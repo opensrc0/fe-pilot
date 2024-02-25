@@ -41,7 +41,16 @@
     "react-components",
     "ui-component",
     "ui-library",
-    "web"
+    "web",
+    "advance-component",
+    "advance-feature",
+    "scanner",
+    "phonebook",
+    "voice",
+    "autofillotp",
+    "share",
+    "livelocationtracking",
+    "detectmylocation"
   ],
   "config": {
     "commitizen": {
