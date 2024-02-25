@@ -1,0 +1,88 @@
+{
+  "name": "fe-pilot",
+  "version": "0.0.1",
+  "description": "Advance JS features, Plug & Play",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Success: Verified\"",
+    "build": "babel __app/component -d ./__build",
+    "commit": "git-cz",
+    "lint": "eslint .",
+    "semantic-release": "semantic-release --branches main"
+  },
+  "author": "Himanshu Gupta",
+  "license": "ISC",
+  "lint-staged": {
+    "*.js": [
+      "eslint"
+    ]
+  },
+  "devEngines": {
+    "node": "20.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opensrc0/fe-pilot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/opensrc0/fe-pilot/issues"
+  },
+  "homepage": "https://github.com/opensrc0/fe-pilot#readme",
+  "keywords": [
+    "accessible",
+    "components",
+    "web component",
+    "front-end",
+    "framework",
+    "library",
+    "react",
+    "react-components",
+    "ui-component",
+    "ui-library",
+    "web"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/npm",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/changelog",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ]
+  },
+  "files": [
+    "Scanner/",
+    "Voice/",
+    "TextToSpeech/",
+    "Share/",
+    "LiveLocationTracking/",
+    "DetectMyLocation/",
+    "AutoFillOtp",
+    "PhoneBook",
+    "MobileNavBar"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.23.9",
+    "@babel/core": "^7.23.9",
+    "@babel/preset-react": "^7.23.3",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "semantic-release": "^23.0.2",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

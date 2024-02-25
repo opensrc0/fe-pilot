@@ -1,0 +1,10 @@
+{
+  "search.exclude": {
+		"**/index.js": true,
+    "**/__build-es/**": true
+	},
+	"editor.tabSize": 2,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit"
+	},
+}
