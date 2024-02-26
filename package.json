@@ -5,7 +5,9 @@
   "main": "",
   "scripts": {
     "test": "echo \"Success: Verified\"",
-    "build": "babel __app/component -d ./__build",
+    "build": "npm run build:component && npm run build:index",
+    "build:component": "babel __app/component -d ./__build",
+    "build:indexfile": "node ./__app/script/generateIndex.js",
     "commit": "git-cz",
     "lint": "eslint .",
     "semantic-release": "semantic-release --branches main"
@@ -79,6 +81,7 @@
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "cz-conventional-changelog": "^3.3.0",
+    "mkdirp": "^3.0.1",
     "semantic-release": "^23.0.2",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"
