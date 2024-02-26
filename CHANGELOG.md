@@ -1,3 +1,12 @@
+## [1.0.2](https://github.com/opensrc0/fe-pilot/compare/v1.0.1...v1.0.2) (2024-2-26)
+
+
+### Bug Fixes
+
+* **generateindex file:** generate index file for all the component ([aa032e2](https://github.com/opensrc0/fe-pilot/commit/aa032e230da438d24cc95caa8b0b428740a1ec26))
+* **package.json:** changed command in package.json ([8e5d7fa](https://github.com/opensrc0/fe-pilot/commit/8e5d7fa42c928f96067c6951d876f0b73e91bba2))
+* **resolved conflicts:** conflicts resolved ([d2f97d4](https://github.com/opensrc0/fe-pilot/commit/d2f97d489c7747fb95af023b99977ee19c0008d6))
+
 ## [1.0.1](https://github.com/opensrc0/fe-pilot/compare/v1.0.0...v1.0.1) (2024-2-26)
 
 
