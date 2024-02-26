@@ -68,7 +68,8 @@
     "DetectMyLocation/",
     "AutoFillOtp",
     "PhoneBook",
-    "MobileNavBar"
+    "MobileNavBar",
+    "BackHistory"
   ],
   "devDependencies": {
     "@babel/cli": "^7.23.9",
