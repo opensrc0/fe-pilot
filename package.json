@@ -60,6 +60,7 @@
     ]
   },
   "files": [
+    "__build/**",
     "Scanner/",
     "Voice/",
     "TextToSpeech/",
