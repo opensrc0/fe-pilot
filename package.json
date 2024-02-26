@@ -5,7 +5,7 @@
   "main": "",
   "scripts": {
     "test": "echo \"Success: Verified\"",
-    "build": "npm run build:component && npm run build:index",
+    "build": "npm run build:component && npm run build:indexfile",
     "build:component": "babel __app/component -d ./__build",
     "build:indexfile": "node ./__app/script/generateIndex.js",
     "commit": "git-cz",
