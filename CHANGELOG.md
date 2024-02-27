@@ -1,3 +1,10 @@
+## [1.0.12](https://github.com/opensrc0/fe-pilot/compare/v1.0.11...v1.0.12) (2024-2-27)
+
+
+### Bug Fixes
+
+* **s:** s ([36fee20](https://github.com/opensrc0/fe-pilot/commit/36fee209c7a281a8514d2b813079fe13dfb29397))
+
 ## [1.0.11](https://github.com/opensrc0/fe-pilot/compare/v1.0.10...v1.0.11) (2024-2-27)
 
 
