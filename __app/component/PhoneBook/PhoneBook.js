@@ -36,7 +36,7 @@ function PhoneBook({
   }, []);
 
   return isBrowser && (showForever || hasBrowserSupport()) ? (
-    React.Children.map(children, (child) => React.cloneElement(child, {
+    React.Children.map(children, (child) => React.cloneElement(typeof child === 'string' ? <span>{child}</span> : child, {
       onClick: getContacts,
     }))
   ) : null;
@@ -52,7 +52,7 @@ PhoneBook.propTypes = {
 PhoneBook.defaultProps = {
   cb: () => {},
   contactProperty: ['name', 'email', 'tel', 'address', 'icon'],
-  isSelectMultiple: true,
+  isSelectMultiple: false,
   showForever: false,
 };
 
