@@ -1,33 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-const hasBrowserSupport = () => {
-  if (navigator.contacts && window.ContactsManager) {
-    return true;
-  }
-  return false;
-};
+const isPhoneBookAPISupport = () => navigator.contacts && window.ContactsManager;
 
 function PhoneBook({
-  cb,
-  contactProperty,
-  isSelectMultiple,
+  disbaleToast,
+  successCb,
+  failureCb,
+  successMsg,
+  failureMsg,
   showForever,
   children,
+  contactProperty,
+  isSelectMultiple,
 }) {
   const [isBrowser, setIsBrowser] = useState(false);
 
   const getContacts = async () => {
     const opts = { multiple: isSelectMultiple };
-    if (hasBrowserSupport()) {
+    if (isPhoneBookAPISupport()) {
       try {
         const contacts = await navigator.contacts.select(contactProperty, opts);
-        cb(contacts);
+        if (!disbaleToast && successMsg) console.log('Success:', successMsg);
+        successCb({ msgType: 'SUCCESS', msg: successMsg, data: contacts });
       } catch (error) {
-        console.log('Error: ', error);
+        if (!disbaleToast && failureMsg.generalMsg) console.log(failureMsg.generalMsg || error);
+        failureCb({ msgType: 'ERROR', msg: failureMsg.generalMsg || error });
       }
     } else {
-      console.log("Unsupported Error: Device doesn't support the feature");
+      if (!disbaleToast && failureMsg.unSupportedMsg) console.log(failureMsg.unSupportedMsg);
+      failureCb({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupportedMsg });
     }
   };
 
@@ -35,7 +37,7 @@ function PhoneBook({
     setIsBrowser(true);
   }, []);
 
-  return isBrowser && (showForever || hasBrowserSupport()) ? (
+  return isBrowser && (showForever || isPhoneBookAPISupport()) ? (
     React.Children.map(children, (child) => React.cloneElement(typeof child === 'string' ? <span>{child}</span> : child, {
       onClick: getContacts,
     }))
@@ -43,17 +45,29 @@ function PhoneBook({
 }
 
 PhoneBook.propTypes = {
-  cb: PropTypes.func,
+  disbaleToast: PropTypes.bool,
+  successCb: PropTypes.func,
+  failureCb: PropTypes.func,
+  successMsg: PropTypes.string,
+  failureMsg: PropTypes.object,
+  showForever: PropTypes.bool,
   contactProperty: PropTypes.array,
   isSelectMultiple: PropTypes.bool,
-  showForever: PropTypes.bool,
 };
 
 PhoneBook.defaultProps = {
-  cb: () => {},
+  disbaleToast: false,
+  successCb: () => {},
+  failureCb: () => {},
+  successMsg: '',
+  failureMsg: {
+    unSupportedMsg: '',
+    badRequestMsg: '',
+    generalMsg: '',
+  },
+  showForever: false,
   contactProperty: ['name', 'email', 'tel', 'address', 'icon'],
   isSelectMultiple: false,
-  showForever: false,
 };
 
 export default PhoneBook;
