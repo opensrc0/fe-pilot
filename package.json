@@ -59,7 +59,8 @@
   },
   "release": {
     "branches": [
-      "main"
+      "main",
+      "next"
     ],
     "plugins": [
       "@semantic-release/npm",
