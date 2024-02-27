@@ -1,3 +1,14 @@
+## [1.0.5](https://github.com/opensrc0/fe-pilot/compare/v1.0.4...v1.0.5) (2024-2-27)
+
+
+### Bug Fixes
+
+* **changelog:** changelog ([dcc2e97](https://github.com/opensrc0/fe-pilot/commit/dcc2e9777732f654cb21a037ffb66b90ab0aca6b))
+* **changelog:** changelog ([6307531](https://github.com/opensrc0/fe-pilot/commit/6307531c2b3c47f49018db55f062c6eefd90ceda))
+* **package.json:** package.json ([4d2f8f7](https://github.com/opensrc0/fe-pilot/commit/4d2f8f70ec3868781178d46b0911b58dc043b598))
+* **readme.md:** readme.md ([dd4b6e7](https://github.com/opensrc0/fe-pilot/commit/dd4b6e71fff2e2a91b70caa6834fefed1c9b8cc9))
+* **readme:** readme.md ([68b2e31](https://github.com/opensrc0/fe-pilot/commit/68b2e311e56f38f5f88ac7aa974b8e9f125f81a0))
+
 ## [1.0.4](https://github.com/opensrc0/fe-pilot/compare/v1.0.3...v1.0.4) (2024-2-27)
 
 
