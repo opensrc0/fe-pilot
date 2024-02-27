@@ -5,6 +5,7 @@
   "main": "",
   "scripts": {
     "test": "echo \"Success: Verified\"",
+    "local": "babel __app/component -d __build --watch",
     "build": "npm run build:component && npm run build:indexfile",
     "build:component": "babel __app/component -d ./__build",
     "build:indexfile": "node ./__app/script/generateIndex.js",
@@ -91,6 +92,8 @@
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb": "^19.0.4",
     "mkdirp": "^3.0.1",
     "semantic-release": "^23.0.2",
     "webpack": "^5.89.0",

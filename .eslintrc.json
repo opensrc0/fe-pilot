@@ -1,0 +1,22 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "globals": {
+    "APP_ENV": true
+  },
+   "rules": {
+    "import/no-extraneous-dependencies": ["off"], // Need to use external dep like webpack-dashboard
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }], // Need to use jsx
+    "import/extensions": ["off"], // Use file extensions
+    "no-underscore-dangle": ["off"],
+    "react/prop-types": ["off"],
+    "jsx-a11y/control-has-associated-label": ["off"],
+    "react/forbid-prop-types": ["off"]
+  },
+  "parserOptions": {
+    "ecmaVersion":"latest"
+  }
+}
