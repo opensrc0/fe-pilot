@@ -1,3 +1,10 @@
+## [1.0.18](https://github.com/opensrc0/fe-pilot/compare/v1.0.17...v1.0.18) (2024-2-27)
+
+
+### Bug Fixes
+
+* **phonebook:** added 1. Phonebook component ([5974e75](https://github.com/opensrc0/fe-pilot/commit/5974e751a839a43a2586b355c368613741b0caac))
+
 ## [1.0.17](https://github.com/opensrc0/fe-pilot/compare/v1.0.16...v1.0.17) (2024-2-27)
 
 
