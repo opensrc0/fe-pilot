@@ -1,3 +1,10 @@
+## [1.0.20](https://github.com/opensrc0/fe-pilot/compare/v1.0.19...v1.0.20) (2024-3-3)
+
+
+### Bug Fixes
+
+* **scanner:** added scanner component ([b043eb3](https://github.com/opensrc0/fe-pilot/commit/b043eb3a71b0d450fb296ac3c999b3ace84a986f))
+
 ## [1.0.19](https://github.com/opensrc0/fe-pilot/compare/v1.0.18...v1.0.19) (2024-2-27)
 
 
