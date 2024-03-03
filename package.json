@@ -5,6 +5,7 @@
   "main": "",
   "scripts": {
     "test": "echo \"Success: Verified\"",
+    "start": "npm run local",
     "local": "babel __app/component -d __build --watch",
     "build": "npm run build:component && npm run build:indexfile",
     "build:component": "babel __app/component -d ./__build",

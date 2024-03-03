@@ -5,7 +5,8 @@
     "node": true
   },
   "globals": {
-    "APP_ENV": true
+    "APP_ENV": true,
+    "globalThis": true
   },
    "rules": {
     "import/no-extraneous-dependencies": ["off"], // Need to use external dep like webpack-dashboard
@@ -14,7 +15,8 @@
     "no-underscore-dangle": ["off"],
     "react/prop-types": ["off"],
     "jsx-a11y/control-has-associated-label": ["off"],
-    "react/forbid-prop-types": ["off"]
+    "react/forbid-prop-types": ["off"],
+    "object-curly-newline": ["off"]
   },
   "parserOptions": {
     "ecmaVersion":"latest"

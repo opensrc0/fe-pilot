@@ -3,6 +3,25 @@ import PropTypes from 'prop-types';
 
 const isPhoneBookAPISupport = () => navigator.contacts && window.ContactsManager;
 
+const handleError = ({ disbaleToast, msg, msgType, failureCb }) => {
+  console.log(msgType);
+  if (!disbaleToast && msg) console.log(msg);
+  failureCb({
+    msgType,
+    msg,
+  });
+};
+
+const handleSuccess = ({ disbaleToast, msg, msgType, data, successCb }) => {
+  console.log(msgType);
+  if (!disbaleToast && msg) console.log('Success:', msg);
+  successCb({
+    msgType,
+    msg,
+    data,
+  });
+};
+
 function PhoneBook({
   disbaleToast,
   successCb,
@@ -21,15 +40,12 @@ function PhoneBook({
     if (isPhoneBookAPISupport()) {
       try {
         const contacts = await navigator.contacts.select(contactProperty, opts);
-        if (!disbaleToast && successMsg) console.log('Success:', successMsg);
-        successCb({ msgType: 'SUCCESS', msg: successMsg, data: contacts });
+        handleSuccess({ disbaleToast, msgType: 'SUCCESS', msg: successMsg, successCb, data: contacts });
       } catch (error) {
-        if (!disbaleToast && failureMsg.generalMsg) console.log(failureMsg.generalMsg || error);
-        failureCb({ msgType: 'ERROR', msg: failureMsg.generalMsg || error });
+        handleError({ disbaleToast, msgType: 'ERROR', msg: failureMsg.error || error, failureCb });
       }
     } else {
-      if (!disbaleToast && failureMsg.unSupportedMsg) console.log(failureMsg.unSupportedMsg);
-      failureCb({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupportedMsg });
+      handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
     }
   };
 
@@ -61,11 +77,10 @@ PhoneBook.defaultProps = {
   failureCb: () => {},
   successMsg: '',
   failureMsg: {
-    unSupportedMsg: '',
-    badRequestMsg: '',
-    generalMsg: '',
+    unSupported: '',
+    error: '',
   },
-  showForever: false,
+  showForever: true,
   contactProperty: ['name', 'email', 'tel', 'address', 'icon'],
   isSelectMultiple: false,
 };

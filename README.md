@@ -40,7 +40,7 @@ A React UI library for Advance Web Features that streamlines the development of 
   
 ## Features
 - **Web/Mobile Support:** fe-pilot will be helpfull in Large/Mid/Small size of web based applications.
-- **Ease of Use:** fe-pilot contains a set of components like `Scanner`, `PhoneBook`, `Voice Search`, `Share`, `Contact List`, `Live Location Tracking`, `Current Location` that are easy to plug and play.
+- **Ease of Use:** fe-pilot contains a set of components like `Scanner`, `PhoneBook`, `Voice Search`, `Share`, `Live Location Tracking`, `Current Location` that are easy to plug and play.
 - **Scalable & Maintainable:** fe-pilot components are built on top of a React for better scalable, maintainable component.
   
 ## Installation

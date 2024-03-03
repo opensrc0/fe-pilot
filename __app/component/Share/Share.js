@@ -1,13 +1,33 @@
+/* eslint-disable  */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 const isShareAPISupport = () => navigator.share;
+
 const isShareAPIDataValid = (sharingData) => {
   if (navigator.canShare) {
     return navigator.canShare(sharingData);
   }
 
   return true;
+};
+
+const handleError = ({ disbaleToast, msg, msgType, failureCb }) => {
+  console.log(msgType);
+  if (!disbaleToast && msg) console.log(msg);
+  failureCb({
+    msgType,
+    msg,
+  });
+};
+
+const handleSuccess = ({ disbaleToast, msg, msgType, successCb }) => {
+  console.log(msgType);
+  if (!disbaleToast && msg) console.log('Success:', msg);
+  successCb({
+    msgType,
+    msg,
+  });
 };
 
 function Share({
@@ -23,28 +43,21 @@ function Share({
   sUrl,
 }) {
   const [isBrowser, setIsBrowser] = useState(false);
-  const sharingData = { title: sName, textasxzdsc: sTitle, url: sUrl };
+  const sharingData = { title: sName, text: sTitle, url: sUrl };
 
   const showDropdown = () => {
     if (isShareAPISupport()) {
       if (isShareAPIDataValid(sharingData)) {
         navigator.share(sharingData).then(() => {
-          if (!disbaleToast && successMsg) console.log('Success:', successMsg);
-          successCb({ msgType: 'SUCCESS', msg: successMsg });
+          handleSuccess({ disbaleToast, msgType: 'SUCCESS', msg: successMsg, successCb });
         }).catch((error) => {
-          console.log(error);
-          if (!disbaleToast && failureMsg.generalMsg) console.log(failureMsg.generalMsg || error);
-          failureCb({ msgType: 'ERROR', msg: failureMsg.generalMsg || error });
+          handleError({ disbaleToast, msgType: 'ERROR', msg: failureMsg.error || error, failureCb });
         });
       } else {
-        console.log('BAD_REQUEST');
-        if (!disbaleToast && failureMsg.badRequestMsg) console.log(failureMsg.badRequestMsg);
-        failureCb({ msgType: 'BAD_REQUEST', msg: failureMsg.badRequestMsg });
+        handleError({ disbaleToast, msgType: 'BAD_REQUEST', msg: failureMsg.badRequest, failureCb });
       }
     } else {
-      console.log('UN_SUPPORTED_FEATURE');
-      if (!disbaleToast && failureMsg.unSupportedMsg) console.log(failureMsg.unSupportedMsg);
-      failureCb({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupportedMsg });
+      handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });      
     }
   };
 
@@ -77,9 +90,9 @@ Share.defaultProps = {
   failureCb: () => {},
   successMsg: '',
   failureMsg: {
-    unSupportedMsg: '',
-    badRequestMsg: '',
-    generalMsg: '',
+    unSupported: '',
+    badRequest: '',
+    error: '',
   },
   showForever: true,
   sName: 'fe-pilot',
