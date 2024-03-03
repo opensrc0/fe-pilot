@@ -1,3 +1,10 @@
+## [1.0.21](https://github.com/opensrc0/fe-pilot/compare/v1.0.20...v1.0.21) (2024-3-3)
+
+
+### Bug Fixes
+
+* **scanner:** completed scanner component with children and props ([f85b901](https://github.com/opensrc0/fe-pilot/commit/f85b9010c2739d2aeea47180d3df524690a19f42))
+
 ## [1.0.20](https://github.com/opensrc0/fe-pilot/compare/v1.0.19...v1.0.20) (2024-3-3)
 
 
