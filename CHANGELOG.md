@@ -1,3 +1,11 @@
+## [1.0.19](https://github.com/opensrc0/fe-pilot/compare/v1.0.18...v1.0.19) (2024-2-27)
+
+
+### Bug Fixes
+
+* **phonebook:** supported string and element as a child of phonebook ([f66d122](https://github.com/opensrc0/fe-pilot/commit/f66d1225b77298bbc74deb026425e8f072f8d263))
+* **share:** build share component and modify PhoneBook Component ([1a47f4f](https://github.com/opensrc0/fe-pilot/commit/1a47f4fca28e671fef44e2d13eeb9b49f2f3c56d))
+
 ## [1.0.18](https://github.com/opensrc0/fe-pilot/compare/v1.0.17...v1.0.18) (2024-2-27)
 
 
