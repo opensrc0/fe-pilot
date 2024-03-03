@@ -1,22 +1,32 @@
 import React from 'react';
 
-function Close({ zIndex, onClose }) {
+function Close({
+  onClose,
+  children,
+  zIndex,
+  top,
+  bottom,
+  left,
+  right,
+  color,
+}) {
   return (
     <div
       style={{
-        left: '5%',
-        bottom: '25%',
+        top,
+        bottom,
+        left,
+        right,
         zIndex,
+        color,
         position: 'absolute',
-        cursor: 'pointer',
-        color: 'white',
       }}
       onClick={onClose}
       onKeyDown={(ev) => ev.key === 'Enter' && onClose()}
       role="button"
       tabIndex={0}
     >
-      Close Button
+      {children || 'Close Button'}
     </div>
   );
 }
@@ -26,7 +36,11 @@ Close.propTypes = {
 };
 
 Close.defaultProps = {
-
+  color: 'white',
+  top: 'auto',
+  bottom: '25%',
+  left: 'auto',
+  right: '72%',
 };
 
 export default Close;

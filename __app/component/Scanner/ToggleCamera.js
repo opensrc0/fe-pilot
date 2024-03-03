@@ -1,19 +1,25 @@
 import React from 'react';
 
 function ToggleCamera({
-  zIndex,
   toggleCamera,
   children,
+  zIndex,
+  top,
+  bottom,
+  left,
+  right,
+  color,
 }) {
   return (
     <div
       style={{
-        left: '38%',
-        bottom: '25%',
+        top,
+        bottom,
+        left,
+        right,
         zIndex,
+        color,
         position: 'absolute',
-        cursor: 'pointer',
-        color: 'white',
       }}
       onClick={toggleCamera}
       onKeyDown={(ev) => ev.key === 'Enter' && toggleCamera()}
@@ -30,7 +36,11 @@ ToggleCamera.propTypes = {
 };
 
 ToggleCamera.defaultProps = {
-
+  color: 'white',
+  top: 'auto',
+  bottom: '25%',
+  left: 'auto',
+  right: '37%',
 };
 
 export default ToggleCamera;
