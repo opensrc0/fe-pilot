@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-const isPhoneBookAPISupport = () => navigator.contacts && window.ContactsManager;
+const isPhoneBookAPISupport = () => globalThis.navigator.contacts && globalThis.ContactsManager;
 
 const handleError = ({ disbaleToast, msg, msgType, failureCb }) => {
   console.log(msgType);

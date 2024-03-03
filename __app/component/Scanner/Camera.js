@@ -53,7 +53,7 @@ function Camera({
   };
 
   const detectCodes = async () => {
-    if ('BarcodeDetector' in window) {
+    if ('BarcodeDetector' in globalThis) {
       const WindowBarcodeDetector = window.BarcodeDetector;
       const barcodeDetector = new WindowBarcodeDetector();
       const itemsFound = [];
@@ -191,6 +191,13 @@ function Camera({
           zIndex,
           toggleCamera,
           toggleFlash,
+          handleSuccess,
+          disbaleToast,
+          successCb,
+          successMsg,
+          handleError,
+          failureCb,
+          failureMsg,
         }))
       }
     </div>
@@ -216,6 +223,9 @@ Camera.defaultProps = {
     unSupported: '',
     streaming: '',
     barCodeDetection: '',
+    invalidImage: '',
+    flash: '',
+    unableToScan: '',
   },
   zIndex: 9,
   cameraType: 'back',

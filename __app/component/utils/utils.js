@@ -1,13 +1,13 @@
 export const browserDimensions = () => ({
   width: globalThis.document && (
-    window.innerWidth
-    || document.documentElement.clientWidth
-    || document.body.clientWidth
+    globalThis.innerWidth
+    || globalThis.document.documentElement.clientWidth
+    || globalThis.document.body.clientWidth
   ),
   height: globalThis.document && (
-    window.innerHeight
-    || document.documentElement.clientHeight
-    || document.body.clientHeight
+    globalThis.innerHeight
+    || globalThis.document.documentElement.clientHeight
+    || globalThis.document.body.clientHeight
   ),
 });
 

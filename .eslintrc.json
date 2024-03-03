@@ -16,7 +16,8 @@
     "react/prop-types": ["off"],
     "jsx-a11y/control-has-associated-label": ["off"],
     "react/forbid-prop-types": ["off"],
-    "object-curly-newline": ["off"]
+    "object-curly-newline": ["off"],
+    "react/jsx-fragments": ["off" ]
   },
   "parserOptions": {
     "ecmaVersion":"latest"
