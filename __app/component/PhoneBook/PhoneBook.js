@@ -1,26 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { handleSuccess, handleError } from '../services/handler';
 
 const isPhoneBookAPISupport = () => globalThis.navigator.contacts && globalThis.ContactsManager;
-
-const handleError = ({ disbaleToast, msg, msgType, failureCb }) => {
-  console.log(msgType);
-  if (!disbaleToast && msg) console.log(msg);
-  failureCb({
-    msgType,
-    msg,
-  });
-};
-
-const handleSuccess = ({ disbaleToast, msg, msgType, data, successCb }) => {
-  console.log(msgType);
-  if (!disbaleToast && msg) console.log('Success:', msg);
-  successCb({
-    msgType,
-    msg,
-    data,
-  });
-};
 
 function PhoneBook({
   disbaleToast,

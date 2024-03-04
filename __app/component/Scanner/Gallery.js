@@ -1,11 +1,10 @@
 import React from 'react';
+import { handleSuccess, handleError } from '../services/handler';
 
 function Gallery({
   disbaleToast,
-  handleSuccess,
   successCb,
   successMsg,
-  handleError,
   failureCb,
   failureMsg,
   children,

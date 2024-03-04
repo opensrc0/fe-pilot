@@ -1,31 +1,13 @@
 /* eslint-disable no-inner-declarations */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { handleSuccess, handleError } from '../services/handler';
 
 let mediaStream = null;
 let videoUnmount = null;
 let unmoutRenderLoop = null;
 
 const isScannerSupport = () => navigator && navigator.mediaDevices;
-
-const handleError = ({ disbaleToast, msg, msgType, failureCb }) => {
-  console.log(msgType);
-  if (!disbaleToast && msg) console.log(msg);
-  failureCb({
-    msgType,
-    msg,
-  });
-};
-
-const handleSuccess = ({ disbaleToast, msg, msgType, data, successCb }) => {
-  console.log(msgType);
-  if (!disbaleToast && msg) console.log('Success:', msg);
-  successCb({
-    msgType,
-    msg,
-    data,
-  });
-};
 
 function Camera({
   disbaleToast,
@@ -191,11 +173,9 @@ function Camera({
           zIndex,
           toggleCamera,
           toggleFlash,
-          handleSuccess,
           disbaleToast,
           successCb,
           successMsg,
-          handleError,
           failureCb,
           failureMsg,
         }))

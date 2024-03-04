@@ -1,6 +1,7 @@
 /* eslint-disable  */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { handleSuccess, handleError } from '../services/handler';
 
 const isShareAPISupport = () => navigator.share;
 
@@ -10,24 +11,6 @@ const isShareAPIDataValid = (sharingData) => {
   }
 
   return true;
-};
-
-const handleError = ({ disbaleToast, msg, msgType, failureCb }) => {
-  console.log(msgType);
-  if (!disbaleToast && msg) console.log(msg);
-  failureCb({
-    msgType,
-    msg,
-  });
-};
-
-const handleSuccess = ({ disbaleToast, msg, msgType, successCb }) => {
-  console.log(msgType);
-  if (!disbaleToast && msg) console.log('Success:', msg);
-  successCb({
-    msgType,
-    msg,
-  });
 };
 
 function Share({
@@ -48,8 +31,8 @@ function Share({
   const showDropdown = () => {
     if (isShareAPISupport()) {
       if (isShareAPIDataValid(sharingData)) {
-        navigator.share(sharingData).then(() => {
-          handleSuccess({ disbaleToast, msgType: 'SUCCESS', msg: successMsg, successCb });
+        navigator.share(sharingData).then((data) => {
+          handleSuccess({ disbaleToast, msgType: 'SUCCESS', msg: successMsg, successCb, data });
         }).catch((error) => {
           handleError({ disbaleToast, msgType: 'ERROR', msg: failureMsg.error || error, failureCb });
         });
