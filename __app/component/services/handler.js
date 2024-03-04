@@ -1,6 +1,6 @@
 export const handleSuccess = ({ disbaleToast, msg, msgType, successCb, data }) => {
-  console.log(msgType);
-  if (!disbaleToast && msg) console.log('Success:', msg);
+  console.log(msgType, data);
+  if (!disbaleToast && msg) console.log('Success:', data);
   successCb({
     msgType,
     msg,

@@ -11,6 +11,4 @@ export const browserDimensions = () => ({
   ),
 });
 
-export const saveLocal = () => {
-
-};
+export const IsValidUPI = (url = '') => (url.search(/upi:\/\/pay\?pa=/) !== -1);

@@ -75,6 +75,19 @@ Gallery.propTypes = {
 };
 
 Gallery.defaultProps = {
+  disbaleToast: false,
+  successCb: () => {},
+  failureCb: () => {},
+  successMsg: '',
+  failureMsg: {
+    unSupported: '',
+    streaming: '',
+    barCodeDetection: '',
+    invalidImage: '',
+    flash: '',
+    unableToScan: '',
+  },
+  zIndex: 9,
   color: 'white',
   top: 'auto',
   bottom: '18%',
