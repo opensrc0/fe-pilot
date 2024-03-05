@@ -1,7 +1,7 @@
 import React from 'react';
 import { handleSuccess, handleError } from '../services/handler';
 
-function Gallery({
+function PhoneGallery({
   disbaleToast,
   successCb,
   successMsg,
@@ -70,11 +70,11 @@ function Gallery({
   );
 }
 
-Gallery.propTypes = {
+PhoneGallery.propTypes = {
 
 };
 
-Gallery.defaultProps = {
+PhoneGallery.defaultProps = {
   disbaleToast: false,
   successCb: () => {},
   failureCb: () => {},
@@ -95,7 +95,7 @@ Gallery.defaultProps = {
   right: '64%',
 };
 
-export default Gallery;
+export default PhoneGallery;
 
 // <input type="file" id="id" name="id" accept="image/png,image/jpeg" capture="filesystem" />
 // <input type="file" accept="image/*" capture="filesystem" />

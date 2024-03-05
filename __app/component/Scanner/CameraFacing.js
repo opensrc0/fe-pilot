@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ToggleCamera({
+function CameraFacing({
   toggleCamera,
   children,
   zIndex,
@@ -31,11 +31,11 @@ function ToggleCamera({
   );
 }
 
-ToggleCamera.propTypes = {
+CameraFacing.propTypes = {
 
 };
 
-ToggleCamera.defaultProps = {
+CameraFacing.defaultProps = {
   color: 'white',
   top: 'auto',
   bottom: '25%',
@@ -43,4 +43,4 @@ ToggleCamera.defaultProps = {
   right: '37%',
 };
 
-export default ToggleCamera;
+export default CameraFacing;

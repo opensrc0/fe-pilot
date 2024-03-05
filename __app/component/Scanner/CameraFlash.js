@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Close({
-  onClose,
+function CameraFlash({
+  toggleFlash,
   children,
   zIndex,
   top,
@@ -21,26 +21,26 @@ function Close({
         color,
         position: 'absolute',
       }}
-      onClick={onClose}
-      onKeyDown={(ev) => ev.key === 'Enter' && onClose()}
+      onClick={toggleFlash}
+      onKeyDown={(ev) => ev.key === 'Enter' && toggleFlash()}
       role="button"
       tabIndex={0}
     >
-      {children || 'Close Button'}
+      {children || 'Toggle Flash'}
     </div>
   );
 }
 
-Close.propTypes = {
+CameraFlash.propTypes = {
 
 };
 
-Close.defaultProps = {
+CameraFlash.defaultProps = {
   color: 'white',
   top: 'auto',
   bottom: '25%',
   left: 'auto',
-  right: '72%',
+  right: '5%',
 };
 
-export default Close;
+export default CameraFlash;

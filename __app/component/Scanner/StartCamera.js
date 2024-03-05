@@ -9,7 +9,7 @@ let unmoutRenderLoop = null;
 
 const isScannerSupport = () => navigator && navigator.mediaDevices;
 
-function Camera({
+function StartCamera({
   disbaleToast,
   successCb,
   failureCb,
@@ -184,7 +184,7 @@ function Camera({
   );
 }
 
-Camera.propTypes = {
+StartCamera.propTypes = {
   disbaleToast: PropTypes.bool,
   successCb: PropTypes.func,
   failureCb: PropTypes.func,
@@ -194,7 +194,7 @@ Camera.propTypes = {
   cameraType: PropTypes.oneOf(['back', 'front']),
 };
 
-Camera.defaultProps = {
+StartCamera.defaultProps = {
   disbaleToast: false,
   successCb: () => {},
   failureCb: () => {},
@@ -211,4 +211,4 @@ Camera.defaultProps = {
   cameraType: 'back',
 };
 
-export default Camera;
+export default StartCamera;

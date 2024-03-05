@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { browserDimensions } from '../utils/utils';
 
-function ScanBox({ zIndex, marginTop, background, children }) {
+function CameraScanBox({ zIndex, marginTop, background, children }) {
   const [isBrowser, setIsBrowser] = useState(false);
   const [appCss, setAppCss] = useState({});
 
@@ -35,16 +35,16 @@ function ScanBox({ zIndex, marginTop, background, children }) {
   ));
 }
 
-ScanBox.propTypes = {
+CameraScanBox.propTypes = {
   zIndex: PropTypes.number,
   marginTop: PropTypes.number,
   background: PropTypes.string,
 };
 
-ScanBox.defaultProps = {
+CameraScanBox.defaultProps = {
   zIndex: 9,
   marginTop: 0,
   background: 'rgba(0, 0, 0, 0.7)',
 };
 
-export default ScanBox;
+export default CameraScanBox;

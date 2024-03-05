@@ -1,15 +1,15 @@
-import Camera from './Camera';
-import Flash from './Flash';
-import Close from './Close';
-import ScanBox from './ScanBox';
-import ToggleCamera from './ToggleCamera';
-import Gallery from './Gallery';
+import StartCamera from './StartCamera';
+import CameraFlash from './CameraFlash';
+import CameraClose from './CameraClose';
+import CameraScanBox from './CameraScanBox';
+import CameraFacing from './CameraFacing';
+import PhoneGallery from './PhoneGallery';
 
 export default {
-  Camera,
-  Flash,
-  Close,
-  ScanBox,
-  ToggleCamera,
-  Gallery,
+  StartCamera,
+  CameraFlash,
+  CameraClose,
+  CameraScanBox,
+  CameraFacing,
+  PhoneGallery,
 };
