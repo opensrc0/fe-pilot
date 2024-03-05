@@ -36,7 +36,7 @@ function PhoneBook({
   }, []);
 
   return isBrowser && (showForever || isPhoneBookAPISupport()) ? (
-    React.Children.map(children, (child) => React.cloneElement(typeof child === 'string' ? <span>{child}</span> : child, {
+    React.Children.map(children || 'PhoneBook', (child) => React.cloneElement(typeof child === 'string' ? <span>{child}</span> : child, {
       onClick: getContacts,
     }))
   ) : null;

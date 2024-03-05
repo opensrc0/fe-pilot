@@ -1,5 +1,5 @@
 /* eslint-disable  */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Children } from 'react';
 import PropTypes from 'prop-types';
 import { handleSuccess, handleError } from '../services/handler';
 
@@ -47,9 +47,9 @@ function Share({
   useEffect(() => {
     setIsBrowser(true);
   }, []);
-
+  
   return isBrowser && (showForever || isShareAPISupport()) ? (
-    React.Children.map(children, (child) => React.cloneElement(typeof child === 'string' ? <span>{child}</span> : child, {
+    React.Children.map(children || "Share", (child) => React.cloneElement(typeof child === 'string' ? <span>{child}</span> : child, {
       onClick: showDropdown,
     }))
   ) : null;
