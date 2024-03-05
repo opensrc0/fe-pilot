@@ -4,6 +4,7 @@ import CameraClose from './CameraClose';
 import CameraScanBox from './CameraScanBox';
 import CameraFacing from './CameraFacing';
 import PhoneGallery from './PhoneGallery';
+import CameraClick from './CameraClick';
 
 export default {
   StartCamera,
@@ -12,4 +13,5 @@ export default {
   CameraScanBox,
   CameraFacing,
   PhoneGallery,
+  CameraClick,
 };

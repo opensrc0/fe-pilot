@@ -1,7 +1,7 @@
 import React from 'react';
 import { handleSuccess, handleError } from '../services/handler';
 
-function PhoneGallery({
+function CameraClick({
   disbaleToast,
   successCb,
   successMsg,
@@ -16,9 +16,8 @@ function PhoneGallery({
   color,
   position,
 }) {
-  const onSelectGalleryImage = async (event) => {
+  const onClickImage = async (event) => {
     const file = event.target.files[0];
-
     if ('BarcodeDetector' in globalThis) {
       const WindowBarcodeDetector = window.BarcodeDetector;
       const barcodeDetector = new WindowBarcodeDetector();
@@ -47,7 +46,7 @@ function PhoneGallery({
 
   return (
     <label
-      htmlFor="upload-gallery-photo"
+      htmlFor="click-photo"
       style={{
         top,
         bottom,
@@ -58,24 +57,25 @@ function PhoneGallery({
         position,
       }}
     >
-      {children || 'Gallery'}
+      {children || 'Camera'}
       <input
-        id="upload-gallery-photo"
+        id="click-photo"
         type="file"
-        accept="image/*"
-        onChange={onSelectGalleryImage}
-        onSelect={onSelectGalleryImage}
+        accept="*"
+        capture="filesystem"
+        onChange={onClickImage}
+        onSelect={onClickImage}
         style={{ display: 'none' }}
       />
     </label>
   );
 }
 
-PhoneGallery.propTypes = {
+CameraClick.propTypes = {
 
 };
 
-PhoneGallery.defaultProps = {
+CameraClick.defaultProps = {
   disbaleToast: false,
   successCb: () => {},
   failureCb: () => {},
@@ -93,23 +93,8 @@ PhoneGallery.defaultProps = {
   top: 'auto',
   bottom: '18%',
   left: 'auto',
-  right: '64%',
+  right: '25%',
   position: 'absolute',
 };
 
-export default PhoneGallery;
-
-// <input type="file" id="id" name="id" accept="image/png,image/jpeg" capture="filesystem" />
-// <input type="file" accept="image/*" capture="filesystem" />
-
-// const generateImage = async () => {
-//   const resp = await fetch('https://i.postimg.cc/br85dpb4/Untitled-1.png');
-//   if (!resp.ok) {
-//     return console.error('Network error', resp.status);
-//   }
-//   const blob = await resp.blob();
-//   console.log(blob);
-
-//   const bmp = await createImageBitmap(blob);
-//   return bmp;
-// };
+export default CameraClick;

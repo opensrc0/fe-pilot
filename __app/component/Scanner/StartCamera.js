@@ -123,7 +123,6 @@ function StartCamera({
   };
 
   const allClear = () => {
-    console.log('unmount');
     cancelAnimationFrame(videoUnmount);
     stopStreaming();
     clearTimeout(unmoutRenderLoop);
