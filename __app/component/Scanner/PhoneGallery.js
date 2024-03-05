@@ -14,6 +14,7 @@ function PhoneGallery({
   left,
   right,
   color,
+  position,
 }) {
   const onSelectGalleryImage = async (event) => {
     const file = event.target.files[0];
@@ -54,7 +55,7 @@ function PhoneGallery({
         right,
         zIndex,
         color,
-        position: 'absolute',
+        position,
       }}
     >
       {children || 'Gallery'}
@@ -93,6 +94,7 @@ PhoneGallery.defaultProps = {
   bottom: '18%',
   left: 'auto',
   right: '64%',
+  position: 'absolute',
 };
 
 export default PhoneGallery;

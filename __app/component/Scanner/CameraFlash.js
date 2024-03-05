@@ -9,6 +9,7 @@ function CameraFlash({
   left,
   right,
   color,
+  position,
 }) {
   return (
     <div
@@ -19,7 +20,7 @@ function CameraFlash({
         right,
         zIndex,
         color,
-        position: 'absolute',
+        position,
       }}
       onClick={toggleFlash}
       onKeyDown={(ev) => ev.key === 'Enter' && toggleFlash()}
@@ -41,6 +42,7 @@ CameraFlash.defaultProps = {
   bottom: '25%',
   left: 'auto',
   right: '5%',
+  position: 'absolute',
 };
 
 export default CameraFlash;

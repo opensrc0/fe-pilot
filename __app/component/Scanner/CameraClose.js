@@ -9,6 +9,7 @@ function CameraClose({
   left,
   right,
   color,
+  position,
 }) {
   return (
     <div
@@ -19,7 +20,7 @@ function CameraClose({
         right,
         zIndex,
         color,
-        position: 'absolute',
+        position,
       }}
       onClick={onClose}
       onKeyDown={(ev) => ev.key === 'Enter' && onClose()}
@@ -41,6 +42,7 @@ CameraClose.defaultProps = {
   bottom: '25%',
   left: 'auto',
   right: '72%',
+  position: 'absolute',
 };
 
 export default CameraClose;

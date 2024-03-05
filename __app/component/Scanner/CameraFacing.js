@@ -9,6 +9,7 @@ function CameraFacing({
   left,
   right,
   color,
+  position,
 }) {
   return (
     <div
@@ -19,7 +20,7 @@ function CameraFacing({
         right,
         zIndex,
         color,
-        position: 'absolute',
+        position,
       }}
       onClick={toggleCamera}
       onKeyDown={(ev) => ev.key === 'Enter' && toggleCamera()}
@@ -41,6 +42,7 @@ CameraFacing.defaultProps = {
   bottom: '25%',
   left: 'auto',
   right: '37%',
+  position: 'absolute',
 };
 
 export default CameraFacing;
