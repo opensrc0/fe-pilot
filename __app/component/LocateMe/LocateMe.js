@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-
-// const isLocateMeAPISupport = () => globalThis.navigator.contacts && globalThis.ContactsManager;
+import Wrapper from '../Wrapper/Wrapper';
 
 function LocateMe({
   // disbaleToast,
@@ -9,23 +8,17 @@ function LocateMe({
   // failureCb,
   // successMsg,
   // failureMsg,
-  showForever,
   children,
 
 }) {
-  const [isBrowser, setIsBrowser] = useState(false);
-
-  useEffect(() => {
-    setIsBrowser(true);
-  }, []);
-
-  console.log('Locateme');
-  return isBrowser && (showForever || true) ? (
+  return (
     React.Children.map(children || 'Use my current location', (child) => React.cloneElement(typeof child === 'string' ? <span>{child}</span> : child, {
       onClick: () => {},
     }))
-  ) : null;
+  );
 }
+
+LocateMe.isBrowserSupport = () => true;
 
 LocateMe.propTypes = {
   disbaleToast: PropTypes.bool,
@@ -33,7 +26,6 @@ LocateMe.propTypes = {
   failureCb: PropTypes.func,
   successMsg: PropTypes.string,
   failureMsg: PropTypes.object,
-  showForever: PropTypes.bool,
 };
 
 LocateMe.defaultProps = {
@@ -45,7 +37,6 @@ LocateMe.defaultProps = {
     unSupported: '',
     error: '',
   },
-  showForever: true,
 };
 
-export default LocateMe;
+export default Wrapper(LocateMe);

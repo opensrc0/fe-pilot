@@ -17,7 +17,9 @@
     "jsx-a11y/control-has-associated-label": ["off"],
     "react/forbid-prop-types": ["off"],
     "object-curly-newline": ["off"],
-    "react/jsx-fragments": ["off" ]
+    "react/jsx-fragments": ["off" ],
+    "react/jsx-props-no-spreading": ["off"],
+    "func-names": ["off"]
   },
   "parserOptions": {
     "ecmaVersion":"latest"

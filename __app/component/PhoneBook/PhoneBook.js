@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { handleSuccess, handleError } from '../services/handler';
-
-const isPhoneBookAPISupport = () => globalThis.navigator.contacts && globalThis.ContactsManager;
+import Wrapper from '../Wrapper/Wrapper';
 
 function PhoneBook({
   disbaleToast,
@@ -10,16 +9,13 @@ function PhoneBook({
   failureCb,
   successMsg,
   failureMsg,
-  showForever,
   children,
   contactProperty,
   isSelectMultiple,
 }) {
-  const [isBrowser, setIsBrowser] = useState(false);
-
   const getContacts = async () => {
     const opts = { multiple: isSelectMultiple };
-    if (isPhoneBookAPISupport()) {
+    if (PhoneBook.isBrowserSupport()) {
       try {
         const contacts = await navigator.contacts.select(contactProperty, opts);
         handleSuccess({ disbaleToast, msgType: 'SUCCESS', msg: successMsg, successCb, data: contacts });
@@ -31,16 +27,14 @@ function PhoneBook({
     }
   };
 
-  useEffect(() => {
-    setIsBrowser(true);
-  }, []);
-
-  return isBrowser && (showForever || isPhoneBookAPISupport()) ? (
+  return (
     React.Children.map(children || 'PhoneBook', (child) => React.cloneElement(typeof child === 'string' ? <span>{child}</span> : child, {
       onClick: getContacts,
     }))
-  ) : null;
+  );
 }
+
+PhoneBook.isBrowserSupport = () => globalThis.navigator.contacts && globalThis.ContactsManager;
 
 PhoneBook.propTypes = {
   disbaleToast: PropTypes.bool,
@@ -48,7 +42,6 @@ PhoneBook.propTypes = {
   failureCb: PropTypes.func,
   successMsg: PropTypes.string,
   failureMsg: PropTypes.object,
-  showForever: PropTypes.bool,
   contactProperty: PropTypes.array,
   isSelectMultiple: PropTypes.bool,
 };
@@ -62,9 +55,8 @@ PhoneBook.defaultProps = {
     unSupported: '',
     error: '',
   },
-  showForever: true,
   contactProperty: ['name', 'email', 'tel', 'address', 'icon'],
   isSelectMultiple: false,
 };
 
-export default PhoneBook;
+export default Wrapper(PhoneBook);

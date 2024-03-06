@@ -1,9 +1,7 @@
-/* eslint-disable  */
-import React, { useEffect, useState, Children } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { handleSuccess, handleError } from '../services/handler';
-
-const isShareAPISupport = () => navigator.share;
+import Wrapper from '../Wrapper/Wrapper';
 
 const isShareAPIDataValid = (sharingData) => {
   if (navigator.canShare) {
@@ -19,17 +17,15 @@ function Share({
   failureCb,
   successMsg,
   failureMsg,
-  showForever,
   children,
   sName,
   sTitle,
   sUrl,
 }) {
-  const [isBrowser, setIsBrowser] = useState(false);
   const sharingData = { title: sName, text: sTitle, url: sUrl };
 
   const showDropdown = () => {
-    if (isShareAPISupport()) {
+    if (Share.isBrowserSupport()) {
       if (isShareAPIDataValid(sharingData)) {
         navigator.share(sharingData).then((data) => {
           handleSuccess({ disbaleToast, msgType: 'SUCCESS', msg: successMsg, successCb, data });
@@ -40,20 +36,18 @@ function Share({
         handleError({ disbaleToast, msgType: 'BAD_REQUEST', msg: failureMsg.badRequest, failureCb });
       }
     } else {
-      handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });      
+      handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
     }
   };
 
-  useEffect(() => {
-    setIsBrowser(true);
-  }, []);
-  
-  return isBrowser && (showForever || isShareAPISupport()) ? (
-    React.Children.map(children || "Share", (child) => React.cloneElement(typeof child === 'string' ? <span>{child}</span> : child, {
+  return (
+    React.Children.map(children || 'Share', (child) => React.cloneElement(typeof child === 'string' ? <span>{child}</span> : child, {
       onClick: showDropdown,
     }))
-  ) : null;
+  );
 }
+
+Share.isBrowserSupport = () => navigator.share;
 
 Share.propTypes = {
   disbaleToast: PropTypes.bool,
@@ -61,7 +55,6 @@ Share.propTypes = {
   failureCb: PropTypes.func,
   successMsg: PropTypes.string,
   failureMsg: PropTypes.object,
-  showForever: PropTypes.bool,
   sName: PropTypes.string,
   sTitle: PropTypes.string,
   sUrl: PropTypes.string,
@@ -77,10 +70,9 @@ Share.defaultProps = {
     badRequest: '',
     error: '',
   },
-  showForever: true,
   sName: 'fe-pilot',
   sTitle: 'A React library for advance JS features',
   sUrl: 'https://www.npmjs.com/package/fe-pilot',
 };
 
-export default Share;
+export default Wrapper(Share);
