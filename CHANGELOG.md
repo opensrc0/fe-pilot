@@ -1,3 +1,10 @@
+## [1.0.22](https://github.com/opensrc0/fe-pilot/compare/v1.0.21...v1.0.22) (2024-3-5)
+
+
+### Bug Fixes
+
+* **scanner:** scanner component added Camera click ([ffd46e2](https://github.com/opensrc0/fe-pilot/commit/ffd46e2c6eefa40f4743d3319c925b49a8360f95))
+
 ## [1.0.21](https://github.com/opensrc0/fe-pilot/compare/v1.0.20...v1.0.21) (2024-3-3)
 
 
