@@ -1,3 +1,10 @@
+## [1.0.23](https://github.com/opensrc0/fe-pilot/compare/v1.0.22...v1.0.23) (2024-3-12)
+
+
+### Bug Fixes
+
+* **locate me:** locateme component has been added ([891f86c](https://github.com/opensrc0/fe-pilot/commit/891f86c2e0e341e6709c801d7c6b6dc3d41bb5f6))
+
 ## [1.0.22](https://github.com/opensrc0/fe-pilot/compare/v1.0.21...v1.0.22) (2024-3-5)
 
 
