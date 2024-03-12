@@ -1,5 +1,5 @@
 import React from 'react';
-import { handleSuccess, handleError } from '../services/handler';
+import { handleSuccess, handleError } from '../services/handlerService';
 
 function PhoneGallery({
   disbaleToast,

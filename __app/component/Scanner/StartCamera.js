@@ -1,7 +1,7 @@
 /* eslint-disable no-inner-declarations */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { handleSuccess, handleError } from '../services/handler';
+import { handleSuccess, handleError } from '../services/handlerService';
 
 let mediaStream = null;
 let videoUnmount = null;

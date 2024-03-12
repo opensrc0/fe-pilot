@@ -2,15 +2,13 @@ import React, { useState, useEffect } from 'react';
 
 function Wrapper(WrappedComponent) {
   return function ({ showForever = true, ...props }) {
-    const [isBrowser, setIsBrowser] = useState(false);
+    const [shouldRender, setShouldRender] = useState(false);
 
     useEffect(() => {
-      setIsBrowser(true);
+      setShouldRender(showForever || WrappedComponent.isBrowserSupport?.());
     }, []);
 
-    return isBrowser && (showForever || WrappedComponent.isBrowserSupport?.()) ? (
-      <WrappedComponent {...props} />
-    ) : null;
+    return shouldRender && <WrappedComponent {...props} />;
   };
 }
 

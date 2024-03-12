@@ -6,7 +6,8 @@
   },
   "globals": {
     "APP_ENV": true,
-    "globalThis": true
+    "globalThis": true,
+    "google": true
   },
    "rules": {
     "import/no-extraneous-dependencies": ["off"], // Need to use external dep like webpack-dashboard

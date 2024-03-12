@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { handleSuccess, handleError } from '../services/handler';
+import { handleSuccess, handleError } from '../services/handlerService';
 import Wrapper from '../Wrapper/Wrapper';
 
 function PhoneBook({
