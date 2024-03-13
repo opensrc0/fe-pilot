@@ -1,3 +1,10 @@
+## [1.0.24](https://github.com/opensrc0/fe-pilot/compare/v1.0.23...v1.0.24) (2024-3-13)
+
+
+### Bug Fixes
+
+* **handle error:** added return type false in handle error ([b2b77a7](https://github.com/opensrc0/fe-pilot/commit/b2b77a7dbcc3bcc48a3bd6101940f7a79fd9865a))
+
 ## [1.0.23](https://github.com/opensrc0/fe-pilot/compare/v1.0.22...v1.0.23) (2024-3-12)
 
 
