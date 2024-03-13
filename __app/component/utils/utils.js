@@ -1,3 +1,11 @@
+const getRandomInt = (max) => Math.floor(Math.random() * max);
+
+const consoleColor = [
+  'color: red',
+  'color: green',
+  'color: magenta',
+];
+
 export const browserDimensions = () => ({
   width: globalThis.document && (
     globalThis.innerWidth
@@ -12,3 +20,5 @@ export const browserDimensions = () => ({
 });
 
 export const IsValidUPI = (url = '') => (url.search(/upi:\/\/pay\?pa=/) !== -1);
+
+export const getRandomColor = () => consoleColor[getRandomInt(consoleColor.length)];

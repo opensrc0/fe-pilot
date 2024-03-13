@@ -35,12 +35,10 @@ function CameraClick({
               data: { barCodeValue: barcode.rawValue, barCodeType: barcode.format },
             });
           } else {
-            handleError({ disbaleToast, msgType: 'INVALID_IMAGE', msg: failureMsg.invalidImage, failureCb });
+            return handleError({ disbaleToast, msgType: 'INVALID_IMAGE', msg: failureMsg.invalidImage, failureCb });
           }
         })
-        .catch((error) => {
-          handleError({ disbaleToast, msgType: 'UNABLE_TO_SCAN', msg: failureMsg.unableToScan || error, failureCb });
-        });
+        .catch((error) => handleError({ disbaleToast, msgType: 'UNABLE_TO_SCAN', msg: failureMsg.unableToScan || error, failureCb }));
     }
   };
 

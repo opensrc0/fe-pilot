@@ -20,10 +20,10 @@ function PhoneBook({
         const contacts = await navigator.contacts.select(contactProperty, opts);
         handleSuccess({ disbaleToast, msgType: 'SUCCESS', msg: successMsg, successCb, data: contacts });
       } catch (error) {
-        handleError({ disbaleToast, msgType: 'ERROR', msg: failureMsg.error || error, failureCb });
+        return handleError({ disbaleToast, msgType: 'ERROR', msg: failureMsg.error || error, failureCb });
       }
     } else {
-      handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
+      return handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
     }
   };
 

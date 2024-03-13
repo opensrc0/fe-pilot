@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { handleSuccess, handleError } from '../services/handler';
+import { handleSuccess, handleError } from '../services/handlerService';
 import Wrapper from '../Wrapper/Wrapper';
 
 const isShareAPIDataValid = (sharingData) => {
@@ -29,14 +29,12 @@ function Share({
       if (isShareAPIDataValid(sharingData)) {
         navigator.share(sharingData).then((data) => {
           handleSuccess({ disbaleToast, msgType: 'SUCCESS', msg: successMsg, successCb, data });
-        }).catch((error) => {
-          handleError({ disbaleToast, msgType: 'ERROR', msg: failureMsg.error || error, failureCb });
-        });
+        }).catch((error) => handleError({ disbaleToast, msgType: 'ERROR', msg: failureMsg.error || error, failureCb }));
       } else {
-        handleError({ disbaleToast, msgType: 'BAD_REQUEST', msg: failureMsg.badRequest, failureCb });
+        return handleError({ disbaleToast, msgType: 'BAD_REQUEST', msg: failureMsg.badRequest, failureCb });
       }
     } else {
-      handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
+      return handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
     }
   };
 

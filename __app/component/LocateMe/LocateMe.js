@@ -8,26 +8,25 @@ const checkBrowserPermit = async (disbaleToast, failureMsg, failureCb) => {
   try {
     const permissions = await navigator.permissions.query({ name: 'geolocation' });
     if (permissions.state === 'denied') {
-      handleError({ disbaleToast, msgType: 'PERMISSION_DENIED', msg: failureMsg.permissionDenied || 'Permission Denied', failureCb });
-      return false;
+      return handleError({ disbaleToast, msgType: 'PERMISSION_DENIED', msg: failureMsg.permissionDenied || 'Permission Denied', failureCb });
     }
   } catch (error) {
-    handleError({ disbaleToast, msgType: 'BROWSER_PERMISION_CHECK_FAILED', msg: failureMsg.browserPermissionCheckFailed || 'Unable to check browser permission', failureCb });
-    return false;
+    return handleError({ disbaleToast, msgType: 'BROWSER_PERMISION_CHECK_FAILED', msg: failureMsg.browserPermissionCheckFailed || 'Unable to check browser permission', failureCb });
   }
 
   return true;
 };
-const checkScriptInBrowser = async (disbaleToast, failureMsg, failureCb, isProdKey, googleKey = 'gme-reliancecorporate1') => {
+const checkScriptInBrowser = async (disbaleToast, failureMsg, failureCb, isProdKey, googleKey) => {
+  if (!googleKey) {
+    return handleError({ disbaleToast, msgType: 'GOOGLE_API_KEY_MISSING', msg: failureMsg.browserPermissionCheckFailed || 'Unable to check browser permission', failureCb });
+  }
   const googleApiUrl = `https://maps.googleapis.com/maps/api/js?${isProdKey ? 'client' : 'key'}=${googleKey}&libraries=places&loading=async`;
 
   try {
     await dependentJsService(googleApiUrl, 'googleMapLocationAPI', true);
     return true;
   } catch (error) {
-    handleError({ disbaleToast, msgType: 'UNABLE_TO_LOAD_GOOGLE_APIS', msg: failureMsg.unableToLoadGoogleAPI || 'Unable to load google api script', failureCb });
-
-    return false;
+    return handleError({ disbaleToast, msgType: 'UNABLE_TO_LOAD_GOOGLE_APIS', msg: failureMsg.unableToLoadGoogleAPI || 'Unable to load google api script', failureCb });
   }
 };
 
@@ -52,7 +51,7 @@ const getPincode = async (
       return zipcode;
     }
   } catch (err) {
-    handleError({ disbaleToast, msgType: 'ERROR', msg: failureMsg.invalidLatLng || 'Invalid Lat lng', failureCb });
+    return handleError({ disbaleToast, msgType: 'ERROR', msg: failureMsg.invalidLatLng || 'Invalid Lat lng', failureCb });
   }
 
   return '';
@@ -79,8 +78,7 @@ const onSuccss = async (
 
 const onFailure = async (failureCb, error, disbaleToast, failureMsg) => {
   failureCb(error);
-
-  handleError({ disbaleToast, msgType: 'ERROR', msg: failureMsg.error || error, failureCb });
+  return handleError({ disbaleToast, msgType: 'ERROR', msg: failureMsg.error || error, failureCb });
 };
 
 function LocateMe({
@@ -137,6 +135,7 @@ LocateMe.propTypes = {
   successMsg: PropTypes.string,
   failureMsg: PropTypes.object,
   isProdKey: PropTypes.bool,
+  googleKey: PropTypes.string.isRequired,
 };
 
 LocateMe.defaultProps = {
@@ -150,9 +149,11 @@ LocateMe.defaultProps = {
     browserPermissionCheckFailed: '',
     unableToLoadGoogleAPI: '',
     invalidLatLng: '',
+    googleAPIKeyMissing: '',
     error: '',
   },
   isProdKey: true,
+  googleKey: '',
 };
 
 export default Wrapper(LocateMe);

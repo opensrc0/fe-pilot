@@ -59,9 +59,7 @@ function StartCamera({
                 }
               });
             })
-            .catch((error) => {
-              handleError({ disbaleToast, msgType: 'BAR_CODE_DETECTION', msg: failureMsg.barCodeDetection || error, failureCb });
-            })
+            .catch((error) => handleError({ disbaleToast, msgType: 'BAR_CODE_DETECTION', msg: failureMsg.barCodeDetection || error, failureCb }))
         ) : null;
       }
 
@@ -72,7 +70,7 @@ function StartCamera({
         }());
       }, 1000);
     } else {
-      handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
+      return handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
     }
   };
 
@@ -111,7 +109,7 @@ function StartCamera({
         },
       });
     } catch (error) {
-      handleError({ disbaleToast, msgType: 'STREAMING_ERROR', msg: failureMsg.streaming || error, failureCb });
+      return handleError({ disbaleToast, msgType: 'STREAMING_ERROR', msg: failureMsg.streaming || error, failureCb });
     }
     return mediaStream;
   };
@@ -136,7 +134,7 @@ function StartCamera({
       });
       setFlash((s) => !s);
     } catch (error) {
-      handleError({ disbaleToast, msgType: 'FLASH', msg: failureMsg.flash, failureCb });
+      return handleError({ disbaleToast, msgType: 'FLASH', msg: failureMsg.flash, failureCb });
     }
   };
 
@@ -156,7 +154,7 @@ function StartCamera({
       facingMode = cameraType === 'back' ? 'environment' : 'user';
       startVideo();
     } else {
-      handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
+      return handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
     }
 
     return () => {
