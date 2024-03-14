@@ -1,3 +1,10 @@
+## [1.0.27](https://github.com/opensrc0/fe-pilot/compare/v1.0.26...v1.0.27) (2024-3-14)
+
+
+### Bug Fixes
+
+* **adde copytoclickboard component:** added CopyToClickBoard Component in the package ([c77b8a1](https://github.com/opensrc0/fe-pilot/commit/c77b8a199cfb40860e749abecb9134fcbd0ea093))
+
 ## [1.0.26](https://github.com/opensrc0/fe-pilot/compare/v1.0.25...v1.0.26) (2024-3-14)
 
 
