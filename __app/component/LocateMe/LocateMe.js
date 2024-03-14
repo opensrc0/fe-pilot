@@ -101,20 +101,25 @@ function LocateMe({
       googleKey,
     );
 
-    if (isBrowserPermit && isScriptInBrowser) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        onSuccss(
-          disbaleToast,
-          successCb,
-          failureCb,
-          successMsg,
-          failureMsg,
-          position,
-        );
-      }, (error) => {
-        onFailure(failureCb, error, disbaleToast, failureMsg);
-      });
+    if (LocateMe.isBrowserSupport()) {
+      if (isBrowserPermit && isScriptInBrowser) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          onSuccss(
+            disbaleToast,
+            successCb,
+            failureCb,
+            successMsg,
+            failureMsg,
+            position,
+          );
+        }, (error) => {
+          onFailure(failureCb, error, disbaleToast, failureMsg);
+        });
+      }
+    } else {
+      return handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
     }
+    return true;
   };
 
   return (

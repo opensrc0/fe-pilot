@@ -7,8 +7,6 @@ let mediaStream = null;
 let videoUnmount = null;
 let unmoutRenderLoop = null;
 
-const isScannerSupport = () => navigator && navigator.mediaDevices;
-
 function StartCamera({
   disbaleToast,
   successCb,
@@ -72,6 +70,7 @@ function StartCamera({
     } else {
       return handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
     }
+    return true;
   };
 
   const createVideo = async (id) => {
@@ -136,6 +135,7 @@ function StartCamera({
     } catch (error) {
       return handleError({ disbaleToast, msgType: 'FLASH', msg: failureMsg.flash, failureCb });
     }
+    return true;
   };
 
   const toggleCamera = () => {
@@ -150,7 +150,7 @@ function StartCamera({
   useEffect(() => {
     setIsBrowser(true);
 
-    if (isScannerSupport()) {
+    if (StartCamera.isBrowserSupport()) {
       facingMode = cameraType === 'back' ? 'environment' : 'user';
       startVideo();
     } else {
@@ -162,7 +162,7 @@ function StartCamera({
     };
   }, []);
 
-  return isBrowser && isScannerSupport() && (
+  return isBrowser && StartCamera.isBrowserSupport() && (
     <div id="scanner">
       <div id="camera" />
       {
@@ -180,6 +180,8 @@ function StartCamera({
     </div>
   );
 }
+
+StartCamera.isBrowserSupport = () => navigator && navigator.mediaDevices;
 
 StartCamera.propTypes = {
   disbaleToast: PropTypes.bool,

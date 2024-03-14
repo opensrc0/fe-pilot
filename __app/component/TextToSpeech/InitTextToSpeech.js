@@ -16,17 +16,22 @@ function InitTextToSpeech({
   const [isAudioOn, setIsAudioOn] = useState(false);
 
   const handlePlay = async () => {
-    setIsAudioOn(true);
-    if (text) {
-      try {
-        const utteranceCbk = await textToSpeech(text);
-        handleSuccess({ disbaleToast, msgType: 'SUCCESS', msg: successMsg, successCb, data: '' });
-        utteranceCbk.onend = () => setIsAudioOn(false);
-        utteranceCbk.onerror = () => setIsAudioOn(false);
-      } catch (error) {
-        return handleError({ disbaleToast, msgType: 'ERROR', msg: failureMsg.error, failureCb });
+    if (InitTextToSpeech.isBrowserSupport()) {
+      setIsAudioOn(true);
+      if (text) {
+        try {
+          const utteranceCbk = await textToSpeech(text);
+          handleSuccess({ disbaleToast, msgType: 'SUCCESS', msg: successMsg, successCb, data: '' });
+          utteranceCbk.onend = () => setIsAudioOn(false);
+          utteranceCbk.onerror = () => setIsAudioOn(false);
+        } catch (error) {
+          return handleError({ disbaleToast, msgType: 'ERROR', msg: failureMsg.error, failureCb });
+        }
       }
+    } else {
+      return handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
     }
+
     return true;
   };
 
