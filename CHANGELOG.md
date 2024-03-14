@@ -1,3 +1,10 @@
+## [1.0.26](https://github.com/opensrc0/fe-pilot/compare/v1.0.25...v1.0.26) (2024-3-14)
+
+
+### Bug Fixes
+
+* **text to speech component:** added tectToSpeechComponent ([bd1f505](https://github.com/opensrc0/fe-pilot/commit/bd1f505b4518b5f7eaee4168063d00a047782826))
+
 ## [1.0.25](https://github.com/opensrc0/fe-pilot/compare/v1.0.24...v1.0.25) (2024-3-13)
 
 
