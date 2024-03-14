@@ -1,3 +1,10 @@
+## [1.0.25](https://github.com/opensrc0/fe-pilot/compare/v1.0.24...v1.0.25) (2024-3-13)
+
+
+### Bug Fixes
+
+* **autofillotp:** added AutoFillOtp service ([4c57954](https://github.com/opensrc0/fe-pilot/commit/4c5795432ed8ac5cdddd0c1764ef7ad80a38537f))
+
 ## [1.0.24](https://github.com/opensrc0/fe-pilot/compare/v1.0.23...v1.0.24) (2024-3-13)
 
 
