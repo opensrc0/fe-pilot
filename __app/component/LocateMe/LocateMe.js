@@ -126,7 +126,8 @@ function LocateMe({
 
 LocateMe.isBrowserSupport = () => navigator.geolocation
   && navigator?.permissions?.query
-  && navigator?.geolocation?.getCurrentPosition;
+  && navigator?.geolocation?.getCurrentPosition
+  && true;
 
 LocateMe.propTypes = {
   disbaleToast: PropTypes.bool,

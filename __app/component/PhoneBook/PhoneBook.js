@@ -25,6 +25,8 @@ function PhoneBook({
     } else {
       return handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
     }
+
+    return true;
   };
 
   return (
@@ -34,7 +36,9 @@ function PhoneBook({
   );
 }
 
-PhoneBook.isBrowserSupport = () => globalThis.navigator.contacts && globalThis.ContactsManager;
+PhoneBook.isBrowserSupport = () => globalThis.navigator.contacts
+  && globalThis.ContactsManager
+  && true;
 
 PhoneBook.propTypes = {
   disbaleToast: PropTypes.bool,

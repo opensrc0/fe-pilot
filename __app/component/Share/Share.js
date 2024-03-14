@@ -36,6 +36,7 @@ function Share({
     } else {
       return handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
     }
+    return true;
   };
 
   return (
@@ -45,7 +46,7 @@ function Share({
   );
 }
 
-Share.isBrowserSupport = () => navigator.share;
+Share.isBrowserSupport = () => navigator.share && true;
 
 Share.propTypes = {
   disbaleToast: PropTypes.bool,

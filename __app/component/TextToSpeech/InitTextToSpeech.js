@@ -27,6 +27,7 @@ function InitTextToSpeech({
         return handleError({ disbaleToast, msgType: 'ERROR', msg: failureMsg.error, failureCb });
       }
     }
+    return true;
   };
 
   const handleStop = () => {
@@ -61,9 +62,9 @@ function InitTextToSpeech({
 }
 
 InitTextToSpeech.isBrowserSupport = () => globalThis.speechSynthesis
-  && globalThis.speechSynthesis?.getVoice
   && globalThis.speechSynthesis?.cancel
-  && globalThis.speechSynthesis?.speak;
+  && globalThis.speechSynthesis?.speak
+  && true;
 
 InitTextToSpeech.propTypes = {
   disbaleToast: PropTypes.bool,
