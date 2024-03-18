@@ -1,3 +1,10 @@
+## [1.0.28](https://github.com/opensrc0/fe-pilot/compare/v1.0.27...v1.0.28) (2024-3-14)
+
+
+### Bug Fixes
+
+* **locateme:** added feature check in locateMe ([b44d574](https://github.com/opensrc0/fe-pilot/commit/b44d574bba2082c4beccd53f197bbf031abb0aa5))
+
 ## [1.0.27](https://github.com/opensrc0/fe-pilot/compare/v1.0.26...v1.0.27) (2024-3-14)
 
 
