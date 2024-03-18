@@ -1,3 +1,10 @@
+## [1.0.32](https://github.com/opensrc0/fe-pilot/compare/v1.0.31...v1.0.32) (2024-3-18)
+
+
+### Bug Fixes
+
+* **voice recognition:** added Voice Recognition component ([f3d5bbd](https://github.com/opensrc0/fe-pilot/commit/f3d5bbd0e9d70793f78c464b259e22405acadd68))
+
 ## [1.0.31](https://github.com/opensrc0/fe-pilot/compare/v1.0.30...v1.0.31) (2024-3-18)
 
 
