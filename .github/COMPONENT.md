@@ -1,11 +1,11 @@
-01. AutoFillOtp
-02. Bluetooth
-03. CopyToClipboard
-04. LiveLocationTracking
-05. LocateMe
-06. MobileNavBar
-07. PhoneBook
-08. Scanner
-09. Share
-10. TextToSpeech
-11. VoiceRecognition
+01. AutoFillOtp :exclamation:
+02. Bluetooth :no_entry_sign:
+03. CopyToClipboard :white_check_mark:
+04. LiveLocationTracking :no_entry_sign:
+05. LocateMe :white_check_mark:
+06. MobileNavBar :no_entry_sign:
+07. PhoneBook :white_check_mark:
+08. Scanner :white_check_mark:
+09. Share :white_check_mark:
+10. TextToSpeech :white_check_mark:
+11. VoiceRecognition :white_check_mark:
