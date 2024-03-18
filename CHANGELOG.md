@@ -1,3 +1,10 @@
+## [1.0.31](https://github.com/opensrc0/fe-pilot/compare/v1.0.30...v1.0.31) (2024-3-18)
+
+
+### Bug Fixes
+
+* **contributing.md and setup.md:** added contributing.md and setup.md file ([58d7ffd](https://github.com/opensrc0/fe-pilot/commit/58d7ffda2519acde469aab42e761b64ad091e0a2))
+
 ## [1.0.30](https://github.com/opensrc0/fe-pilot/compare/v1.0.29...v1.0.30) (2024-3-18)
 
 
