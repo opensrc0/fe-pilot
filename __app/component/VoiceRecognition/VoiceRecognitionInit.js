@@ -1,12 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Wrapper from '../Wrapper/Wrapper';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-// import './voiceSearch.css';
-// import Modal from '../../components/Modal/Modal';
-// import VoiceLoader from './VoiceLoader';
-// import LoadingDots from '../../components/LoadingDots/LoadingDots';
+import { handleSuccess, handleError } from '../services/handlerService';
 
 function VoiceRecognition({
   disbaleToast,
@@ -14,53 +9,63 @@ function VoiceRecognition({
   successMsg,
   failureCb,
   failureMsg,
-  cb,
   children,
 }) {
-  const [modalVisible, setModalVisible] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isVoiceStarted, setIsVoiceStarted] = useState(false);
   const [voiceText, setVoiceText] = useState('');
-  const [isLoadingDots, setIsLoadingDots] = useState(true);
 
   const listen = () => {
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    const recognition = new SpeechRecognition();
+    if (VoiceRecognition.isBrowserSupport()) {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      const recognition = new SpeechRecognition();
 
-    recognition.continuous = false;
-    recognition.lang = 'en-US';
-    recognition.interimResults = true;
-    recognition.maxAlternatives = 1;
-    recognition.onresult = (event) => {
-      const text = event.results[0][0].transcript;
-      setVoiceText(text);
-      if (event.results[0].isFinal) {
-        setTimeout(() => {
-          cb(text, true);
-          setModalVisible(false);
-          setVoiceText('');
-        }, 1500);
-      }
-    };
-    recognition.start();
-    recognition.onsoundstart = () => {
-      setIsLoadingDots(false);
-    };
-    recognition.onsoundend = () => {
-      setIsLoadingDots(true);
-    };
-    recognition.onerror = () => {
-      setModalVisible(false);
-    };
-    recognition.onend = () => {
-      recognition.abort();
-      recognition.onresult = () => {};
-      recognition.stop();
-      setTimeout(() => setModalVisible(false), 1500);
-    };
-    setModalVisible(true);
+      recognition.continuous = false;
+      recognition.lang = 'en-US';
+      recognition.interimResults = true;
+      recognition.maxAlternatives = 1;
+      recognition.onresult = (event) => {
+        const text = event.results[0][0].transcript;
+        setVoiceText(text);
+        if (event.results[0].isFinal) {
+          setTimeout(() => {
+            handleSuccess({ disbaleToast, msgType: 'SUCCESS', msg: successMsg, successCb, data: text });
+            setIsModalVisible(false);
+            setVoiceText('');
+          }, 1500);
+        }
+      };
+      recognition.start();
+      recognition.onsoundstart = () => {
+        setIsVoiceStarted(true);
+      };
+      recognition.onsoundend = () => {
+        setIsVoiceStarted(false);
+      };
+      recognition.onerror = () => {
+        setIsModalVisible(false);
+        return handleError({ disbaleToast, msgType: 'ERROR', msg: failureMsg.error, failureCb });
+      };
+      recognition.onend = () => {
+        recognition.abort();
+        recognition.onresult = () => {};
+        recognition.stop();
+        setTimeout(() => setIsModalVisible(false), 1500);
+      };
+      setIsModalVisible(true);
+    } else {
+      return handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
+    }
+
+    return true;
   };
 
   return React.Children.map(children, (child) => React.cloneElement(child, {
-    onClick: child.type.name === 'VoiceRecognitionIcon' ? listen : () => {},
+    listen,
+    isVoiceStarted,
+    isModalVisible,
+    voiceText,
+    onClose: () => setIsModalVisible(false),
     disbaleToast,
     successCb,
     successMsg,
@@ -69,10 +74,8 @@ function VoiceRecognition({
   }));
 }
 
-VoiceRecognition.isBrowserSupport = () => globalThis.speechSynthesis
-  && globalThis.speechSynthesis?.cancel
-  && globalThis.speechSynthesis?.speak
-  && true;
+VoiceRecognition.isBrowserSupport = () => window.SpeechRecognition
+  || window.webkitSpeechRecognition;
 
 VoiceRecognition.propTypes = {
   disbaleToast: PropTypes.bool,
@@ -94,18 +97,3 @@ VoiceRecognition.defaultProps = {
 };
 
 export default Wrapper(VoiceRecognition);
-
-// {
-//   <FontAwesomeIcon icon="fa-solid fa-microphone"
-// size="xl" style={{ color: 'var(--secondary)' }} className="voiceIcon" onClick={listen} />
-
-//     modalVisible ? (
-//       <Modal modalTitle="Listening..." onClickCloseIcon={() =>
-// setModalVisible(false)} titleClasses="listen" modalClass="voice-modal">
-//         <div className="voice-text">{voiceText}</div>
-//         <div className="loading-container">
-//           {isLoadingDots ? <LoadingDots /> : <VoiceLoader />}
-//         </div>
-//       </Modal>
-//     ) : null
-//   }

@@ -1,9 +1,15 @@
+import TextToSpeechInit from './TextToSpeechInit';
 import TextToSpeechStart from './TextToSpeechStart';
 import TextToSpeechStop from './TextToSpeechStop';
-import TextToSpeechInit from './TextToSpeechInit';
 
 export {
+  TextToSpeechInit,
   TextToSpeechStart,
   TextToSpeechStop,
-  TextToSpeechInit,
+};
+
+export default {
+  Init: TextToSpeechInit,
+  Start: TextToSpeechStart,
+  Stop: TextToSpeechStop,
 };
