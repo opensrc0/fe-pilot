@@ -11,12 +11,12 @@ major version.
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 2.0.x   | :white_check_mark: |
-| < 2.0   | :x:                |
+| 1.1.x   | :white_check_mark: |
+| < 1.1.0   | :x:                |
 
 ## Reporting a Vulnerability
 
-If you find a vulnerability, please contact **opensrc.0@gmail.com**,
+If you find a vulnerability, please contact **opensrc0@gmail.com**,
 do not disclose the vulnerability on the public issue tracker.
 
 Alternatively, visit https://tidelift.com/security
