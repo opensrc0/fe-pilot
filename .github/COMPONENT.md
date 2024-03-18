@@ -1,2 +1,11 @@
-1. PhoneBook
-2. Share
+01. AutoFillOtp
+02. Bluetooth
+03. CopyToClipboard
+04. LiveLocationTracking
+05. LocateMe
+06. MobileNavBar
+07. PhoneBook
+08. Scanner
+09. Share
+10. TextToSpeech
+11. VoiceRecognition

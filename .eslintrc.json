@@ -20,7 +20,8 @@
     "object-curly-newline": ["off"],
     "react/jsx-fragments": ["off" ],
     "react/jsx-props-no-spreading": ["off"],
-    "func-names": ["off"]
+    "func-names": ["off"],
+    "no-restricted-exports": ["off"]
   },
   "parserOptions": {
     "ecmaVersion":"latest"

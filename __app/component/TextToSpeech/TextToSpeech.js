@@ -1,9 +1,9 @@
-import Start from './StartTextToSpeech';
-import Stop from './StopTextToSpeech';
-import Init from './InitTextToSpeech';
+import TextToSpeechStart from './TextToSpeechStart';
+import TextToSpeechStop from './TextToSpeechStop';
+import TextToSpeechInit from './TextToSpeechInit';
 
-export default {
-  Start,
-  Stop,
-  Init,
+export {
+  TextToSpeechStart,
+  TextToSpeechStop,
+  TextToSpeechInit,
 };

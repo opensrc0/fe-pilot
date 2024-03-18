@@ -4,7 +4,7 @@ import Wrapper from '../Wrapper/Wrapper';
 import textToSpeech from './textToSpeechService';
 import { handleSuccess, handleError } from '../services/handlerService';
 
-function InitTextToSpeech({
+function TextToSpeechInit({
   disbaleToast,
   successCb,
   successMsg,
@@ -16,17 +16,21 @@ function InitTextToSpeech({
   const [isAudioOn, setIsAudioOn] = useState(false);
 
   const handlePlay = async () => {
-    if (InitTextToSpeech.isBrowserSupport()) {
-      setIsAudioOn(true);
+    if (TextToSpeechInit.isBrowserSupport()) {
       if (text) {
+        setIsAudioOn(true);
         try {
           const utteranceCbk = await textToSpeech(text);
-          handleSuccess({ disbaleToast, msgType: 'SUCCESS', msg: successMsg, successCb, data: '' });
-          utteranceCbk.onend = () => setIsAudioOn(false);
+          utteranceCbk.onend = () => {
+            setIsAudioOn(false);
+            handleSuccess({ disbaleToast, msgType: 'SUCCESS', msg: successMsg, successCb, data: text });
+          };
           utteranceCbk.onerror = () => setIsAudioOn(false);
         } catch (error) {
           return handleError({ disbaleToast, msgType: 'ERROR', msg: failureMsg.error, failureCb });
         }
+      } else {
+        return handleError({ disbaleToast, msgType: 'BAD_REQUEST', msg: failureMsg.badRequest, failureCb });
       }
     } else {
       return handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
@@ -47,17 +51,10 @@ function InitTextToSpeech({
     };
   }, []);
 
-  return isAudioOn ? (
-    React.Children.map(children, (child) => (child.type.name === 'StopTextToSpeech') && React.cloneElement(child, {
-      onClick: handleStop,
-      disbaleToast,
-      successCb,
-      successMsg,
-      failureCb,
-      failureMsg,
-    }))
-  ) : React.Children.map(children, (child) => (child.type.name === 'StartTextToSpeech') && React.cloneElement(child, {
-    onClick: handlePlay,
+  return React.Children.map(children, (child) => React.cloneElement(child, {
+    handleStop,
+    handlePlay,
+    isAudioOn,
     disbaleToast,
     successCb,
     successMsg,
@@ -66,12 +63,12 @@ function InitTextToSpeech({
   }));
 }
 
-InitTextToSpeech.isBrowserSupport = () => globalThis.speechSynthesis
+TextToSpeechInit.isBrowserSupport = () => globalThis.speechSynthesis
   && globalThis.speechSynthesis?.cancel
   && globalThis.speechSynthesis?.speak
   && true;
 
-InitTextToSpeech.propTypes = {
+TextToSpeechInit.propTypes = {
   disbaleToast: PropTypes.bool,
   successCb: PropTypes.func,
   failureCb: PropTypes.func,
@@ -79,15 +76,16 @@ InitTextToSpeech.propTypes = {
   failureMsg: PropTypes.object,
 };
 
-InitTextToSpeech.defaultProps = {
+TextToSpeechInit.defaultProps = {
   disbaleToast: false,
   successCb: () => {},
   failureCb: () => {},
   successMsg: '',
   failureMsg: {
     unSupported: '',
+    badRequest: '',
     error: '',
   },
 };
 
-export default Wrapper(InitTextToSpeech);
+export default Wrapper(TextToSpeechInit);

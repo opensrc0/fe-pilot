@@ -31,8 +31,9 @@ components.forEach((component) => {
   const componentDir = path.resolve(`${__dirname}`, `../../${component}`);
   mkdirp(componentDir).then(() => {
     const componentFile = path.resolve(componentDir, 'index.js');
-    // const componentContent = `export { default } from '../__build/${component}';\nexport * from '../__build/${component}';\n`;
-    const componentContent = `import ${component} from '../__build/${component}/${component}';\nexport default ${component};\n`;
+    const componentContent = `export { default } from '../__build/${component}/${component}';\nexport * from '../__build/${component}/${component}';\n`;
+    // const componentContent = `import ${component}
+    // from '../__build/${component}/${component}';\nexport default ${component};\n`;
     fs.writeFile(componentFile, componentContent, (writeFileErr) => {
       if (writeFileErr) throw writeFileErr;
       console.log(color[getRandomInt(color.length)].value, ` ${count + 3}. generated: ${componentFile} \n`);
