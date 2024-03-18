@@ -1,3 +1,10 @@
+## [1.0.30](https://github.com/opensrc0/fe-pilot/compare/v1.0.29...v1.0.30) (2024-3-18)
+
+
+### Bug Fixes
+
+* **read.md:** changes in readme.md authors and security ([60faccf](https://github.com/opensrc0/fe-pilot/commit/60faccf63d1ec399c1c827fba6bea1d4c166e532))
+
 ## [1.0.29](https://github.com/opensrc0/fe-pilot/compare/v1.0.28...v1.0.29) (2024-3-18)
 
 
