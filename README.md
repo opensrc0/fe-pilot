@@ -1,7 +1,7 @@
 <p align="center">
 <img src="https://github.com/opensrc0/fe-pilot/blob/develop/logo.png" alt="fe-pilot Logo" align="center" width="30%" style="width: 30%;">
 </p>
-<h2 align="center">A React UI library for Advance JS Features 👨‍✈️ </h2>
+<h2 align="center">A React UI library for Advance Web Features 👨‍✈️ </h2>
 <br />
 <p align="center">
   <a href="https://www.npmjs.com/package/fe-pilot">
@@ -68,7 +68,7 @@ import Share from 'fe-pilot/Share';
 
 <Share 
   name={'fe-pilot'}
-  title={'A React library for advance JS features'}
+  title={'A React library for advance web features'}
   url={'https://www.npmjs.com/package/fe-pilot'}
 />
 ```
