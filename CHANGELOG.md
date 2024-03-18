@@ -1,3 +1,10 @@
+## [1.0.29](https://github.com/opensrc0/fe-pilot/compare/v1.0.28...v1.0.29) (2024-3-18)
+
+
+### Bug Fixes
+
+* **treeshaking:** added treeshaking for multiple child component ([dfa296a](https://github.com/opensrc0/fe-pilot/commit/dfa296a158c524e325a4d01a2c92ca83ffbeef05))
+
 ## [1.0.28](https://github.com/opensrc0/fe-pilot/compare/v1.0.27...v1.0.28) (2024-3-14)
 
 
