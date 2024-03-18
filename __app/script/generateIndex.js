@@ -8,6 +8,8 @@ const ignoreFiles = [
   'scripts',
   'utils',
   'WIP-',
+  'services',
+  'Wrapper',
 ];
 
 function getRandomInt(max) {
