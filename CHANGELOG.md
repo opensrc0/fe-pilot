@@ -1,3 +1,10 @@
+## [1.0.33](https://github.com/opensrc0/fe-pilot/compare/v1.0.32...v1.0.33) (2024-3-19)
+
+
+### Bug Fixes
+
+* **live location tracking:** live Location tracking and locate me updated ([bb3a99a](https://github.com/opensrc0/fe-pilot/commit/bb3a99ae42c237770d70a216f4962fb5ffbe8490))
+
 ## [1.0.32](https://github.com/opensrc0/fe-pilot/compare/v1.0.31...v1.0.32) (2024-3-18)
 
 
