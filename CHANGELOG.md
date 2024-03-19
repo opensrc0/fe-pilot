@@ -1,3 +1,10 @@
+## [1.0.34](https://github.com/opensrc0/fe-pilot/compare/v1.0.33...v1.0.34) (2024-3-19)
+
+
+### Bug Fixes
+
+* **missing component:** added missing components ([22ee75f](https://github.com/opensrc0/fe-pilot/commit/22ee75fcf2639e5c5903ecefef5b9b56f6ac62c4))
+
 ## [1.0.33](https://github.com/opensrc0/fe-pilot/compare/v1.0.32...v1.0.33) (2024-3-19)
 
 
