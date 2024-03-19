@@ -38,11 +38,13 @@ components.forEach((component) => {
     // from '../__build/${component}/${component}';\nexport default ${component};\n`;
     fs.writeFile(componentFile, componentContent, (writeFileErr) => {
       if (writeFileErr) throw writeFileErr;
-      console.log(color[getRandomInt(color.length)].value, ` ${count + 3}. generated: ${componentFile} \n`);
+      console.log(color[getRandomInt(color.length)].value, ` ${count + 1}. generated: ${componentFile} \n`);
       count += 1;
       if (count === components.length) {
-        console.log(color[0].value, ` ${count + 3}. Generated: Package index files for package for direct import \n`);
-        console.log('\x1b[44m%s\x1b[0m', ` ${count + 4}. Final: Setup Completed Successfully`);
+        // console.log(color[0].value, ' \n Completed: Index files direct import of Package \n');
+        console.log('===============================================================================');
+        console.log('\x1b[44m%s\x1b[0m', 'Final: Setup Completed Successfully');
+        console.log('===============================================================================');
         console.log('');
       }
     });

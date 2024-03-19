@@ -78,16 +78,17 @@
   },
   "files": [
     "__build/**",
-    "Scanner/",
-    "Voice/",
-    "TextToSpeech/",
-    "Share/",
+    "AutoFillOtp/",
+    "Bluetooth/",
+    "CopyToClipboard/",
     "LiveLocationTracking/",
-    "DetectMyLocation/",
-    "AutoFillOtp",
-    "PhoneBook",
-    "MobileNavBar",
-    "BackHistory"
+    "LocateMe/",
+    "MobileNavBar/",
+    "PhoneBook/",
+    "Scanner/",
+    "Share/",
+    "TextToSpeech/",
+    "VoiceRecognition"
   ],
   "devDependencies": {
     "@babel/cli": "^7.23.9",
