@@ -11,14 +11,14 @@ const checkBrowserPermit = async (disbaleToast, failureMsg, failureCb) => {
       return handleError({ disbaleToast, msgType: 'PERMISSION_DENIED', msg: failureMsg.permissionDenied || 'Permission Denied', failureCb });
     }
   } catch (error) {
-    return handleError({ disbaleToast, msgType: 'BROWSER_PERMISION_CHECK_FAILED', msg: failureMsg.browserPermissionCheckFailed || 'Unable to check browser permission', failureCb });
+    return handleError({ disbaleToast, msgType: 'BROWSER_PERMISION_API_FAILED', msg: failureMsg.browserPermissionAPIFailed || 'Unable to check browser permission', failureCb });
   }
 
   return true;
 };
 const checkScriptInBrowser = async (disbaleToast, failureMsg, failureCb, isProdKey, googleKey) => {
   if (!googleKey) {
-    return handleError({ disbaleToast, msgType: 'GOOGLE_API_KEY_MISSING', msg: failureMsg.browserPermissionCheckFailed || 'Unable to check browser permission', failureCb });
+    return handleError({ disbaleToast, msgType: 'GOOGLE_API_KEY_MISSING', msg: failureMsg.googleAPIKeyMissing || 'Unable to check browser permission', failureCb });
   }
   const googleApiUrl = `https://maps.googleapis.com/maps/api/js?${isProdKey ? 'client' : 'key'}=${googleKey}&libraries=places&loading=async`;
 
@@ -152,10 +152,10 @@ LocateMe.defaultProps = {
   failureMsg: {
     unSupported: '',
     permissionDenied: '',
-    browserPermissionCheckFailed: '',
+    browserPermissionAPIFailed: '',
+    googleAPIKeyMissing: '',
     unableToLoadGoogleAPI: '',
     invalidLatLng: '',
-    googleAPIKeyMissing: '',
     error: '',
   },
   isProdKey: true,
