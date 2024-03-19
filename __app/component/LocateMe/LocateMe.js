@@ -4,7 +4,7 @@ import Wrapper from '../Wrapper/Wrapper';
 import { handleSuccess, handleError } from '../services/handlerService';
 import dependentJsService from '../services/dependentJsService';
 
-const checkBrowserPermit = async (disbaleToast, failureMsg, failureCb) => {
+const checkPermitByBrowser = async (disbaleToast, failureMsg, failureCb) => {
   try {
     const permissions = await navigator.permissions.query({ name: 'geolocation' });
     if (permissions.state === 'denied') {
@@ -92,17 +92,16 @@ function LocateMe({
   googleKey,
 }) {
   const onClick = async () => {
-    const isBrowserPermit = await checkBrowserPermit(disbaleToast, failureMsg, failureCb);
-    const isScriptInBrowser = await checkScriptInBrowser(
-      disbaleToast,
-      failureMsg,
-      failureCb,
-      isProdKey,
-      googleKey,
-    );
-
     if (LocateMe.isBrowserSupport()) {
-      if (isBrowserPermit && isScriptInBrowser) {
+      const isPermitByBrowser = await checkPermitByBrowser(disbaleToast, failureMsg, failureCb);
+      const isScriptInBrowser = await checkScriptInBrowser(
+        disbaleToast,
+        failureMsg,
+        failureCb,
+        isProdKey,
+        googleKey,
+      );
+      if (isPermitByBrowser && isScriptInBrowser) {
         navigator.geolocation.getCurrentPosition((position) => {
           onSuccss(
             disbaleToast,

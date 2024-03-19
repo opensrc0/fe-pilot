@@ -1,7 +1,33 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import dependentService from '../services/dependentJsService';
+import dependentJsService from '../services/dependentJsService';
 import { handleError, handleSuccess } from '../services/handlerService';
+
+const checkPermitByBrowser = async (disbaleToast, failureMsg, failureCb) => {
+  try {
+    const permissions = await navigator.permissions.query({ name: 'geolocation' });
+    if (permissions.state === 'denied') {
+      return handleError({ disbaleToast, msgType: 'PERMISSION_DENIED', msg: failureMsg.permissionDenied || 'Permission Denied', failureCb });
+    }
+  } catch (error) {
+    return handleError({ disbaleToast, msgType: 'BROWSER_PERMISION_API_FAILED', msg: failureMsg.browserPermissionAPIFailed || 'Unable to check browser permission', failureCb });
+  }
+
+  return true;
+};
+const checkScriptInBrowser = async (disbaleToast, failureMsg, failureCb, isProdKey, googleKey) => {
+  if (!googleKey) {
+    return handleError({ disbaleToast, msgType: 'GOOGLE_API_KEY_MISSING', msg: failureMsg.googleAPIKeyMissing || 'Unable to check browser permission', failureCb });
+  }
+  const googleApiUrl = `https://maps.googleapis.com/maps/api/js?${isProdKey ? 'client' : 'key'}=${googleKey}&libraries=places&loading=async`;
+
+  try {
+    await dependentJsService(googleApiUrl, 'googleMapLocationAPI', true);
+    return true;
+  } catch (error) {
+    return handleError({ disbaleToast, msgType: 'UNABLE_TO_LOAD_GOOGLE_APIS', msg: failureMsg.unableToLoadGoogleAPI || 'Unable to load google api script', failureCb });
+  }
+};
 
 function LiveLocationTracking({
   disbaleToast,
@@ -22,12 +48,18 @@ function LiveLocationTracking({
   let watchID = null;
 
   const createMap = (userCurrenrLocation) => {
-    const googleMap = new google.maps.Map(directionMapRef.current, {
-      mapTypeControl,
-      center: userCurrenrLocation,
-      zoom,
-    });
-    directionsRenderer.setMap(googleMap);
+    try {
+      const googleMap = new google.maps.Map(directionMapRef.current, {
+        mapTypeControl,
+        center: userCurrenrLocation,
+        zoom,
+      });
+      directionsRenderer.setMap(googleMap);
+    } catch (error) {
+      return handleError({ disbaleToast, msgType: 'UNABLE_TO_CREATE_MAP', msg: failureMsg.unableToCreateMap, failureCb });
+    }
+
+    return true;
   };
 
   const plotDirection = (currentLocations) => {
@@ -54,34 +86,41 @@ function LiveLocationTracking({
     }
   };
 
-  useEffect(() => {
+  const init = async () => {
     if (LiveLocationTracking.isBrowserSupport()) {
-      const googleMapUrl = `https://maps.googleapis.com/maps/api/js?${isProdKey ? 'client' : 'key'}=${googleKey}`;
-      dependentService(googleMapUrl, 'googleMapLocationAPI')
-        .then(async () => {
-          try {
-            directionsService = new google.maps.DirectionsService();
-            directionsRenderer = new google.maps.DirectionsRenderer();
-            createMap(originLatLng);
+      const isPermitByBrowser = await checkPermitByBrowser(disbaleToast, failureMsg, failureCb);
+      const isScriptInBrowser = await checkScriptInBrowser(
+        disbaleToast,
+        failureMsg,
+        failureCb,
+        isProdKey,
+        googleKey,
+      );
+      if (isPermitByBrowser && isScriptInBrowser) {
+        setTimeout(() => {
+          directionsService = new google.maps.DirectionsService();
+          directionsRenderer = new google.maps.DirectionsRenderer();
+          createMap(originLatLng);
 
-            // Adding a watch when user cordinates changes to replot the direction
-            watchID = navigator.geolocation.watchPosition(
-              (newPosition) => {
-                const lat = newPosition.coords.latitude;
-                const lng = newPosition.coords.longitude;
-                plotDirection({ lat, lng });
-              },
-              locationError(),
-              { enableHighAccuracy: true, timeout: 30000, maximumAge: 2000, distanceFilter: 100 },
-            );
-          } catch (error) {
-            console.log(error);
-          }
-        })
-        .catch(() => handleError({ disbaleToast, msgType: 'SCRIPT_NOT_LOADED', msg: failureMsg.scriptNotLoaded || 'Unable to load script properly', failureCb }));
+          watchID = navigator.geolocation.watchPosition(
+            (newPosition) => {
+              const lat = newPosition.coords.latitude;
+              const lng = newPosition.coords.longitude;
+              plotDirection({ lat, lng });
+            },
+            locationError(),
+            { enableHighAccuracy: true, timeout: 30000, maximumAge: 2000, distanceFilter: 100 },
+          );
+        }, 0);
+      }
     } else {
       return handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
     }
+    return true;
+  };
+
+  useEffect(() => {
+    init();
 
     return () => {
       if (watchID) {
