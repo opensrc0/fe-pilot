@@ -55,7 +55,7 @@ const successCb = ({ msgType, msg, data }) => {
 />
 ```
 > [!Note]
- Define **successCb** fn and your will get an object in param contains the property ```msgType```, ```msg```, ```data```
+> Define **successCb** fn and your will get an object in param contains the property ```msgType```, ```msg```, ```data```
 
 ## 3. Failure CallBack Fn along with failure msg
 ```js
