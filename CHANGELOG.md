@@ -1,3 +1,10 @@
+## [1.0.37](https://github.com/opensrc0/fe-pilot/compare/v1.0.36...v1.0.37) (2024-3-20)
+
+
+### Bug Fixes
+
+* **readme.md:** created 2 readme.md, onde for github one for npm ([9eaa030](https://github.com/opensrc0/fe-pilot/commit/9eaa030ed3e66fd0f8849f5e8e37c4789e678328))
+
 ## [1.0.36](https://github.com/opensrc0/fe-pilot/compare/v1.0.35...v1.0.36) (2024-3-20)
 
 
