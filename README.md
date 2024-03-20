@@ -79,7 +79,7 @@ import Share from 'fe-pilot/Share';
 />
 ```
 > [!Note]
->  [Click Me](./.github/COMPONENT.md) To find the list of components, implemention, folder structure. 
+>  [Click Me](./.github/COMPONENT.md) To find the list of components, implemention and folder structure. 
 
 
 ## Online Editor Templates
