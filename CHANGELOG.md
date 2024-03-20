@@ -1,3 +1,10 @@
+## [1.0.38](https://github.com/opensrc0/fe-pilot/compare/v1.0.37...v1.0.38) (2024-3-20)
+
+
+### Bug Fixes
+
+* **added readme.md files:** added readme.md files ([45cbc0b](https://github.com/opensrc0/fe-pilot/commit/45cbc0b7ee9e935893c0e968ed1013d5bf9fbdae))
+
 ## [1.0.37](https://github.com/opensrc0/fe-pilot/compare/v1.0.36...v1.0.37) (2024-3-20)
 
 
