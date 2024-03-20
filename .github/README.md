@@ -83,14 +83,14 @@ import Share from 'fe-pilot/Share';
 >  <summary>See the list of components</summary>
 >
 >  ### 
->  1. AutoFillOtp &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](./__app/component/AutoFillOtp/README.md)
+>  1. AutoFillOtp &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](./__app/component/AutoFillOtp/README.md)
 >  2. CopyToClipboard :white_check_mark: &nbsp; [Implementation & Structure](./__app/component/CopyToClipboard/README.md)
->  3. LiveLocation &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](./__app/component/LiveLocation/README.md)
->  4. LocateMe &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](./__app/component/LocateMe/README.md)
->  5. PhoneBook &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](./__app/component/PhoneBook/README.md)
->  6. Scanner &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](./__app/component/Scanner/README.md)
->  7. Share &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](./__app/component/Share/README.md)
->  8. TextToSpeech &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](./__app/component/TextToSpeech/README.md)
+>  3. LiveLocation &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](./__app/component/LiveLocation/README.md)
+>  4. LocateMe &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](./__app/component/LocateMe/README.md)
+>  5. PhoneBook &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](./__app/component/PhoneBook/README.md)
+>  6. Scanner &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](./__app/component/Scanner/README.md)
+>  7. Share &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](./__app/component/Share/README.md)
+>  8. TextToSpeech &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](./__app/component/TextToSpeech/README.md)
 >  9. VoiceRecognition :white_check_mark: &nbsp; [Implementation & Structure](./__app/component/VoiceRecognition/README.md)
 ></details>
 
@@ -112,6 +112,11 @@ import Share from 'fe-pilot/Share';
 
 1. https://6jpxdq.csb.app/
 2. https://fepilot-qhym--5173--810981ba.local-credentialless.webcontainer.io/
+<br />
+
+> [!IMPORTANT]
+> Play around links have better support in your actual Mobile Device.
+
 <br />
 
 ## Contributing
@@ -190,6 +195,10 @@ Thanks goes to these wonderful people
       </tr>
     </tbody>
 </table>
+
+> [!TIP]
+> After the contribution, Contributor name will be shown in the List.
+
 
 
 ## License
