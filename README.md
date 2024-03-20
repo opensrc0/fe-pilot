@@ -78,6 +78,9 @@ import Share from 'fe-pilot/Share';
   url={'https://www.npmjs.com/package/fe-pilot'}
 />
 ```
+> [!Note]
+>  [Click Me](./.github/COMPONENT.md) To find the list of components, implemention, folder structure. 
+
 
 ## Online Editor Templates
 
