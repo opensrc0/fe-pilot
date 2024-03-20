@@ -121,7 +121,7 @@ import Share from 'fe-pilot/Share';
 
 ## Contributing
 Feel like contributing? Most welcome! 
-[Setup locally](./.github/SETUP.md) to get fe-pilot working on your local machine and [guide lines](./.github/CONTRIBUTING.md) to contribute in fe-pilot.
+[Setup locally](https://github.com/opensrc0/fe-pilot/blob/HEAD/.github/SETUP.md) to get fe-pilot working on your local machine and [guide lines](https://github.com/opensrc0/fe-pilot/blob/main/.github/CONTRIBUTING.md) to contribute in fe-pilot.
 
 ## Contributors
 
