@@ -197,7 +197,7 @@ Thanks goes to these wonderful people
 </table>
 
 > [!TIP]
-> After your contribution your name will be added in Contributors List.
+> After the contribution, Contributor name will be shown in the List.
 
 
 
