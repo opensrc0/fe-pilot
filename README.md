@@ -115,7 +115,7 @@ import Share from 'fe-pilot/Share';
 <br />
 
 > [!IMPORTANT]
-> Play around links has better support in your actual Mobile Device.
+> Play around links have better support in your actual Mobile Device.
 
 <br />
 
