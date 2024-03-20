@@ -83,15 +83,15 @@ import Share from 'fe-pilot/Share';
 <summary>See the list of components</summary>
 
 ### 
-1. AutoFillOtp &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](./__app/component/AutoFillOtp/README.md)
-2. CopyToClipboard :white_check_mark: &nbsp; [Implementation & Structure](./__app/component/CopyToClipboard/README.md)
-3. LiveLocation &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](./__app/component/LiveLocation/README.md)
-4. LocateMe &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](./__app/component/LocateMe/README.md)
-5. PhoneBook &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](./__app/component/PhoneBook/README.md)
-6. Scanner &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](./__app/component/Scanner/README.md)
-7. Share &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](./__app/component/Share/README.md)
-8. TextToSpeech &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](./__app/component/TextToSpeech/README.md)
-9. VoiceRecognition :white_check_mark: &nbsp; [Implementation & Structure](./__app/component/VoiceRecognition/README.md)
+1. AutoFillOtp &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/AutoFillOtp/README.md)
+2. CopyToClipboard :white_check_mark: &nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/CopyToClipboard/README.md)
+3. LiveLocation &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/LiveLocation/README.md)
+4. LocateMe &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/LocateMe/README.md)
+5. PhoneBook &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/PhoneBook/README.md)
+6. Scanner &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/Scanner/README.md)
+7. Share &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/Share/README.md)
+8. TextToSpeech &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/TextToSpeech/README.md)
+9. VoiceRecognition :white_check_mark: &nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/VoiceRecognition/README.md)
 ></details>
 
 ## Online Editor Templates
@@ -145,7 +145,7 @@ Thanks goes to these wonderful people
         <td align="center" valign="top" width="14.28%">
           <p>
             <a target="_blank" href="https://github.com/Indian2025">
-              <img src="https://avatars.githubusercontent.com/u/164238626?v=4" width="64px;" alt="Fossa Bot" />
+              <img src="https://avatars.githubusercontent.com/u/164238626?v=4" width="64px;" alt="Shashank Gupta" />
               <br />
               <sub><b>Shashank Gupta</b></sub>
             </a>
