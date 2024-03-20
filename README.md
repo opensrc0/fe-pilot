@@ -2,21 +2,21 @@
 <img src="https://github.com/opensrc0/fe-pilot/blob/develop/logo.png" alt="fe-pilot Logo" align="center" width="30%" style="width: 30%;">
 </p>
 <h2 align="center">A React UI library for Advance Web Features 👨‍✈️ </h2>
-<br />
-<p align="center">
-  <a href="https://www.npmjs.com/package/fe-pilot">
-   <img alt="Minified Size" src="https://badgen.net/bundlephobia/minzip/fe-pilot?color=cyan"/>
-  </a>
-  <a href="https://react.dev/reference/react">
-  <img alt="React Version" src="https://img.shields.io/badge/react-18.2.0-%23f1e05a?logo=React"/>
-  </a>
-  <a href="https://www.npmjs.com/package/fe-pilot">
-    <img alt="NPM Downloads" src="https://img.shields.io/npm/dw/fe-pilot?label=Downloads&logo=npm"/>
-  </a>
-  <a href="https://www.npmjs.com/package/fe-pilot/v/latest">
-    <img alt="Latest Release" src="https://badgen.net/github/release/opensrc0/fe-pilot?icon=github&color=pink"/>
-  </a>
-</p>
+<h3 >
+  <p align="center" class="tasklist-issue-content">
+    <a href="https://www.npmjs.com/package/fe-pilot">
+     <img alt="Minified Size" src="https://badgen.net/bundlephobia/minzip/fe-pilot?color=cyan"/>
+    </a>
+    <a href="https://react.dev/reference/react">
+    <img alt="React Version" src="https://img.shields.io/badge/react-18.2.0-%23f1e05a?logo=React"/>
+    </a>
+    <a href="https://www.npmjs.com/package/fe-pilot">
+      <img alt="NPM Downloads" src="https://img.shields.io/npm/dw/fe-pilot?label=Downloads&logo=npm"/>
+    </a>
+    <a href="https://www.npmjs.com/package/fe-pilot/v/latest">
+      <img alt="Latest Release" src="https://badgen.net/github/release/opensrc0/fe-pilot?icon=github&color=pink"/>
+    </a>
+  </p>
 <p align="center">
   <a href="https://github.com/opensrc0/fe-pilot/stargazers">
     <img alt="Github Stars" src="https://badgen.net/github/stars/opensrc0/fe-pilot?icon=github&color=purple"/>
@@ -25,7 +25,8 @@
     <img alt="MIT License" src="https://badgen.net/static/license/MIT/orange"/>
   </a>
 </p>
-<br />
+</h6>
+  
 
 A React UI library for Advance Web Features that streamlines the development of modern web applications and websites. The library offers component like scanner, voice search, autofill otp, phonebook, share and many more for a small/medium/large size web based applications. Fe-Pilot is a easy to use, light weighted, fully mobile APP like features in web.
 
