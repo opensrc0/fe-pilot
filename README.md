@@ -77,12 +77,12 @@ import Share from 'fe-pilot/Share';
 ## Online Editor Templates
 
 #### 1. CodeSandbox
-- JavaScript Starter: https://codesandbox.io/p/devbox/fe-pilot-js-6q2vcg
+- JavaScript Starter: https://codesandbox.io/p/sandbox/fe-pilot-js-6jpxdq
 <!-- - TypeScript Starter: WIP -->
 <!-- - NextJS TypeScript Starter: WIP -->
 
 #### 2. Stackblitz
-- JavaScript Starter: https://stackblitz.com/edit/fe-pilot-js-b6mri2
+- JavaScript Starter: https://stackblitz.com/edit/fe-pilot?file=src%2FApp.jsx
 <!-- - TypeScript Starter: WIP -->
 <!-- - NextJS TypeScript Starter: WIP -->
 
