@@ -48,19 +48,22 @@ A React UI library for Advance Web Features that streamlines the development of 
 
 ## Installation
 Install `fe-pilot` package using any package manager
-  
+
+###### 1. Package Manager yarn 
 ```sh
-# with Yarn
-$ yarn add fe-pilot
-    
-# with npm
-$ npm i fe-pilot --save
-
-# with pnpm
-$ pnpm add fe-pilot
-
-# with Bun
-$ bun add fe-pilot
+yarn add fe-pilot
+```
+###### 2. Package Manager npm 
+```sh  
+npm i fe-pilot --save
+```
+###### 3. Package Manager pnpm 
+```sh
+pnpm add fe-pilot
+```
+###### 4. Package Manager bun 
+```sh
+bun add fe-pilot
 ```
 
 ## Usage
@@ -94,14 +97,16 @@ import Share from 'fe-pilot/Share';
 
 1. https://6jpxdq.csb.app/
 2. https://fepilot-qhym--5173--810981ba.local-credentialless.webcontainer.io/
+<br />
+
+> [!IMPORTANT]
+> Play around links has better support in your actual Mobile Device.
 
 <br />
 
 ## Contributing
-
 Feel like contributing? Most welcome! 
 [Setup locally](./.github/SETUP.md) to get fe-pilot working on your local machine and [guide lines](./.github/CONTRIBUTING.md) to contribute in fe-pilot.
-
 
 ## Contributors
 
@@ -175,6 +180,9 @@ Thanks goes to these wonderful people
       </tr>
     </tbody>
 </table>
+
+> [!TIP]
+> After your contribution your name will be added in Contributors List.
 
 
 
