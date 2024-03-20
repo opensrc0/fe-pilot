@@ -85,7 +85,7 @@ import Share from 'fe-pilot/Share';
 >  ### 
 >  1. AutoFillOtp &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/AutoFillOtp/README.md)
 >  2. CopyToClipboard :white_check_mark: &nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/CopyToClipboard/README.md)
->  3. LiveLocation &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/LiveLocation/README.md)
+>  3. LiveLocation &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/LiveLocationTracking/README.md)
 >  4. LocateMe &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/LocateMe/README.md)
 >  5. PhoneBook &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/PhoneBook/README.md)
 >  6. Scanner &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/Scanner/README.md)
