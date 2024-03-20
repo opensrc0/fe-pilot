@@ -144,6 +144,15 @@ Thanks goes to these wonderful people
         </td>
         <td align="center" valign="top" width="14.28%">
           <p>
+            <a target="_blank" href="https://github.com/Indian2025">
+              <img src="https://avatars.githubusercontent.com/u/164238626?v=4" width="64px;" alt="Fossa Bot" />
+              <br />
+              <sub><b>Shashank Gupta</b></sub>
+            </a>
+          </p>
+        </td>
+        <td align="center" valign="top" width="14.28%">
+          <p>
             <a href="https://github.com/Alok30">
               <img src="https://avatars.githubusercontent.com/u/36290248?s=64&v=4" width="64px;" alt="Alok Dubey" />
               <br />
@@ -178,16 +187,18 @@ Thanks goes to these wonderful people
             </a>
           </p>
         </td>
-        <td align="center" valign="top" width="14.28%">
-          <p>
-            <a target="_blank" href="https://github.com/fossabot">
-              <img src="https://avatars.githubusercontent.com/u/29791463?v=4" width="64px;" alt="Fossa Bot" />
-              <br />
-              <sub><b>Fossa Bot</b></sub>
-            </a>
-          </p>
-        </td>
       </tr>
+      <tr>
+        <td align="center" valign="top" width="14.28%">
+            <p>
+              <a target="_blank" href="https://github.com/fossabot">
+                <img src="https://avatars.githubusercontent.com/u/29791463?v=4" width="64px;" alt="Fossa Bot" />
+                <br />
+                <sub><b>Fossa Bot</b></sub>
+              </a>
+            </p>
+          </td>
+       </tr>
     </tbody>
 </table>
 
