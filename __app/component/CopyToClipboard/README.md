@@ -1,6 +1,6 @@
-# 1. Happy Flow 
+## 1. Happy Flow 
 
-## a) Passing string for copy
+#### a) Passing string for copy
 
 ```js
 <CopyToClipboard 
@@ -8,7 +8,7 @@
 />
 ```
 
-## b) Passing element for copy
+#### b) Passing element for copy
 
 ```js
 <CopyToClipboard 
@@ -23,7 +23,7 @@
 > You can also pass ref variable
 
 
-## c) Passing child
+#### c) Passing child
 
 ```js
 <CopyToClipboard 
