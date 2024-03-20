@@ -36,15 +36,16 @@ A React UI library for Advance Web Features that streamlines the development of 
 2. 📦 [Installation](#installation)
 3. 💻 [Usage](#usage)
 4. 📚 [Online Editor Templates](#online-editor-templates)
-5. 📝 [Contributing](#contributing)
-6. ✨ [Contributors](#contributors)
-7. ⚖️  [License](#license)
-  
+5. 🔦 [Plug and Play](#plug-and-play-around-the-features-and-component)
+6. 📝 [Contributing](#contributing)
+7. ✨ [Contributors](#contributors)
+8. ⚖️  [License](#license)
+ 
 ## Features
 - **Web/Mobile Support:** fe-pilot will be helpfull in Large/Mid/Small size of web based applications.
 - **Ease of Use:** fe-pilot contains a set of components like `Scanner`, `PhoneBook`, `Voice Search`, `Share`, `Live Location Tracking`, `Current Location` that are easy to plug and play.
 - **Scalable & Maintainable:** fe-pilot components are built on top of a React for better scalable, maintainable component.
-  
+
 ## Installation
 Install `fe-pilot` package using any package manager
   
@@ -75,7 +76,6 @@ import Share from 'fe-pilot/Share';
 />
 ```
 
-
 ## Online Editor Templates
 
 #### 1. CodeSandbox
@@ -88,11 +88,20 @@ import Share from 'fe-pilot/Share';
 <!-- - TypeScript Starter: WIP -->
 <!-- - NextJS TypeScript Starter: WIP -->
 
+<br />
+
+## Plug and Play around the features and component
+
+1. https://6jpxdq.csb.app/
+2. https://fepilot-qhym--5173--810981ba.local-credentialless.webcontainer.io/
+
+<br />
 
 ## Contributing
 
 Feel like contributing? Most welcome! 
 [Setup locally](./.github/SETUP.md) to get fe-pilot working on your local machine and [guide lines](./.github/CONTRIBUTING.md) to contribute in fe-pilot.
+
 
 ## Contributors
 
