@@ -110,62 +110,67 @@ Thanks goes to these wonderful people
     <tbody>
       <tr>
         <td align="center" valign="top" width="14.28%">
-          <a href="https://github.com/opensrc0">
-            <img src="https://avatars.githubusercontent.com/u/6891544?s=400&v=4" width="64px;" alt="Himanshu Gupta" />
-            <br />
-            <sub><b>Himanshu Gupta</b></sub>
-          </a>
-          <br />
+          <p>
+            <a href="https://github.com/opensrc0">
+              <img src="https://avatars.githubusercontent.com/u/6891544?s=400&v=4" width="64px;" alt="Himanshu Gupta" />
+              <br />
+              <sub><b>Himanshu Gupta</b></sub>
+            </a>
+          </p>
         </td>
         <td align="center" valign="top" width="14.28%">
-          <a target="_blank" href="https://github.com/hardikjain29">
-            <img src="https://avatars.githubusercontent.com/u/13768932?v=4" width="64px;" alt="Hardik Jain" />
-            <br />
-            <sub><b>Hardik Jain</b></sub>
-          </a>
-          <br />
+          <p>
+            <a target="_blank" href="https://github.com/hardikjain29">
+              <img src="https://avatars.githubusercontent.com/u/13768932?v=4" width="64px;" alt="Hardik Jain" />
+              <br />
+              <sub><b>Hardik Jain</b></sub>
+            </a>
+          </p>
         </td>
         <td align="center" valign="top" width="14.28%">
-          <a href="https://github.com/Alok30">
-            <img src="https://avatars.githubusercontent.com/u/36290248?s=64&v=4" width="64px;" alt="Alok Dubey" />
-            <br />
-            <sub><b>Alok Dubey</b></sub>
-          </a>
-          <br />
+          <p>
+            <a href="https://github.com/Alok30">
+              <img src="https://avatars.githubusercontent.com/u/36290248?s=64&v=4" width="64px;" alt="Alok Dubey" />
+              <br />
+              <sub><b>Alok Dubey</b></sub>
+            </a>
+          </p>
         </td>
         <td align="center" valign="top" width="14.28%">
-          <a href="https://github.com/Ravi-Chef">
-            <img src="https://avatars.githubusercontent.com/u/31059087?v=4" width="64px;" alt="Ravi Verma" />
-            <br />
-            <sub><b>Ravi Verma</b></sub>
-          </a>
-          <br />
+          <p>
+            <a href="https://github.com/Ravi-Chef">
+              <img src="https://avatars.githubusercontent.com/u/31059087?v=4" width="64px;" alt="Ravi Verma" />
+              <br />
+              <sub><b>Ravi Verma</b></sub>
+            </a>
+          </p>
         </td>
         <td align="center" valign="top" width="14.28%">
-          <a target="_blank" href="https://github.com/semantic-release-bot">
-            <img src="https://avatars.githubusercontent.com/u/32174276?v=4" width="64px;" alt="Semantic Release Bot" />
-            <br />
-            <sub><b>Semantic Release Bot</b></sub>
-          </a>
-          <br />
+          <p>
+            <a target="_blank" href="https://github.com/semantic-release-bot">
+              <img src="https://avatars.githubusercontent.com/u/32174276?v=4" width="64px;" alt="Semantic Release Bot" />
+              <br />
+              <sub><b>Semantic Release Bot</b></sub>
+            </a>
+          </p>
         </td>
         <td align="center" valign="top" width="14.28%">
-          <a target="_blank" href="https://github.com/Ghanshyam-K-Dobariya">
-            <img src="https://avatars.githubusercontent.com/u/5426993?s=400" width="64px;" alt="Ghanshyam KD" />
-            <br />
-            <sub><b>Ghanshyam KD</b></sub>
-          </a>
-          <br />
+          <p>
+            <a target="_blank" href="https://github.com/Ghanshyam-K-Dobariya">
+              <img src="https://avatars.githubusercontent.com/u/5426993?s=400" width="64px;" alt="Ghanshyam KD" />
+              <br />
+              <sub><b>Ghanshyam KD</b></sub>
+            </a>
+          </p>
         </td>
-      </tr>
-      <tr>
         <td align="center" valign="top" width="14.28%">
-          <a target="_blank" href="https://github.com/fossabot">
-            <img src="https://avatars.githubusercontent.com/u/29791463?v=4" width="64px;" alt="Fossa Bot" />
-            <br />
-            <sub><b>Fossa Bot</b></sub>
-          </a>
-          <br />
+          <p>
+            <a target="_blank" href="https://github.com/fossabot">
+              <img src="https://avatars.githubusercontent.com/u/29791463?v=4" width="64px;" alt="Fossa Bot" />
+              <br />
+              <sub><b>Fossa Bot</b></sub>
+            </a>
+          </p>
         </td>
       </tr>
     </tbody>
