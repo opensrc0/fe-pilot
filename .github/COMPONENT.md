@@ -1,9 +1,9 @@
-01. AutoFillOtp :exclamation:
-02. CopyToClipboard :white_check_mark:
-03. LiveLocation :exclamation:
-04. LocateMe :white_check_mark:
-05. PhoneBook :white_check_mark:
-06. Scanner :white_check_mark:
-07. Share :white_check_mark:
-08. TextToSpeech :white_check_mark:
-09. VoiceRecognition :white_check_mark:
+01. AutoFillOtp &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](./../__app/component/AutoFillOtp/README.md)
+02. CopyToClipboard :white_check_mark: &nbsp; [Implementation & Structure](./../__app/component/CopyToClipboard/README.md)
+03. LiveLocation &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](./../__app/component/LiveLocation/README.md)
+04. LocateMe &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](./../__app/component/LocateMe/README.md)
+05. PhoneBook &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](./../__app/component/PhoneBook/README.md)
+06. Scanner &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](./../__app/component/Scanner/README.md)
+07. Share &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](./../__app/component/Share/README.md)
+08. TextToSpeech &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :white_check_mark: &nbsp; [Implementation & Structure](./../__app/component/TextToSpeech/README.md)
+09. VoiceRecognition :white_check_mark: &nbsp; [Implementation & Structure](./../__app/component/VoiceRecognition/README.md)
