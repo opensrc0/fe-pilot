@@ -2,6 +2,7 @@
 <img src="https://github.com/opensrc0/fe-pilot/blob/develop/logo.png" alt="fe-pilot Logo" align="center" width="30%" style="width: 30%;">
 </p>
 <h2 align="center">A React UI library for Advance Web Features 👨‍✈️ </h2>
+<br />
 <h3 >
   <p align="center" class="tasklist-issue-content">
     <a href="https://www.npmjs.com/package/fe-pilot">
@@ -25,8 +26,8 @@
     <img alt="MIT License" src="https://badgen.net/static/license/MIT/orange"/>
   </a>
 </p>
-</h6>
-  
+</h3>
+<br />
 
 A React UI library for Advance Web Features that streamlines the development of modern web applications and websites. The library offers component like scanner, voice search, autofill otp, phonebook, share and many more for a small/medium/large size web based applications. Fe-Pilot is a easy to use, light weighted, fully mobile APP like features in web.
 
