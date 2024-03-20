@@ -35,7 +35,6 @@ import { TextToSpeechInit, TextToSpeechStart, TextToSpeechStop } from 'fe-pilot/
 
 
 ## Folder Structure
-
 ```
 fe-pilot
   └── __app      
@@ -46,3 +45,57 @@ fe-pilot
       |   ├──TextToSpeechStart.js    (child component)
       |   └──TextToSpeechStop.js     (child component)
 ```
+
+```mermaid
+graph TD;
+    fe-pilot-->__app;
+    __app-->component;
+    component-->AutoFillOtp;
+    component-->CopyToClipboard;
+    component-->LiveLocation;
+    component-->LocateMe;
+    component-->PhoneBook;
+    component-->Scanner;
+    component-->Share;
+    component-->TextToSpeech;
+    component-->VoiceRecognition;
+```
+> [!IMPORTANT]
+> App Structure from root to component
+
+<br /><br /><br />
+
+```mermaid
+graph TD;
+    Scanner--->CameraClick;
+    Scanner--->CameraClose;
+    Scanner--->CameraFacing;
+    Scanner--->CameraFlash;
+    Scanner--->CameraScanBox;
+    Scanner--->PhoneGallery;
+    Scanner--->StartCamera;
+```
+> [!IMPORTANT]
+> Camera component Structure
+
+<br /><br /><br />
+
+```mermaid
+graph TD;
+    TextToSpeech--->TextToSpeechInit;
+    TextToSpeech--->TextToSpeechStart;
+    TextToSpeech--->TextToSpeechStop;
+```
+> [!IMPORTANT]
+> TextToSpeech component Structure
+
+<br /><br /><br />
+
+```mermaid
+graph TD;
+    VoiceRecognition--->TextToSpeechInit;
+    VoiceRecognition--->VoiceRecognitionIcon;
+    VoiceRecognition--->VoiceRecognitionModal;
+```
+> [!IMPORTANT]
+> VoiceRecognition component Structure
