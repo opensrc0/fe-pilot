@@ -163,6 +163,15 @@ Thanks goes to these wonderful people
         <td align="center" valign="top" width="14.28%">
           <p>
             <a href="https://github.com/Ravi-Chef">
+              <img src="https://avatars.githubusercontent.com/u/13002628?v=4" width="64px;" alt="Nimish Gupta" />
+              <br />
+              <sub><b>Nimish Gupta</b></sub>
+            </a>
+          </p>
+        </td>
+        <td align="center" valign="top" width="14.28%">
+          <p>
+            <a href="https://github.com/Ravi-Chef">
               <img src="https://avatars.githubusercontent.com/u/31059087?v=4" width="64px;" alt="Ravi Verma" />
               <br />
               <sub><b>Ravi Verma</b></sub>
@@ -178,6 +187,8 @@ Thanks goes to these wonderful people
             </a>
           </p>
         </td>
+      </tr>
+      <tr>
         <td align="center" valign="top" width="14.28%">
           <p>
             <a target="_blank" href="https://github.com/Ghanshyam-K-Dobariya">
@@ -187,8 +198,6 @@ Thanks goes to these wonderful people
             </a>
           </p>
         </td>
-      </tr>
-      <tr>
         <td align="center" valign="top" width="14.28%">
             <p>
               <a target="_blank" href="https://github.com/fossabot">
