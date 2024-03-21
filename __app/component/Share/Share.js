@@ -27,8 +27,8 @@ function Share({
   const showDropdown = () => {
     if (Share.isBrowserSupport()) {
       if (isShareAPIDataValid(sharingData)) {
-        navigator.share(sharingData).then((data) => {
-          handleSuccess({ disbaleToast, msgType: 'SUCCESS', msg: successMsg, successCb, data });
+        navigator.share(sharingData).then(() => {
+          handleSuccess({ disbaleToast, msgType: 'SUCCESS', msg: successMsg, successCb, data: sharingData });
         }).catch((error) => handleError({ disbaleToast, msgType: 'ERROR', msg: failureMsg.error || error, failureCb }));
       } else {
         return handleError({ disbaleToast, msgType: 'BAD_REQUEST', msg: failureMsg.badRequest, failureCb });
