@@ -129,7 +129,7 @@ Thanks goes to these wonderful people
 <table>
     <tbody>
       <tr>
-        <td align="center" valign="top" width="16.67%">
+        <td align="center" valign="top" width="14.28%">
           <p>
             <a href="https://github.com/opensrc0">
               <img src="https://avatars.githubusercontent.com/u/6891544?s=400&v=4" width="64px;" alt="Himanshu Gupta" />
@@ -138,7 +138,7 @@ Thanks goes to these wonderful people
             </a>
           </p>
         </td>
-        <td align="center" valign="top" width="16.67%">
+        <td align="center" valign="top" width="14.28%">
           <p>
             <a target="_blank" href="https://github.com/hardikjain29">
               <img src="https://avatars.githubusercontent.com/u/13768932?v=4" width="64px;" alt="Hardik Jain" />
@@ -147,7 +147,7 @@ Thanks goes to these wonderful people
             </a>
           </p>
         </td>
-        <td align="center" valign="top" width="16.67%">
+        <td align="center" valign="top" width="14.28%">
           <p>
             <a target="_blank" href="https://github.com/Indian2025">
               <img src="https://avatars.githubusercontent.com/u/164238626?v=4" width="64px;" alt="Shashank Gupta" />
@@ -156,7 +156,7 @@ Thanks goes to these wonderful people
             </a>
           </p>
         </td>
-        <td align="center" valign="top" width="16.67%">
+        <td align="center" valign="top" width="14.28%">
           <p>
             <a href="https://github.com/Alok30">
               <img src="https://avatars.githubusercontent.com/u/36290248?s=64&v=4" width="64px;" alt="Alok Dubey" />
@@ -165,7 +165,7 @@ Thanks goes to these wonderful people
             </a>
           </p>
         </td>
-        <td align="center" valign="top" width="16.67%">
+        <td align="center" valign="top" width="14.28%">
           <p>
             <a href="https://github.com/Ravi-Chef">
               <img src="https://avatars.githubusercontent.com/u/31059087?v=4" width="64px;" alt="Ravi Verma" />
@@ -174,7 +174,7 @@ Thanks goes to these wonderful people
             </a>
           </p>
         </td>
-        <td align="center" valign="top" width="16.67%">
+        <td align="center" valign="top" width="14.28%">
           <p>
             <a target="_blank" href="https://github.com/semantic-release-bot">
               <img src="https://avatars.githubusercontent.com/u/32174276?v=4" width="64px;" alt="Semantic Release Bot" />
@@ -183,9 +183,7 @@ Thanks goes to these wonderful people
             </a>
           </p>
         </td>
-      </tr>
-      <tr>
-        <td align="center" valign="top" width="16.67%">
+        <td align="center" valign="top" width="14.28%">
           <p>
             <a target="_blank" href="https://github.com/Ghanshyam-K-Dobariya">
               <img src="https://avatars.githubusercontent.com/u/5426993?s=400" width="64px;" alt="Ghanshyam KD" />
@@ -194,7 +192,9 @@ Thanks goes to these wonderful people
             </a>
           </p>
         </td>
-        <td align="center" valign="top" width="16.67%">
+      </tr>
+      <tr>
+        <td align="center" valign="top" width="14.28%">
             <p>
               <a target="_blank" href="https://github.com/fossabot">
                 <img src="https://avatars.githubusercontent.com/u/29791463?v=4" width="64px;" alt="Fossa Bot" />
