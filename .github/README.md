@@ -213,11 +213,6 @@ Thanks goes to these wonderful people
     </tbody>
 </table>
 
-> [!Note]
-> After the contribution, Contributor name will be shown in the List.
-
-
-
 ## License
 
 MIT © [Himanshu Gupta](https://github.com/opensrc0)
