@@ -1,3 +1,10 @@
+## [1.0.41](https://github.com/opensrc0/fe-pilot/compare/v1.0.40...v1.0.41) (2024-3-21)
+
+
+### Bug Fixes
+
+* **handleservice.js:** added status attribute in success and failure ([5af3605](https://github.com/opensrc0/fe-pilot/commit/5af360570680bb58d49f710539659e847cb11faa))
+
 ## [1.0.40](https://github.com/opensrc0/fe-pilot/compare/v1.0.39...v1.0.40) (2024-3-21)
 
 
