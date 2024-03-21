@@ -162,7 +162,7 @@ Thanks goes to these wonderful people
         </td>
         <td align="center" valign="top" width="14.28%">
           <p>
-            <a href="https://github.com/Ravi-Chef">
+            <a href="https://github.com/NimishGupta95">
               <img src="https://avatars.githubusercontent.com/u/13002628?v=4" width="64px;" alt="Nimish Gupta" />
               <br />
               <sub><b>Nimish Gupta</b></sub>
