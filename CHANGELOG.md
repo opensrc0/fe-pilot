@@ -1,3 +1,10 @@
+## [1.0.39](https://github.com/opensrc0/fe-pilot/compare/v1.0.38...v1.0.39) (2024-3-21)
+
+
+### Bug Fixes
+
+* **prop type:** removed prop type from the prodcution build ([323bced](https://github.com/opensrc0/fe-pilot/commit/323bced52d34e6a8ec87be420381df8d95cef29c))
+
 ## [1.0.38](https://github.com/opensrc0/fe-pilot/compare/v1.0.37...v1.0.38) (2024-3-20)
 
 
