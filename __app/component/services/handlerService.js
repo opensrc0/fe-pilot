@@ -5,6 +5,7 @@ export const handleSuccess = ({ disbaleToast, msg, msgType, successCb, data }) =
     msgType,
     msg,
     data,
+    status: 'SUCCESS',
   });
 };
 
@@ -14,6 +15,7 @@ export const handleError = ({ disbaleToast, msg, msgType, failureCb }) => {
   failureCb({
     msgType,
     msg,
+    status: 'FAILURE',
   });
 
   return false;

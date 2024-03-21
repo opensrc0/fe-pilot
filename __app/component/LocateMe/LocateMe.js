@@ -18,7 +18,7 @@ const checkPermitByBrowser = async (disbaleToast, failureMsg, failureCb) => {
 };
 const checkScriptInBrowser = async (disbaleToast, failureMsg, failureCb, isProdKey, googleKey) => {
   if (!googleKey) {
-    return handleError({ disbaleToast, msgType: 'GOOGLE_API_KEY_MISSING', msg: failureMsg.googleAPIKeyMissing || 'Unable to check browser permission', failureCb });
+    return handleError({ disbaleToast, msgType: 'GOOGLE_API_KEY_MISSING', msg: failureMsg.googleAPIKeyMissing || 'Google Key is missing', failureCb });
   }
   const googleApiUrl = `https://maps.googleapis.com/maps/api/js?${isProdKey ? 'client' : 'key'}=${googleKey}&libraries=places&loading=async`;
 
