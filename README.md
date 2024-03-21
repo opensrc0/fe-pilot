@@ -20,7 +20,7 @@
   </p>
 <p align="center">
   <a href="https://github.com/opensrc0/fe-pilot/stargazers">
-    <img alt="Github Stars" src="https://badgen.net/github/stars/opensrc0/fe-pilot?icon=github&color=purple"/>
+    <img alt="Github Stars" src="https://badgen.net/github/stars/opensrc0/fe-pilot?icon=github&color=cyan"/>
   </a>
   <a href="https://github.com/opensrc0/fe-pilot?tab=MIT-1-ov-file">
     <img alt="MIT License" src="https://badgen.net/static/license/MIT/orange"/>
