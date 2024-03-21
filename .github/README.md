@@ -78,7 +78,7 @@ import Share from 'fe-pilot/Share';
   url={'https://www.npmjs.com/package/fe-pilot'}
 />
 ```
-> [!Note]
+> [!Tip]
 > <details>
 >  <summary>See the list of components</summary>
 >
@@ -207,7 +207,7 @@ Thanks goes to these wonderful people
     </tbody>
 </table>
 
-> [!TIP]
+> [!Note]
 > After the contribution, Contributor name will be shown in the List.
 
 
