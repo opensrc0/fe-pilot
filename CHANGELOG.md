@@ -1,3 +1,10 @@
+## [1.0.40](https://github.com/opensrc0/fe-pilot/compare/v1.0.39...v1.0.40) (2024-3-21)
+
+
+### Bug Fixes
+
+* **fix scanner:** scanner tree handshaking ([d446b49](https://github.com/opensrc0/fe-pilot/commit/d446b49fd39c62c361e76edb5cb21c95f1f6d387))
+
 ## [1.0.39](https://github.com/opensrc0/fe-pilot/compare/v1.0.38...v1.0.39) (2024-3-21)
 
 
