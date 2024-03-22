@@ -18,7 +18,7 @@ function PhoneBook({
     if (PhoneBook.isBrowserSupport()) {
       try {
         const contacts = await navigator.contacts.select(contactProperty, opts);
-        if (contacts) {
+        if (contacts[0]) {
           handleSuccess({ disbaleToast, msgType: 'SUCCESS', msg: successMsg, successCb, data: contacts });
         } else {
           return handleError({ disbaleToast, msgType: 'CANCELLED', msg: failureMsg.cancelled || 'Feature Cancelled', failureCb });
