@@ -45,8 +45,8 @@ CopyToClipboard.defaultProps = {
   failureCb: () => {},
   successMsg: 'Copied Successfully',
   failureMsg: {
-    unSupported: 'Copy To Click to Board',
-    error: '',
+    unSupported: 'Copy To ClipBoard is not supporting in your device',
+    error: 'Unable to copy',
   },
 };
 

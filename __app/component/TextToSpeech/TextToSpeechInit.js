@@ -30,7 +30,7 @@ function TextToSpeechInit({
           return handleError({ disbaleToast, msgType: 'ERROR', msg: failureMsg.error, failureCb });
         }
       } else {
-        return handleError({ disbaleToast, msgType: 'BAD_REQUEST', msg: failureMsg.badRequest, failureCb });
+        return handleError({ disbaleToast, msgType: 'MISSING_PARAMS', msg: failureMsg.badRequest, failureCb });
       }
     } else {
       return handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
@@ -80,11 +80,11 @@ TextToSpeechInit.defaultProps = {
   disbaleToast: false,
   successCb: () => {},
   failureCb: () => {},
-  successMsg: '',
+  successMsg: 'Converted text to voice Successfully',
   failureMsg: {
-    unSupported: '',
-    badRequest: '',
-    error: '',
+    unSupported: 'Text To Speech feature is not supporting in your device',
+    badRequest: 'Missing props',
+    error: 'Unable to convert text to voice',
   },
 };
 

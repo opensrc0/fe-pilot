@@ -89,10 +89,10 @@ VoiceRecognition.defaultProps = {
   disbaleToast: false,
   successCb: () => {},
   failureCb: () => {},
-  successMsg: '',
+  successMsg: 'Successfully converted your voice to text',
   failureMsg: {
-    unSupported: '',
-    error: '',
+    unSupported: 'Voice Recognition feature is not supporting in your device',
+    error: 'Unable to convert your voice to text',
   },
 };
 

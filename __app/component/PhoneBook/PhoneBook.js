@@ -58,10 +58,10 @@ PhoneBook.defaultProps = {
   disbaleToast: false,
   successCb: () => {},
   failureCb: () => {},
-  successMsg: '',
+  successMsg: 'Phonebook details fetch Successfully',
   failureMsg: {
-    unSupported: '',
-    error: '',
+    unSupported: 'PhoneBook is not supporting in your device',
+    error: 'Unable to fetch details from PhoneBook',
   },
   contactProperty: ['name', 'email', 'tel', 'address', 'icon'],
   isSelectMultiple: false,
