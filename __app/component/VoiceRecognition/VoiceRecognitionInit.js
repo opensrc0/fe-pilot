@@ -29,7 +29,7 @@ function VoiceRecognition({
         setVoiceText(text);
         if (event.results[0].isFinal) {
           setTimeout(() => {
-            handleSuccess({ disbaleToast, msgType: 'SUCCESS', msg: successMsg, successCb, data: text });
+            handleSuccess({ disbaleToast, msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: text });
             setIsModalVisible(false);
             setVoiceText('');
           }, 1500);

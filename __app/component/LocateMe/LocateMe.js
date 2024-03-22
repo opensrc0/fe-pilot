@@ -73,7 +73,7 @@ const onSuccss = async (
     failureMsg,
   );
 
-  handleSuccess({ disbaleToast, msgType: 'SUCCESS', msg: successMsg, successCb, data: zipcode });
+  handleSuccess({ disbaleToast, msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: zipcode });
 };
 
 const onFailure = async (failureCb, error, disbaleToast, failureMsg) => {

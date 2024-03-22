@@ -23,7 +23,7 @@ function TextToSpeechInit({
           const utteranceCbk = await textToSpeech(text);
           utteranceCbk.onend = () => {
             setIsAudioOn(false);
-            handleSuccess({ disbaleToast, msgType: 'SUCCESS', msg: successMsg, successCb, data: text });
+            handleSuccess({ disbaleToast, msgType: 'SUCCESSFULFUL', msg: successMsg, successCb, data: text });
           };
           utteranceCbk.onerror = () => setIsAudioOn(false);
         } catch (error) {
@@ -42,6 +42,7 @@ function TextToSpeechInit({
   const handleStop = () => {
     window.speechSynthesis.cancel();
     setIsAudioOn(false);
+    return handleError({ disbaleToast, msgType: 'CANCELLED', msg: failureMsg.cancelled || 'Feature Cancelled', failureCb });
   };
 
   useEffect(() => {

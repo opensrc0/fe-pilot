@@ -29,7 +29,7 @@ function CameraClick({
           if (barcode) {
             handleSuccess({
               disbaleToast,
-              msgType: 'SUCCESS',
+              msgType: 'SUCCESSFUL',
               msg: successMsg,
               successCb,
               data: { barCodeValue: barcode.rawValue, barCodeType: barcode.format },
@@ -37,6 +37,7 @@ function CameraClick({
           } else {
             return handleError({ disbaleToast, msgType: 'INVALID_IMAGE', msg: failureMsg.invalidImage, failureCb });
           }
+          return true;
         })
         .catch((error) => handleError({ disbaleToast, msgType: 'UNABLE_TO_SCAN', msg: failureMsg.unableToScan || error, failureCb }));
     }

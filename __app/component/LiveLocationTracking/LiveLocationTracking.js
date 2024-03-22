@@ -72,7 +72,7 @@ function LiveLocationTracking({
         })
         .then((response) => {
           directionsRenderer.setDirections(response);
-          handleSuccess({ disbaleToast, msgType: 'SUCCESS', msg: successMsg, successCb, data: currentLocations });
+          handleSuccess({ disbaleToast, msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: currentLocations });
         }).catch(() => handleError({ disbaleToast, msgType: 'UNABLE_TO_LOCATE_DIRECTION', msg: failureMsg.unableToLocateDirection || 'Unable To get Updated Location', failureCb }));
     }
   };

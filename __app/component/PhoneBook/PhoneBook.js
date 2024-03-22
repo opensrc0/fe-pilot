@@ -19,7 +19,7 @@ function PhoneBook({
       try {
         const contacts = await navigator.contacts.select(contactProperty, opts);
         if (contacts[0]) {
-          handleSuccess({ disbaleToast, msgType: 'SUCCESS', msg: successMsg, successCb, data: contacts });
+          handleSuccess({ disbaleToast, msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: contacts });
         } else {
           return handleError({ disbaleToast, msgType: 'CANCELLED', msg: failureMsg.cancelled || 'Feature Cancelled', failureCb });
         }

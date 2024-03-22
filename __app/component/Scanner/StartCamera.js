@@ -49,7 +49,7 @@ function StartCamera({
                   itemsFound.push(barcode.rawValue);
                   handleSuccess({
                     disbaleToast,
-                    msgType: 'SUCCESS',
+                    msgType: 'SUCCESSFUL',
                     msg: successMsg,
                     successCb,
                     data: { barCodeValue: barcode.rawValue, barCodeType: barcode.format },

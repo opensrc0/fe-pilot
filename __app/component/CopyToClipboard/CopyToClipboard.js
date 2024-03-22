@@ -15,7 +15,7 @@ function CopyToClipboard({
   const copyText = () => {
     if (CopyToClipboard.isBrowserSupport()) {
       navigator.clipboard.writeText(elementToBeCopy).then(() => {
-        handleSuccess({ disbaleToast, msgType: 'SUCCESS', msg: successMsg, successCb, data: elementToBeCopy });
+        handleSuccess({ disbaleToast, msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: elementToBeCopy });
       }).catch((error) => handleError({ disbaleToast, msgType: 'ERROR', msg: failureMsg.error || error, failureCb }));
     } else {
       return handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
@@ -43,9 +43,9 @@ CopyToClipboard.defaultProps = {
   disbaleToast: false,
   successCb: () => {},
   failureCb: () => {},
-  successMsg: '',
+  successMsg: 'Copied Successfully',
   failureMsg: {
-    unSupported: '',
+    unSupported: 'Copy To Click to Board',
     error: '',
   },
 };

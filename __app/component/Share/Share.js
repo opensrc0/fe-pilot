@@ -28,7 +28,7 @@ function Share({
     if (Share.isBrowserSupport()) {
       if (isShareAPIDataValid(sharingData)) {
         navigator.share(sharingData).then(() => {
-          handleSuccess({ disbaleToast, msgType: 'SUCCESS', msg: successMsg, successCb, data: sharingData });
+          handleSuccess({ disbaleToast, msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: sharingData });
         }).catch(() => handleError({ disbaleToast, msgType: 'ERROR', msg: failureMsg.error, failureCb }));
       } else {
         return handleError({ disbaleToast, msgType: 'BAD_REQUEST', msg: failureMsg.badRequest, failureCb });
