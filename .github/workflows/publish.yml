@@ -25,9 +25,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         
-    - run: pnpm ci
-    - run: pnpm run prod
-    - run: pnpm run semantic-release
+    - run: npm ci
+    - run: npm run prod
+    - run: npm run semantic-release
       env: 
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
