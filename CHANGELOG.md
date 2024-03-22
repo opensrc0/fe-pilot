@@ -1,3 +1,10 @@
+## [1.0.47](https://github.com/opensrc0/fe-pilot/compare/v1.0.46...v1.0.47) (2024-3-22)
+
+
+### Bug Fixes
+
+* **all component:** added msg in case of success and failure ([630e9ea](https://github.com/opensrc0/fe-pilot/commit/630e9ea740abd0b332f46efeafee278094641cd2))
+
 ## [1.0.46](https://github.com/opensrc0/fe-pilot/compare/v1.0.45...v1.0.46) (2024-3-22)
 
 
