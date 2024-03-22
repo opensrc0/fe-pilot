@@ -1,3 +1,10 @@
+## [1.0.46](https://github.com/opensrc0/fe-pilot/compare/v1.0.45...v1.0.46) (2024-3-22)
+
+
+### Bug Fixes
+
+* **npmrc:** remove props type import from code base ([db939a4](https://github.com/opensrc0/fe-pilot/commit/db939a40763a398155a24240673f3a04cc4f73e5))
+
 ## [1.0.45](https://github.com/opensrc0/fe-pilot/compare/v1.0.44...v1.0.45) (2024-3-22)
 
 
