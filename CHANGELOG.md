@@ -1,3 +1,10 @@
+## [1.0.42](https://github.com/opensrc0/fe-pilot/compare/v1.0.41...v1.0.42) (2024-3-21)
+
+
+### Bug Fixes
+
+* **share:** return data in share api ([b85be53](https://github.com/opensrc0/fe-pilot/commit/b85be53c96d403c0a27bed026b42291a7d687d7d))
+
 ## [1.0.41](https://github.com/opensrc0/fe-pilot/compare/v1.0.40...v1.0.41) (2024-3-21)
 
 
