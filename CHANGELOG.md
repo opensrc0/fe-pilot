@@ -1,3 +1,11 @@
+## [1.0.45](https://github.com/opensrc0/fe-pilot/compare/v1.0.44...v1.0.45) (2024-3-22)
+
+
+### Bug Fixes
+
+* **npmrc and package.json:** added minied files instead of normal file ([00df024](https://github.com/opensrc0/fe-pilot/commit/00df0241b53077d13cf6af2c6ae69d13e116a5a2))
+* **remove pnpm:** added npm instead of pnpm ([3a2e3cf](https://github.com/opensrc0/fe-pilot/commit/3a2e3cf1d87f447bd79f119e197eb147598afa51))
+
 ## [1.0.44](https://github.com/opensrc0/fe-pilot/compare/v1.0.43...v1.0.44) (2024-3-22)
 
 
