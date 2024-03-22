@@ -1,3 +1,10 @@
+## [1.0.44](https://github.com/opensrc0/fe-pilot/compare/v1.0.43...v1.0.44) (2024-3-22)
+
+
+### Bug Fixes
+
+* **share & phonebook:** share & Phonebook cancelled operation ([6af1853](https://github.com/opensrc0/fe-pilot/commit/6af1853373e8a4289d854c9c30a6fc2ed72208db))
+
 ## [1.0.43](https://github.com/opensrc0/fe-pilot/compare/v1.0.42...v1.0.43) (2024-3-22)
 
 
