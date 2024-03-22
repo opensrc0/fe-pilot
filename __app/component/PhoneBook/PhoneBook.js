@@ -18,7 +18,11 @@ function PhoneBook({
     if (PhoneBook.isBrowserSupport()) {
       try {
         const contacts = await navigator.contacts.select(contactProperty, opts);
-        handleSuccess({ disbaleToast, msgType: 'SUCCESS', msg: successMsg, successCb, data: contacts });
+        if (contacts) {
+          handleSuccess({ disbaleToast, msgType: 'SUCCESS', msg: successMsg, successCb, data: contacts });
+        } else {
+          return handleError({ disbaleToast, msgType: 'CANCELLED', msg: failureMsg.cancelled || 'Feature Cancelled', failureCb });
+        }
       } catch (error) {
         return handleError({ disbaleToast, msgType: 'ERROR', msg: failureMsg.error || error, failureCb });
       }

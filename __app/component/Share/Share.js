@@ -29,7 +29,7 @@ function Share({
       if (isShareAPIDataValid(sharingData)) {
         navigator.share(sharingData).then(() => {
           handleSuccess({ disbaleToast, msgType: 'SUCCESS', msg: successMsg, successCb, data: sharingData });
-        }).catch((error) => handleError({ disbaleToast, msgType: 'ERROR', msg: failureMsg.error || error, failureCb }));
+        }).catch((error) => handleError({ disbaleToast, msgType: 'ERROR', msg: failureMsg.error.toString() || error, failureCb }));
       } else {
         return handleError({ disbaleToast, msgType: 'BAD_REQUEST', msg: failureMsg.badRequest, failureCb });
       }
