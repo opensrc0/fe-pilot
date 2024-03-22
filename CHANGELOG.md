@@ -1,3 +1,10 @@
+## [1.0.43](https://github.com/opensrc0/fe-pilot/compare/v1.0.42...v1.0.43) (2024-3-22)
+
+
+### Bug Fixes
+
+* **share & phookbook:** cancel on share and phonebook ([ce9ffd7](https://github.com/opensrc0/fe-pilot/commit/ce9ffd73edd2c5645984d774e2c9c1348edf69be))
+
 ## [1.0.42](https://github.com/opensrc0/fe-pilot/compare/v1.0.41...v1.0.42) (2024-3-21)
 
 
