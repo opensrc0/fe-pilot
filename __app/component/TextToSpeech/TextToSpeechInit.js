@@ -42,7 +42,6 @@ function TextToSpeechInit({
   const handleStop = () => {
     window.speechSynthesis.cancel();
     setIsAudioOn(false);
-    return handleError({ disbaleToast, msgType: 'CANCELLED', msg: failureMsg.cancelled || 'Feature Cancelled', failureCb });
   };
 
   useEffect(() => {
