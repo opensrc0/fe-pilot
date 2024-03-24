@@ -1,3 +1,10 @@
+## [1.0.48](https://github.com/opensrc0/fe-pilot/compare/v1.0.47...v1.0.48) (2024-3-24)
+
+
+### Bug Fixes
+
+* **scanner:** scanner file name revamp and supoort failure case ([cc9cb84](https://github.com/opensrc0/fe-pilot/commit/cc9cb84c96f12cc51745d8890c7c26ad2e176322))
+
 ## [1.0.47](https://github.com/opensrc0/fe-pilot/compare/v1.0.46...v1.0.47) (2024-3-22)
 
 
