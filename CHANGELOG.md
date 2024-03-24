@@ -1,3 +1,10 @@
+## [1.0.49](https://github.com/opensrc0/fe-pilot/compare/v1.0.48...v1.0.49) (2024-3-24)
+
+
+### Bug Fixes
+
+* **scanner:** removed return from useEffect inside ScannerInit ([b9a68a2](https://github.com/opensrc0/fe-pilot/commit/b9a68a21bc45d23d5c2f4e4adf23eb85da6a5a2b))
+
 ## [1.0.48](https://github.com/opensrc0/fe-pilot/compare/v1.0.47...v1.0.48) (2024-3-24)
 
 
