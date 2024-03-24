@@ -1,3 +1,10 @@
+## [1.0.50](https://github.com/opensrc0/fe-pilot/compare/v1.0.49...v1.0.50) (2024-3-24)
+
+
+### Bug Fixes
+
+* **autofill otp:** added failure case for autofill otp ([8548e37](https://github.com/opensrc0/fe-pilot/commit/8548e376d9804eb91120e146d2e4f5020d7f4879))
+
 ## [1.0.49](https://github.com/opensrc0/fe-pilot/compare/v1.0.48...v1.0.49) (2024-3-24)
 
 
