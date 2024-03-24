@@ -142,15 +142,20 @@ function ScannerInit({
     startVideo();
   };
 
-  useEffect(() => {
-    setIsBrowser(true);
-
+  const handleBrowserSupport = () => {
     if (ScannerInit.isBrowserSupport()) {
       facingMode = cameraType === 'back' ? 'environment' : 'user';
       startVideo();
     } else {
       return handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
     }
+
+    return true;
+  };
+
+  useEffect(() => {
+    setIsBrowser(true);
+    handleBrowserSupport();
 
     return () => {
       allClear();
