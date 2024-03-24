@@ -1,3 +1,5 @@
+import { handleError, handleSuccess } from '../services/handlerService';
+
 const abortAutoFill = (abort, time) => {
   setTimeout(() => {
     // abort after two minutes
@@ -5,20 +7,25 @@ const abortAutoFill = (abort, time) => {
   }, time * 60 * 1000);
 };
 
-const AutoFillOtp = (successCb, failureCb) => {
+function AutoFillOtp({
+  successCb,
+  successMsg,
+  failureCb,
+  failureMsg,
+}) {
   if ('OTPCredential' in window) {
     const abort = new AbortController();
-    abortAutoFill(abort, 1);
+    abortAutoFill(abort, 3);
     navigator.credentials.get({
       otp: { transport: ['sms'] },
       signal: abort.signal,
     }).then((otp) => {
       const { code } = otp;
-      successCb(code);
-    }).catch((error) => {
-      failureCb(error);
-    });
+      handleSuccess({ disbaleToast: false, msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: code });
+    }).catch((error) => handleError({ disbaleToast: false, msgType: 'ERROR', msg: error, failureCb }));
+  } else {
+    return handleError({ disbaleToast: false, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
   }
-};
+}
 
 export default AutoFillOtp;
