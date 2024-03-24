@@ -24,7 +24,7 @@ function AutoFillOtp({
       handleSuccess({ disbaleToast: false, msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: code });
     }).catch((error) => handleError({ disbaleToast: false, msgType: 'ERROR', msg: error, failureCb }));
   } else {
-    return handleError({ disbaleToast: false, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
+    return handleError({ disbaleToast: false, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported || 'Your device is not supporting AutofillOTP', failureCb });
   }
 }
 
