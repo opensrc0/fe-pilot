@@ -21,7 +21,7 @@ function PhoneBook({
         if (contacts[0]) {
           handleSuccess({ disbaleToast, msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: contacts });
         } else {
-          return handleError({ disbaleToast, msgType: 'CANCELLED', msg: failureMsg.cancelled || 'Feature Cancelled', failureCb });
+          return handleError({ disbaleToast, msgType: 'CANCELLED', msg: failureMsg.cancelled, failureCb });
         }
       } catch (error) {
         return handleError({ disbaleToast, msgType: 'ERROR', msg: failureMsg.error || error, failureCb });
@@ -61,6 +61,7 @@ PhoneBook.defaultProps = {
   successMsg: 'Phonebook details fetch Successfully',
   failureMsg: {
     unSupported: 'PhoneBook is not supporting in your device',
+    cancelled: 'Feature Cancelled',
     error: 'Unable to fetch details from PhoneBook',
   },
   contactProperty: ['name', 'email', 'tel', 'address', 'icon'],

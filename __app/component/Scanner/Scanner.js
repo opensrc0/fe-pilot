@@ -1,27 +1,28 @@
-import StartCamera from './StartCamera';
-import CameraFlash from './CameraFlash';
-import CameraClose from './CameraClose';
-import CameraScanBox from './CameraScanBox';
-import CameraFacing from './CameraFacing';
-import PhoneGallery from './PhoneGallery';
-import CameraClick from './CameraClick';
+import ScannerInit from './ScannerInit';
+import ScannerScanBox from './ScannerScanBox';
+import ScannerFlash from './ScannerFlash';
+import ScannerClose from './ScannerClose';
+
+import ScannerFacing from './ScannerFacing';
+import ScannerGallery from './ScannerGallery';
+import ScannerCamera from './ScannerCamera';
 
 export {
-  StartCamera,
-  CameraFlash,
-  CameraClose,
-  CameraScanBox,
-  CameraFacing,
-  PhoneGallery,
-  CameraClick,
+  ScannerInit,
+  ScannerFlash,
+  ScannerClose,
+  ScannerScanBox,
+  ScannerFacing,
+  ScannerGallery,
+  ScannerCamera,
 };
 
 export default {
-  StartCamera,
-  CameraFlash,
-  CameraClose,
-  CameraScanBox,
-  CameraFacing,
-  PhoneGallery,
-  CameraClick,
+  Init: ScannerInit,
+  Flash: ScannerFlash,
+  Close: ScannerClose,
+  ScanBox: ScannerScanBox,
+  Facing: ScannerFacing,
+  Gallery: ScannerGallery,
+  Camera: ScannerCamera,
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function CameraClose({
+function ScannerClose({
   onClose,
   children,
   zIndex,
@@ -32,11 +32,11 @@ function CameraClose({
   );
 }
 
-CameraClose.propTypes = {
+ScannerClose.propTypes = {
 
 };
 
-CameraClose.defaultProps = {
+ScannerClose.defaultProps = {
   color: 'white',
   top: 'auto',
   bottom: '25%',
@@ -45,4 +45,4 @@ CameraClose.defaultProps = {
   position: 'absolute',
 };
 
-export default CameraClose;
+export default ScannerClose;

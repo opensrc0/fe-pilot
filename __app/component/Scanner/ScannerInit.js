@@ -7,7 +7,7 @@ let mediaStream = null;
 let videoUnmount = null;
 let unmoutRenderLoop = null;
 
-function StartCamera({
+function ScannerInit({
   disbaleToast,
   successCb,
   failureCb,
@@ -33,44 +33,39 @@ function StartCamera({
   };
 
   const detectCodes = async () => {
-    if ('BarcodeDetector' in globalThis) {
-      const WindowBarcodeDetector = window.BarcodeDetector;
-      const barcodeDetector = new WindowBarcodeDetector();
-      const itemsFound = [];
+    const WindowBarcodeDetector = window.BarcodeDetector;
+    const barcodeDetector = new WindowBarcodeDetector();
+    const itemsFound = [];
 
-      function render() {
-        // eslint-disable-next-line no-unused-expressions
-        barcodeDetector.detect ? (
-          barcodeDetector
-            .detect(video)
-            .then((barcodes) => {
-              barcodes.forEach((barcode) => {
-                if (!itemsFound.includes(barcode.rawValue)) {
-                  itemsFound.push(barcode.rawValue);
-                  handleSuccess({
-                    disbaleToast,
-                    msgType: 'SUCCESSFUL',
-                    msg: successMsg,
-                    successCb,
-                    data: { barCodeValue: barcode.rawValue, barCodeType: barcode.format },
-                  });
-                }
-              });
-            })
-            .catch((error) => handleError({ disbaleToast, msgType: 'BAR_CODE_DETECTION', msg: failureMsg.barCodeDetection || error, failureCb }))
-        ) : null;
-      }
-
-      unmoutRenderLoop = setTimeout(() => {
-        (function renderLoop() {
-          videoUnmount = requestAnimationFrame(renderLoop);
-          render();
-        }());
-      }, 1000);
-    } else {
-      return handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
+    function render() {
+      // eslint-disable-next-line no-unused-expressions
+      barcodeDetector.detect ? (
+        barcodeDetector
+          .detect(video)
+          .then((barcodes) => {
+            barcodes.forEach((barcode) => {
+              if (!itemsFound.includes(barcode.rawValue)) {
+                itemsFound.push(barcode.rawValue);
+                handleSuccess({
+                  disbaleToast,
+                  msgType: 'SUCCESSFUL',
+                  msg: successMsg,
+                  successCb,
+                  data: { barCodeValue: barcode.rawValue, barCodeType: barcode.format },
+                });
+              }
+            });
+          })
+          .catch((error) => handleError({ disbaleToast, msgType: 'BAR_CODE_DETECTION', msg: failureMsg.barCodeDetection || error, failureCb }))
+      ) : null;
     }
-    return true;
+
+    unmoutRenderLoop = setTimeout(() => {
+      (function renderLoop() {
+        videoUnmount = requestAnimationFrame(renderLoop);
+        render();
+      }());
+    }, 1000);
   };
 
   const createVideo = async (id) => {
@@ -150,7 +145,7 @@ function StartCamera({
   useEffect(() => {
     setIsBrowser(true);
 
-    if (StartCamera.isBrowserSupport()) {
+    if (ScannerInit.isBrowserSupport()) {
       facingMode = cameraType === 'back' ? 'environment' : 'user';
       startVideo();
     } else {
@@ -162,7 +157,7 @@ function StartCamera({
     };
   }, []);
 
-  return isBrowser && StartCamera.isBrowserSupport() && (
+  return isBrowser && ScannerInit.isBrowserSupport() && (
     <div id="scanner">
       <div id="camera" />
       {
@@ -181,9 +176,9 @@ function StartCamera({
   );
 }
 
-StartCamera.isBrowserSupport = () => navigator && navigator.mediaDevices;
+ScannerInit.isBrowserSupport = () => navigator?.mediaDevices && globalThis.BarcodeDetector;
 
-StartCamera.propTypes = {
+ScannerInit.propTypes = {
   disbaleToast: PropTypes.bool,
   successCb: PropTypes.func,
   failureCb: PropTypes.func,
@@ -193,7 +188,7 @@ StartCamera.propTypes = {
   cameraType: PropTypes.oneOf(['back', 'front']),
 };
 
-StartCamera.defaultProps = {
+ScannerInit.defaultProps = {
   disbaleToast: false,
   successCb: () => {},
   failureCb: () => {},
@@ -210,4 +205,4 @@ StartCamera.defaultProps = {
   cameraType: 'back',
 };
 
-export default StartCamera;
+export default ScannerInit;

@@ -1,7 +1,7 @@
 import React from 'react';
 
-function CameraFlash({
-  toggleFlash,
+function ScannerFacing({
+  toggleCamera,
   children,
   zIndex,
   top,
@@ -22,27 +22,27 @@ function CameraFlash({
         color,
         position,
       }}
-      onClick={toggleFlash}
-      onKeyDown={(ev) => ev.key === 'Enter' && toggleFlash()}
+      onClick={toggleCamera}
+      onKeyDown={(ev) => ev.key === 'Enter' && toggleCamera()}
       role="button"
       tabIndex={0}
     >
-      {children || 'Toggle Flash'}
+      {children || 'Toggle Camera'}
     </div>
   );
 }
 
-CameraFlash.propTypes = {
+ScannerFacing.propTypes = {
 
 };
 
-CameraFlash.defaultProps = {
+ScannerFacing.defaultProps = {
   color: 'white',
   top: 'auto',
   bottom: '25%',
   left: 'auto',
-  right: '5%',
+  right: '37%',
   position: 'absolute',
 };
 
-export default CameraFlash;
+export default ScannerFacing;

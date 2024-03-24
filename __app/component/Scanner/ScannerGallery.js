@@ -1,7 +1,7 @@
 import React from 'react';
 import { handleSuccess, handleError } from '../services/handlerService';
 
-function CameraClick({
+function ScannerGallery({
   disbaleToast,
   successCb,
   successMsg,
@@ -16,8 +16,9 @@ function CameraClick({
   color,
   position,
 }) {
-  const onClickImage = async (event) => {
+  const onSelectGalleryImage = async (event) => {
     const file = event.target.files[0];
+
     if ('BarcodeDetector' in globalThis) {
       const WindowBarcodeDetector = window.BarcodeDetector;
       const barcodeDetector = new WindowBarcodeDetector();
@@ -45,7 +46,7 @@ function CameraClick({
 
   return (
     <label
-      htmlFor="click-photo"
+      htmlFor="upload-gallery-photo"
       style={{
         top,
         bottom,
@@ -56,25 +57,24 @@ function CameraClick({
         position,
       }}
     >
-      {children || 'Camera'}
+      {children || 'Gallery'}
       <input
-        id="click-photo"
+        id="upload-gallery-photo"
         type="file"
-        accept="*"
-        capture="filesystem"
-        onChange={onClickImage}
-        onSelect={onClickImage}
+        accept="image/*"
+        onChange={onSelectGalleryImage}
+        onSelect={onSelectGalleryImage}
         style={{ display: 'none' }}
       />
     </label>
   );
 }
 
-CameraClick.propTypes = {
+ScannerGallery.propTypes = {
 
 };
 
-CameraClick.defaultProps = {
+ScannerGallery.defaultProps = {
   disbaleToast: false,
   successCb: () => {},
   failureCb: () => {},
@@ -92,8 +92,23 @@ CameraClick.defaultProps = {
   top: 'auto',
   bottom: '18%',
   left: 'auto',
-  right: '25%',
+  right: '64%',
   position: 'absolute',
 };
 
-export default CameraClick;
+export default ScannerGallery;
+
+// <input type="file" id="id" name="id" accept="image/png,image/jpeg" capture="filesystem" />
+// <input type="file" accept="image/*" capture="filesystem" />
+
+// const generateImage = async () => {
+//   const resp = await fetch('https://i.postimg.cc/br85dpb4/Untitled-1.png');
+//   if (!resp.ok) {
+//     return console.error('Network error', resp.status);
+//   }
+//   const blob = await resp.blob();
+//   console.log(blob);
+
+//   const bmp = await createImageBitmap(blob);
+//   return bmp;
+// };
