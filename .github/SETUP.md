@@ -9,7 +9,7 @@ npm install
 npm start
 ```
 
-#### 2. Open terminal and Go to any ```working react application``` in your system, where you want to ```implement FE-Theme```
+#### 2. Open terminal and Go to any ```working react application``` in your system, where you want to ```implement FE-Pilot```
 
 ```js
 npm link {PATH}/fe-pilot/
@@ -17,7 +17,7 @@ npm link {PATH}/fe-pilot/
 &nbsp;&nbsp;**Note:** PATH is the location of cloned fe-pilot folder
 
 
-#### 3. Pass theme config to ThemeProvider 
+#### 3. Import the component and use it
 ```js
 import PhoneBook from 'fe-pilot/PhoneBook';
 import Share from 'fe-pilot/Share';

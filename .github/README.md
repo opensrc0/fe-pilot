@@ -36,7 +36,7 @@ A React UI library for Advance Web Features that streamlines the development of 
 2. 📦 [Installation](#installation)
 3. 💻 [Usage](#usage)
 4. 📚 [Online Editor Templates](#online-editor-templates)
-5. 🔦 [Plug and Play](#plug-and-play-around-the-features-and-component)
+5. 📽️ [Demo](#demo-the-features-and-component)
 6. 📝 [Contributing](#contributing)
 7. ✨ [Contributors](#contributors)
 8. ⚖️  [License](#license)
@@ -108,9 +108,8 @@ import Share from 'fe-pilot/Share';
 <!-- - purple -->
 <br />
 
-## Plug and Play around the features and component
+## Demo the features and component
 1. https://6jpxdq.csb.app/
-2. https://fepilot-qhym--5173--810981ba.local-credentialless.webcontainer.io/
 > [!IMPORTANT]
 > Play around links have better support in your actual Mobile Device.
 
