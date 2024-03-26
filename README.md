@@ -15,12 +15,12 @@
       <img alt="NPM Downloads" src="https://img.shields.io/npm/dw/fe-pilot?label=Downloads&logo=npm"/>
     </a>
     <a href="https://www.npmjs.com/package/fe-pilot/v/latest">
-      <img alt="Latest Release" src="https://badgen.net/github/release/opensrc0/fe-pilot?icon=github&color=purple"/>
+      <img alt="Latest Release" src="https://badgen.net/github/release/opensrc0/fe-pilot?icon=github&color=pink"/>
     </a>
   </p>
 <p align="center">
   <a href="https://github.com/opensrc0/fe-pilot/stargazers">
-    <img alt="Github Stars" src="https://badgen.net/github/stars/opensrc0/fe-pilot?icon=github&color=cyan"/>
+    <img alt="Github Stars" src="https://badgen.net/github/stars/opensrc0/fe-pilot?icon=github&color=purple"/>
   </a>
   <a href="https://github.com/opensrc0/fe-pilot?tab=MIT-1-ov-file">
     <img alt="MIT License" src="https://badgen.net/static/license/MIT/orange"/>
