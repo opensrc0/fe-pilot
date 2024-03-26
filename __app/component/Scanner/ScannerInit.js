@@ -33,7 +33,7 @@ function ScannerInit({
   };
 
   const detectCodes = async () => {
-    const WindowBarcodeDetector = window.BarcodeDetector;
+    const WindowBarcodeDetector = globalThis.BarcodeDetector;
     const barcodeDetector = new WindowBarcodeDetector();
     const itemsFound = [];
 

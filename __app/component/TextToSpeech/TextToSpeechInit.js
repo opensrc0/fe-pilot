@@ -40,14 +40,14 @@ function TextToSpeechInit({
   };
 
   const handleStop = () => {
-    window.speechSynthesis.cancel();
+    globalThis.speechSynthesis.cancel();
     setIsAudioOn(false);
   };
 
   useEffect(() => {
-    window.speechSynthesis.cancel();
+    globalThis.speechSynthesis.cancel();
     return () => {
-      window.speechSynthesis.cancel();
+      globalThis.speechSynthesis.cancel();
     };
   }, []);
 

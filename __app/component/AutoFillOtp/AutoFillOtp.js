@@ -13,7 +13,7 @@ function AutoFillOtp({
   failureCb,
   failureMsg,
 }) {
-  if ('OTPCredential' in window) {
+  if (AutoFillOtp.isBrowserSupport()) {
     const abort = new AbortController();
     abortAutoFill(abort, 3);
     navigator.credentials.get({
@@ -27,5 +27,7 @@ function AutoFillOtp({
     return handleError({ disbaleToast: false, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported || 'Your device is not supporting AutofillOTP', failureCb });
   }
 }
+
+AutoFillOtp.isBrowserSupport = () => globalThis.OTPCredential;
 
 export default AutoFillOtp;

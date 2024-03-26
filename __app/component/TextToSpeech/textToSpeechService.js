@@ -20,7 +20,7 @@ export default async function textToSpeech(text) {
     const voice = voicesList.find((item) => item.lang.toLowerCase() === 'en-in' || item.lang.toLowerCase() === 'en_in');
 
     // Removes previous utterance
-    window.speechSynthesis.cancel();
+    globalThis.speechSynthesis.cancel();
 
     const utterance = new SpeechSynthesisUtterance();
 
@@ -34,7 +34,7 @@ export default async function textToSpeech(text) {
     // Need to put set timeout coz we need to add pause before starting the new
     // If we remove it the new utterance will be in the queue
     setTimeout(() => {
-      window.speechSynthesis.speak(utterance);
+      globalThis.speechSynthesis.speak(utterance);
     }, 300);
     return utterance;
   }

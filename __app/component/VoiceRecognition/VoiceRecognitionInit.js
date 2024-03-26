@@ -17,7 +17,7 @@ function VoiceRecognition({
 
   const listen = () => {
     if (VoiceRecognition.isBrowserSupport()) {
-      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      const SpeechRecognition = globalThis.SpeechRecognition || globalThis.webkitSpeechRecognition;
       const recognition = new SpeechRecognition();
 
       recognition.continuous = false;
@@ -74,8 +74,8 @@ function VoiceRecognition({
   }));
 }
 
-VoiceRecognition.isBrowserSupport = () => window.SpeechRecognition
-  || window.webkitSpeechRecognition;
+VoiceRecognition.isBrowserSupport = () => globalThis.SpeechRecognition
+  || globalThis.webkitSpeechRecognition;
 
 VoiceRecognition.propTypes = {
   disbaleToast: PropTypes.bool,

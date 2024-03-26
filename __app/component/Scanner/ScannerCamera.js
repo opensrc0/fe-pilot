@@ -19,7 +19,7 @@ function ScannerCamera({
   const onClickImage = async (event) => {
     const file = event.target.files[0];
     if ('BarcodeDetector' in globalThis) {
-      const WindowBarcodeDetector = window.BarcodeDetector;
+      const WindowBarcodeDetector = globalThis.BarcodeDetector;
       const barcodeDetector = new WindowBarcodeDetector();
 
       createImageBitmap(file)
