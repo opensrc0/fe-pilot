@@ -40,6 +40,7 @@ const successCb = ({ msgType, msg, data }) => {
   console.log(msg);     // Copied Successfully
   console.log(data);    // data will be an array of object
 }
+
 <PhoneBook 
   successCb={successCb}
   successMsg="Details selected Successfully"
@@ -111,8 +112,7 @@ Failure can happend due to multiple reasons, due to that reason ```failureMsg```
 />
 ```
 > [!Note]
-> ```showForever``` props will false, feature will be hidden in case of unSupported by the device
-
+> if ```showForever``` props value is false, feature will be hidden in case of unSupported by the device
 
 ## 5. Combine with all props
 ```js

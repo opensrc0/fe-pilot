@@ -45,9 +45,7 @@ const successCb = ({ msgType, msg, data }) => {
   console.log(msg);     // Copied Successfully
   console.log(data);    // Fe-pilot library offers component like scanner, voice search, autofill otp, phonebook, share
 }
-```
 
-```js
 <CopyToClipboard 
   successCb={successCb}
   successMsg="Copied Successfully"
@@ -55,7 +53,7 @@ const successCb = ({ msgType, msg, data }) => {
 />
 ```
 > [!Note]
-> Define **successCb** fn and your will get an object in param contains the property ```msgType```, ```msg```, ```data```
+> **successCb** will get an object contains the property ```msgType```, ```msg```, ```data```
 
 ## 3. Failure: failureCb callBack Fn along with failure msg
 ```js
@@ -80,7 +78,7 @@ const failureCb = ({ msgType, msg }) => {
 />
 ```
 > [!Note]
-> Define **failureCb** fn and your will get an object in param contains the property ```msgType```, ```msg```
+> **failureCb** will get an object contains the property ```msgType```, ```msg```
 
 > [!Important]
 Failure can happend due to multiple reasons, due to that reason ```failureMsg``` is an object having different kind of error property according to the error can occur in component
@@ -98,7 +96,7 @@ Failure can happend due to multiple reasons, due to that reason ```failureMsg```
 />
 ```
 > [!Note]
-> ```showForever``` props will false, feature will be hidden in case of unSupported by the device
+> if ```showForever``` props value is false, feature will be hidden in case of unSupported by the device
 
 ## 5. Combine with all props
 ```js
