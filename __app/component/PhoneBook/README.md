@@ -40,12 +40,20 @@ const successCb = ({ msgType, msg, data }) => {
   console.log(msg);     // Copied Successfully
   console.log(data);    // data will be an array of object
 }
+<PhoneBook 
+  successCb={successCb}
+  successMsg="Details selected Successfully"
+/>
+
 ```
-> [!Tip]
+> [!Note]
+> **successCb** will get an object contains the property ```msgType```, ```msg```, ```data```
+
+> [!Important]
 > <details>
->  <summary>date</summary>
+>  <summary>data</summary>
 >
->  ### 
+>   
 >  [
 >     {
 >        'name': 'fe-pilot',
@@ -55,33 +63,26 @@ const successCb = ({ msgType, msg, data }) => {
 >     }
 >  ]
 
-```js
-<PhoneBook 
-  successCb={successCb}
-  successMsg="Details selected Successfully"
-/>
-```
-> [!Note]
-> Define **successCb** fn and your will get an object in param contains the property ```msgType```, ```msg```, ```data```
-
 ## 3. Failure: failureCb callBack Fn along with failure msg
 ```js
 const failureCb = ({ msgType, msg }) => {
-  console.log(msgType); // UN_SUPPORTED_FEATURE
-  console.log(msg);     // PhoneBook is not supporting in your device
+  console.log(msgType); 
+  console.log(msg);     
 
-  OR
+  // UN_SUPPORTED_FEATURE
+  // PhoneBook is not supporting in your device
 
-  console.log(msgType); // CANCELLED
-  console.log(msg);     // Feature Cancelled
+  // ----------OR----------
 
-  OR
+  // CANCELLED
+  // Feature Cancelled
 
-  console.log(msgType); // ERROR
-  console.log(msg);     // Unable to fetch details from PhoneBook
+  // ----------OR----------
+
+  // ERROR
+  // Unable to fetch details from PhoneBook
 }
-```
-```js
+
 <PhoneBook 
   failureCb={failureCb}
   failureMsg={{
@@ -92,7 +93,7 @@ const failureCb = ({ msgType, msg }) => {
 />
 ```
 > [!Note]
-> Define **failureCb** fn and you will get an object in param contains the property ```msgType```, ```msg```
+> **failureCb** fn will get an object contains the property ```msgType```, ```msg```
 
 > [!Important]
 Failure can happend due to multiple reasons, due to that reason ```failureMsg``` is an object having different kind of error property according to the error can occur in component
