@@ -7,18 +7,14 @@
 
 #### b) Passing contactProperty pros to the PhoneBook Component
 ```js
-<PhoneBook 
-  contactProperty={['name', 'email', 'tel', 'address', 'icon']},
-/>
+<PhoneBook contactProperty={['name', 'email', 'tel', 'address', 'icon']} />
 ```
 > [!Note]
 > Prop contactProperty will be an array and it can contains 5 value. These 5 value are optional, you can pass either the single/two/three/four/five values.
 
 #### c) Passing isSelectMultiple pros to the PhoneBook Component
 ```js
-<PhoneBook 
-  isSelectMultiple={true}
-/>
+<PhoneBook isSelectMultiple={true} />
 ```
 > [!Note]
 > You can select multiple phone numbers from phonebook directory.
@@ -27,9 +23,7 @@
 #### d) Passing child
 
 ```js
-<PhoneBook>
-  Pass PhoneBook Icon here
-</PhoneBook>
+<PhoneBook>Pass PhoneBook Icon here</PhoneBook>
 ```
 
 ## 2. Success: successCb callBack Fn along with success msg
