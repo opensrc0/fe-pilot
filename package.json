@@ -89,7 +89,8 @@
     "Scanner/",
     "Share/",
     "TextToSpeech/",
-    "VoiceRecognition"
+    "VoiceRecognition/",
+    "Vibrate/"
   ],
   "devDependencies": {
     "@babel/cli": "^7.23.9",
