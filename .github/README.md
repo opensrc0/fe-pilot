@@ -191,15 +191,6 @@ Thanks goes to these wonderful people
       </tr>
       <tr>
         <td align="center" valign="top" width="14.28%">
-          <p>
-            <a target="_blank" href="https://github.com/Ghanshyam-K-Dobariya">
-              <img src="https://avatars.githubusercontent.com/u/5426993?s=400" width="64px;" alt="Ghanshyam KD" />
-              <br />
-              <sub><b>Ghanshyam KD</b></sub>
-            </a>
-          </p>
-        </td>
-        <td align="center" valign="top" width="14.28%">
             <p>
               <a target="_blank" href="https://github.com/fossabot">
                 <img src="https://avatars.githubusercontent.com/u/29791463?v=4" width="64px;" alt="Fossa Bot" />
