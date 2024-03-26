@@ -1,3 +1,10 @@
+## [1.0.52](https://github.com/opensrc0/fe-pilot/compare/v1.0.51...v1.0.52) (2024-3-26)
+
+
+### Bug Fixes
+
+* **vibrate:** added component in package.json ([9fd2336](https://github.com/opensrc0/fe-pilot/commit/9fd233635d1b9730b8d9e5a9c525183bbb8c3123))
+
 ## [1.0.51](https://github.com/opensrc0/fe-pilot/compare/v1.0.50...v1.0.51) (2024-3-26)
 
 
