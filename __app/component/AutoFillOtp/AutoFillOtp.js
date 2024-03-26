@@ -7,12 +7,12 @@ const abortAutoFill = (abort, time) => {
   }, time * 60 * 1000);
 };
 
-function AutoFillOtp({
-  successCb,
-  successMsg,
-  failureCb,
-  failureMsg,
-}) {
+function AutoFillOtp(props) {
+  const successCb = props.successCb || (() => {});
+  const failureCb = props.failureCb || (() => {});
+  const successMsg = props.successMsg || '';
+  const failureMsg = props.failureMsg || {};
+
   if (AutoFillOtp.isBrowserSupport()) {
     const abort = new AbortController();
     abortAutoFill(abort, 3);

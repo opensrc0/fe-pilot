@@ -1,17 +1,17 @@
 import { handleError, handleSuccess } from '../services/handlerService';
 
-function Vibrate({
-  successCb,
-  successMsg,
-  failureCb,
-  failureMsg,
-  vibrationSeq,
-}) {
+function Vibrate(props) {
+  const successCb = props.successCb || (() => {});
+  const failureCb = props.failureCb || (() => {});
+  const successMsg = props.successMsg || '';
+  const failureMsg = props.failureMsg || {};
+  const vibrationSeq = props.vibrationSeq || [100, 30, 100, 30, 100, 30, 200, 30, 200, 30];
+
   if (Vibrate.isBrowserSupport()) {
-    window.navigator.vibrate(vibrationSeq || [100, 30, 100, 30, 100, 30, 200, 30, 200, 30]);
-    handleSuccess({ disbaleToast: false, msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: '' });
+    window.navigator.vibrate(vibrationSeq);
+    handleSuccess({ disbaleToast: false, msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: vibrationSeq });
   } else {
-    return handleError({ disbaleToast: false, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported || 'Your device is not supporting AutofillOTP', failureCb });
+    return handleError({ disbaleToast: false, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported || 'Your device is not supporting Vibrate', failureCb });
   }
 }
 
