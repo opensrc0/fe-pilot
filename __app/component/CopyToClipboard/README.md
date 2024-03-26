@@ -33,7 +33,7 @@
     <div>
   `} 
 >
-  Click Me to Copy
+  Pass Copy Icon here
 </CopyToClipboard> 
 ```
 
@@ -49,9 +49,9 @@ const successCb = ({ msgType, msg, data }) => {
 
 ```js
 <CopyToClipboard 
-  elementToBeCopy={`Fe-pilot library offers component like scanner, voice search, autofill otp, phonebook, share`}
   successCb={successCb}
   successMsg="Copied Successfully"
+  elementToBeCopy={`Fe-pilot library offers component like scanner, voice search, autofill otp, phonebook, share`}
 />
 ```
 > [!Note]
@@ -71,12 +71,12 @@ const failureCb = ({ msgType, msg }) => {
 ```
 ```js
 <CopyToClipboard 
-  elementToBeCopy={`Fe-pilot library offers component like scanner, voice search, autofill otp, phonebook, share`}
   failureCb={failureCb}
   failureMsg={{
     unSupported: 'Your device is not supporting Copy feature',
     error: 'Unable to copy the text',
   }}
+  elementToBeCopy={`Fe-pilot library offers component like scanner, voice search, autofill otp, phonebook, share`}
 />
 ```
 > [!Note]
@@ -88,13 +88,13 @@ Failure can happend due to multiple reasons, due to that reason ```failureMsg```
 ## 4. Failure: Device don't support the feature and you want to hide the feauture from User
 ```js
 <CopyToClipboard 
-  elementToBeCopy={`Fe-pilot library offers component like scanner, voice search, autofill otp, phonebook, share`}
   failureCb={failureCb}
   failureMsg={{
     unSupported: 'Your device is not supporting Copy feature',
     error: 'Unable to copy the text',
   }}
   showForever={false}
+  elementToBeCopy={`Fe-pilot library offers component like scanner, voice search, autofill otp, phonebook, share`}
 />
 ```
 > [!Note]
@@ -103,7 +103,6 @@ Failure can happend due to multiple reasons, due to that reason ```failureMsg```
 ## 5. Combine with all props
 ```js
 <CopyToClipboard 
-  elementToBeCopy={`Fe-pilot library offers component like scanner, voice search, autofill otp, phonebook, share`}
   successCb={successCb}
   successMsg="Copied Successfully"
   failureCb={failureCb}
@@ -112,7 +111,8 @@ Failure can happend due to multiple reasons, due to that reason ```failureMsg```
     error: 'Unable to copy the text',
   }}
   showForever={false}
+  elementToBeCopy={`Fe-pilot library offers component like scanner, voice search, autofill otp, phonebook, share`}
 >
-  Pass Copy Icon to Copy Element/String
+  Pass Copy Icon here
 </CopyToClipboard>
 ```
