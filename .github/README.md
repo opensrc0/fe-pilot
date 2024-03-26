@@ -15,7 +15,7 @@
       <img alt="NPM Downloads" src="https://img.shields.io/npm/dw/fe-pilot?label=Downloads&logo=npm"/>
     </a>
     <a href="https://www.npmjs.com/package/fe-pilot/v/latest">
-      <img alt="Latest Release" src="https://badgen.net/github/release/opensrc0/fe-pilot?icon=github&color=pink"/>
+      <img alt="Latest Release" src="https://badgen.net/github/release/opensrc0/fe-pilot?icon=github&color=purple"/>
     </a>
   </p>
 <p align="center">
