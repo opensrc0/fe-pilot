@@ -49,7 +49,6 @@ function Share({
 Share.isBrowserSupport = () => navigator.share && true;
 
 Share.propTypes = {
-  disbaleToast: PropTypes.bool,
   successCb: PropTypes.func,
   failureCb: PropTypes.func,
   successMsg: PropTypes.string,
@@ -60,7 +59,6 @@ Share.propTypes = {
 };
 
 Share.defaultProps = {
-  disbaleToast: false,
   successCb: () => {},
   failureCb: () => {},
   successMsg: 'Shared Successfully',
