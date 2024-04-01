@@ -84,15 +84,16 @@ import Share from 'fe-pilot/Share';
 >
 >  ### 
 >  01. :white_check_mark: AutoFillOtp &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/AutoFillOtp/README.md)
->  02. :white_check_mark: CopyToClipboard&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/CopyToClipboard/README.md)
->  03. :white_check_mark: LiveLocation &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/LiveLocationTracking/README.md)
->  04. :white_check_mark: LocateMe &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/LocateMe/README.md)
->  05. :white_check_mark: PhoneBook &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/PhoneBook/README.md)
->  06. :white_check_mark: Scanner &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/Scanner/README.md)
->  07. :white_check_mark: Share &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/Share/README.md)
->  08. :white_check_mark: TextToSpeech &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/TextToSpeech/README.md)
->  09. :white_check_mark: VoiceRecognition&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/VoiceRecognition/README.md)
-></details>
+>  00. :white_check_mark: CopyToClipboard&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/CopyToClipboard/README.md)
+>  00. :white_check_mark: LiveLocation &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/LiveLocationTracking/README.md)
+>  00. :white_check_mark: LocateMe &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/LocateMe/README.md)
+>  00. :white_check_mark: PhoneBook &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/PhoneBook/README.md)
+>  00. :white_check_mark: Scanner &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/Scanner/README.md)
+>  00. :white_check_mark: Share &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/Share/README.md)
+>  00. :white_check_mark: TextToSpeech &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/TextToSpeech/README.md)
+>  00. :white_check_mark: VoiceRecognition&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/VoiceRecognition/README.md)
+>  00. :white_check_mark: Vibrate &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/Vibrate/README.md)
+> </details>
 
 ## Online Editor Templates
 

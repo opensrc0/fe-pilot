@@ -92,6 +92,7 @@ import Share from 'fe-pilot/Share';
 7. :white_check_mark: Share &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/Share/README.md)
 8. :white_check_mark: TextToSpeech &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/TextToSpeech/README.md)
 9. :white_check_mark: VoiceRecognition&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/VoiceRecognition/README.md)
+10. :white_check_mark: Vibrate &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/Vibrate/README.md)
 ></details>
 
 ## Online Editor Templates
