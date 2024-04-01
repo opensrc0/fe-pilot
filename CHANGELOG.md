@@ -1,3 +1,10 @@
+## [1.0.53](https://github.com/opensrc0/fe-pilot/compare/v1.0.52...v1.0.53) (2024-4-1)
+
+
+### Bug Fixes
+
+* **share:** removed disbaleToast props from the Shared component ([f0d64f3](https://github.com/opensrc0/fe-pilot/commit/f0d64f310a83b3b5c4cef3de44029fb0ee1d81c0))
+
 ## [1.0.52](https://github.com/opensrc0/fe-pilot/compare/v1.0.51...v1.0.52) (2024-3-26)
 
 
