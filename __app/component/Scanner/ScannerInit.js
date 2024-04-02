@@ -199,15 +199,13 @@ ScannerInit.defaultProps = {
   failureCb: () => {},
   successMsg: '',
   failureMsg: {
-    unSupported: '',
-    streaming: '',
-    barCodeDetection: '',
-    invalidImage: '',
-    flash: '',
-    unableToScan: '',
+    unSupported: 'QR-Code/Bar-Code/UPI Scanner is not supporting in your device',
+    streaming: 'Camera streaming failed',
+    barCodeDetection: 'Bar code detection failed',
+    invalidImage: 'Invalid Images',
+    flash: 'Flash is not supporting in your device',
+    unableToScan: 'Unable to scan',
   },
   zIndex: 9,
   cameraType: 'back',
 };
-
-export default ScannerInit;

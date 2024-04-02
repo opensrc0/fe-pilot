@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Wrapper from '../Wrapper/Wrapper';
-import { handleSuccess, handleError } from '../services/handlerService';
+import { handleSuccess, handleError, handleLoading } from '../services/handlerService';
 import dependentJsService from '../services/dependentJsService';
 
 const checkPermitByBrowser = async (disbaleToast, failureMsg, failureCb) => {
@@ -87,12 +87,14 @@ function LocateMe({
   failureCb,
   successMsg,
   failureMsg,
+  loadingCb,
   children,
   isProdKey,
   googleKey,
 }) {
   const onClick = async () => {
     if (LocateMe.isBrowserSupport()) {
+      handleLoading(loadingCb);
       const isPermitByBrowser = await checkPermitByBrowser(disbaleToast, failureMsg, failureCb);
       const isScriptInBrowser = await checkScriptInBrowser(
         disbaleToast,
@@ -147,7 +149,7 @@ LocateMe.defaultProps = {
   disbaleToast: false,
   successCb: () => {},
   failureCb: () => {},
-  successMsg: '',
+  successMsg: 'Located Successfully',
   failureMsg: {
     unSupported: '',
     permissionDenied: '',
@@ -157,6 +159,7 @@ LocateMe.defaultProps = {
     invalidLatLng: '',
     error: '',
   },
+  loadingCb: () => {},
   isProdKey: true,
   googleKey: '',
 };

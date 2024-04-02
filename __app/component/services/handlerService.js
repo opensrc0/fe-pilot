@@ -20,3 +20,11 @@ export const handleError = ({ disbaleToast, msg, msgType, failureCb }) => {
 
   return false;
 };
+
+export const handleLoading = ({ loadingCb }) => {
+  loadingCb({
+    msgType: 'LOADING',
+    msg: 'Loading...',
+    status: 'LOADING',
+  });
+};
