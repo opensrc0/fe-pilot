@@ -4,21 +4,21 @@ import dependentJsService from '../services/dependentJsService';
 import { handleError, handleSuccess, handleLoading } from '../services/handlerService';
 import Wrapper from '../Wrapper/Wrapper';
 
-const checkPermitByBrowser = async (disbaleToast, failureMsg, failureCb) => {
+const checkPermitByBrowser = async (failureMsg, failureCb) => {
   try {
     const permissions = await navigator.permissions.query({ name: 'geolocation' });
     if (permissions.state === 'denied') {
-      return handleError({ disbaleToast, msgType: 'PERMISSION_DENIED', msg: failureMsg.permissionDenied || 'Permission Denied', failureCb });
+      return handleError({ msgType: 'PERMISSION_DENIED', msg: failureMsg.permissionDenied || 'Permission Denied', failureCb });
     }
   } catch (error) {
-    return handleError({ disbaleToast, msgType: 'BROWSER_PERMISION_API_FAILED', msg: failureMsg.browserPermissionAPIFailed || 'Unable to check browser permission', failureCb });
+    return handleError({ msgType: 'BROWSER_PERMISION_API_FAILED', msg: failureMsg.browserPermissionAPIFailed || 'Unable to check browser permission', failureCb });
   }
 
   return true;
 };
-const checkScriptInBrowser = async (disbaleToast, failureMsg, failureCb, isProdKey, googleKey) => {
+const checkScriptInBrowser = async (failureMsg, failureCb, isProdKey, googleKey) => {
   if (!googleKey) {
-    return handleError({ disbaleToast, msgType: 'GOOGLE_API_KEY_MISSING', msg: failureMsg.googleAPIKeyMissing || 'Unable to check browser permission', failureCb });
+    return handleError({ msgType: 'GOOGLE_API_KEY_MISSING', msg: failureMsg.googleAPIKeyMissing || 'Unable to check browser permission', failureCb });
   }
   const googleApiUrl = `https://maps.googleapis.com/maps/api/js?${isProdKey ? 'client' : 'key'}=${googleKey}&libraries=places&loading=async`;
 
@@ -26,12 +26,12 @@ const checkScriptInBrowser = async (disbaleToast, failureMsg, failureCb, isProdK
     await dependentJsService(googleApiUrl, 'googleMapLocationAPI', true);
     return true;
   } catch (error) {
-    return handleError({ disbaleToast, msgType: 'UNABLE_TO_LOAD_GOOGLE_APIS', msg: failureMsg.unableToLoadGoogleAPI || 'Unable to load google api script', failureCb });
+    return handleError({ msgType: 'UNABLE_TO_LOAD_GOOGLE_APIS', msg: failureMsg.unableToLoadGoogleAPI || 'Unable to load google api script', failureCb });
   }
 };
 
 function LiveLocationTracking({
-  disbaleToast,
+
   successCb,
   failureCb,
   successMsg,
@@ -58,7 +58,7 @@ function LiveLocationTracking({
       });
       directionsRenderer.setMap(googleMap);
     } catch (error) {
-      return handleError({ disbaleToast, msgType: 'UNABLE_TO_CREATE_MAP', msg: failureMsg.unableToCreateMap, failureCb });
+      return handleError({ msgType: 'UNABLE_TO_CREATE_MAP', msg: failureMsg.unableToCreateMap, failureCb });
     }
 
     return true;
@@ -74,26 +74,26 @@ function LiveLocationTracking({
         })
         .then((response) => {
           directionsRenderer.setDirections(response);
-          handleSuccess({ disbaleToast, msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: currentLocations });
-        }).catch(() => handleError({ disbaleToast, msgType: 'UNABLE_TO_LOCATE_DIRECTION', msg: failureMsg.unableToLocateDirection || 'Unable To get Updated Location', failureCb }));
+          handleSuccess({ msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: currentLocations });
+        }).catch(() => handleError({ msgType: 'UNABLE_TO_LOCATE_DIRECTION', msg: failureMsg.unableToLocateDirection || 'Unable To get Updated Location', failureCb }));
     }
   };
 
   const locationError = (error) => {
     if (error) {
       if (error.code === 1 && error.message === 'User denied Geolocation') {
-        handleError({ disbaleToast, msgType: 'PERMISSION_DENIED', msg: failureMsg.permissionDenied || 'Permission Denied', failureCb });
+        handleError({ msgType: 'PERMISSION_DENIED', msg: failureMsg.permissionDenied || 'Permission Denied', failureCb });
       }
-      handleError({ disbaleToast, msgType: 'LOCATION_NOT_FOUND', msg: failureMsg.locationNotFound || 'Unable To get Updated Location', failureCb });
+      handleError({ msgType: 'LOCATION_NOT_FOUND', msg: failureMsg.locationNotFound || 'Unable To get Updated Location', failureCb });
     }
   };
 
   const init = async () => {
     if (LiveLocationTracking.isBrowserSupport()) {
       handleLoading({ loadingCb });
-      const isPermitByBrowser = await checkPermitByBrowser(disbaleToast, failureMsg, failureCb);
+      const isPermitByBrowser = await checkPermitByBrowser(failureMsg, failureCb);
       const isScriptInBrowser = await checkScriptInBrowser(
-        disbaleToast,
+
         failureMsg,
         failureCb,
         isProdKey,
@@ -117,7 +117,7 @@ function LiveLocationTracking({
         }, 0);
       }
     } else {
-      return handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
+      return handleError({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
     }
     return true;
   };
@@ -140,23 +140,22 @@ function LiveLocationTracking({
 LiveLocationTracking.isBrowserSupport = () => navigator?.geolocation?.watchPosition;
 
 LiveLocationTracking.propTypes = {
-  disbaleToast: PropTypes.bool,
   successCb: PropTypes.func,
   failureCb: PropTypes.func,
   loadingCb: PropTypes.func,
   successMsg: PropTypes.string,
   failureMsg: PropTypes.object,
   isProdKey: PropTypes.bool,
-  googleKey: PropTypes.string.isRequired,
-  destinationLatLng: PropTypes.object.isRequired,
+  googleKey: PropTypes.string,
+  destinationLatLng: PropTypes.object,
   zoom: PropTypes.number,
   mapTypeControl: PropTypes.bool,
 };
 
 LiveLocationTracking.defaultProps = {
-  disbaleToast: false,
   successCb: () => {},
   failureCb: () => {},
+  loadingCb: () => {},
   successMsg: '',
   failureMsg: {
     unSupported: '',
@@ -170,8 +169,9 @@ LiveLocationTracking.defaultProps = {
     googleAPIKeyMissing: '',
     error: '',
   },
-  loadingCb: () => {},
+  destinationLatLng: { lat: 12.9541033, lng: 77.7091133 },
   isProdKey: true,
+  googleKey: '',
   zoom: 13,
   mapTypeControl: false,
 };

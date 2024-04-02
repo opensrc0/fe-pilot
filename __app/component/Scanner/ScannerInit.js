@@ -9,7 +9,6 @@ let videoUnmount = null;
 let unmoutRenderLoop = null;
 
 function ScannerInit({
-  disbaleToast,
   successCb,
   failureCb,
   loadingCb,
@@ -49,7 +48,6 @@ function ScannerInit({
               if (!itemsFound.includes(barcode.rawValue)) {
                 itemsFound.push(barcode.rawValue);
                 handleSuccess({
-                  disbaleToast,
                   msgType: 'SUCCESSFUL',
                   msg: successMsg,
                   successCb,
@@ -58,7 +56,7 @@ function ScannerInit({
               }
             });
           })
-          .catch((error) => handleError({ disbaleToast, msgType: 'BAR_CODE_DETECTION', msg: failureMsg.barCodeDetection || error, failureCb }))
+          .catch((error) => handleError({ msgType: 'BAR_CODE_DETECTION', msg: failureMsg.barCodeDetection || error, failureCb }))
       ) : null;
     }
 
@@ -105,7 +103,7 @@ function ScannerInit({
         },
       });
     } catch (error) {
-      return handleError({ disbaleToast, msgType: 'STREAMING_ERROR', msg: failureMsg.streaming || error, failureCb });
+      return handleError({ msgType: 'STREAMING_ERROR', msg: failureMsg.streaming || error, failureCb });
     }
     return mediaStream;
   };
@@ -130,7 +128,7 @@ function ScannerInit({
       });
       setFlash((s) => !s);
     } catch (error) {
-      return handleError({ disbaleToast, msgType: 'FLASH', msg: failureMsg.flash, failureCb });
+      return handleError({ msgType: 'FLASH', msg: failureMsg.flash, failureCb });
     }
     return true;
   };
@@ -151,7 +149,7 @@ function ScannerInit({
 
       startVideo();
     } else {
-      return handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
+      return handleError({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
     }
 
     return true;
@@ -174,7 +172,6 @@ function ScannerInit({
           zIndex,
           toggleCamera,
           toggleFlash,
-          disbaleToast,
           successCb,
           successMsg,
           failureCb,
@@ -188,7 +185,6 @@ function ScannerInit({
 ScannerInit.isBrowserSupport = () => navigator?.mediaDevices && globalThis.BarcodeDetector;
 
 ScannerInit.propTypes = {
-  disbaleToast: PropTypes.bool,
   successCb: PropTypes.func,
   failureCb: PropTypes.func,
   loadingCb: PropTypes.func,
@@ -199,7 +195,6 @@ ScannerInit.propTypes = {
 };
 
 ScannerInit.defaultProps = {
-  disbaleToast: false,
   successCb: () => {},
   failureCb: () => {},
   loadingCb: () => {},

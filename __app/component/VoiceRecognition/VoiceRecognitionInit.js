@@ -4,7 +4,6 @@ import Wrapper from '../Wrapper/Wrapper';
 import { handleSuccess, handleError, handleLoading } from '../services/handlerService';
 
 function VoiceRecognition({
-  disbaleToast,
   successCb,
   failureCb,
   loadingCb,
@@ -32,7 +31,7 @@ function VoiceRecognition({
         setVoiceText(text);
         if (event.results[0].isFinal) {
           setTimeout(() => {
-            handleSuccess({ disbaleToast, msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: text });
+            handleSuccess({ msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: text });
             setIsModalVisible(false);
             setVoiceText('');
           }, 1500);
@@ -47,7 +46,7 @@ function VoiceRecognition({
       };
       recognition.onerror = () => {
         setIsModalVisible(false);
-        return handleError({ disbaleToast, msgType: 'ERROR', msg: failureMsg.error, failureCb });
+        return handleError({ msgType: 'ERROR', msg: failureMsg.error, failureCb });
       };
       recognition.onend = () => {
         recognition.abort();
@@ -57,23 +56,23 @@ function VoiceRecognition({
       };
       setIsModalVisible(true);
     } else {
-      return handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
+      return handleError({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
     }
 
     return true;
   };
 
   return React.Children.map(children, (child) => React.cloneElement(child, {
+    successCb,
+    successMsg,
+    failureCb,
+    failureMsg,
     listen,
     isVoiceStarted,
     isModalVisible,
     voiceText,
     onClose: () => setIsModalVisible(false),
-    disbaleToast,
-    successCb,
-    successMsg,
-    failureCb,
-    failureMsg,
+
   }));
 }
 
@@ -81,7 +80,6 @@ VoiceRecognition.isBrowserSupport = () => globalThis.SpeechRecognition
   || globalThis.webkitSpeechRecognition;
 
 VoiceRecognition.propTypes = {
-  disbaleToast: PropTypes.bool,
   successCb: PropTypes.func,
   failureCb: PropTypes.func,
   loadingCb: PropTypes.func,
@@ -90,7 +88,6 @@ VoiceRecognition.propTypes = {
 };
 
 VoiceRecognition.defaultProps = {
-  disbaleToast: false,
   successCb: () => {},
   failureCb: () => {},
   loadingCb: () => {},

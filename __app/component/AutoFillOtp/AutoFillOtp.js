@@ -21,10 +21,10 @@ function AutoFillOtp(props = {}) {
       signal: abort.signal,
     }).then((otp) => {
       const { code } = otp;
-      handleSuccess({ disbaleToast: false, msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: code });
-    }).catch((error) => handleError({ disbaleToast: false, msgType: 'ERROR', msg: error, failureCb }));
+      handleSuccess({ msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: code });
+    }).catch((error) => handleError({ msgType: 'ERROR', msg: error, failureCb }));
   } else {
-    return handleError({ disbaleToast: false, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported || 'Your device is not supporting AutofillOTP', failureCb });
+    return handleError({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported || 'Your device is not supporting AutofillOTP', failureCb });
   }
 }
 

@@ -9,9 +9,9 @@ function Vibrate(props = {}) {
 
   if (Vibrate.isBrowserSupport()) {
     window.navigator.vibrate(vibrationSeq);
-    handleSuccess({ disbaleToast: false, msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: vibrationSeq });
+    handleSuccess({ msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: vibrationSeq });
   } else {
-    return handleError({ disbaleToast: false, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported || 'Your device is not supporting Vibrate', failureCb });
+    return handleError({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported || 'Your device is not supporting Vibrate', failureCb });
   }
 }
 

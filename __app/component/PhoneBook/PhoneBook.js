@@ -4,7 +4,6 @@ import { handleSuccess, handleError, handleLoading } from '../services/handlerSe
 import Wrapper from '../Wrapper/Wrapper';
 
 function PhoneBook({
-  disbaleToast,
   successCb,
   failureCb,
   loadingCb,
@@ -21,15 +20,15 @@ function PhoneBook({
       try {
         const contacts = await navigator.contacts.select(contactProperty, opts);
         if (contacts[0]) {
-          handleSuccess({ disbaleToast, msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: contacts });
+          handleSuccess({ msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: contacts });
         } else {
-          return handleError({ disbaleToast, msgType: 'CANCELLED', msg: failureMsg.cancelled, failureCb });
+          return handleError({ msgType: 'CANCELLED', msg: failureMsg.cancelled, failureCb });
         }
       } catch (error) {
-        return handleError({ disbaleToast, msgType: 'ERROR', msg: failureMsg.error || error, failureCb });
+        return handleError({ msgType: 'ERROR', msg: failureMsg.error || error, failureCb });
       }
     } else {
-      return handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
+      return handleError({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
     }
 
     return true;
@@ -47,7 +46,6 @@ PhoneBook.isBrowserSupport = () => globalThis.navigator.contacts
   && true;
 
 PhoneBook.propTypes = {
-  disbaleToast: PropTypes.bool,
   successCb: PropTypes.func,
   failureCb: PropTypes.func,
   loadingCb: PropTypes.func,
@@ -58,7 +56,6 @@ PhoneBook.propTypes = {
 };
 
 PhoneBook.defaultProps = {
-  disbaleToast: false,
   successCb: () => {},
   failureCb: () => {},
   loadingCb: () => {},

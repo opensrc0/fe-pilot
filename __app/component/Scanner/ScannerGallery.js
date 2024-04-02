@@ -2,7 +2,6 @@ import React from 'react';
 import { handleSuccess, handleError } from '../services/handlerService';
 
 function ScannerGallery({
-  disbaleToast,
   successCb,
   successMsg,
   failureCb,
@@ -29,18 +28,17 @@ function ScannerGallery({
           const barcode = results[0];
           if (barcode) {
             handleSuccess({
-              disbaleToast,
               msgType: 'SUCCESSFUL',
               msg: successMsg,
               successCb,
               data: { barCodeValue: barcode.rawValue, barCodeType: barcode.format },
             });
           } else {
-            return handleError({ disbaleToast, msgType: 'INVALID_IMAGE', msg: failureMsg.invalidImage, failureCb });
+            return handleError({ msgType: 'INVALID_IMAGE', msg: failureMsg.invalidImage, failureCb });
           }
           return true;
         })
-        .catch((error) => handleError({ disbaleToast, msgType: 'UNABLE_TO_SCAN', msg: failureMsg.unableToScan || error, failureCb }));
+        .catch((error) => handleError({ msgType: 'UNABLE_TO_SCAN', msg: failureMsg.unableToScan || error, failureCb }));
     }
   };
 
@@ -75,7 +73,6 @@ ScannerGallery.propTypes = {
 };
 
 ScannerGallery.defaultProps = {
-  disbaleToast: false,
   successCb: () => {},
   failureCb: () => {},
   successMsg: '',

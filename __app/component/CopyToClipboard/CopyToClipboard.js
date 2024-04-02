@@ -4,7 +4,6 @@ import { handleSuccess, handleError, handleLoading } from '../services/handlerSe
 import Wrapper from '../Wrapper/Wrapper';
 
 function CopyToClipboard({
-  disbaleToast,
   successCb,
   failureCb,
   loadingCb,
@@ -17,10 +16,10 @@ function CopyToClipboard({
     if (CopyToClipboard.isBrowserSupport()) {
       handleLoading({ loadingCb });
       navigator.clipboard.writeText(elementToBeCopy).then(() => {
-        handleSuccess({ disbaleToast, msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: elementToBeCopy });
-      }).catch((error) => handleError({ disbaleToast, msgType: 'ERROR', msg: failureMsg.error || error, failureCb }));
+        handleSuccess({ msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: elementToBeCopy });
+      }).catch((error) => handleError({ msgType: 'ERROR', msg: failureMsg.error || error, failureCb }));
     } else {
-      return handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
+      return handleError({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
     }
     return true;
   };
@@ -34,7 +33,6 @@ function CopyToClipboard({
 CopyToClipboard.isBrowserSupport = () => navigator.clipboard && true;
 
 CopyToClipboard.propTypes = {
-  disbaleToast: PropTypes.bool,
   successCb: PropTypes.func,
   failureCb: PropTypes.func,
   loadingCb: PropTypes.func,
@@ -43,7 +41,6 @@ CopyToClipboard.propTypes = {
 };
 
 CopyToClipboard.defaultProps = {
-  disbaleToast: false,
   successCb: () => {},
   failureCb: () => {},
   loadingCb: () => {},
@@ -52,7 +49,6 @@ CopyToClipboard.defaultProps = {
     unSupported: 'Copy To ClipBoard is not supporting in your device',
     error: 'Unable to copy',
   },
-  edsd: 3,
 };
 
 export default Wrapper(CopyToClipboard);

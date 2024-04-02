@@ -5,7 +5,6 @@ import textToSpeech from './textToSpeechService';
 import { handleSuccess, handleError, handleLoading } from '../services/handlerService';
 
 function TextToSpeechInit({
-  disbaleToast,
   successCb,
   failureCb,
   loadingCb,
@@ -25,17 +24,17 @@ function TextToSpeechInit({
           const utteranceCbk = await textToSpeech(text);
           utteranceCbk.onend = () => {
             setIsAudioOn(false);
-            handleSuccess({ disbaleToast, msgType: 'SUCCESSFULFUL', msg: successMsg, successCb, data: text });
+            handleSuccess({ msgType: 'SUCCESSFULFUL', msg: successMsg, successCb, data: text });
           };
           utteranceCbk.onerror = () => setIsAudioOn(false);
         } catch (error) {
-          return handleError({ disbaleToast, msgType: 'ERROR', msg: failureMsg.error, failureCb });
+          return handleError({ msgType: 'ERROR', msg: failureMsg.error, failureCb });
         }
       } else {
-        return handleError({ disbaleToast, msgType: 'MISSING_PARAMS', msg: failureMsg.badRequest, failureCb });
+        return handleError({ msgType: 'MISSING_PARAMS', msg: failureMsg.badRequest, failureCb });
       }
     } else {
-      return handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
+      return handleError({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
     }
 
     return true;
@@ -57,7 +56,6 @@ function TextToSpeechInit({
     handleStop,
     handlePlay,
     isAudioOn,
-    disbaleToast,
     successCb,
     successMsg,
     failureCb,
@@ -71,7 +69,6 @@ TextToSpeechInit.isBrowserSupport = () => globalThis.speechSynthesis
   && true;
 
 TextToSpeechInit.propTypes = {
-  disbaleToast: PropTypes.bool,
   successCb: PropTypes.func,
   failureCb: PropTypes.func,
   loadingCb: PropTypes.func,
@@ -80,7 +77,6 @@ TextToSpeechInit.propTypes = {
 };
 
 TextToSpeechInit.defaultProps = {
-  disbaleToast: false,
   successCb: () => {},
   failureCb: () => {},
   loadingCb: () => {},

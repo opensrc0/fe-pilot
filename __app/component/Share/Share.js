@@ -12,7 +12,6 @@ const isShareAPIDataValid = (sharingData) => {
 };
 
 function Share({
-  disbaleToast,
   successCb,
   failureCb,
   loadingCb,
@@ -30,13 +29,13 @@ function Share({
       handleLoading({ loadingCb });
       if (isShareAPIDataValid(sharingData)) {
         navigator.share(sharingData).then(() => {
-          handleSuccess({ disbaleToast, msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: sharingData });
-        }).catch(() => handleError({ disbaleToast, msgType: 'ERROR', msg: failureMsg.error, failureCb }));
+          handleSuccess({ msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: sharingData });
+        }).catch(() => handleError({ msgType: 'ERROR', msg: failureMsg.error, failureCb }));
       } else {
-        return handleError({ disbaleToast, msgType: 'BAD_REQUEST', msg: failureMsg.badRequest, failureCb });
+        return handleError({ msgType: 'BAD_REQUEST', msg: failureMsg.badRequest, failureCb });
       }
     } else {
-      return handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
+      return handleError({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
     }
     return true;
   };
