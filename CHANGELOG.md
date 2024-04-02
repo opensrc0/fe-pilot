@@ -1,3 +1,10 @@
+## [1.0.58](https://github.com/opensrc0/fe-pilot/compare/v1.0.57...v1.0.58) (2024-4-2)
+
+
+### Bug Fixes
+
+* **disbaletoast:** removed disbaleToast from all the components ([225941b](https://github.com/opensrc0/fe-pilot/commit/225941b0f7f16d0ff2c47bcf85a8fda4054af22e))
+
 ## [1.0.57](https://github.com/opensrc0/fe-pilot/compare/v1.0.56...v1.0.57) (2024-4-2)
 
 
