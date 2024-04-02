@@ -1,3 +1,10 @@
+## [1.0.56](https://github.com/opensrc0/fe-pilot/compare/v1.0.55...v1.0.56) (2024-4-2)
+
+
+### Bug Fixes
+
+* **locate me:** added error handling in locate me ([137a6c1](https://github.com/opensrc0/fe-pilot/commit/137a6c1f52d32c5eac7dcf738123756f1dbc77bc))
+
 ## [1.0.55](https://github.com/opensrc0/fe-pilot/compare/v1.0.54...v1.0.55) (2024-4-2)
 
 
