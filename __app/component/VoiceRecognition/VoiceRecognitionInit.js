@@ -18,7 +18,7 @@ function VoiceRecognition({
 
   const listen = () => {
     if (VoiceRecognition.isBrowserSupport()) {
-      handleLoading(loadingCb);
+      handleLoading({ loadingCb });
 
       const SpeechRecognition = globalThis.SpeechRecognition || globalThis.webkitSpeechRecognition;
       const recognition = new SpeechRecognition();

@@ -19,7 +19,7 @@ function TextToSpeechInit({
   const handlePlay = async () => {
     if (TextToSpeechInit.isBrowserSupport()) {
       if (text) {
-        handleLoading(loadingCb);
+        handleLoading({ loadingCb });
         setIsAudioOn(true);
         try {
           const utteranceCbk = await textToSpeech(text);

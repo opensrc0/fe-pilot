@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { handleSuccess, handleError, handleLoading } from '../services/handlerService';
+import Wrapper from '../Wrapper/Wrapper';
 
 let mediaStream = null;
 let videoUnmount = null;
@@ -214,3 +215,5 @@ ScannerInit.defaultProps = {
   zIndex: 9,
   cameraType: 'back',
 };
+
+export default Wrapper(ScannerInit);
