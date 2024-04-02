@@ -114,7 +114,7 @@ function LiveLocationTracking({
             locationError(),
             { enableHighAccuracy: true, timeout: 30000, maximumAge: 2000, distanceFilter: 100 },
           );
-        }, 0);
+        }, 100);
       }
     } else {
       return handleError({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
