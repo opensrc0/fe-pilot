@@ -1,3 +1,10 @@
+## [1.0.59](https://github.com/opensrc0/fe-pilot/compare/v1.0.58...v1.0.59) (2024-4-2)
+
+
+### Bug Fixes
+
+* **livelocation tracking:** fixed live locatio tracking issue ([a489a63](https://github.com/opensrc0/fe-pilot/commit/a489a63b671cda5a5ad74fe22b6a2102253eadd1))
+
 ## [1.0.58](https://github.com/opensrc0/fe-pilot/compare/v1.0.57...v1.0.58) (2024-4-2)
 
 
