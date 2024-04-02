@@ -38,7 +38,7 @@ function ScannerGallery({
           }
           return true;
         })
-        .catch((error) => handleError({ msgType: 'UNABLE_TO_SCAN', msg: failureMsg.unableToScan || error, failureCb }));
+        .catch((error) => handleError({ msgType: 'UNABLE_TO_SCAN', msg: failureMsg.unableToScan || JSON.stringify(error), failureCb }));
     }
   };
 

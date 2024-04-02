@@ -17,7 +17,7 @@ function CopyToClipboard({
       handleLoading({ loadingCb });
       navigator.clipboard.writeText(elementToBeCopy).then(() => {
         handleSuccess({ msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: elementToBeCopy });
-      }).catch((error) => handleError({ msgType: 'ERROR', msg: failureMsg.error || error, failureCb }));
+      }).catch((error) => handleError({ msgType: 'ERROR', msg: failureMsg.error || JSON.stringify(error), failureCb }));
     } else {
       return handleError({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
     }

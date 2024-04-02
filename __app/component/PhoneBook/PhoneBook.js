@@ -25,7 +25,7 @@ function PhoneBook({
           return handleError({ msgType: 'CANCELLED', msg: failureMsg.cancelled, failureCb });
         }
       } catch (error) {
-        return handleError({ msgType: 'ERROR', msg: failureMsg.error || error, failureCb });
+        return handleError({ msgType: 'ERROR', msg: failureMsg.error || JSON.stringify(error), failureCb });
       }
     } else {
       return handleError({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });

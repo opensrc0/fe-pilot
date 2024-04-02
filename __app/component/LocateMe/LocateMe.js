@@ -8,17 +8,17 @@ const checkPermitByBrowser = async (failureMsg, failureCb) => {
   try {
     const permissions = await navigator.permissions.query({ name: 'geolocation' });
     if (permissions.state === 'denied') {
-      return handleError({ msgType: 'PERMISSION_DENIED', msg: failureMsg.permissionDenied || 'Permission Denied', failureCb });
+      return handleError({ msgType: 'PERMISSION_DENIED', msg: failureMsg.permissionDenied, failureCb });
     }
   } catch (error) {
-    return handleError({ msgType: 'BROWSER_PERMISION_API_FAILED', msg: failureMsg.browserPermissionAPIFailed || 'Unable to check browser permission', failureCb });
+    return handleError({ msgType: 'BROWSER_PERMISION_API_FAILED', msg: failureMsg.browserPermissionAPIFailed, failureCb });
   }
 
   return true;
 };
 const checkScriptInBrowser = async (failureMsg, failureCb, isProdKey, googleKey) => {
   if (!googleKey) {
-    return handleError({ msgType: 'GOOGLE_API_KEY_MISSING', msg: failureMsg.googleAPIKeyMissing || 'Google Key is missing', failureCb });
+    return handleError({ msgType: 'GOOGLE_API_KEY_MISSING', msg: failureMsg.googleAPIKeyMissing, failureCb });
   }
   const googleApiUrl = `https://maps.googleapis.com/maps/api/js?${isProdKey ? 'client' : 'key'}=${googleKey}&libraries=places&loading=async`;
 
@@ -26,14 +26,13 @@ const checkScriptInBrowser = async (failureMsg, failureCb, isProdKey, googleKey)
     await dependentJsService(googleApiUrl, 'googleMapLocationAPI', true);
     return true;
   } catch (error) {
-    return handleError({ msgType: 'UNABLE_TO_LOAD_GOOGLE_APIS', msg: failureMsg.unableToLoadGoogleAPI || 'Unable to load google api script', failureCb });
+    return handleError({ msgType: 'UNABLE_TO_LOAD_GOOGLE_APIS', msg: failureMsg.unableToLoadGoogleAPI, failureCb });
   }
 };
 
 const getPincode = async (
   latitude,
   longitude,
-
   failureCb,
   failureMsg,
 ) => {
@@ -51,14 +50,13 @@ const getPincode = async (
       return zipcode;
     }
   } catch (err) {
-    return handleError({ msgType: 'INVALID_LAT_LNG', msg: failureMsg.invalidLatLng || 'Invalid Lat lng', failureCb });
+    return handleError({ msgType: 'INVALID_LAT_LNG', msg: failureMsg.invalidLatLng, failureCb });
   }
 
   return '';
 };
 
 const onSuccss = async (
-
   successCb,
   failureCb,
   successMsg,
@@ -68,7 +66,6 @@ const onSuccss = async (
   const zipcode = await getPincode(
     position.coords.latitude,
     position.coords.longitude,
-
     failureCb,
     failureMsg,
   );
@@ -76,13 +73,9 @@ const onSuccss = async (
   handleSuccess({ msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: zipcode });
 };
 
-const onFailure = async (failureCb, error, failureMsg) => {
-  failureCb(error);
-  return handleError({ msgType: 'ERROR', msg: failureMsg.error || error, failureCb });
-};
+const onFailure = async (failureCb, error, failureMsg) => handleError({ msgType: 'ERROR', msg: failureMsg.error || JSON.stringify(error), failureCb });
 
 function LocateMe({
-
   successCb,
   failureCb,
   successMsg,
@@ -106,7 +99,6 @@ function LocateMe({
       if (isPermitByBrowser && isScriptInBrowser) {
         navigator.geolocation.getCurrentPosition((position) => {
           onSuccss(
-
             successCb,
             failureCb,
             successMsg,
@@ -148,7 +140,6 @@ LocateMe.isBrowserSupport = () => navigator.geolocation
   && true;
 
 LocateMe.propTypes = {
-
   successCb: PropTypes.func,
   failureCb: PropTypes.func,
   loadingCb: PropTypes.func,
@@ -159,18 +150,17 @@ LocateMe.propTypes = {
 };
 
 LocateMe.defaultProps = {
-
   successCb: () => {},
   failureCb: () => {},
   loadingCb: () => {},
   successMsg: 'Located Successfully',
   failureMsg: {
-    unSupported: '',
-    permissionDenied: '',
-    browserPermissionAPIFailed: '',
-    googleAPIKeyMissing: '',
-    unableToLoadGoogleAPI: '',
-    invalidLatLng: '',
+    unSupported: 'LocationMe is not supporting in your device',
+    permissionDenied: 'Permission Denied',
+    browserPermissionAPIFailed: 'Unable to check browser permission',
+    googleAPIKeyMissing: 'Google Key is missing',
+    unableToLoadGoogleAPI: 'Unable to load google api script',
+    invalidLatLng: 'Invalid Lat lng',
     error: '',
   },
   isProdKey: true,

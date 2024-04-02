@@ -8,17 +8,17 @@ const checkPermitByBrowser = async (failureMsg, failureCb) => {
   try {
     const permissions = await navigator.permissions.query({ name: 'geolocation' });
     if (permissions.state === 'denied') {
-      return handleError({ msgType: 'PERMISSION_DENIED', msg: failureMsg.permissionDenied || 'Permission Denied', failureCb });
+      return handleError({ msgType: 'PERMISSION_DENIED', msg: failureMsg.permissionDenied, failureCb });
     }
   } catch (error) {
-    return handleError({ msgType: 'BROWSER_PERMISION_API_FAILED', msg: failureMsg.browserPermissionAPIFailed || 'Unable to check browser permission', failureCb });
+    return handleError({ msgType: 'BROWSER_PERMISION_API_FAILED', msg: failureMsg.browserPermissionAPIFailed, failureCb });
   }
 
   return true;
 };
 const checkScriptInBrowser = async (failureMsg, failureCb, isProdKey, googleKey) => {
   if (!googleKey) {
-    return handleError({ msgType: 'GOOGLE_API_KEY_MISSING', msg: failureMsg.googleAPIKeyMissing || 'Unable to check browser permission', failureCb });
+    return handleError({ msgType: 'GOOGLE_API_KEY_MISSING', msg: failureMsg.googleAPIKeyMissing, failureCb });
   }
   const googleApiUrl = `https://maps.googleapis.com/maps/api/js?${isProdKey ? 'client' : 'key'}=${googleKey}&libraries=places&loading=async`;
 
@@ -26,12 +26,11 @@ const checkScriptInBrowser = async (failureMsg, failureCb, isProdKey, googleKey)
     await dependentJsService(googleApiUrl, 'googleMapLocationAPI', true);
     return true;
   } catch (error) {
-    return handleError({ msgType: 'UNABLE_TO_LOAD_GOOGLE_APIS', msg: failureMsg.unableToLoadGoogleAPI || 'Unable to load google api script', failureCb });
+    return handleError({ msgType: 'UNABLE_TO_LOAD_GOOGLE_APIS', msg: failureMsg.unableToLoadGoogleAPI, failureCb });
   }
 };
 
 function LiveLocationTracking({
-
   successCb,
   failureCb,
   successMsg,
@@ -75,7 +74,7 @@ function LiveLocationTracking({
         .then((response) => {
           directionsRenderer.setDirections(response);
           handleSuccess({ msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: currentLocations });
-        }).catch(() => handleError({ msgType: 'UNABLE_TO_LOCATE_DIRECTION', msg: failureMsg.unableToLocateDirection || 'Unable To get Updated Location', failureCb }));
+        }).catch(() => handleError({ msgType: 'UNABLE_TO_LOCATE_DIRECTION', msg: failureMsg.unableToLocateDirection, failureCb }));
     }
   };
 
@@ -84,7 +83,7 @@ function LiveLocationTracking({
       if (error.code === 1 && error.message === 'User denied Geolocation') {
         handleError({ msgType: 'PERMISSION_DENIED', msg: failureMsg.permissionDenied || 'Permission Denied', failureCb });
       }
-      handleError({ msgType: 'LOCATION_NOT_FOUND', msg: failureMsg.locationNotFound || 'Unable To get Updated Location', failureCb });
+      handleError({ msgType: 'LOCATION_NOT_FOUND', msg: failureMsg.locationNotFound, failureCb });
     }
   };
 
@@ -114,7 +113,7 @@ function LiveLocationTracking({
             locationError(),
             { enableHighAccuracy: true, timeout: 30000, maximumAge: 2000, distanceFilter: 100 },
           );
-        }, 100);
+        }, 200);
       }
     } else {
       return handleError({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
@@ -158,15 +157,14 @@ LiveLocationTracking.defaultProps = {
   loadingCb: () => {},
   successMsg: '',
   failureMsg: {
-    unSupported: '',
-    permissionDenied: '',
-    unableToLocateDirection: '',
-    browserPermissionCheckFailed: '',
-    unableToLoadGoogleAPI: '',
-    locationNotFound: '',
-    scriptNotLoaded: '',
-    invalidLatLng: '',
-    googleAPIKeyMissing: '',
+    unSupported: 'LiveLocationTracking is not supporting in your device',
+    permissionDenied: 'Permission Denied',
+    unableToLocateDirection: 'Unable To get Updated Location',
+    browserPermissionAPIFailed: 'Unable to check browser permission',
+    unableToLoadGoogleAPI: 'Unable to load google api script',
+    locationNotFound: 'Unable To get Updated Location',
+    // invalidLatLng: '',
+    googleAPIKeyMissing: 'Unable to check browser permission',
     error: '',
   },
   destinationLatLng: { lat: 12.9541033, lng: 77.7091133 },

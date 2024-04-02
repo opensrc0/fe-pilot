@@ -56,7 +56,7 @@ function ScannerInit({
               }
             });
           })
-          .catch((error) => handleError({ msgType: 'BAR_CODE_DETECTION', msg: failureMsg.barCodeDetection || error, failureCb }))
+          .catch((error) => handleError({ msgType: 'BAR_CODE_DETECTION', msg: failureMsg.barCodeDetection || JSON.stringify(error), failureCb }))
       ) : null;
     }
 
@@ -103,7 +103,7 @@ function ScannerInit({
         },
       });
     } catch (error) {
-      return handleError({ msgType: 'STREAMING_ERROR', msg: failureMsg.streaming || error, failureCb });
+      return handleError({ msgType: 'STREAMING_ERROR', msg: failureMsg.streaming || JSON.stringify(error), failureCb });
     }
     return mediaStream;
   };
