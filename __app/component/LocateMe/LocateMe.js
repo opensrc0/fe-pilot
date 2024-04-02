@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Wrapper from '../Wrapper/Wrapper';
 import { handleSuccess, handleError, handleLoading } from '../services/handlerService';
@@ -51,7 +51,7 @@ const getPincode = async (
       return zipcode;
     }
   } catch (err) {
-    return handleError({ disbaleToast, msgType: 'ERROR', msg: failureMsg.invalidLatLng || 'Invalid Lat lng', failureCb });
+    return handleError({ disbaleToast, msgType: 'INVALID_LAT_LNG', msg: failureMsg.invalidLatLng || 'Invalid Lat lng', failureCb });
   }
 
   return '';
@@ -122,6 +122,18 @@ function LocateMe({
     }
     return true;
   };
+
+  useEffect(() => {
+    globalThis.console.error = (...arg) => {
+      if (arg[0] && arg[0].indexOf('https://developers.google.com/maps/documentation/javascript/error-messages') !== -1) {
+        const errMsg = arg[0].split('\nhttps://developers.google.com/maps/documentation/javascript/error-messages')[0];
+
+        return handleError({ msgType: 'ERROR', msg: errMsg, failureCb });
+      }
+
+      return true;
+    };
+  }, []);
 
   return (
     React.Children.map(children || 'Use my current location', (child) => React.cloneElement(typeof child === 'string' ? <span>{child}</span> : child, {
