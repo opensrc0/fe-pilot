@@ -1,3 +1,10 @@
+## [1.0.55](https://github.com/opensrc0/fe-pilot/compare/v1.0.54...v1.0.55) (2024-4-2)
+
+
+### Bug Fixes
+
+* **locateme:** added loadingCb ([d7aea80](https://github.com/opensrc0/fe-pilot/commit/d7aea80b771a1edd5f24b2eacdac88e05b42cf20))
+
 ## [1.0.54](https://github.com/opensrc0/fe-pilot/compare/v1.0.53...v1.0.54) (2024-4-2)
 
 
