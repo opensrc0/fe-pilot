@@ -1,3 +1,10 @@
+## [1.0.60](https://github.com/opensrc0/fe-pilot/compare/v1.0.59...v1.0.60) (2024-4-2)
+
+
+### Bug Fixes
+
+* **error fix:** added JSON.stringyfy in case of error ([3df39fb](https://github.com/opensrc0/fe-pilot/commit/3df39fb5a4f9c32013fd766ca3635c335972371e))
+
 ## [1.0.59](https://github.com/opensrc0/fe-pilot/compare/v1.0.58...v1.0.59) (2024-4-2)
 
 
