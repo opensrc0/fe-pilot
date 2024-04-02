@@ -94,7 +94,7 @@ function LocateMe({
 }) {
   const onClick = async () => {
     if (LocateMe.isBrowserSupport()) {
-      handleLoading(loadingCb);
+      handleLoading({ loadingCb });
       const isPermitByBrowser = await checkPermitByBrowser(disbaleToast, failureMsg, failureCb);
       const isScriptInBrowser = await checkScriptInBrowser(
         disbaleToast,
