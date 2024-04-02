@@ -1,3 +1,10 @@
+## [1.0.57](https://github.com/opensrc0/fe-pilot/compare/v1.0.56...v1.0.57) (2024-4-2)
+
+
+### Bug Fixes
+
+* **handle loading:** fixed handle loading ([b112ff2](https://github.com/opensrc0/fe-pilot/commit/b112ff25284d46fe0f701e1e09fdda2f2db89934))
+
 ## [1.0.56](https://github.com/opensrc0/fe-pilot/compare/v1.0.55...v1.0.56) (2024-4-2)
 
 
