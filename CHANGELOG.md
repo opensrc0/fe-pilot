@@ -1,3 +1,10 @@
+## [1.0.54](https://github.com/opensrc0/fe-pilot/compare/v1.0.53...v1.0.54) (2024-4-2)
+
+
+### Bug Fixes
+
+* **locateme:** added loading CB in locate me ([964369b](https://github.com/opensrc0/fe-pilot/commit/964369b56cff04466cfd8f5b30f3b1c47e640079))
+
 ## [1.0.53](https://github.com/opensrc0/fe-pilot/compare/v1.0.52...v1.0.53) (2024-4-1)
 
 
