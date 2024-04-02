@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Wrapper from '../Wrapper/Wrapper';
 import textToSpeech from './textToSpeechService';
-import { handleSuccess, handleError } from '../services/handlerService';
+import { handleSuccess, handleError, handleLoading } from '../services/handlerService';
 
 function TextToSpeechInit({
   disbaleToast,
   successCb,
-  successMsg,
   failureCb,
+  loadingCb,
+  successMsg,
   failureMsg,
   children,
   text,
@@ -18,6 +19,7 @@ function TextToSpeechInit({
   const handlePlay = async () => {
     if (TextToSpeechInit.isBrowserSupport()) {
       if (text) {
+        handleLoading(loadingCb);
         setIsAudioOn(true);
         try {
           const utteranceCbk = await textToSpeech(text);
@@ -72,6 +74,7 @@ TextToSpeechInit.propTypes = {
   disbaleToast: PropTypes.bool,
   successCb: PropTypes.func,
   failureCb: PropTypes.func,
+  loadingCb: PropTypes.func,
   successMsg: PropTypes.string,
   failureMsg: PropTypes.object,
 };
@@ -80,6 +83,7 @@ TextToSpeechInit.defaultProps = {
   disbaleToast: false,
   successCb: () => {},
   failureCb: () => {},
+  loadingCb: () => {},
   successMsg: 'Converted text to voice Successfully',
   failureMsg: {
     unSupported: 'Text To Speech feature is not supporting in your device',

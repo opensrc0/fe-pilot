@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Wrapper from '../Wrapper/Wrapper';
-import { handleSuccess, handleError } from '../services/handlerService';
+import { handleSuccess, handleError, handleLoading } from '../services/handlerService';
 
 function VoiceRecognition({
   disbaleToast,
   successCb,
-  successMsg,
   failureCb,
+  loadingCb,
+  successMsg,
   failureMsg,
   children,
 }) {
@@ -17,6 +18,8 @@ function VoiceRecognition({
 
   const listen = () => {
     if (VoiceRecognition.isBrowserSupport()) {
+      handleLoading(loadingCb);
+
       const SpeechRecognition = globalThis.SpeechRecognition || globalThis.webkitSpeechRecognition;
       const recognition = new SpeechRecognition();
 
@@ -81,6 +84,7 @@ VoiceRecognition.propTypes = {
   disbaleToast: PropTypes.bool,
   successCb: PropTypes.func,
   failureCb: PropTypes.func,
+  loadingCb: PropTypes.func,
   successMsg: PropTypes.string,
   failureMsg: PropTypes.object,
 };
@@ -89,6 +93,7 @@ VoiceRecognition.defaultProps = {
   disbaleToast: false,
   successCb: () => {},
   failureCb: () => {},
+  loadingCb: () => {},
   successMsg: 'Successfully converted your voice to text',
   failureMsg: {
     unSupported: 'Voice Recognition feature is not supporting in your device',

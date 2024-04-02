@@ -7,7 +7,7 @@ const abortAutoFill = (abort, time) => {
   }, time * 60 * 1000);
 };
 
-function AutoFillOtp(props) {
+function AutoFillOtp(props = {}) {
   const successCb = props.successCb || (() => {});
   const failureCb = props.failureCb || (() => {});
   const successMsg = props.successMsg || '';

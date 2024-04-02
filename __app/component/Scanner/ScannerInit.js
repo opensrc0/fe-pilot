@@ -1,7 +1,7 @@
 /* eslint-disable no-inner-declarations */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { handleSuccess, handleError } from '../services/handlerService';
+import { handleSuccess, handleError, handleLoading } from '../services/handlerService';
 
 let mediaStream = null;
 let videoUnmount = null;
@@ -11,6 +11,7 @@ function ScannerInit({
   disbaleToast,
   successCb,
   failureCb,
+  loadingCb,
   successMsg,
   failureMsg,
   cameraType,
@@ -145,6 +146,8 @@ function ScannerInit({
   const handleBrowserSupport = () => {
     if (ScannerInit.isBrowserSupport()) {
       facingMode = cameraType === 'back' ? 'environment' : 'user';
+      handleLoading({ loadingCb });
+
       startVideo();
     } else {
       return handleError({ disbaleToast, msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
@@ -187,6 +190,7 @@ ScannerInit.propTypes = {
   disbaleToast: PropTypes.bool,
   successCb: PropTypes.func,
   failureCb: PropTypes.func,
+  loadingCb: PropTypes.func,
   successMsg: PropTypes.string,
   failureMsg: PropTypes.object,
   zIndex: PropTypes.number,
@@ -197,6 +201,7 @@ ScannerInit.defaultProps = {
   disbaleToast: false,
   successCb: () => {},
   failureCb: () => {},
+  loadingCb: () => {},
   successMsg: '',
   failureMsg: {
     unSupported: 'QR-Code/Bar-Code/UPI Scanner is not supporting in your device',

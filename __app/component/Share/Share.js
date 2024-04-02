@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { handleSuccess, handleError } from '../services/handlerService';
+import { handleSuccess, handleError, handleLoading } from '../services/handlerService';
 import Wrapper from '../Wrapper/Wrapper';
 
 const isShareAPIDataValid = (sharingData) => {
@@ -15,6 +15,7 @@ function Share({
   disbaleToast,
   successCb,
   failureCb,
+  loadingCb,
   successMsg,
   failureMsg,
   children,
@@ -26,6 +27,7 @@ function Share({
 
   const showDropdown = () => {
     if (Share.isBrowserSupport()) {
+      handleLoading({ loadingCb });
       if (isShareAPIDataValid(sharingData)) {
         navigator.share(sharingData).then(() => {
           handleSuccess({ disbaleToast, msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: sharingData });
@@ -51,6 +53,7 @@ Share.isBrowserSupport = () => navigator.share && true;
 Share.propTypes = {
   successCb: PropTypes.func,
   failureCb: PropTypes.func,
+  loadingCb: PropTypes.func,
   successMsg: PropTypes.string,
   failureMsg: PropTypes.object,
   sName: PropTypes.string,
@@ -61,6 +64,7 @@ Share.propTypes = {
 Share.defaultProps = {
   successCb: () => {},
   failureCb: () => {},
+  loadingCb: () => {},
   successMsg: 'Shared Successfully',
   failureMsg: {
     unSupported: 'Share is not supporting in your device',

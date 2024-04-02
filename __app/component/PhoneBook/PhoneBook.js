@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { handleSuccess, handleError } from '../services/handlerService';
+import { handleSuccess, handleError, handleLoading } from '../services/handlerService';
 import Wrapper from '../Wrapper/Wrapper';
 
 function PhoneBook({
   disbaleToast,
   successCb,
   failureCb,
+  loadingCb,
   successMsg,
   failureMsg,
   children,
@@ -16,6 +17,7 @@ function PhoneBook({
   const getContacts = async () => {
     const opts = { multiple: isSelectMultiple };
     if (PhoneBook.isBrowserSupport()) {
+      handleLoading({ loadingCb });
       try {
         const contacts = await navigator.contacts.select(contactProperty, opts);
         if (contacts[0]) {
@@ -48,6 +50,7 @@ PhoneBook.propTypes = {
   disbaleToast: PropTypes.bool,
   successCb: PropTypes.func,
   failureCb: PropTypes.func,
+  loadingCb: PropTypes.func,
   successMsg: PropTypes.string,
   failureMsg: PropTypes.object,
   contactProperty: PropTypes.array,
@@ -58,6 +61,7 @@ PhoneBook.defaultProps = {
   disbaleToast: false,
   successCb: () => {},
   failureCb: () => {},
+  loadingCb: () => {},
   successMsg: 'Phonebook details fetch Successfully',
   failureMsg: {
     unSupported: 'PhoneBook is not supporting in your device',

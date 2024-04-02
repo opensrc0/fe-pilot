@@ -1,6 +1,6 @@
 import { handleError, handleSuccess } from '../services/handlerService';
 
-function Vibrate(props) {
+function Vibrate(props = {}) {
   const successCb = props.successCb || (() => {});
   const failureCb = props.failureCb || (() => {});
   const successMsg = props.successMsg || '';

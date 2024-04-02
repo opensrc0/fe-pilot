@@ -139,6 +139,7 @@ LocateMe.propTypes = {
   disbaleToast: PropTypes.bool,
   successCb: PropTypes.func,
   failureCb: PropTypes.func,
+  loadingCb: PropTypes.func,
   successMsg: PropTypes.string,
   failureMsg: PropTypes.object,
   isProdKey: PropTypes.bool,
@@ -149,6 +150,7 @@ LocateMe.defaultProps = {
   disbaleToast: false,
   successCb: () => {},
   failureCb: () => {},
+  loadingCb: () => {},
   successMsg: 'Located Successfully',
   failureMsg: {
     unSupported: '',
@@ -159,7 +161,6 @@ LocateMe.defaultProps = {
     invalidLatLng: '',
     error: '',
   },
-  loadingCb: () => {},
   isProdKey: true,
   googleKey: '',
 };

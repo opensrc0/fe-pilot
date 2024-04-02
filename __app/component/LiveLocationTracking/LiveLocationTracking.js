@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import dependentJsService from '../services/dependentJsService';
-import { handleError, handleSuccess } from '../services/handlerService';
+import { handleError, handleSuccess, handleLoading } from '../services/handlerService';
+import Wrapper from '../Wrapper/Wrapper';
 
 const checkPermitByBrowser = async (disbaleToast, failureMsg, failureCb) => {
   try {
@@ -35,6 +36,7 @@ function LiveLocationTracking({
   failureCb,
   successMsg,
   failureMsg,
+  loadingCb,
   googleKey,
   isProdKey,
   zoom,
@@ -88,6 +90,7 @@ function LiveLocationTracking({
 
   const init = async () => {
     if (LiveLocationTracking.isBrowserSupport()) {
+      handleLoading({ loadingCb });
       const isPermitByBrowser = await checkPermitByBrowser(disbaleToast, failureMsg, failureCb);
       const isScriptInBrowser = await checkScriptInBrowser(
         disbaleToast,
@@ -140,6 +143,7 @@ LiveLocationTracking.propTypes = {
   disbaleToast: PropTypes.bool,
   successCb: PropTypes.func,
   failureCb: PropTypes.func,
+  loadingCb: PropTypes.func,
   successMsg: PropTypes.string,
   failureMsg: PropTypes.object,
   isProdKey: PropTypes.bool,
@@ -166,12 +170,13 @@ LiveLocationTracking.defaultProps = {
     googleAPIKeyMissing: '',
     error: '',
   },
+  loadingCb: () => {},
   isProdKey: true,
   zoom: 13,
   mapTypeControl: false,
 };
 
-export default LiveLocationTracking;
+export default Wrapper(LiveLocationTracking);
 
 // WALKING - bike
 // TWO_WHEELER - Walking
