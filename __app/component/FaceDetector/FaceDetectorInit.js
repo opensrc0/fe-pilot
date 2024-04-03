@@ -1,14 +1,14 @@
 /* eslint-disable no-inner-declarations */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { handleSuccess, handleError, handleLoading } from '../services/handlerService';
+import { handleError, handleLoading } from '../services/handlerService';
 import Wrapper from '../Wrapper/Wrapper';
 
 let mediaStream = null;
 let videoUnmount = null;
 let unmoutRenderLoop = null;
 
-function ScannerInit({
+function FaceDetectorInit({
   successCb,
   failureCb,
   loadingCb,
@@ -24,6 +24,7 @@ function ScannerInit({
 
   const [flash, setFlash] = useState(false);
   const [isBrowser, setIsBrowser] = useState(false);
+  const [faces, setFaces] = useState([]);
 
   const stopStreaming = () => {
     if (mediaStream) {
@@ -33,26 +34,27 @@ function ScannerInit({
     }
   };
 
+  const allClear = () => {
+    cancelAnimationFrame(videoUnmount);
+    stopStreaming();
+    clearTimeout(unmoutRenderLoop);
+  };
+
   const detectCodes = async () => {
-    const WindowBarcodeDetector = globalThis.BarcodeDetector;
-    const barcodeDetector = new WindowBarcodeDetector();
-    const itemsFound = [];
+    const WindowFaceDetector = globalThis.FaceDetector;
+    const faceDetector = new WindowFaceDetector();
 
     // eslint-disable-next-line consistent-return
     async function render() {
       try {
-        const barcodes = await barcodeDetector.detect(video);
-        barcodes.forEach((barcode) => {
-          if (!itemsFound.includes(barcode.rawValue)) {
-            itemsFound.push(barcode.rawValue);
-            handleSuccess({
-              msgType: 'SUCCESSFUL',
-              msg: successMsg,
-              successCb,
-              data: { barCodeValue: barcode.rawValue, barCodeType: barcode.format },
-            });
-          }
-        });
+        const getFaces = await faceDetector.detect(video);
+
+        if (getFaces[0]) {
+          setFaces(getFaces);
+          // cancelAnimationFrame(videoUnmount);
+          // stopStreaming();
+          // clearTimeout(unmoutRenderLoop);
+        }
       } catch (error) {
         return handleError({ msgType: 'BAR_CODE_DETECTION_FAILED', msg: failureMsg.barCodeDetectionFailed || JSON.stringify(error), failureCb });
       }
@@ -60,10 +62,12 @@ function ScannerInit({
 
     unmoutRenderLoop = setTimeout(() => {
       (function renderLoop() {
-        videoUnmount = requestAnimationFrame(renderLoop);
+        videoUnmount = requestAnimationFrame(() => {
+          setTimeout(renderLoop, 1500);
+        });
         render();
       }());
-    }, 1000);
+    }, 100);
   };
 
   const createVideo = async (id) => {
@@ -75,11 +79,11 @@ function ScannerInit({
     video.srcObject = mediaStream;
     video.autoplay = true;
     video.play();
-    video.style.width = '100%';
-    video.style.height = '100%';
+    // video.style.width = '100vh';
+    // video.style.height = '100%';
     video.style.position = 'absolute';
-    video.style.overflow = 'hidden';
-    video.style.display = 'block';
+    // video.style.overflow = 'hidden';
+    // video.style.display = 'block';
     video.style.zIndex = zIndex;
     video.style.top = '0';
     video.style.left = '0';
@@ -112,12 +116,6 @@ function ScannerInit({
     detectCodes();
   };
 
-  const allClear = () => {
-    cancelAnimationFrame(videoUnmount);
-    stopStreaming();
-    clearTimeout(unmoutRenderLoop);
-  };
-
   const toggleFlash = async () => {
     const track = mediaStream.getVideoTracks()[0];
     try {
@@ -141,7 +139,7 @@ function ScannerInit({
   };
 
   const handleBrowserSupport = () => {
-    if (ScannerInit.isBrowserSupport()) {
+    if (FaceDetectorInit.isBrowserSupport()) {
       facingMode = cameraType === 'back' ? 'environment' : 'user';
       handleLoading({ loadingCb });
 
@@ -162,9 +160,9 @@ function ScannerInit({
     };
   }, []);
 
-  return isBrowser && ScannerInit.isBrowserSupport() && (
-    <div id="scanner">
-      <div id="camera" />
+  return isBrowser && FaceDetectorInit.isBrowserSupport() && (
+    <div id="face-detector">
+      <div id="camera" style={{ position: 'absolute' }} />
       {
         React.Children.map(children, (child) => React.cloneElement(child, {
           zIndex,
@@ -176,13 +174,30 @@ function ScannerInit({
           failureMsg,
         }))
       }
+      {
+        faces.map((face) => (
+          <div
+            className="face"
+            style={{
+              width: `${face.boundingBox.width}px`,
+              height: `${face.boundingBox.height}px`,
+              left: `${face.boundingBox.left}px`,
+              top: `${face.boundingBox.top}px`,
+              position: 'absolute',
+              border: '2px solid yellow',
+              zIndex: '12',
+            }}
+
+          />
+        ))
+      }
     </div>
   );
 }
 
-ScannerInit.isBrowserSupport = () => navigator?.mediaDevices && globalThis.BarcodeDetector;
+FaceDetectorInit.isBrowserSupport = () => navigator?.mediaDevices && globalThis.FaceDetector;
 
-ScannerInit.propTypes = {
+FaceDetectorInit.propTypes = {
   successCb: PropTypes.func,
   failureCb: PropTypes.func,
   loadingCb: PropTypes.func,
@@ -192,7 +207,7 @@ ScannerInit.propTypes = {
   cameraType: PropTypes.oneOf(['back', 'front']),
 };
 
-ScannerInit.defaultProps = {
+FaceDetectorInit.defaultProps = {
   successCb: () => {},
   failureCb: () => {},
   loadingCb: () => {},
@@ -209,4 +224,4 @@ ScannerInit.defaultProps = {
   cameraType: 'back',
 };
 
-export default Wrapper(ScannerInit);
+export default Wrapper(FaceDetectorInit);
