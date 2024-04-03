@@ -81,6 +81,7 @@
     "__build/**",
     "AutoFillOtp/",
     "Bluetooth/",
+    "FaceDetector/",
     "CopyToClipboard/",
     "LiveLocationTracking/",
     "LocateMe/",

@@ -213,7 +213,7 @@ FaceDetectorInit.defaultProps = {
   loadingCb: () => {},
   successMsg: '',
   failureMsg: {
-    unSupported: 'QR-Code/Bar-Code/UPI Scanner is not supporting in your device',
+    unSupported: 'Face Detector is not supporting in your device',
     streamingFailed: 'Camera streaming failed',
     barCodeDetectionFailed: 'Bar code detection failed',
     invalidImage: 'Invalid Images',
