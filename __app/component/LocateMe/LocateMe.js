@@ -117,7 +117,7 @@ function LocateMe({
 
   useEffect(() => {
     globalThis.console.error = (...arg) => {
-      if (arg[0] && arg[0].indexOf('https://developers.google.com/maps/documentation/javascript/error-messages') !== -1) {
+      if (arg[0] && arg[0]?.indexOf('https://developers.google.com/maps/documentation/javascript/error-messages') !== -1) {
         const errMsg = arg[0].split('\nhttps://developers.google.com/maps/documentation/javascript/error-messages')[0];
 
         return handleError({ msgType: 'ERROR', msg: errMsg, failureCb });

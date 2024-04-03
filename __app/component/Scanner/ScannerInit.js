@@ -56,7 +56,7 @@ function ScannerInit({
               }
             });
           })
-          .catch((error) => handleError({ msgType: 'BAR_CODE_DETECTION', msg: failureMsg.barCodeDetection || JSON.stringify(error), failureCb }))
+          .catch((error) => handleError({ msgType: 'BAR_CODE_DETECTION_FAILED', msg: failureMsg.barCodeDetectionFailed || JSON.stringify(error), failureCb }))
       ) : null;
     }
 
@@ -103,7 +103,7 @@ function ScannerInit({
         },
       });
     } catch (error) {
-      return handleError({ msgType: 'STREAMING_ERROR', msg: failureMsg.streaming || JSON.stringify(error), failureCb });
+      return handleError({ msgType: 'STREAMING_FAILED', msg: failureMsg.streamingFailed || JSON.stringify(error), failureCb });
     }
     return mediaStream;
   };
@@ -128,7 +128,7 @@ function ScannerInit({
       });
       setFlash((s) => !s);
     } catch (error) {
-      return handleError({ msgType: 'FLASH', msg: failureMsg.flash, failureCb });
+      return handleError({ msgType: 'FLASH_UPSUPPORTED', msg: failureMsg.flashUnsupported, failureCb });
     }
     return true;
   };
@@ -201,10 +201,10 @@ ScannerInit.defaultProps = {
   successMsg: '',
   failureMsg: {
     unSupported: 'QR-Code/Bar-Code/UPI Scanner is not supporting in your device',
-    streaming: 'Camera streaming failed',
-    barCodeDetection: 'Bar code detection failed',
+    streamingFailed: 'Camera streaming failed',
+    barCodeDetectionFailed: 'Bar code detection failed',
     invalidImage: 'Invalid Images',
-    flash: 'Flash is not supporting in your device',
+    flashUnsupported: 'Flash is not supporting in your device',
     unableToScan: 'Unable to scan',
   },
   zIndex: 9,
