@@ -1,3 +1,4 @@
+/* eslint-disable no-new */
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import dependentJsService from '../services/dependentJsService';
@@ -20,7 +21,7 @@ const checkScriptInBrowser = async (failureMsg, failureCb, isProdKey, googleKey)
   if (!googleKey) {
     return handleError({ msgType: 'GOOGLE_API_KEY_MISSING', msg: failureMsg.googleAPIKeyMissing, failureCb });
   }
-  const googleApiUrl = `https://maps.googleapis.com/maps/api/js?${isProdKey ? 'client' : 'key'}=${googleKey}&libraries=places&loading=async`;
+  const googleApiUrl = `https://maps.googleapis.com/maps/api/js?${isProdKey ? 'client' : 'key'}=${googleKey}&libraries=places&loading=async&callback=scriptCbLLT`;
 
   try {
     await dependentJsService(googleApiUrl, 'googleMapLocationAPI', true);
@@ -39,22 +40,54 @@ function LiveLocationTracking({
   googleKey,
   isProdKey,
   zoom,
-  mapTypeControl,
-  originLatLng,
   destinationLatLng,
+  mapTypeControl,
+  panControl,
+  zoomControl,
+  scaleControl,
+  streetViewControl,
+  overviewMapControl,
+  rotateControl,
+  fullscreenControl,
 }) {
   const directionMapRef = useRef();
   let directionsService;
   let directionsRenderer;
   let watchID = null;
 
-  const createMap = (userCurrenrLocation) => {
+  const createMarker = async (googleMap, userCurrenrLocation, url) => {
+    const { AdvancedMarkerElement } = await google.maps.importLibrary('marker');
+
+    const beachFlagImg = document.createElement('img');
+    beachFlagImg.src = url;
+    beachFlagImg.style.transform = 'scaleX(-1)';
+
+    new AdvancedMarkerElement({
+      map: googleMap,
+      position: { lat: parseFloat(userCurrenrLocation.lat) - 0.0001, lng: userCurrenrLocation.lng },
+      content: beachFlagImg,
+      title: 'A marker using a custom PNG Image',
+    });
+  };
+
+  const createMap = async (userCurrenrLocation) => {
     try {
       const googleMap = new google.maps.Map(directionMapRef.current, {
-        mapTypeControl,
+        mapId: 'DEMO_MAP_ID',
         center: userCurrenrLocation,
         zoom,
+        mapTypeControl,
+        panControl,
+        zoomControl,
+        scaleControl,
+        streetViewControl,
+        overviewMapControl,
+        rotateControl,
+        fullscreenControl,
+
       });
+      createMarker(googleMap, userCurrenrLocation, 'https://maps.gstatic.com/mapfiles/ms2/micons/motorcycling.png');
+      createMarker(googleMap, destinationLatLng, 'https://maps.gstatic.com/mapfiles/ms2/micons/red-dot.png');
       directionsRenderer.setMap(googleMap);
     } catch (error) {
       return handleError({ msgType: 'UNABLE_TO_CREATE_MAP', msg: failureMsg.unableToCreateMap, failureCb });
@@ -69,7 +102,7 @@ function LiveLocationTracking({
         .route({
           origin: currentLocations,
           destination: destinationLatLng,
-          travelMode: google.maps.TravelMode.DRIVING,
+          travelMode: google.maps.TravelMode.WALKING,
         })
         .then((response) => {
           directionsRenderer.setDirections(response);
@@ -92,17 +125,24 @@ function LiveLocationTracking({
       handleLoading({ loadingCb });
       const isPermitByBrowser = await checkPermitByBrowser(failureMsg, failureCb);
       const isScriptInBrowser = await checkScriptInBrowser(
-
         failureMsg,
         failureCb,
         isProdKey,
         googleKey,
       );
-      if (isPermitByBrowser && isScriptInBrowser) {
-        setTimeout(() => {
+
+      window.scriptCbLLT = () => {
+        if (isPermitByBrowser && isScriptInBrowser) {
+          // setTimeout(() => {
           directionsService = new google.maps.DirectionsService();
-          directionsRenderer = new google.maps.DirectionsRenderer();
-          createMap(originLatLng);
+          directionsRenderer = new google.maps.DirectionsRenderer({
+            suppressMarkers: true,
+          });
+          navigator.geolocation.getCurrentPosition((position) => {
+            const lat = position.coords.latitude;
+            const lng = position.coords.longitude;
+            createMap({ lat, lng });
+          });
 
           watchID = navigator.geolocation.watchPosition(
             (newPosition) => {
@@ -113,8 +153,9 @@ function LiveLocationTracking({
             locationError(),
             { enableHighAccuracy: true, timeout: 30000, maximumAge: 2000, distanceFilter: 100 },
           );
-        }, 200);
-      }
+          // }, 200);
+        }
+      };
     } else {
       return handleError({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
     }
@@ -149,6 +190,13 @@ LiveLocationTracking.propTypes = {
   destinationLatLng: PropTypes.object,
   zoom: PropTypes.number,
   mapTypeControl: PropTypes.bool,
+  panControl: PropTypes.bool,
+  zoomControl: PropTypes.bool,
+  scaleControl: PropTypes.bool,
+  streetViewControl: PropTypes.bool,
+  overviewMapControl: PropTypes.bool,
+  rotateControl: PropTypes.bool,
+  fullscreenControl: PropTypes.bool,
 };
 
 LiveLocationTracking.defaultProps = {
@@ -167,11 +215,18 @@ LiveLocationTracking.defaultProps = {
     googleAPIKeyMissing: 'Unable to check browser permission',
     error: '',
   },
-  destinationLatLng: { lat: 12.9541033, lng: 77.7091133 },
+  destinationLatLng: { lat: 12.9387901, lng: 77.6407703 },
   isProdKey: true,
   googleKey: '',
   zoom: 13,
-  mapTypeControl: false,
+  mapTypeControl: true,
+  panControl: true,
+  zoomControl: true,
+  scaleControl: true,
+  streetViewControl: true,
+  overviewMapControl: true,
+  rotateControl: true,
+  fullscreenControl: true,
 };
 
 export default Wrapper(LiveLocationTracking);
