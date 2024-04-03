@@ -1,3 +1,10 @@
+## [1.0.61](https://github.com/opensrc0/fe-pilot/compare/v1.0.60...v1.0.61) (2024-4-3)
+
+
+### Bug Fixes
+
+* **live location tracking ng cchanges:** live location tracking changes ([5ff98bd](https://github.com/opensrc0/fe-pilot/commit/5ff98bd478b360f2f46938ab76fd59ac8057ff15))
+
 ## [1.0.60](https://github.com/opensrc0/fe-pilot/compare/v1.0.59...v1.0.60) (2024-4-2)
 
 
