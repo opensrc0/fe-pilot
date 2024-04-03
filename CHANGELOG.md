@@ -1,3 +1,10 @@
+## [1.0.62](https://github.com/opensrc0/fe-pilot/compare/v1.0.61...v1.0.62) (2024-4-3)
+
+
+### Bug Fixes
+
+* **live location tracking:** added start button in live location tracking ([6fd4c3d](https://github.com/opensrc0/fe-pilot/commit/6fd4c3d7380eea3c8b3abc7ab770ff60e37e61fd))
+
 ## [1.0.61](https://github.com/opensrc0/fe-pilot/compare/v1.0.60...v1.0.61) (2024-4-3)
 
 
