@@ -1,3 +1,10 @@
+## [1.0.64](https://github.com/opensrc0/fe-pilot/compare/v1.0.63...v1.0.64) (2024-4-3)
+
+
+### Bug Fixes
+
+* **face detector:** added face detector ([0d3e5f3](https://github.com/opensrc0/fe-pilot/commit/0d3e5f30261b55c10b8a56a668a4a2e10479e1f2))
+
 ## [1.0.63](https://github.com/opensrc0/fe-pilot/compare/v1.0.62...v1.0.63) (2024-4-3)
 
 
