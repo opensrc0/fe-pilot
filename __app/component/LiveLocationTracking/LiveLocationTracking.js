@@ -39,7 +39,6 @@ function LiveLocationTracking({
   loadingCb,
   googleKey,
   isProdKey,
-  zoom,
   destinationLatLng,
   mapTypeControl,
   panControl,
@@ -70,12 +69,38 @@ function LiveLocationTracking({
     });
   };
 
+  function createCenterControl(map, userCurrenrLocation) {
+    const controlButton = document.createElement('button');
+
+    // Set CSS for the control.
+    controlButton.style.backgroundColor = '#709bd5';
+    controlButton.style.border = '2px solid #fff';
+    controlButton.style.borderRadius = '50px';
+    controlButton.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
+    controlButton.style.color = '#fff';
+    controlButton.style.cursor = 'pointer';
+    controlButton.style.fontFamily = 'Roboto,Arial,sans-serif';
+    controlButton.style.fontSize = '16px';
+    controlButton.style.lineHeight = '38px';
+    controlButton.style.margin = '8px';
+    controlButton.style.padding = '0 16px';
+    controlButton.style.textAlign = 'center';
+    controlButton.textContent = 'Start';
+    controlButton.title = 'Click to recenter the map';
+    controlButton.type = 'button';
+    // Setup the click event listeners: simply set the map to Chicago.
+    controlButton.addEventListener('click', () => {
+      map.setCenter(userCurrenrLocation);
+      map.setZoom(19);
+    });
+    return controlButton;
+  }
+
   const createMap = async (userCurrenrLocation) => {
     try {
       const googleMap = new google.maps.Map(directionMapRef.current, {
         mapId: 'DEMO_MAP_ID',
         center: userCurrenrLocation,
-        zoom,
         mapTypeControl,
         panControl,
         zoomControl,
@@ -86,8 +111,17 @@ function LiveLocationTracking({
         fullscreenControl,
 
       });
+      // Crate Start Button
+      const centerControlDiv = document.createElement('div');
+      const centerControl = createCenterControl(googleMap, userCurrenrLocation);
+      centerControlDiv.appendChild(centerControl);
+      googleMap.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(centerControlDiv);
+
+      // Change Origin and Destination marker
       createMarker(googleMap, userCurrenrLocation, 'https://maps.gstatic.com/mapfiles/ms2/micons/motorcycling.png');
       createMarker(googleMap, destinationLatLng, 'https://maps.gstatic.com/mapfiles/ms2/micons/red-dot.png');
+
+      // Render Map with origin
       directionsRenderer.setMap(googleMap);
     } catch (error) {
       return handleError({ msgType: 'UNABLE_TO_CREATE_MAP', msg: failureMsg.unableToCreateMap, failureCb });
@@ -137,6 +171,7 @@ function LiveLocationTracking({
           directionsService = new google.maps.DirectionsService();
           directionsRenderer = new google.maps.DirectionsRenderer({
             suppressMarkers: true,
+            preserveViewport: true,
           });
           navigator.geolocation.getCurrentPosition((position) => {
             const lat = position.coords.latitude;
@@ -188,7 +223,6 @@ LiveLocationTracking.propTypes = {
   isProdKey: PropTypes.bool,
   googleKey: PropTypes.string,
   destinationLatLng: PropTypes.object,
-  zoom: PropTypes.number,
   mapTypeControl: PropTypes.bool,
   panControl: PropTypes.bool,
   zoomControl: PropTypes.bool,
@@ -218,7 +252,6 @@ LiveLocationTracking.defaultProps = {
   destinationLatLng: { lat: 12.9387901, lng: 77.6407703 },
   isProdKey: true,
   googleKey: '',
-  zoom: 13,
   mapTypeControl: true,
   panControl: true,
   zoomControl: true,
