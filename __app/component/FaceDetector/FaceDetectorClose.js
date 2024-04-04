@@ -4,6 +4,7 @@ function FaceDetectorClose({
   onClose,
   children,
   zIndex,
+  allClear,
   top,
   bottom,
   left,
@@ -11,6 +12,11 @@ function FaceDetectorClose({
   color,
   position,
 }) {
+  const setClose = () => {
+    onClose();
+    allClear();
+  };
+
   return (
     <div
       style={{
@@ -22,8 +28,8 @@ function FaceDetectorClose({
         color,
         position,
       }}
-      onClick={onClose}
-      onKeyDown={(ev) => ev.key === 'Enter' && onClose()}
+      onClick={setClose}
+      onKeyDown={(ev) => ev.key === 'Enter' && setClose()}
       role="button"
       tabIndex={0}
     >

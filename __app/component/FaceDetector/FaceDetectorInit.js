@@ -166,6 +166,7 @@ function FaceDetectorInit({
       {
         React.Children.map(children, (child) => React.cloneElement(child, {
           zIndex,
+          allClear,
           toggleCamera,
           toggleFlash,
           successCb,
