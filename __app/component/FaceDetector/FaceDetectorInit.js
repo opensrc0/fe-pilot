@@ -7,6 +7,12 @@ import Wrapper from '../Wrapper/Wrapper';
 let mediaStream = null;
 let videoUnmount = null;
 let unmoutRenderLoop = null;
+const failureMsgDefault = {
+  unSupported: 'Face Detector is not supporting in your device',
+  streamingFailed: 'Camera streaming failed',
+  barCodeDetectionFailed: 'Bar code detection failed',
+  flashUnsupported: 'Flash is not supporting in your device',
+};
 
 function FaceDetectorInit({
   successCb,
@@ -18,6 +24,7 @@ function FaceDetectorInit({
   zIndex,
   children,
 }) {
+  const failureMsgMerge = { ...failureMsgDefault, ...failureMsg };
   let list = null;
   let video = null;
   let facingMode;
@@ -56,7 +63,7 @@ function FaceDetectorInit({
           // clearTimeout(unmoutRenderLoop);
         }
       } catch (error) {
-        return handleError({ msgType: 'BAR_CODE_DETECTION_FAILED', msg: failureMsg.barCodeDetectionFailed || JSON.stringify(error), failureCb });
+        return handleError({ msgType: 'BAR_CODE_DETECTION_FAILED', msg: failureMsgMerge.barCodeDetectionFailed || JSON.stringify(error), failureCb });
       }
     }
 
@@ -105,7 +112,7 @@ function FaceDetectorInit({
         },
       });
     } catch (error) {
-      return handleError({ msgType: 'STREAMING_FAILED', msg: failureMsg.streamingFailed || JSON.stringify(error), failureCb });
+      return handleError({ msgType: 'STREAMING_FAILED', msg: failureMsgMerge.streamingFailed || JSON.stringify(error), failureCb });
     }
     return mediaStream;
   };
@@ -124,7 +131,7 @@ function FaceDetectorInit({
       });
       setFlash((s) => !s);
     } catch (error) {
-      return handleError({ msgType: 'FLASH_UPSUPPORTED', msg: failureMsg.flashUnsupported, failureCb });
+      return handleError({ msgType: 'FLASH_UPSUPPORTED', msg: failureMsgMerge.flashUnsupported, failureCb });
     }
     return true;
   };
@@ -145,7 +152,7 @@ function FaceDetectorInit({
 
       startVideo();
     } else {
-      return handleError({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
+      return handleError({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsgMerge.unSupported, failureCb });
     }
 
     return true;
@@ -213,14 +220,7 @@ FaceDetectorInit.defaultProps = {
   failureCb: () => {},
   loadingCb: () => {},
   successMsg: '',
-  failureMsg: {
-    unSupported: 'Face Detector is not supporting in your device',
-    streamingFailed: 'Camera streaming failed',
-    barCodeDetectionFailed: 'Bar code detection failed',
-    invalidImage: 'Invalid Images',
-    flashUnsupported: 'Flash is not supporting in your device',
-    unableToScan: 'Unable to scan',
-  },
+  failureMsg: { ...failureMsgDefault },
   zIndex: 9,
   cameraType: 'back',
 };
