@@ -56,7 +56,8 @@
     "autofillotp",
     "share",
     "livelocationtracking",
-    "detectmylocation"
+    "detectmylocation",
+    "colorpicker"
   ],
   "config": {
     "commitizen": {
@@ -91,7 +92,8 @@
     "Share/",
     "TextToSpeech/",
     "VoiceRecognition/",
-    "Vibrate/"
+    "Vibrate/",
+    "ColorPicker/"
   ],
   "devDependencies": {
     "@babel/cli": "^7.23.9",
