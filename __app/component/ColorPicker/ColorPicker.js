@@ -9,11 +9,10 @@ function ColorPicker({
   successMsg,
   failureMsg,
   children,
-  showForever,
 }) {
   const pickColor = () => {
-    if (ColorPicker.isBrowserSupport(showForever)) {
-      const eyeDropper = new window.EyeDropper();
+    if (ColorPicker.isBrowserSupport()) {
+      const eyeDropper = new globalThis.EyeDropper();
 
       eyeDropper
         .open()
@@ -33,14 +32,13 @@ function ColorPicker({
   }));
 }
 
-ColorPicker.isBrowserSupport = (showForever) => window.EyeDropper && showForever && true;
+ColorPicker.isBrowserSupport = () => globalThis.EyeDropper;
 
 ColorPicker.propTypes = {
   successCb: PropTypes.func,
   failureCb: PropTypes.func,
   successMsg: PropTypes.string,
   failureMsg: PropTypes.object,
-  showForever: PropTypes.bool,
 };
 
 ColorPicker.defaultProps = {
@@ -51,7 +49,6 @@ ColorPicker.defaultProps = {
     unSupported: 'Your browser does not support the Color Picker fetaure',
     error: 'Unable to copy color code',
   },
-  showForever: true,
 };
 
 export default Wrapper(ColorPicker);
