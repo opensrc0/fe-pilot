@@ -3,3 +3,6 @@ node_modules/
 __build/
 
 **/index.js
+
+!__app/component/**/index.js
+
