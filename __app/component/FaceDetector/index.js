@@ -1,17 +1,17 @@
-import FaceDetectorInit from './FaceDetectorInit';
+import FaceDetector from './FaceDetector';
 import FaceDetectorFlash from './FaceDetectorFlash';
 import FaceDetectorClose from './FaceDetectorClose';
 import FaceDetectorFacing from './FaceDetectorFacing';
 
 export {
-  FaceDetectorInit,
+  FaceDetector,
   FaceDetectorFlash,
   FaceDetectorClose,
   FaceDetectorFacing,
 };
 
 export default {
-  Init: FaceDetectorInit,
+  Init: FaceDetector,
   Flash: FaceDetectorFlash,
   Close: FaceDetectorClose,
   Facing: FaceDetectorFacing,

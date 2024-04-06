@@ -1,4 +1,4 @@
-import ScannerInit from './ScannerInit';
+import Scanner from './Scanner';
 import ScannerScanBox from './ScannerScanBox';
 import ScannerFlash from './ScannerFlash';
 import ScannerClose from './ScannerClose';
@@ -8,7 +8,7 @@ import ScannerCamera from './ScannerCamera';
 
 // Helps in tree shaking
 export {
-  ScannerInit,
+  Scanner,
   ScannerFlash,
   ScannerClose,
   ScannerScanBox,
@@ -18,7 +18,7 @@ export {
 };
 
 export default {
-  Init: ScannerInit,
+  Init: Scanner,
   Flash: ScannerFlash,
   Close: ScannerClose,
   ScanBox: ScannerScanBox,

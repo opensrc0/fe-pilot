@@ -1,37 +1,39 @@
 /* eslint-disable no-inner-declarations */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { handleError, handleLoading } from '../services/handlerService';
+import { handleSuccess, handleError, handleLoading } from '../services/handlerService';
 import Wrapper from '../Wrapper/Wrapper';
 
 let mediaStream = null;
 let videoUnmount = null;
 let unmoutRenderLoop = null;
+
 const failureMsgDefault = {
-  unSupported: 'Face Detector is not supporting in your device',
+  unSupported: 'QR-Code/Bar-Code/UPI Scanner is not supporting in your device',
   streamingFailed: 'Camera streaming failed',
   barCodeDetectionFailed: 'Bar code detection failed',
+  invalidImage: 'Invalid Images',
   flashUnsupported: 'Flash is not supporting in your device',
+  unableToScan: 'Unable to scan',
 };
 
-function FaceDetectorInit({
-  // successCb,
+function Scanner({
+  successCb,
   failureCb,
   loadingCb,
-  // successMsg,
+  successMsg,
   failureMsg: failureMsgProps,
   cameraType,
   zIndex,
   children,
 }) {
-  const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
   let list = null;
   let video = null;
   let facingMode;
+  const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
 
   const [flash, setFlash] = useState(false);
   const [isBrowser, setIsBrowser] = useState(false);
-  const [faces, setFaces] = useState([]);
 
   const stopStreaming = () => {
     if (mediaStream) {
@@ -41,27 +43,26 @@ function FaceDetectorInit({
     }
   };
 
-  const allClear = () => {
-    cancelAnimationFrame(videoUnmount);
-    stopStreaming();
-    clearTimeout(unmoutRenderLoop);
-  };
-
   const detectCodes = async () => {
-    const WindowFaceDetector = globalThis.FaceDetector;
-    const faceDetector = new WindowFaceDetector();
+    const WindowBarcodeDetector = globalThis.BarcodeDetector;
+    const barcodeDetector = new WindowBarcodeDetector();
+    const itemsFound = [];
 
     // eslint-disable-next-line consistent-return
     async function render() {
       try {
-        const getFaces = await faceDetector.detect(video);
-
-        if (getFaces[0]) {
-          setFaces(getFaces);
-          // cancelAnimationFrame(videoUnmount);
-          // stopStreaming();
-          // clearTimeout(unmoutRenderLoop);
-        }
+        const barcodes = await barcodeDetector.detect(video);
+        barcodes.forEach((barcode) => {
+          if (!itemsFound.includes(barcode.rawValue)) {
+            itemsFound.push(barcode.rawValue);
+            handleSuccess({
+              msgType: 'SUCCESSFUL',
+              msg: successMsg,
+              successCb,
+              data: { barCodeValue: barcode.rawValue, barCodeType: barcode.format },
+            });
+          }
+        });
       } catch (error) {
         return handleError({ msgType: 'BAR_CODE_DETECTION_FAILED', msg: failureMsg.barCodeDetectionFailed || JSON.stringify(error), failureCb });
       }
@@ -69,12 +70,10 @@ function FaceDetectorInit({
 
     unmoutRenderLoop = setTimeout(() => {
       (function renderLoop() {
-        videoUnmount = requestAnimationFrame(() => {
-          setTimeout(renderLoop, 1500);
-        });
+        videoUnmount = requestAnimationFrame(renderLoop);
         render();
       }());
-    }, 100);
+    }, 1000);
   };
 
   const createVideo = async (id) => {
@@ -86,11 +85,11 @@ function FaceDetectorInit({
     video.srcObject = mediaStream;
     video.autoplay = true;
     video.play();
-    // video.style.width = '100vh';
-    // video.style.height = '100%';
+    video.style.width = '100%';
+    video.style.height = '100%';
     video.style.position = 'absolute';
-    // video.style.overflow = 'hidden';
-    // video.style.display = 'block';
+    video.style.overflow = 'hidden';
+    video.style.display = 'block';
     video.style.zIndex = zIndex;
     video.style.top = '0';
     video.style.left = '0';
@@ -123,6 +122,12 @@ function FaceDetectorInit({
     detectCodes();
   };
 
+  const allClear = () => {
+    cancelAnimationFrame(videoUnmount);
+    stopStreaming();
+    clearTimeout(unmoutRenderLoop);
+  };
+
   const toggleFlash = async () => {
     const track = mediaStream.getVideoTracks()[0];
     try {
@@ -146,7 +151,7 @@ function FaceDetectorInit({
   };
 
   const handleBrowserSupport = () => {
-    if (FaceDetectorInit.isBrowserSupport()) {
+    if (Scanner.isBrowserSupport()) {
       facingMode = cameraType === 'back' ? 'environment' : 'user';
       handleLoading({ loadingCb });
 
@@ -167,58 +172,45 @@ function FaceDetectorInit({
     };
   }, []);
 
-  return isBrowser && FaceDetectorInit.isBrowserSupport() && (
-    <div id="face-detector">
-      <div id="camera" style={{ position: 'absolute' }} />
+  return isBrowser && Scanner.isBrowserSupport() && (
+    <div id="scanner">
+      <div id="camera" />
       {
         React.Children.map(children, (child) => React.cloneElement(child, {
           zIndex,
           allClear,
           toggleCamera,
           toggleFlash,
+          successCb,
+          successMsg,
+          failureCb,
+          failureMsg,
         }))
-      }
-      {
-        faces.map((face) => (
-          <div
-            className="face"
-            style={{
-              width: `${face.boundingBox.width}px`,
-              height: `${face.boundingBox.height}px`,
-              left: `${face.boundingBox.left}px`,
-              top: `${face.boundingBox.top}px`,
-              position: 'absolute',
-              border: '2px solid yellow',
-              zIndex: '12',
-            }}
-
-          />
-        ))
       }
     </div>
   );
 }
 
-FaceDetectorInit.isBrowserSupport = () => navigator?.mediaDevices && globalThis.FaceDetector;
+Scanner.isBrowserSupport = () => navigator?.mediaDevices && globalThis.BarcodeDetector;
 
-FaceDetectorInit.propTypes = {
-  // successCb: PropTypes.func,
+Scanner.propTypes = {
+  successCb: PropTypes.func,
   failureCb: PropTypes.func,
   loadingCb: PropTypes.func,
-  // successMsg: PropTypes.string,
+  successMsg: PropTypes.string,
   failureMsg: PropTypes.object,
   zIndex: PropTypes.number,
   cameraType: PropTypes.oneOf(['back', 'front']),
 };
 
-FaceDetectorInit.defaultProps = {
-  // successCb: () => {},
+Scanner.defaultProps = {
+  successCb: () => {},
   failureCb: () => {},
   loadingCb: () => {},
-  // successMsg: '',
+  successMsg: '',
   failureMsg: { ...failureMsgDefault },
   zIndex: 9,
   cameraType: 'back',
 };
 
-export default Wrapper(FaceDetectorInit);
+export default Wrapper(Scanner);

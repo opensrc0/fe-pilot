@@ -10,7 +10,7 @@ const failureMsgDefault = {
   error: 'Unable to convert text to voice',
 };
 
-function TextToSpeechInit({
+function TextToSpeech({
   successCb,
   failureCb,
   loadingCb,
@@ -23,7 +23,7 @@ function TextToSpeechInit({
   const [isAudioOn, setIsAudioOn] = useState(false);
 
   const handlePlay = async () => {
-    if (TextToSpeechInit.isBrowserSupport()) {
+    if (TextToSpeech.isBrowserSupport()) {
       if (text) {
         handleLoading({ loadingCb });
         setIsAudioOn(true);
@@ -70,12 +70,12 @@ function TextToSpeechInit({
   }));
 }
 
-TextToSpeechInit.isBrowserSupport = () => globalThis.speechSynthesis
+TextToSpeech.isBrowserSupport = () => globalThis.speechSynthesis
   && globalThis.speechSynthesis?.cancel
   && globalThis.speechSynthesis?.speak
   && true;
 
-TextToSpeechInit.propTypes = {
+TextToSpeech.propTypes = {
   successCb: PropTypes.func,
   failureCb: PropTypes.func,
   loadingCb: PropTypes.func,
@@ -83,7 +83,7 @@ TextToSpeechInit.propTypes = {
   failureMsg: PropTypes.object,
 };
 
-TextToSpeechInit.defaultProps = {
+TextToSpeech.defaultProps = {
   successCb: () => {},
   failureCb: () => {},
   loadingCb: () => {},
@@ -91,4 +91,4 @@ TextToSpeechInit.defaultProps = {
   failureMsg: { ...failureMsgDefault },
 };
 
-export default Wrapper(TextToSpeechInit);
+export default Wrapper(TextToSpeech);
