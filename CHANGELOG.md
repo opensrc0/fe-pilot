@@ -1,3 +1,11 @@
+## [1.0.65](https://github.com/opensrc0/fe-pilot/compare/v1.0.64...v1.0.65) (2024-4-6)
+
+
+### Bug Fixes
+
+* **failuremsgdefault:** changed failureMsgDefault accross the component ([d64ab7b](https://github.com/opensrc0/fe-pilot/commit/d64ab7b16fed744a2f0bf5f72eb37397ce92813d))
+* **package.json:** change publish branch from main to master ([40e3118](https://github.com/opensrc0/fe-pilot/commit/40e31189e46221c86cc94bd86c90277fad92c956))
+
 ## [1.0.64](https://github.com/opensrc0/fe-pilot/compare/v1.0.63...v1.0.64) (2024-4-3)
 
 
