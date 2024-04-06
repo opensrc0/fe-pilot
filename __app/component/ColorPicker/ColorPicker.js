@@ -51,7 +51,7 @@ ColorPicker.propTypes = {
 ColorPicker.defaultProps = {
   successCb: () => {},
   failureCb: () => {},
-  successMsg: 'Color copied successfully!!',
+  successMsg: 'Color picked successfully!!',
   failureMsg: { ...failureMsgDefault },
 };
 
