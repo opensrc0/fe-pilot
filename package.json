@@ -16,7 +16,7 @@
     "commit": "npm run lint:check && git-cz",
     "lint:check": "lint-staged",
     "lint:fix": "eslint . --fix",
-    "semantic-release": "semantic-release --branches main"
+    "semantic-release": "semantic-release --branches master"
   },
   "author": "Himanshu Gupta",
   "license": "MIT",
@@ -66,7 +66,7 @@
   },
   "release": {
     "branches": [
-      "main",
+      "master",
       "next"
     ],
     "plugins": [
