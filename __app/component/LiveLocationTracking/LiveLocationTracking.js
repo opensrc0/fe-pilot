@@ -5,6 +5,17 @@ import dependentJsService from '../services/dependentJsService';
 import { handleError, handleSuccess, handleLoading } from '../services/handlerService';
 import Wrapper from '../Wrapper/Wrapper';
 
+const failureMsgDefault = {
+  unSupported: 'LiveLocationTracking is not supporting in your device',
+  permissionDenied: 'Permission Denied',
+  unableToLocateDirection: 'Unable To get Updated Location',
+  browserPermissionAPIFailed: 'Unable to check browser permission',
+  unableToLoadGoogleAPI: 'Unable to load google api script',
+  locationNotFound: 'Unable To get Updated Location',
+  googleAPIKeyMissing: 'Unable to check browser permission',
+  error: '',
+};
+
 const checkPermitByBrowser = async (failureMsg, failureCb) => {
   try {
     const permissions = await navigator.permissions.query({ name: 'geolocation' });
@@ -35,7 +46,7 @@ function LiveLocationTracking({
   successCb,
   failureCb,
   successMsg,
-  failureMsg,
+  failureMsg: failureMsgProps,
   loadingCb,
   googleKey,
   isProdKey,
@@ -53,6 +64,7 @@ function LiveLocationTracking({
   let directionsService;
   let directionsRenderer;
   let watchID = null;
+  const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
 
   const createMarker = async (googleMap, userCurrenrLocation, url) => {
     const { AdvancedMarkerElement } = await google.maps.importLibrary('marker');
@@ -238,17 +250,8 @@ LiveLocationTracking.defaultProps = {
   failureCb: () => {},
   loadingCb: () => {},
   successMsg: '',
-  failureMsg: {
-    unSupported: 'LiveLocationTracking is not supporting in your device',
-    permissionDenied: 'Permission Denied',
-    unableToLocateDirection: 'Unable To get Updated Location',
-    browserPermissionAPIFailed: 'Unable to check browser permission',
-    unableToLoadGoogleAPI: 'Unable to load google api script',
-    locationNotFound: 'Unable To get Updated Location',
-    // invalidLatLng: '',
-    googleAPIKeyMissing: 'Unable to check browser permission',
-    error: '',
-  },
+  failureMsg: { ...failureMsgDefault },
+
   destinationLatLng: { lat: 12.9387901, lng: 77.6407703 },
   isProdKey: true,
   googleKey: '',

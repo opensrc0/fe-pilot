@@ -3,13 +3,20 @@ import PropTypes from 'prop-types';
 import { handleSuccess, handleError } from '../services/handlerService';
 import Wrapper from '../Wrapper/Wrapper';
 
+const failureMsgDefault = {
+  unSupported: 'Your browser does not support the Color Picker fetaure',
+  error: 'Unable to copy color code',
+};
+
 function ColorPicker({
   successCb,
   failureCb,
   successMsg,
-  failureMsg,
+  failureMsg: failureMsgProps,
   children,
 }) {
+  const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
+
   const pickColor = () => {
     if (ColorPicker.isBrowserSupport()) {
       const eyeDropper = new globalThis.EyeDropper();
@@ -45,10 +52,7 @@ ColorPicker.defaultProps = {
   successCb: () => {},
   failureCb: () => {},
   successMsg: 'Color copied successfully!!',
-  failureMsg: {
-    unSupported: 'Your browser does not support the Color Picker fetaure',
-    error: 'Unable to copy color code',
-  },
+  failureMsg: { ...failureMsgDefault },
 };
 
 export default Wrapper(ColorPicker);

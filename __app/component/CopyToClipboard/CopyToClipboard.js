@@ -3,15 +3,22 @@ import PropTypes from 'prop-types';
 import { handleSuccess, handleError, handleLoading } from '../services/handlerService';
 import Wrapper from '../Wrapper/Wrapper';
 
+const failureMsgDefault = {
+  unSupported: 'Copy To ClipBoard is not supporting in your device',
+  error: 'Unable to copy',
+};
+
 function CopyToClipboard({
   successCb,
   failureCb,
   loadingCb,
   successMsg,
-  failureMsg,
+  failureMsg: failureMsgProps,
   children,
   elementToBeCopy,
 }) {
+  const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
+
   const copyText = () => {
     if (CopyToClipboard.isBrowserSupport()) {
       handleLoading({ loadingCb });
@@ -45,10 +52,7 @@ CopyToClipboard.defaultProps = {
   failureCb: () => {},
   loadingCb: () => {},
   successMsg: 'Copied Successfully',
-  failureMsg: {
-    unSupported: 'Copy To ClipBoard is not supporting in your device',
-    error: 'Unable to copy',
-  },
+  failureMsg: { ...failureMsgDefault },
 };
 
 export default Wrapper(CopyToClipboard);

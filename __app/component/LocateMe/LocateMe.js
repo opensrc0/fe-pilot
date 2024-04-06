@@ -4,6 +4,16 @@ import Wrapper from '../Wrapper/Wrapper';
 import { handleSuccess, handleError, handleLoading } from '../services/handlerService';
 import dependentJsService from '../services/dependentJsService';
 
+const failureMsgDefault = {
+  unSupported: 'LocationMe is not supporting in your device',
+  permissionDenied: 'Permission Denied',
+  googleAPIKeyMissing: 'Google Key is missing',
+  unableToLoadGoogleAPI: 'Unable to load google api script',
+  browserPermissionAPIFailed: 'Unable to check browser permission',
+  invalidLatLng: 'Invalid Lat lng',
+  error: '',
+};
+
 const checkPermitByBrowser = async (failureMsg, failureCb) => {
   try {
     const permissions = await navigator.permissions.query({ name: 'geolocation' });
@@ -79,18 +89,19 @@ function LocateMe({
   successCb,
   failureCb,
   successMsg,
-  failureMsg,
+  failureMsg: failureMsgProps,
   loadingCb,
   children,
   isProdKey,
   googleKey,
 }) {
+  const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
+
   const onClick = async () => {
     if (LocateMe.isBrowserSupport()) {
       handleLoading({ loadingCb });
       const isPermitByBrowser = await checkPermitByBrowser(failureMsg, failureCb);
       const isScriptInBrowser = await checkScriptInBrowser(
-
         failureMsg,
         failureCb,
         isProdKey,
@@ -154,15 +165,7 @@ LocateMe.defaultProps = {
   failureCb: () => {},
   loadingCb: () => {},
   successMsg: 'Located Successfully',
-  failureMsg: {
-    unSupported: 'LocationMe is not supporting in your device',
-    permissionDenied: 'Permission Denied',
-    browserPermissionAPIFailed: 'Unable to check browser permission',
-    googleAPIKeyMissing: 'Google Key is missing',
-    unableToLoadGoogleAPI: 'Unable to load google api script',
-    invalidLatLng: 'Invalid Lat lng',
-    error: '',
-  },
+  failureMsg: { ...failureMsgDefault },
   isProdKey: true,
   googleKey: '',
 };

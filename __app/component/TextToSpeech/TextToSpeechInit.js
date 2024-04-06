@@ -4,15 +4,22 @@ import Wrapper from '../Wrapper/Wrapper';
 import textToSpeech from './textToSpeechService';
 import { handleSuccess, handleError, handleLoading } from '../services/handlerService';
 
+const failureMsgDefault = {
+  unSupported: 'Text To Speech feature is not supporting in your device',
+  badRequest: 'Missing props',
+  error: 'Unable to convert text to voice',
+};
+
 function TextToSpeechInit({
   successCb,
   failureCb,
   loadingCb,
   successMsg,
-  failureMsg,
+  failureMsg: failureMsgProps,
   children,
   text,
 }) {
+  const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
   const [isAudioOn, setIsAudioOn] = useState(false);
 
   const handlePlay = async () => {
@@ -81,11 +88,7 @@ TextToSpeechInit.defaultProps = {
   failureCb: () => {},
   loadingCb: () => {},
   successMsg: 'Converted text to voice Successfully',
-  failureMsg: {
-    unSupported: 'Text To Speech feature is not supporting in your device',
-    badRequest: 'Missing props',
-    error: 'Unable to convert text to voice',
-  },
+  failureMsg: { ...failureMsgDefault },
 };
 
 export default Wrapper(TextToSpeechInit);

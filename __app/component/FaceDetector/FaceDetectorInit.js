@@ -15,16 +15,16 @@ const failureMsgDefault = {
 };
 
 function FaceDetectorInit({
-  successCb,
+  // successCb,
   failureCb,
   loadingCb,
-  successMsg,
-  failureMsg,
+  // successMsg,
+  failureMsg: failureMsgProps,
   cameraType,
   zIndex,
   children,
 }) {
-  const failureMsgMerge = { ...failureMsgDefault, ...failureMsg };
+  const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
   let list = null;
   let video = null;
   let facingMode;
@@ -63,7 +63,7 @@ function FaceDetectorInit({
           // clearTimeout(unmoutRenderLoop);
         }
       } catch (error) {
-        return handleError({ msgType: 'BAR_CODE_DETECTION_FAILED', msg: failureMsgMerge.barCodeDetectionFailed || JSON.stringify(error), failureCb });
+        return handleError({ msgType: 'BAR_CODE_DETECTION_FAILED', msg: failureMsg.barCodeDetectionFailed || JSON.stringify(error), failureCb });
       }
     }
 
@@ -112,7 +112,7 @@ function FaceDetectorInit({
         },
       });
     } catch (error) {
-      return handleError({ msgType: 'STREAMING_FAILED', msg: failureMsgMerge.streamingFailed || JSON.stringify(error), failureCb });
+      return handleError({ msgType: 'STREAMING_FAILED', msg: failureMsg.streamingFailed || JSON.stringify(error), failureCb });
     }
     return mediaStream;
   };
@@ -131,7 +131,7 @@ function FaceDetectorInit({
       });
       setFlash((s) => !s);
     } catch (error) {
-      return handleError({ msgType: 'FLASH_UPSUPPORTED', msg: failureMsgMerge.flashUnsupported, failureCb });
+      return handleError({ msgType: 'FLASH_UPSUPPORTED', msg: failureMsg.flashUnsupported, failureCb });
     }
     return true;
   };
@@ -152,7 +152,7 @@ function FaceDetectorInit({
 
       startVideo();
     } else {
-      return handleError({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsgMerge.unSupported, failureCb });
+      return handleError({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
     }
 
     return true;
@@ -176,10 +176,6 @@ function FaceDetectorInit({
           allClear,
           toggleCamera,
           toggleFlash,
-          successCb,
-          successMsg,
-          failureCb,
-          failureMsg,
         }))
       }
       {
@@ -206,20 +202,20 @@ function FaceDetectorInit({
 FaceDetectorInit.isBrowserSupport = () => navigator?.mediaDevices && globalThis.FaceDetector;
 
 FaceDetectorInit.propTypes = {
-  successCb: PropTypes.func,
+  // successCb: PropTypes.func,
   failureCb: PropTypes.func,
   loadingCb: PropTypes.func,
-  successMsg: PropTypes.string,
+  // successMsg: PropTypes.string,
   failureMsg: PropTypes.object,
   zIndex: PropTypes.number,
   cameraType: PropTypes.oneOf(['back', 'front']),
 };
 
 FaceDetectorInit.defaultProps = {
-  successCb: () => {},
+  // successCb: () => {},
   failureCb: () => {},
   loadingCb: () => {},
-  successMsg: '',
+  // successMsg: '',
   failureMsg: { ...failureMsgDefault },
   zIndex: 9,
   cameraType: 'back',

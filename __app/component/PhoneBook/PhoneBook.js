@@ -3,16 +3,24 @@ import PropTypes from 'prop-types';
 import { handleSuccess, handleError, handleLoading } from '../services/handlerService';
 import Wrapper from '../Wrapper/Wrapper';
 
+const failureMsgDefault = {
+  unSupported: 'PhoneBook is not supporting in your device',
+  cancelled: 'Feature Cancelled',
+  error: 'Unable to fetch details from PhoneBook',
+};
+
 function PhoneBook({
   successCb,
   failureCb,
   loadingCb,
   successMsg,
-  failureMsg,
+  failureMsg: failureMsgProps,
   children,
   contactProperty,
   isSelectMultiple,
 }) {
+  const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
+
   const getContacts = async () => {
     const opts = { multiple: isSelectMultiple };
     if (PhoneBook.isBrowserSupport()) {
@@ -60,11 +68,7 @@ PhoneBook.defaultProps = {
   failureCb: () => {},
   loadingCb: () => {},
   successMsg: 'Phonebook details fetch Successfully',
-  failureMsg: {
-    unSupported: 'PhoneBook is not supporting in your device',
-    cancelled: 'Feature Cancelled',
-    error: 'Unable to fetch details from PhoneBook',
-  },
+  failureMsg: { ...failureMsgDefault },
   contactProperty: ['name', 'email', 'tel', 'address', 'icon'],
   isSelectMultiple: false,
 };

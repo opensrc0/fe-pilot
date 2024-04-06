@@ -8,12 +8,21 @@ let mediaStream = null;
 let videoUnmount = null;
 let unmoutRenderLoop = null;
 
+const failureMsgDefault = {
+  unSupported: 'QR-Code/Bar-Code/UPI Scanner is not supporting in your device',
+  streamingFailed: 'Camera streaming failed',
+  barCodeDetectionFailed: 'Bar code detection failed',
+  invalidImage: 'Invalid Images',
+  flashUnsupported: 'Flash is not supporting in your device',
+  unableToScan: 'Unable to scan',
+};
+
 function ScannerInit({
   successCb,
   failureCb,
   loadingCb,
   successMsg,
-  failureMsg,
+  failureMsg: failureMsgProps,
   cameraType,
   zIndex,
   children,
@@ -21,6 +30,7 @@ function ScannerInit({
   let list = null;
   let video = null;
   let facingMode;
+  const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
 
   const [flash, setFlash] = useState(false);
   const [isBrowser, setIsBrowser] = useState(false);
@@ -198,14 +208,7 @@ ScannerInit.defaultProps = {
   failureCb: () => {},
   loadingCb: () => {},
   successMsg: '',
-  failureMsg: {
-    unSupported: 'QR-Code/Bar-Code/UPI Scanner is not supporting in your device',
-    streamingFailed: 'Camera streaming failed',
-    barCodeDetectionFailed: 'Bar code detection failed',
-    invalidImage: 'Invalid Images',
-    flashUnsupported: 'Flash is not supporting in your device',
-    unableToScan: 'Unable to scan',
-  },
+  failureMsg: { ...failureMsgDefault },
   zIndex: 9,
   cameraType: 'back',
 };

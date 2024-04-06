@@ -3,6 +3,12 @@ import PropTypes from 'prop-types';
 import { handleSuccess, handleError, handleLoading } from '../services/handlerService';
 import Wrapper from '../Wrapper/Wrapper';
 
+const failureMsgDefault = {
+  unSupported: 'Share is not supporting in your device',
+  badRequest: 'Missing props',
+  error: 'Unable to share',
+};
+
 const isShareAPIDataValid = (sharingData) => {
   if (navigator.canShare) {
     return navigator.canShare(sharingData);
@@ -16,12 +22,13 @@ function Share({
   failureCb,
   loadingCb,
   successMsg,
-  failureMsg,
+  failureMsg: failureMsgProps,
   children,
   sName,
   sTitle,
   sUrl,
 }) {
+  const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
   const sharingData = { title: sName, text: sTitle, url: sUrl };
 
   const showDropdown = () => {
@@ -65,11 +72,7 @@ Share.defaultProps = {
   failureCb: () => {},
   loadingCb: () => {},
   successMsg: 'Shared Successfully',
-  failureMsg: {
-    unSupported: 'Share is not supporting in your device',
-    badRequest: 'Missing props',
-    error: 'Unable to share',
-  },
+  failureMsg: { ...failureMsgDefault },
   sName: 'fe-pilot',
   sTitle: 'A React library for advance JS features',
   sUrl: 'https://www.npmjs.com/package/fe-pilot',

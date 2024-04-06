@@ -3,14 +3,20 @@ import PropTypes from 'prop-types';
 import Wrapper from '../Wrapper/Wrapper';
 import { handleSuccess, handleError, handleLoading } from '../services/handlerService';
 
+const failureMsgDefault = {
+  unSupported: 'Voice Recognition feature is not supporting in your device',
+  error: 'Unable to convert your voice to text',
+};
+
 function VoiceRecognition({
   successCb,
   failureCb,
   loadingCb,
   successMsg,
-  failureMsg,
+  failureMsg: failureMsgProps,
   children,
 }) {
+  const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isVoiceStarted, setIsVoiceStarted] = useState(false);
   const [voiceText, setVoiceText] = useState('');
@@ -92,10 +98,7 @@ VoiceRecognition.defaultProps = {
   failureCb: () => {},
   loadingCb: () => {},
   successMsg: 'Successfully converted your voice to text',
-  failureMsg: {
-    unSupported: 'Voice Recognition feature is not supporting in your device',
-    error: 'Unable to convert your voice to text',
-  },
+  failureMsg: { ...failureMsgDefault },
 };
 
 export default Wrapper(VoiceRecognition);
