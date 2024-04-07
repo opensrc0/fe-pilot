@@ -29,7 +29,11 @@ const srcPath = path.resolve(__dirname, '../component');
 const components = fs.readdirSync(srcPath).filter((files) => !ignoreFiles.includes(files) && !files.includes('WIP-'));
 let count = 0;
 
+let indexImport = '';
+let indexExport = '\nexport {';
 components.forEach((component) => {
+  indexImport += `import ${component} from './${component}';\n`;
+  indexExport += `\n  ${component},`;
   const componentDir = path.resolve(`${__dirname}`, `../../${component}`);
   mkdirp(componentDir).then(() => {
     const componentFile = path.resolve(componentDir, 'index.js');
@@ -50,3 +54,5 @@ components.forEach((component) => {
     });
   });
 });
+indexExport += '\n};\n';
+fs.writeFile(('index.js'), indexImport + indexExport, () => {});

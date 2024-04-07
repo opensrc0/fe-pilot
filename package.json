@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Success: Verified\"",
+    "create": "node ./__app/script/boilerPlate.js",
     "start": "npm run local",
     "local": "npm run local:indexfile && npm run local:component",
     "local:indexfile": "node ./__app/script/generateIndex.js",
@@ -81,6 +82,7 @@
   "files": [
     "__build/**",
     "AutoFillOtp/",
+    "ABCD/",
     "Bluetooth/",
     "FaceDetector/",
     "CopyToClipboard/",
@@ -93,7 +95,8 @@
     "TextToSpeech/",
     "VoiceRecognition/",
     "Vibrate/",
-    "ColorPicker/"
+    "ColorPicker/",
+    "./index.js"
   ],
   "devDependencies": {
     "@babel/cli": "^7.23.9",

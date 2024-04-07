@@ -33,7 +33,7 @@
     <div>
   `} 
 >
-  Pass Copy Icon here
+  Pass clickable(button, anchor, icon etc) element here to bind onClick event
 </CopyToClipboard> 
 ```
 
@@ -50,7 +50,9 @@ const successCb = ({ msgType, msg, data }) => {
   successCb={successCb}
   successMsg="Copied Successfully"
   elementToBeCopy={`Fe-pilot library offers component like scanner, voice search, autofill otp, phonebook, share`}
-/>
+>
+  Click here to copy (Element, String, etc)
+</CopyToClipboard>
 ```
 > [!Note]
 > **successCb** will get an object contains the property ```msgType```, ```msg```, ```data```
