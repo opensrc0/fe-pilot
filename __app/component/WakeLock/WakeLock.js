@@ -35,7 +35,6 @@ function WakeLock(props = {}) {
       failureCb,
     });
   }
-  return true;
 }
 
 WakeLock.isBrowserSupport = () => 'wakeLock' in navigator;
