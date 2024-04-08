@@ -1,5 +1,5 @@
 
-## 1. Happy Flow 
+## 1. Happy Flow
 
 ```js
 <TextToSpeech.Init text="Password field is not contained in a form: (More info: ">
@@ -8,5 +8,10 @@
 </TextToSpeech.Init>
 ```
 
-  
- 
+
+```mermaid
+graph TD;
+    VoiceRecognition--->TextToSpeechInit;
+    VoiceRecognition--->VoiceRecognitionIcon;
+    VoiceRecognition--->VoiceRecognitionModal;
+```
