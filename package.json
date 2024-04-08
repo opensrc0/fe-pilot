@@ -56,7 +56,8 @@
     "autofillotp",
     "share",
     "livelocationtracking",
-    "detectmylocation"
+    "detectmylocation",
+    "wakelock"
   ],
   "config": {
     "commitizen": {
