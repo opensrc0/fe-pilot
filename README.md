@@ -40,7 +40,7 @@ A React UI library for Advance Web Features that streamlines the development of 
 6. 📝 [Contributing](#contributing)
 7. ✨ [Contributors](#contributors)
 8. ⚖️  [License](#license)
- 
+
 ## Features
 - **Web/Mobile Support:** fe-pilot will be helpfull in Large/Mid/Small size of web based applications.
 - **Ease of Use:** fe-pilot contains a set of components like `Scanner`, `PhoneBook`, `Voice Search`, `Share`, `Live Location Tracking`, `Current Location` that are easy to plug and play.
@@ -49,19 +49,19 @@ A React UI library for Advance Web Features that streamlines the development of 
 ## Installation
 Install `fe-pilot` package using any package manager
 
-###### 1. Package Manager yarn 
+###### 1. Package Manager yarn
 ```sh
 yarn add fe-pilot
 ```
-###### 2. Package Manager npm 
-```sh  
+###### 2. Package Manager npm
+```sh
 npm i fe-pilot --save
 ```
-###### 3. Package Manager pnpm 
+###### 3. Package Manager pnpm
 ```sh
 pnpm add fe-pilot
 ```
-###### 4. Package Manager bun 
+###### 4. Package Manager bun
 ```sh
 bun add fe-pilot
 ```
@@ -72,7 +72,7 @@ bun add fe-pilot
 ```js
 import Share from 'fe-pilot/Share';
 
-<Share 
+<Share
   name={'fe-pilot'}
   title={'A React library for advance web features'}
   url={'https://www.npmjs.com/package/fe-pilot'}
@@ -82,19 +82,19 @@ import Share from 'fe-pilot/Share';
 <details>
 <summary>See the list of components</summary>
 
-### 
-1. :white_check_mark: AutoFillOtp &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/AutoFillOtp/README.md)
-2. :white_check_mark: ColorPicker&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/ColorPicker/README.md)
-3. :white_check_mark: CopyToClipboard&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/CopyToClipboard/README.md)
-4. :white_check_mark: FaceDetector&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/FaceDetector/README.md)
-5. :white_check_mark: LiveLocation &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/LiveLocationTracking/README.md)
-6. :white_check_mark: LocateMe &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/LocateMe/README.md)
-7. :white_check_mark: PhoneBook &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/PhoneBook/README.md)
-8. :white_check_mark: Scanner &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/Scanner/README.md)
-9. :white_check_mark: Share &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/Share/README.md)
-10. :white_check_mark: TextToSpeech &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/TextToSpeech/README.md)
-11. :white_check_mark: VoiceRecognition&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/VoiceRecognition/README.md)
-12. :white_check_mark: Vibrate &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/Vibrate/README.md)
+###
+1. :white_check_mark: [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/AutoFillOtp/README.md) AutoFillOtp
+2. :white_check_mark: [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/ColorPicker/README.md) ColorPicker
+3. :white_check_mark: [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/CopyToClipboard/README.md) CopyToClipboard
+4. :white_check_mark: [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/FaceDetector/README.md) FaceDetector
+5. :white_check_mark: [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/LiveLocationTracking/README.md) LiveLocation
+6. :white_check_mark: [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/LocateMe/README.md) LocateMe
+7. :white_check_mark: [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/PhoneBook/README.md) PhoneBook
+8. :white_check_mark: [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/Scanner/README.md) Scanner
+9. :white_check_mark: [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/Share/README.md) Share
+10. :white_check_mark: [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/TextToSpeech/README.md) TextToSpeech
+11. :white_check_mark: [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/VoiceRecognition/README.md) VoiceRecognition
+12. :white_check_mark: [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/Vibrate/README.md) Vibrate
 ></details>
 
 ## Online Editor Templates
@@ -117,7 +117,7 @@ import Share from 'fe-pilot/Share';
 
 
 ## Contributing
-Feel like contributing? Most welcome! 
+Feel like contributing? Most welcome!
 [Setup locally](https://github.com/opensrc0/fe-pilot/blob/HEAD/.github/SETUP.md) to get fe-pilot working on your local machine and [guide lines](https://github.com/opensrc0/fe-pilot/blob/main/.github/CONTRIBUTING.md) to contribute in fe-pilot.
 
 ## Contributors
