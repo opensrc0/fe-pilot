@@ -16,7 +16,6 @@ function WakeLock(props = {}) {
       } else {
         return handleError({
           msgType: 'CANCELLED',
-          msg: failureMsg.cancelled,
           failureCb,
         });
       }
