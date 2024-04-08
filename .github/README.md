@@ -40,7 +40,7 @@ A React UI library for Advance Web Features that streamlines the development of 
 6. 📝 [Contributing](#contributing)
 7. ✨ [Contributors](#contributors)
 8. ⚖️  [License](#license)
- 
+
 ## Features
 - **Web/Mobile Support:** fe-pilot will be helpfull in Large/Mid/Small size of web based applications.
 - **Ease of Use:** fe-pilot contains a set of components like `Scanner`, `PhoneBook`, `Voice Search`, `Share`, `Live Location Tracking`, `Current Location` that are easy to plug and play.
@@ -49,19 +49,19 @@ A React UI library for Advance Web Features that streamlines the development of 
 ## Installation
 Install `fe-pilot` package using any package manager
 
-###### 1. Package Manager yarn 
+###### 1. Package Manager yarn
 ```sh
 yarn add fe-pilot
 ```
-###### 2. Package Manager npm 
-```sh  
+###### 2. Package Manager npm
+```sh
 npm i fe-pilot --save
 ```
-###### 3. Package Manager pnpm 
+###### 3. Package Manager pnpm
 ```sh
 pnpm add fe-pilot
 ```
-###### 4. Package Manager bun 
+###### 4. Package Manager bun
 ```sh
 bun add fe-pilot
 ```
@@ -72,7 +72,7 @@ bun add fe-pilot
 ```js
 import Share from 'fe-pilot/Share';
 
-<Share 
+<Share
   name={'fe-pilot'}
   title={'A React library for advance web features'}
   url={'https://www.npmjs.com/package/fe-pilot'}
@@ -82,7 +82,7 @@ import Share from 'fe-pilot/Share';
 > <details>
 >  <summary>See the list of components</summary>
 >
->  ### 
+>  ###
 >  01. :white_check_mark: AutoFillOtp &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/AutoFillOtp/README.md)
 >  00. :white_check_mark: ColorPicker&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/ColorPicker/README.md)
 >  00. :white_check_mark: CopyToClipboard&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/CopyToClipboard/README.md)
@@ -104,13 +104,6 @@ import Share from 'fe-pilot/Share';
 <!-- - TypeScript Starter: WIP -->
 <!-- - NextJS TypeScript Starter: WIP -->
 
-#### 2. Stackblitz
-- JavaScript Starter: https://stackblitz.com/edit/fe-pilot?file=src%2FApp.jsx
-<!-- - TypeScript Starter: WIP -->
-<!-- - NextJS TypeScript Starter: WIP -->
-<!-- - purple -->
-<br />
-
 ## Demo the features and component
 1. https://6jpxdq.csb.app/
 > [!IMPORTANT]
@@ -119,7 +112,7 @@ import Share from 'fe-pilot/Share';
 <br />
 
 ## Contributing
-Feel like contributing? Most welcome! 
+Feel like contributing? Most welcome!
 [Setup locally](https://github.com/opensrc0/fe-pilot/blob/HEAD/.github/SETUP.md) to get fe-pilot working on your local machine and [guide lines](https://github.com/opensrc0/fe-pilot/blob/main/.github/CONTRIBUTING.md) to contribute in fe-pilot.
 
 ## Contributors

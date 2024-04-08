@@ -104,13 +104,6 @@ import Share from 'fe-pilot/Share';
 <!-- - TypeScript Starter: WIP -->
 <!-- - NextJS TypeScript Starter: WIP -->
 
-#### 2. Stackblitz
-- JavaScript Starter: https://stackblitz.com/edit/fe-pilot?file=src%2FApp.jsx
-<!-- - TypeScript Starter: WIP -->
-<!-- - NextJS TypeScript Starter: WIP -->
-
-<br />
-
 ## Demo the features and component
 
 1. https://6jpxdq.csb.app/
