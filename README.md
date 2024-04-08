@@ -6,7 +6,7 @@
 <h3 >
   <p align="center" class="tasklist-issue-content">
     <a href="https://www.npmjs.com/package/fe-pilot">
-     <img alt="Minified Size" src="https://badgen.net/bundlephobia/minzip/fe-pilot?color=cyan"/>
+     <img alt="Minified Size" src="https://img.shields.io/bundlephobia/min/fe-pilot?color=cyan"/>
     </a>
     <a href="https://react.dev/reference/react">
     <img alt="React Version" src="https://img.shields.io/badge/react-18.2.0-%23f1e05a?logo=React"/>
