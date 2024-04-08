@@ -84,6 +84,7 @@ import Share from 'fe-pilot/Share';
 >
 >  ### 
 >  01. :white_check_mark: AutoFillOtp &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/AutoFillOtp/README.md)
+>  00. :white_check_mark: ColorPicker&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/ColorPicker/README.md)
 >  00. :white_check_mark: CopyToClipboard&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/CopyToClipboard/README.md)
 >  00. :white_check_mark: FaceDetector&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/FaceDetector/README.md)
 >  00. :white_check_mark: LiveLocation &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Implementation & Structure](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/LiveLocationTracking/README.md)
@@ -193,14 +194,23 @@ Thanks goes to these wonderful people
       </tr>
       <tr>
         <td align="center" valign="top" width="14.28%">
-            <p>
-              <a target="_blank" href="https://github.com/fossabot">
-                <img src="https://avatars.githubusercontent.com/u/29791463?v=4" width="64px;" alt="Fossa Bot" />
-                <br />
-                <sub><b>Fossa Bot</b></sub>
-              </a>
-            </p>
-          </td>
+          <p>
+            <a target="_blank" href="https://github.com/fossabot">
+              <img src="https://avatars.githubusercontent.com/u/29791463?v=4" width="64px;" alt="Fossa Bot" />
+              <br />
+              <sub><b>Fossa Bot</b></sub>
+            </a>
+          </p>
+        </td>
+        <td align="center" valign="top" width="14.28%">
+          <p>
+            <a target="_blank" href="https://github.com/vineet091">
+              <img src="https://avatars.githubusercontent.com/u/5345138?v=4" width="64px;" alt="Vineet Gupta" />
+              <br />
+              <sub><b>Vineet Gupta</b></sub>
+            </a>
+          </p>
+        </td>
        </tr>
     </tbody>
 </table>

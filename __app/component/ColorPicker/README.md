@@ -6,7 +6,7 @@
 ```js
 <ColorPicker 
   successCb={successCb}
-  successMsg="Color copied successfully!!"
+  successMsg="Color picked successfully!!"
 >
   Pass clickable(button, anchor etc) element here to bind onClick event
 </ColorPicker> 
@@ -17,13 +17,13 @@
 ```js
 const successCb = ({ msgType, msg, data }) => {
   console.log(msgType); // Success
-  console.log(msg);     // Color copied successfully!!
+  console.log(msg);     // Color picked successfully!!
   console.log(data);   // #FFFFFF (Color Code)
 }
 
 <ColorPicker 
   successCb={successCb}
-  successMsg="Color copied successfully!!"
+  successMsg="Color picked successfully!!"
 >
   <button type="button">Click here to start Color Picker</button>
 </ColorPicker>
@@ -80,7 +80,7 @@ Failure can happend due to multiple reasons, due to that reason ```failureMsg```
 ```js
 <ColorPicker 
   successCb={successCb}
-  successMsg="Color copied successfully!!"
+  successMsg="Color picked successfully!!"
   failureCb={failureCb}
   failureMsg={{
     unSupported: 'Your device is not supporting Color Picker feature',

@@ -2,9 +2,10 @@
   "name": "fe-pilot",
   "version": "1.0.65",
   "description": "Advance JS features, Plug & Play",
-  "main": "",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Success: Verified\"",
+    "create": "node ./__app/script/boilerPlate.js",
     "start": "npm run local",
     "local": "npm run local:indexfile && npm run local:component",
     "local:indexfile": "node ./__app/script/generateIndex.js",
@@ -57,7 +58,8 @@
     "share",
     "livelocationtracking",
     "detectmylocation",
-    "colorpicker"
+    "colorpicker",
+    "wakelock"
   ],
   "config": {
     "commitizen": {
@@ -80,7 +82,9 @@
   },
   "files": [
     "__build/**",
+    "./index.js",
     "AutoFillOtp/",
+    "ABCD/",
     "Bluetooth/",
     "FaceDetector/",
     "CopyToClipboard/",
