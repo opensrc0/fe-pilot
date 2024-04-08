@@ -58,7 +58,8 @@
     "share",
     "livelocationtracking",
     "detectmylocation",
-    "colorpicker"
+    "colorpicker",
+    "wakelock"
   ],
   "config": {
     "commitizen": {
