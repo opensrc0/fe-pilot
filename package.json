@@ -82,6 +82,7 @@
   },
   "files": [
     "__build/**",
+    "./index.js",
     "AutoFillOtp/",
     "ABCD/",
     "Bluetooth/",
@@ -96,8 +97,7 @@
     "TextToSpeech/",
     "VoiceRecognition/",
     "Vibrate/",
-    "ColorPicker/",
-    "./index.js"
+    "ColorPicker/"
   ],
   "devDependencies": {
     "@babel/cli": "^7.23.9",
