@@ -11,13 +11,20 @@ that can be consumed in isolation.
 
 ### Tooling
 
-- [PNPM](https://pnpm.io/) to manage packages and dependencies
+- [NPM](https://www.npmjs.com/) to manage packages and dependencies
 
 ### Commands
 
-**`pnpm install`**: bootstraps the entire project, symlinks all dependencies for
+**`npm install`**: bootstraps the entire project, symlinks all dependencies for
 cross-component development and builds all components.
 
+**`npm start`**: Runs the build and watch command for all component packages.
+
+**`npm run build`**: run build for all component packages.
+
+**`npm run test`**: run test for all component packages.
+
+**`npm run commit`**: to commit the changes.
 
 ## Think you found a bug?
 
@@ -27,8 +34,7 @@ link.
 
 You may wish to use our starters to help you get going:
 
-- JavaScript Starter: https://codesandbox.io/s/fe-pilotJS
-- TypeScript Starter: https://codesandbox.io/s/fe-pilotTs
+- JavaScript Starter: https://codesandbox.io/p/sandbox/fe-pilotjs-lts3rg
 
 ## Proposing new or changed API?
 
@@ -69,19 +75,22 @@ the following categories:
 
 ### Steps to PR
 
-Under Maintenance
+1. Fork the fe-pilot repository and clone your fork.
+
+2. Create a new branch out of the `main` branch. We follow the convention
+   `[type/scope]`. For example `fix/share` or `docs/scanner`. `type`
+   can be either `docs`, `fix`, `feat`, `build`, or any other conventional
+   commit type. `scope` will be short name that describes the scope of work.
+
+3. Make and commit your changes following the
+   [commit convention](https://github.com/opensrc0/fe-pilot/blob/main/.github/CONTRIBUTING.md#commit-convention).
+
 
 ### Tests
 
 All commits that fix bugs or add features need a test.
 
-## Want to write a blog post or tutorial
-
-Under Maintenance
-
-## Want to help improve the docs?
-
-Under Maintenance
+> **Dear fe-pilot team:** Please do not merge code without tests
 
 ## License
 
