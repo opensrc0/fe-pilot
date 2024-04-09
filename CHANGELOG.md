@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/opensrc0/fe-pilot/compare/v1.1.0...v1.2.0) (2024-4-9)
+
+
+### Features
+
+* **whatsapp share:** whatsapp share component has been added successfully ([a80375f](https://github.com/opensrc0/fe-pilot/commit/a80375fc206d7d5009dd1e08e40ee5e80cfcf5ca))
+
 # [1.1.0](https://github.com/opensrc0/fe-pilot/compare/v1.0.65...v1.1.0) (2024-4-8)
 
 
