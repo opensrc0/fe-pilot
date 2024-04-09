@@ -1,4 +1,4 @@
-## 1. Happy Flow 
+## 1. Happy Flow
 
 ```js
 <VoiceRecognitionInit>
@@ -11,5 +11,10 @@
 </VoiceRecognitionInit>
 ```
 
-  
- 
+
+```mermaid
+graph TD;
+    TextToSpeech--->TextToSpeechInit;
+    TextToSpeech--->TextToSpeechStart;
+    TextToSpeech--->TextToSpeechStop;
+```

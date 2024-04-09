@@ -4,7 +4,18 @@ const fs = require('fs');
 const path = require('path');
 const { mkdirp } = require('mkdirp');
 
-const { COMPONENT } = process.env;
+const ignoreFiles = [
+  '.DS_Store',
+  'scripts',
+  'utils',
+  'WIP-',
+  'services',
+  'Wrapper',
+];
+// generate exports for all platforms
+const srcPath = path.resolve(__dirname, '../component');
+
+const COMPONENT = process.env.npm_config_component;
 // const srcPath = path.resolve(__dirname, '__app/component');
 const componentDir = path.resolve(`${__dirname}`, `../component/${COMPONENT}`);
 
@@ -34,7 +45,7 @@ function ${COMPONENT}({
   };
 
   return (
-    React.Children.map(children || 'PhoneBook', (child) => React.cloneElement(typeof child === 'string' ? <span>{child}</span> : child, {
+    React.Children.map(children || '${COMPONENT}', (child) => React.cloneElement(typeof child === 'string' ? <span>{child}</span> : child, {
       onClick: get${COMPONENT},
     }))
   );
@@ -54,7 +65,7 @@ ${COMPONENT}.defaultProps = {
   successCb: () => {},
   failureCb: () => {},
   loadingCb: () => {},
-  successMsg: 'Phonebook details fetch Successfully',
+  successMsg: '${COMPONENT} details fetch Successfully',
   failureMsg: { ...failureMsgDefault },
 };
 
@@ -67,7 +78,7 @@ export { ${COMPONENT} };
 export default ${COMPONENT};
 `;
 
-  const READMEContent = `## 1. Happy Flow 
+  const READMEContent = `## 1. Happy Flow
 #### a) Passing child
 
 
@@ -112,6 +123,17 @@ Failure can happend due to multiple reasons, due to that reason **failureMsg** i
   `;
 
   fs.writeFile((`${componentDir}/${COMPONENT}.js`), componentContent, () => {});
-  fs.writeFile((`${componentDir}/index.js`), IndexContent, () => {});
+  fs.writeFile((`${componentDir}/index.js`), IndexContent, () => {
+    const components = fs.readdirSync(srcPath).filter((files) => !ignoreFiles.includes(files) && !files.includes('WIP-'));
+    let rootIndexImport = '';
+    let rootIndexExport = '\nexport {\n';
+    components.forEach((component) => {
+      rootIndexImport += `import ${component} from './${component}';\n`;
+      rootIndexExport += `  ${component},\n`;
+    });
+
+    rootIndexExport += '};\n';
+    fs.writeFile((path.resolve(`${__dirname}`, '../../index.js')), rootIndexImport + rootIndexExport, () => {});
+  });
   fs.writeFile((`${componentDir}/README.md`), READMEContent, () => {});
 });
