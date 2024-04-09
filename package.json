@@ -60,7 +60,7 @@
     "detectmylocation",
     "colorpicker",
     "wakelock",
-    "ABCKEFG"
+    "WhatsappShare"
   ],
   "config": {
     "commitizen": {
@@ -98,7 +98,8 @@
     "TextToSpeech/",
     "VoiceRecognition/",
     "Vibrate/",
-    "ColorPicker/"
+    "ColorPicker/",
+    "WhatsappShare/"
   ],
   "devDependencies": {
     "@babel/cli": "^7.23.9",
