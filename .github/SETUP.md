@@ -3,7 +3,7 @@ Clone the repository and run the following commands from the root directory of f
 
 ## Local setup
 
-#### 1. Go to the fe-pilot repo location in your terminal and do 
+#### 1. Go to the fe-pilot repo location in your terminal and do
 ```
 npm install
 npm start
@@ -37,8 +37,8 @@ import { TextToSpeechInit, TextToSpeechStart, TextToSpeechStop } from 'fe-pilot/
 ## Folder Structure
 ```
 fe-pilot
-  └── __app      
-    └── component                   
+  └── __app
+    └── component
       ├──TextToSpeech                (component name)
       |   ├──TextToSpeech.js         (top level exports/re-exports)
       |   ├──TextToSpeechInit.js     (parent component)

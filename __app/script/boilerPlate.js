@@ -12,11 +12,10 @@ const ignoreFiles = [
   'services',
   'Wrapper',
 ];
-
 // generate exports for all platforms
 const srcPath = path.resolve(__dirname, '../component');
 
-const { COMPONENT } = process.env;
+const COMPONENT = process.env.npm_config_component;
 // const srcPath = path.resolve(__dirname, '__app/component');
 const componentDir = path.resolve(`${__dirname}`, `../component/${COMPONENT}`);
 

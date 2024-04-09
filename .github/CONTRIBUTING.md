@@ -26,6 +26,8 @@ cross-component development and builds all components.
 
 **`npm run commit`**: to commit the changes.
 
+**`npm run create --component=Share_TEST`**: to create a component along with necessary files
+
 ## Think you found a bug?
 
 Please conform to the issue template and provide a clear path to reproduction
