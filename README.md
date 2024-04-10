@@ -96,7 +96,7 @@ import Share from 'fe-pilot/Share';
 11. :white_check_mark: &nbsp; [VoiceRecognition](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/VoiceRecognition/README.md)
 12. :white_check_mark: &nbsp; [Vibrate](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/Vibrate/README.md)
 13. :white_check_mark: &nbsp; [WhatsappShare](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/WhatsappShare/README.md)
-></details>
+</details>
 
 ## Online Editor Templates
 

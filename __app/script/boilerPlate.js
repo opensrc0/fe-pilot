@@ -134,6 +134,24 @@ Failure can happend due to multiple reasons, due to that reason **failureMsg** i
 
     rootIndexExport += '};\n';
     fs.writeFile((path.resolve(`${__dirname}`, '../../index.js')), rootIndexImport + rootIndexExport, () => {});
+
+    // Readme Github File Modification
+    const readMeGitHub = fs.readFileSync((path.resolve(`${__dirname}`, '../../.github/README.md'))).toString();
+
+    const updatedReadMeGitHub = readMeGitHub.replace('> </details>', `>  00. :white_check_mark: &nbsp; [${COMPONENT}](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/${COMPONENT}/README.md)
+> </details>`);
+    fs.writeFile(path.resolve(`${__dirname}`, '../../.github/README.md'), updatedReadMeGitHub, () => {});
+
+    // Readme NPM File Modification
+    const componentCount = fs.readFileSync((path.resolve(`${__dirname}`, '../../.componentCount'))).toString();
+
+    const readMeNpm = fs.readFileSync((path.resolve(`${__dirname}`, '../../README.md'))).toString();
+
+    const updatedReadMeNpm = readMeNpm.replace('</details>', `${parseInt(componentCount, 10) + 1}. :white_check_mark: &nbsp; [${COMPONENT}](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/${COMPONENT}/README.md)
+</details>`);
+    fs.writeFile(path.resolve(`${__dirname}`, '../../README.md'), updatedReadMeNpm, () => {});
+
+    fs.writeFile(path.resolve(`${__dirname}`, '../../.componentCount'), `${parseInt(componentCount, 10) + 1}`, () => {});
   });
   fs.writeFile((`${componentDir}/README.md`), READMEContent, () => {});
 });
