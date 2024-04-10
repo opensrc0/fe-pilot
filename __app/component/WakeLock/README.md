@@ -1,9 +1,16 @@
-## WakeLock Component Documentation
+## WakeLock Service Documentation
 
-### 1. Happy Flow 
+The WakeLock service provides functionality to manage WakeLock for preventing the screen from sleeping.
 
-```jsx
-<WakeLock />
+## Usage
+
+### 1. Apply WakeLock
+
+```js
+import WakeLockService from 'path/to/WakeLockService';
+
+// Apply WakeLock
+WakeLockService();
 ```
 
 ## 2. Success: successCb callBack Fn along with success msg
@@ -14,11 +21,7 @@ const successCb = ({ msgType, msg, data }) => {
   console.log(msg);     // WakeLock successfully applied!
 }
 
-<WakeLock 
-  successCb={successCb}
-  successMsg="WakeLock successfully applied!"
->
-</WakeLock>
+WakeLockService({ successCb });
 ```
 > [!Note]
 > **successCb** will get an object contains the property ```msgType```, ```msg```, ```data```
@@ -28,40 +31,23 @@ const successCb = ({ msgType, msg, data }) => {
 const failureCb = ({ msgType, msg }) => {
   console.log(msgType);  // UN_SUPPORTED_FEATURE or ERROR
   console.log(msg);      // Corresponding error message
-
-  OR
-
-  console.log(msgType); // ERROR
-  console.log(msg);     // Unable to copy wakelock code
 }
+
+WakeLockService({ failureCb });
+
 ```
+
+## 4. Combine with Callbacks and Messages
+
 ```js
-<WakeLock 
-  failureCb={failureCb}
-  failureMsg={{
+WakeLockService({ 
+  successCb,
+  successMsg: "WakeLock successfully applied!",
+  failureCb,
+  failureMsg: {
     unSupported: 'Your browser does not support the WakeLock feature',
     error: 'Unable to apply WakeLock',
-  }}
->
-</WakeLock>
-```
-[!Note]
-failureCb will receive an object containing the properties msgType and msg.
+  }
+});
 
-[!Important]
-Failure can occur due to multiple reasons, hence the failureMsg object contains different error properties according to the possible errors in the component.
-
-
-## 5. Combine with all props
-```js
-<WakeLock 
-  successCb={successCb}
-  successMsg="WakeLock successfully applied!"
-  failureCb={failureCb}
-  failureMsg={{
-    unSupported: 'Your browser does not support the WakeLock feature',
-    error: 'Unable to apply WakeLock',
-  }}
->
-</WakeLock>
 ```
