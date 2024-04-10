@@ -21,14 +21,18 @@ function WhatsappShare({
   const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
 
   const getWhatsappShare = () => {
-    if (mobile) {
-      window.location.href = `https://wa.me/${mobile}/?text=${msg}`;
-      handleSuccess({ msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: msg });
-    } else if (msg) {
-      window.location.href = `https://wa.me/?text=${msg}`;
-      handleSuccess({ msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: msg });
+    if (navigator.userAgent.match(/iPhone|Android/i)) {
+      if (mobile) {
+        window.location.href = `https://wa.me/${mobile}/?text=${msg}`;
+        handleSuccess({ msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: msg });
+      } else if (msg) {
+        window.location.href = `https://wa.me/?text=${msg}`;
+        handleSuccess({ msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: msg });
+      } else {
+        return handleError({ msgType: 'BAD_REQUEST', msg: failureMsg.badRequest, failureCb });
+      }
     } else {
-      return handleError({ msgType: 'BAD_REQUEST', msg: failureMsg.badRequest, failureCb });
+      window.location.href = `https://web.whatsapp.com/send?text=${msg}&phone=${mobile}`;
     }
 
     return true;
