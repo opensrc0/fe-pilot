@@ -48,7 +48,7 @@ WakeLock.propTypes = {
 WakeLock.defaultProps = {
   successCb: () => { },
   failureCb: () => { },
-  successMsg: 'WakeLock successfully!!',
+  successMsg: 'WakeLock successfully applied!',
   failureMsg: {
     unSupported: 'Your browser does not support the WakeLock fetaure',
     error: 'Unable to apply WakeLock',
