@@ -1,5 +1,6 @@
 {
   "name": "fe-pilot",
+  "sideEffects": false,
   "version": "1.0.65",
   "description": "Advance JS features, Plug & Play",
   "main": "index.js",
@@ -19,7 +20,7 @@
     "semantic-release": "semantic-release --branches master",
     "prod:unminified": "NODE_ENV=production babel __app/component -d __build"
   },
-  "author": "Himanshu Gupta",
+  "author": "Himanshu Gupta <opensrc0@gmail.com>",
   "license": "MIT",
   "lint-staged": {
     "*.js": [
