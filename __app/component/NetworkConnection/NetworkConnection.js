@@ -44,18 +44,15 @@ function NetworkConnection({
   };
 
   const networkChangeHandler = () => {
+    if (!navigator?.onLine) return;
     const newObj = navigator?.connection;
-    console.log(connectionDetails);
-    console.log(`${connectionDetails.effectiveType}!==${newObj.effectiveType}`);
-    if (connectionDetails.effectiveType !== newObj.effectiveType) {
-      console.log(newObj, ' newObj');
-      setConnectionDetails({
-        downlink: newObj?.downlink,
-        effectiveType: newObj?.effectiveType,
-        rtt: newObj?.rtt,
-        saveData: newObj?.saveData,
-      });
-    }
+
+    setConnectionDetails({
+      downlink: newObj?.downlink,
+      effectiveType: newObj?.effectiveType,
+      rtt: newObj?.rtt,
+      saveData: newObj?.saveData,
+    });
   };
 
   const handleUpdate = () => {
@@ -92,7 +89,6 @@ function NetworkConnection({
     };
   }, []);
 
-  console.log(connectionDetails, ' outside connectionDetails');
   return (
     React.Children.map(children || 'NetworkConnection', (child) => React.cloneElement(typeof child === 'string' ? <span>{child}</span> : child))
   );
