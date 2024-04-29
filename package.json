@@ -86,7 +86,6 @@
     "__build/**",
     "./index.js",
     "AutoFillOtp/",
-    "ABCD/",
     "Bluetooth/",
     "FaceDetector/",
     "CopyToClipboard/",
