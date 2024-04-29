@@ -88,8 +88,8 @@ Share.propTypes = {
   sUrl: PropTypes.string,
 };
 
-const Wshare = Wrapper(Share, isBrowserSupport);
+const WShare = Wrapper(Share, isBrowserSupport);
 
-export { share, Wshare as Share };
+export { share, WShare as Share };
 
 export default Share;
