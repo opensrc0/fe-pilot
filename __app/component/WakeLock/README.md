@@ -40,7 +40,7 @@ WakeLockService({ failureCb });
 ## 4. Combine with Callbacks and Messages
 
 ```js
-WakeLockService({ 
+WakeLockService({
   successCb,
   successMsg: "WakeLock successfully applied!",
   failureCb,
