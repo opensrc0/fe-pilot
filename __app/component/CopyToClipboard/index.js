@@ -1,5 +1,2 @@
-import CopyToClipboard from './CopyToClipboard';
-
-export { CopyToClipboard };
-
-export default CopyToClipboard;
+export * from './CopyToClipboard';
+export { default } from './CopyToClipboard';
