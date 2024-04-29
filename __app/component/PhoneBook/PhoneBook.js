@@ -9,22 +9,24 @@ const failureMsgDefault = {
   error: 'Unable to fetch details from PhoneBook',
 };
 
-function PhoneBook({
-  successCb,
-  failureCb,
-  loadingCb,
-  successMsg,
-  failureMsg: failureMsgProps,
-  children,
-  contactProperty,
-  isSelectMultiple,
-}) {
+const isBrowserSupport = () => globalThis?.navigator?.contacts && globalThis?.ContactsManage;
+
+const phoneBook = ({
+  successCb = () => {},
+  failureCb = () => {},
+  loadingCb = () => {},
+  successMsg = 'Successfully!!',
+  failureMsg: failureMsgProps = { ...failureMsgDefault },
+  contactProperty = ['name', 'email', 'tel', 'address', 'icon'],
+  isSelectMultiple = false,
+} = {}) => {
   const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
 
-  const getContacts = async () => {
-    const opts = { multiple: isSelectMultiple };
-    if (PhoneBook.isBrowserSupport()) {
+  const init = async () => {
+    if (isBrowserSupport()) {
       handleLoading({ loadingCb });
+      const opts = { multiple: isSelectMultiple };
+      // Your Code will start from here
       try {
         const contacts = await navigator.contacts.select(contactProperty, opts);
         if (contacts[0]) {
@@ -35,42 +37,49 @@ function PhoneBook({
       } catch (error) {
         return handleError({ msgType: 'ERROR', msg: failureMsg.error || JSON.stringify(error), failureCb });
       }
+      // Your Code will end here
     } else {
       return handleError({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
     }
-
     return true;
   };
 
-  return (
-    React.Children.map(children || 'PhoneBook', (child) => React.cloneElement(typeof child === 'string' ? <span>{child}</span> : child, {
-      onClick: getContacts,
-    }))
-  );
+  init();
+};
+
+function PhoneBook({
+  children,
+  successCb,
+  failureCb,
+  loadingCb,
+  successMsg,
+  failureMsg,
+  ...props
+}) {
+  return React.Children.map(children || 'PhoneBook', (child) => React.cloneElement(typeof child === 'string' ? <span>{child}</span> : child, {
+    onClick: () => phoneBook({
+      successCb,
+      failureCb,
+      loadingCb,
+      successMsg,
+      failureMsg,
+      ...props,
+    }),
+  }));
 }
 
-PhoneBook.isBrowserSupport = () => globalThis.navigator.contacts
-  && globalThis.ContactsManager
-  && true;
-
 PhoneBook.propTypes = {
+  showForever: PropTypes.bool,
   successCb: PropTypes.func,
   failureCb: PropTypes.func,
   loadingCb: PropTypes.func,
   successMsg: PropTypes.string,
   failureMsg: PropTypes.object,
-  contactProperty: PropTypes.array,
-  isSelectMultiple: PropTypes.bool,
+
 };
 
-PhoneBook.defaultProps = {
-  successCb: () => {},
-  failureCb: () => {},
-  loadingCb: () => {},
-  successMsg: 'Phonebook details fetch Successfully',
-  failureMsg: { ...failureMsgDefault },
-  contactProperty: ['name', 'email', 'tel', 'address', 'icon'],
-  isSelectMultiple: false,
-};
+const WPhoneBook = Wrapper(PhoneBook, isBrowserSupport);
 
-export default Wrapper(PhoneBook);
+export { phoneBook, WPhoneBook as PhoneBook };
+
+export default WPhoneBook;
