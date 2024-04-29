@@ -66,6 +66,7 @@ function ${COMPONENT}({
   loadingCb,
   successMsg,
   failureMsg,
+  ...props
 }) {
   return React.Children.map(children || '${COMPONENT}', (child) => React.cloneElement(typeof child === 'string' ? <span>{child}</span> : child, {
     onClick: () => ${COMPONENT_SERVICE}({
@@ -74,6 +75,7 @@ function ${COMPONENT}({
       loadingCb,
       successMsg,
       failureMsg,
+      ...props,
     }),
   }));
 }
