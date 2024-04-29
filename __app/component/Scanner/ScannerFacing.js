@@ -45,4 +45,6 @@ ScannerFacing.defaultProps = {
   position: 'absolute',
 };
 
+export { ScannerFacing };
+
 export default ScannerFacing;

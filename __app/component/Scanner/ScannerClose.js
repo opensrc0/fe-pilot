@@ -49,6 +49,9 @@ ScannerClose.defaultProps = {
   left: 'auto',
   right: '72%',
   position: 'absolute',
+  onClose: () => {},
 };
+
+export { ScannerClose };
 
 export default ScannerClose;

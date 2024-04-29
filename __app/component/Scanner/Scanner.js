@@ -17,6 +17,8 @@ const failureMsgDefault = {
   unableToScan: 'Unable to scan',
 };
 
+const isBrowserSupport = () => navigator?.mediaDevices && globalThis.BarcodeDetector;
+
 function Scanner({
   successCb,
   failureCb,
@@ -151,7 +153,7 @@ function Scanner({
   };
 
   const handleBrowserSupport = () => {
-    if (Scanner.isBrowserSupport()) {
+    if (isBrowserSupport()) {
       facingMode = cameraType === 'back' ? 'environment' : 'user';
       handleLoading({ loadingCb });
 
@@ -172,7 +174,7 @@ function Scanner({
     };
   }, []);
 
-  return isBrowser && Scanner.isBrowserSupport() && (
+  return isBrowser && isBrowserSupport() && (
     <div id="scanner">
       <div id="camera" />
       {
@@ -190,8 +192,6 @@ function Scanner({
     </div>
   );
 }
-
-Scanner.isBrowserSupport = () => navigator?.mediaDevices && globalThis.BarcodeDetector;
 
 Scanner.propTypes = {
   successCb: PropTypes.func,
@@ -213,4 +213,8 @@ Scanner.defaultProps = {
   cameraType: 'back',
 };
 
-export default Wrapper(Scanner);
+const WScanner = Wrapper(Scanner, isBrowserSupport);
+
+export { WScanner as Scanner };
+
+export default Scanner;

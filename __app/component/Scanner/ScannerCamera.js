@@ -93,4 +93,6 @@ ScannerCamera.defaultProps = {
   position: 'absolute',
 };
 
+export { ScannerCamera };
+
 export default ScannerCamera;

@@ -1,5 +1,2 @@
-import WakeLock from './WakeLock';
-
-export { WakeLock };
-
-export default WakeLock;
+export * from './WakeLock';
+export { default } from './WakeLock';

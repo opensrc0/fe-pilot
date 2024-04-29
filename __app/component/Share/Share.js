@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { handleSuccess, handleError, handleLoading } from '../services/handlerService';
@@ -17,22 +18,22 @@ const isShareAPIDataValid = (sharingData) => {
   return true;
 };
 
-function Share({
-  successCb,
-  failureCb,
-  loadingCb,
-  successMsg,
-  failureMsg: failureMsgProps,
-  children,
-  sName,
-  sTitle,
-  sUrl,
-}) {
+const isBrowserSupport = () => globalThis.navigator?.share && true;
+
+const share = ({
+  successCb = () => {},
+  failureCb = () => {},
+  loadingCb = () => {},
+  successMsg = 'Shared Successfully',
+  failureMsg: failureMsgProps = { ...failureMsgDefault },
+  sName = 'fe-pilot',
+  sTitle = 'A React library for advance JS features',
+  sUrl = 'https://www.npmjs.com/package/fe-pilot',
+} = {}) => {
   const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
   const sharingData = { title: sName, text: sTitle, url: sUrl };
-
-  const showDropdown = () => {
-    if (Share.isBrowserSupport()) {
+  const init = () => {
+    if (isBrowserSupport()) {
       handleLoading({ loadingCb });
       if (isShareAPIDataValid(sharingData)) {
         navigator.share(sharingData).then(() => {
@@ -47,16 +48,36 @@ function Share({
     return true;
   };
 
-  return (
-    React.Children.map(children || 'Share', (child) => React.cloneElement(typeof child === 'string' ? <span>{child}</span> : child, {
-      onClick: showDropdown,
-    }))
-  );
+  init();
+};
+
+function Share({
+  children,
+  successCb,
+  failureCb,
+  loadingCb,
+  successMsg,
+  failureMsg,
+  sName,
+  sTitle,
+  sUrl,
+}) {
+  return React.Children.map(children || 'Share', (child) => React.cloneElement(typeof child === 'string' ? <span>{child}</span> : child, {
+    onClick: () => share({
+      successCb,
+      failureCb,
+      loadingCb,
+      successMsg,
+      failureMsg,
+      sName,
+      sTitle,
+      sUrl,
+    }),
+  }));
 }
 
-Share.isBrowserSupport = () => navigator.share && true;
-
 Share.propTypes = {
+  showForever: PropTypes.bool,
   successCb: PropTypes.func,
   failureCb: PropTypes.func,
   loadingCb: PropTypes.func,
@@ -67,15 +88,8 @@ Share.propTypes = {
   sUrl: PropTypes.string,
 };
 
-Share.defaultProps = {
-  successCb: () => {},
-  failureCb: () => {},
-  loadingCb: () => {},
-  successMsg: 'Shared Successfully',
-  failureMsg: { ...failureMsgDefault },
-  sName: 'fe-pilot',
-  sTitle: 'A React library for advance JS features',
-  sUrl: 'https://www.npmjs.com/package/fe-pilot',
-};
+const WShare = Wrapper(Share, isBrowserSupport);
 
-export default Wrapper(Share);
+export { share, WShare as Share };
+
+export default WShare;

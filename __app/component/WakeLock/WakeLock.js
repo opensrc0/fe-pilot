@@ -1,57 +1,80 @@
+import React from 'react';
 import PropTypes from 'prop-types';
-import { handleError, handleSuccess } from '../services/handlerService';
+import { handleSuccess, handleError, handleLoading } from '../services/handlerService';
+import Wrapper from '../Wrapper/Wrapper';
 
-function WakeLock(props = {}) {
-  const successCb = props.successCb || (() => { });
-  const failureCb = props.failureCb || (() => { });
-  const successMsg = props.successMsg || '';
-  const failureMsg = props.failureMsg || {};
+const failureMsgDefault = {
+  unSupported: 'WakeLock is not supporting in your device',
+  error: 'Unable to fetch details from WakeLock',
+};
 
-  if (WakeLock.isBrowserSupport()) {
-    let wakeLocker = null;
-    wakeLocker = navigator.wakeLock.request('screen');
-    try {
-      if (wakeLocker) {
-        handleSuccess({ msgType: 'SUCCESSFUL', msg: successMsg, successCb });
-      } else {
-        return handleError({
-          msgType: 'CANCELLED',
-          failureCb,
-        });
+const isBrowserSupport = () => globalThis?.navigator.wakeLock;
+
+const wakeLock = ({
+  successCb = () => {},
+  failureCb = () => {},
+  loadingCb = () => {},
+  successMsg = 'WakeLock successfully applied!!',
+  failureMsg: failureMsgProps = { ...failureMsgDefault },
+} = {}) => {
+  const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
+
+  const init = () => {
+    if (isBrowserSupport()) {
+      handleLoading({ loadingCb });
+
+      // Your Code will start from here
+      let wakeLocker = null;
+      wakeLocker = navigator.wakeLock.request('screen');
+      try {
+        if (wakeLocker) {
+          handleSuccess({ msgType: 'SUCCESSFUL', msg: successMsg, successCb });
+        } else {
+          return handleError({ msgType: 'CANCELLED', failureCb });
+        }
+      } catch (error) {
+        return handleError({ msgType: 'ERROR', msg: failureMsg.error || JSON.stringify(error), failureCb });
       }
-    } catch (error) {
-      return handleError({
-        msgType: 'ERROR',
-        msg: failureMsg.error || JSON.stringify(error),
-        failureCb,
-      });
+      // Your Code will end here
+    } else {
+      return handleError({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
     }
-  } else {
-    return handleError({
-      msgType: 'UN_SUPPORTED_FEATURE',
-      msg:
-        failureMsg.unSupported || 'WakeLock is not supporting in your device',
+    return true;
+  };
+
+  init();
+};
+
+function WakeLock({
+  children,
+  successCb,
+  failureCb,
+  loadingCb,
+  successMsg,
+  failureMsg,
+}) {
+  return React.Children.map(children || 'WakeLock', (child) => React.cloneElement(typeof child === 'string' ? <span>{child}</span> : child, {
+    onClick: () => wakeLock({
+      successCb,
       failureCb,
-    });
-  }
+      loadingCb,
+      successMsg,
+      failureMsg,
+    }),
+  }));
 }
 
-WakeLock.isBrowserSupport = () => 'wakeLock' in navigator;
-
 WakeLock.propTypes = {
+  showForever: PropTypes.bool,
   successCb: PropTypes.func,
   failureCb: PropTypes.func,
+  loadingCb: PropTypes.func,
   successMsg: PropTypes.string,
   failureMsg: PropTypes.object,
 };
 
-WakeLock.defaultProps = {
-  successCb: () => { },
-  failureCb: () => { },
-  successMsg: 'WakeLock successfully!!',
-  failureMsg: {
-    unSupported: 'Your browser does not support the WakeLock fetaure',
-    error: 'Unable to apply WakeLock',
-  },
-};
-export default WakeLock;
+const WWakeLock = Wrapper(WakeLock, isBrowserSupport);
+
+export { wakeLock, WWakeLock as WakeLock };
+
+export default WWakeLock;

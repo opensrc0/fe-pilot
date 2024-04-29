@@ -47,4 +47,6 @@ ScannerScanBox.defaultProps = {
   background: 'rgba(0, 0, 0, 0.7)',
 };
 
-export default ScannerScanBox;
+export { ScannerScanBox };
+
+export default { ScannerScanBox };

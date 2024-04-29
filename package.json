@@ -19,7 +19,7 @@
     "semantic-release": "semantic-release --branches master",
     "prod:unminified": "NODE_ENV=production babel __app/component -d __build"
   },
-  "author": "Himanshu Gupta",
+  "author": "Himanshu Gupta <opensrc0@gmail.com>",
   "license": "MIT",
   "lint-staged": {
     "*.js": [
@@ -85,7 +85,6 @@
     "__build/**",
     "./index.js",
     "AutoFillOtp/",
-    "ABCD/",
     "Bluetooth/",
     "FaceDetector/",
     "CopyToClipboard/",

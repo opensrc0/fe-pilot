@@ -1,5 +1,2 @@
-import PhoneBook from './PhoneBook';
-
-export { PhoneBook };
-
-export default PhoneBook;
+export * from './PhoneBook';
+export { default } from './PhoneBook';

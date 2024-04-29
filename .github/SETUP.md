@@ -25,13 +25,24 @@ import { TextToSpeechInit, TextToSpeechStart, TextToSpeechStop } from 'fe-pilot/
 
 <PhoneBook />
 <Share />
- <TextToSpeechInit text="Password field is not contained in a form: (More info: ">
+ <TextToSpeech text="Password field is not contained in a form: (More info: ">
   <TextToSpeechStart>Start Icon</TextToSpeechStart>
   <TextToSpeechStop>Stop Icon</TextToSpeechStop>
-</TextToSpeechInit>
+</TextToSpeech>
 ```
 
-#### 4. Hurrah...! Now fe-pilot repo is available inside the node_modules of your project, and waching change in fe-pilot.
+#### 4. Are you getting Error ? continue to step 4. If no error found go to step 5.
+
+**bug:** ```TypeError: Cannot read properties of null (reading 'useState')```<br/>
+**solution**  Go to fe-pilot in terminal and run below command
+
+```js
+npm link {PATH}/{Your Repo}
+```
+
+&nbsp;&nbsp;**Note:** PATH is the location of ```your repo``` folder. ```Your Repo``` is the name of the repo.
+
+#### 5. Hurrah...! Now fe-pilot repo is available inside the node_modules of your project, and waching change in fe-pilot.
 
 
 ## Folder Structure
@@ -40,8 +51,8 @@ fe-pilot
   └── __app
     └── component
       ├──TextToSpeech                (component name)
-      |   ├──TextToSpeech.js         (top level exports/re-exports)
-      |   ├──TextToSpeechInit.js     (parent component)
+      |   ├──index.js                (top level exports/re-exports)
+      |   ├──TextToSpeech.js         (parent component)
       |   ├──TextToSpeechStart.js    (child component)
       |   └──TextToSpeechStop.js     (child component)
 ```
@@ -67,13 +78,13 @@ graph TD;
 
 ```mermaid
 graph TD;
-    Scanner--->CameraClick;
-    Scanner--->CameraClose;
-    Scanner--->CameraFacing;
-    Scanner--->CameraFlash;
-    Scanner--->CameraScanBox;
-    Scanner--->PhoneGallery;
-    Scanner--->StartCamera;
+    Scanner--->ScannerCamera;
+    Scanner--->ScannerClose;
+    Scanner--->ScannerFacing;
+    Scanner--->ScannerFlash;
+    Scanner--->ScannerGallery;
+    Scanner--->ScannerScanBox;
+    Scanner--->ScannerClick;
 ```
 > [!IMPORTANT]
 > Camera component Structure
@@ -82,7 +93,6 @@ graph TD;
 
 ```mermaid
 graph TD;
-    TextToSpeech--->TextToSpeechInit;
     TextToSpeech--->TextToSpeechStart;
     TextToSpeech--->TextToSpeechStop;
 ```
@@ -93,7 +103,6 @@ graph TD;
 
 ```mermaid
 graph TD;
-    VoiceRecognition--->TextToSpeechInit;
     VoiceRecognition--->VoiceRecognitionIcon;
     VoiceRecognition--->VoiceRecognitionModal;
 ```
