@@ -71,4 +71,4 @@ const WColorPicker = Wrapper(ColorPicker, isBrowserSupport);
 
 export { colorPicker, WColorPicker as ColorPicker };
 
-export default ColorPicker;
+export default WColorPicker;

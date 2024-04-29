@@ -16,6 +16,7 @@ const ignoreFiles = [
 const srcPath = path.resolve(__dirname, '../component');
 
 const COMPONENT = process.env.npm_config_component;
+const COMPONENT_SERVICE = COMPONENT[0].toLowerCase() + COMPONENT.substring(1);
 // const srcPath = path.resolve(__dirname, '__app/component');
 const componentDir = path.resolve(`${__dirname}`, `../component/${COMPONENT}`);
 
@@ -30,30 +31,55 @@ const failureMsgDefault = {
   error: 'Unable to fetch details from ${COMPONENT}',
 };
 
+const isBrowserSupport = () => globalThis;
+
+const ${COMPONENT_SERVICE} = ({
+  successCb = () => {},
+  failureCb = () => {},
+  loadingCb = () => {},
+  successMsg = 'Successfully!!',
+  failureMsg: failureMsgProps = { ...failureMsgDefault },
+} = {}) => {
+  const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
+
+  const init = () => {
+    if (isBrowserSupport()) {
+      handleLoading({ loadingCb });
+
+      // Your Code will start from here
+
+      // Your Code will end here
+    } else {
+      return handleError({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
+    }
+    return true;
+  };
+
+  init();
+};
+
+
 function ${COMPONENT}({
+  children,
   successCb,
   failureCb,
   loadingCb,
   successMsg,
-  failureMsg: failureMsgProps,
-  children,
+  failureMsg,
 }) {
-  const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
-
-  const get${COMPONENT} = () => {
-
-  };
-
-  return (
-    React.Children.map(children || '${COMPONENT}', (child) => React.cloneElement(typeof child === 'string' ? <span>{child}</span> : child, {
-      onClick: get${COMPONENT},
-    }))
-  );
+  return React.Children.map(children || '${COMPONENT}', (child) => React.cloneElement(typeof child === 'string' ? <span>{child}</span> : child, {
+    onClick: () => ${COMPONENT_SERVICE}({
+      successCb,
+      failureCb,
+      loadingCb,
+      successMsg,
+      failureMsg,
+    }),
+  }));
 }
 
-${COMPONENT}.isBrowserSupport = () => globalThis && true;
-
 ${COMPONENT}.propTypes = {
+  showForever: PropTypes.bool,
   successCb: PropTypes.func,
   failureCb: PropTypes.func,
   loadingCb: PropTypes.func,
@@ -61,21 +87,14 @@ ${COMPONENT}.propTypes = {
   failureMsg: PropTypes.object,
 };
 
-${COMPONENT}.defaultProps = {
-  successCb: () => {},
-  failureCb: () => {},
-  loadingCb: () => {},
-  successMsg: '${COMPONENT} details fetch Successfully',
-  failureMsg: { ...failureMsgDefault },
-};
+const W${COMPONENT} = Wrapper(${COMPONENT}, isBrowserSupport);
 
-export default Wrapper(${COMPONENT});
+export { ${COMPONENT_SERVICE}, W${COMPONENT} as ${COMPONENT} };
+
+export default W${COMPONENT};
 `;
-  const IndexContent = `import ${COMPONENT} from './${COMPONENT}';
-
-export { ${COMPONENT} };
-
-export default ${COMPONENT};
+  const IndexContent = `export * from './${COMPONENT}';
+export { default } from './${COMPONENT}';
 `;
 
   const READMEContent = `## 1. Happy Flow

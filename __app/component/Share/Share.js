@@ -92,4 +92,4 @@ const WShare = Wrapper(Share, isBrowserSupport);
 
 export { share, WShare as Share };
 
-export default Share;
+export default WShare;
