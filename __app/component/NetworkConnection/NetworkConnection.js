@@ -90,7 +90,9 @@ function NetworkConnection({
   }, []);
 
   return (
-    React.Children.map(children || 'NetworkConnection', (child) => React.cloneElement(typeof child === 'string' ? <span>{child}</span> : child))
+    React.Children.map(children, (child) => React.cloneElement(child, {
+      isOnline,
+    }))
   );
 }
 
