@@ -16,21 +16,21 @@ const defaultConnectionValue = {
 };
 
 function NetworkConnection({
-  successCb,
-  failureCb,
-  successMsg,
+  successCb = () => {},
+  failureCb = () => {},
+  successMsg = 'NetworkConnection details fetch Successfully',
   failureMsg: failureMsgProps,
   children,
 }) {
-  const [isOnline, setIsOnline] = useState(navigator.onLine);
+  const [isOnline, setIsOnline] = useState(globalThis?.navigator.onLine);
   const [connectionDetails, setConnectionDetails] = useState(defaultConnectionValue);
 
   const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
 
   const updateNetworkConnection = () => {
-    setIsOnline(navigator?.onLine);
+    setIsOnline(globalThis?.navigator?.onLine);
 
-    const newObj = navigator?.connection;
+    const newObj = globalThis?.navigator?.connection;
     setConnectionDetails({
       downlink: newObj?.downlink,
       effectiveType: newObj?.effectiveType,
@@ -40,12 +40,12 @@ function NetworkConnection({
   };
 
   const onlineOflineHandler = () => {
-    setIsOnline(navigator?.onLine);
+    setIsOnline(globalThis?.navigator?.onLine);
   };
 
   const networkChangeHandler = () => {
-    if (!navigator?.onLine) return;
-    const newObj = navigator?.connection;
+    if (!globalThis?.navigator?.onLine) return;
+    const newObj = globalThis?.navigator?.connection;
 
     setConnectionDetails({
       downlink: newObj?.downlink,
@@ -58,7 +58,7 @@ function NetworkConnection({
   const handleUpdate = () => {
     if (NetworkConnection.isBrowserSupport() === true
      || NetworkConnection.isBrowserSupport() === false) {
-      handleSuccess({ msgType: 'SUCCESSFULFUL',
+      handleSuccess({ msgType: 'SUCCESSFUL',
         msg: successMsg,
         successCb,
         data: {
@@ -102,14 +102,6 @@ NetworkConnection.propTypes = {
   loadingCb: PropTypes.func,
   successMsg: PropTypes.string,
   failureMsg: PropTypes.object,
-};
-
-NetworkConnection.defaultProps = {
-  successCb: () => {},
-  failureCb: () => {},
-  loadingCb: () => {},
-  successMsg: 'NetworkConnection details fetch Successfully',
-  failureMsg: { ...failureMsgDefault },
 };
 
 export default Wrapper(NetworkConnection);
