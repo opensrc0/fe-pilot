@@ -8,7 +8,7 @@ const failureMsgDefault = {
   error: 'Unable To Copy',
 };
 
-const isBrowserSupport = () => globalThis?.navigator?.clipboard;
+const isBrowserSupport = () => globalThis.navigator?.clipboard;
 
 const copyToClipboard = ({
   successCb = () => {},

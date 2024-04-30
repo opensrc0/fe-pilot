@@ -18,7 +18,7 @@ const isShareAPIDataValid = (sharingData) => {
   return true;
 };
 
-const isBrowserSupport = () => globalThis.navigator?.share && true;
+const isBrowserSupport = () => globalThis.navigator?.share;
 
 const share = ({
   successCb = () => {},

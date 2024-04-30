@@ -8,7 +8,7 @@ const failureMsgDefault = {
   error: 'Unable to fetch details from Vibrate',
 };
 
-const isBrowserSupport = () => globalThis?.navigator?.vibrate;
+const isBrowserSupport = () => globalThis.navigator?.vibrate;
 
 const vibrate = ({
   successCb = () => {},

@@ -1,5 +1,2 @@
-import LocateMe from './LocateMe';
-
-export { LocateMe };
-
-export default LocateMe;
+export * from './LocateMe';
+export { default } from './LocateMe';

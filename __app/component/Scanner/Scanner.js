@@ -17,7 +17,7 @@ const failureMsgDefault = {
   unableToScan: 'Unable to scan',
 };
 
-const isBrowserSupport = () => navigator?.mediaDevices && globalThis.BarcodeDetector;
+const isBrowserSupport = () => globalThis.navigator?.mediaDevices && globalThis.BarcodeDetector;
 
 function Scanner({
   successCb,
