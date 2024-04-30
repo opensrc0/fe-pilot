@@ -1,43 +1,30 @@
-## 1. Happy Flow
-#### a) Passing child
+
+# Network Connection
+
+A Network Connection Component returns online status and also information about the system's connection in terms of general connection type (e.g., 'Wi-Fi, 'cellular', etc.). Which can be used to select high-definition content or low-definition content based on the user's connection.
 
 
+## Usage/Examples
 
+```javascript
+import { NetworkConnection, Online, Offline} from 'fe-pilot/NetworkConnection';
 
-## 2. Success: successCb callBack Fn along with success msg
+  const success = (response) => {
+    console.log(response, " success response")
+  }
 
+  const failure = (response) => {
+    console.log(response, " failure response")
+  }
 
+  return (
+    <NetworkConnection successCb={success} failureCb={failure}>
+        <Online>Online</Online>
+        <Offline>
+            <div>Pass custom Html to be displayed when appeared offline</div>
+        </Offline>
+    </NetworkConnection>
+  );
+}
+```
 
-
-
-> [!Note]
-> **successCb** will get an object contains the property **msgType**, **msg**, **data**
-
-## 3. Failure: failureCb callBack Fn along with failure msg
-
-
-
-
-
-> [!Note]
-> **failureCb** will get an object contains the property **msgType**, **msg**
-
-> [!Important]
-Failure can happend due to multiple reasons, due to that reason **failureMsg** is an object having different kind of error property according to the error can occur in component
-
-## 4. Failure: Device don't support the feature and you want to hide the feauture from User
-
-
-
-
-
-> [!Note]
-> if **showForever** props value is false, feature will be hidden in case of unSupported by the device
-
-## 5. Combine with all props
-
-
-
-
-
-  
