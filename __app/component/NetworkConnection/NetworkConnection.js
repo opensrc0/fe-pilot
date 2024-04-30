@@ -39,7 +39,7 @@ function NetworkConnection({
     });
   };
 
-  const onlineOflineHandler = () => {
+  const onlineOfflineHandler = () => {
     setIsOnline(globalThis?.navigator?.onLine);
   };
 
@@ -76,15 +76,15 @@ function NetworkConnection({
   }, [isOnline, connectionDetails.effectiveType]);
 
   useEffect(() => {
-    globalThis.addEventListener('online', onlineOflineHandler);
-    globalThis.addEventListener('offline', onlineOflineHandler);
+    globalThis.addEventListener('online', onlineOfflineHandler);
+    globalThis.addEventListener('offline', onlineOfflineHandler);
     globalThis?.navigator.connection.addEventListener('change', networkChangeHandler);
 
     updateNetworkConnection();
 
     return () => {
-      globalThis.removeEventListener('online', onlineOflineHandler);
-      globalThis.removeEventListener('offline', onlineOflineHandler);
+      globalThis.removeEventListener('online', onlineOfflineHandler);
+      globalThis.removeEventListener('offline', onlineOfflineHandler);
       globalThis.navigator.connection.removeEventListener('change', networkChangeHandler);
     };
   }, []);
