@@ -96,6 +96,7 @@ function Scanner({
     video.style.top = '0';
     video.style.left = '0';
     video.style.objectFit = 'fill';
+    video.style.transform = 'rotateY(180deg)';
     list = document.getElementById(id);
     list.before(video);
   };
