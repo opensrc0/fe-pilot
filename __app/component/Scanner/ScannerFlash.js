@@ -45,4 +45,6 @@ ScannerFlash.defaultProps = {
   position: 'absolute',
 };
 
+export { ScannerFlash };
+
 export default ScannerFlash;

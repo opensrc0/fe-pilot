@@ -1,5 +1,2 @@
-import AutoFillOtp from './AutoFillOtp';
-
-export { AutoFillOtp };
-
-export default AutoFillOtp;
+export * from './AutoFillOtp';
+export { default } from './AutoFillOtp';

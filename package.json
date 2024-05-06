@@ -1,6 +1,6 @@
 {
   "name": "fe-pilot",
-  "version": "1.0.65",
+  "version": "1.2.0",
   "description": "Advance JS features, Plug & Play",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,7 @@
     "semantic-release": "semantic-release --branches master",
     "prod:unminified": "NODE_ENV=production babel __app/component -d __build"
   },
-  "author": "Himanshu Gupta",
+  "author": "Himanshu Gupta <opensrc0@gmail.com>",
   "license": "MIT",
   "lint-staged": {
     "*.js": [
@@ -85,7 +85,6 @@
     "__build/**",
     "./index.js",
     "AutoFillOtp/",
-    "ABCD/",
     "Bluetooth/",
     "FaceDetector/",
     "CopyToClipboard/",
@@ -119,11 +118,7 @@
     "semantic-release": "^23.0.2"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }

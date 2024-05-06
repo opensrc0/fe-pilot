@@ -83,18 +83,20 @@ import Share from 'fe-pilot/Share';
 >  <summary>See the list of components</summary>
 >
 >  ###
->  01. :white_check_mark: &nbsp; [AutoFillOtp](../__app/component/AutoFillOtp/README.md)
->  00. :white_check_mark: &nbsp; [ColorPicker](../__app/component/ColorPicker/README.md)
->  00. :white_check_mark: &nbsp; [CopyToClipboard](../__app/component/CopyToClipboard/README.md)
->  00. :white_check_mark: &nbsp; [FaceDetector](../__app/component/FaceDetector/README.md)
->  00. :white_check_mark: &nbsp; [LiveLocation](../__app/component/LiveLocationTracking/README.md)
->  00. :white_check_mark: &nbsp; [LocateMe](../__app/component/LocateMe/README.md)
->  00. :white_check_mark: &nbsp; [PhoneBook](../__app/component/PhoneBook/README.md)
->  00. :white_check_mark: &nbsp; [Scanner](../__app/component/Scanner/README.md)
->  00. :white_check_mark: &nbsp; [Share](../__app/component/Share/README.md)
->  00. :white_check_mark: &nbsp; [TextToSpeech](../__app/component/TextToSpeech/README.md)
->  00. :white_check_mark: &nbsp; [VoiceRecognition](../__app/component/VoiceRecognition/README.md)
->  00. :white_check_mark: &nbsp; [Vibrate](../__app/component/Vibrate/README.md)
+>  01. :white_check_mark: &nbsp; [AutoFillOtp](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/AutoFillOtp/README.md)
+>  00. :white_check_mark: &nbsp; [ColorPicker](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/ColorPicker/README.md)
+>  00. :white_check_mark: &nbsp; [CopyToClipboard](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/CopyToClipboard/README.md)
+>  00. :white_check_mark: &nbsp; [FaceDetector](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/FaceDetector/README.md)
+>  00. :white_check_mark: &nbsp; [LiveLocation](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/LiveLocationTracking/README.md)
+>  00. :white_check_mark: &nbsp; [LocateMe](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/LocateMe/README.md)
+>  00. :white_check_mark: &nbsp; [PhoneBook](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/PhoneBook/README.md)
+>  00. :white_check_mark: &nbsp; [Scanner](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/Scanner/README.md)
+>  00. :white_check_mark: &nbsp; [Share](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/Share/README.md)
+>  00. :white_check_mark: &nbsp; [TextToSpeech](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/TextToSpeech/README.md)
+>  00. :white_check_mark: &nbsp; [VoiceRecognition](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/VoiceRecognition/README.md)
+>  00. :white_check_mark: &nbsp; [Vibrate](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/Vibrate/README.md)
+>  00. :white_check_mark: &nbsp; [WakeLock](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/WakeLock/README.md)
+>  00. :white_check_mark: &nbsp; [WhatsappShare](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/WhatsappShare/README.md)
 > </details>
 
 ## Online Editor Templates

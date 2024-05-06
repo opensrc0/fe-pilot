@@ -93,6 +93,8 @@ ScannerGallery.defaultProps = {
   position: 'absolute',
 };
 
+export { ScannerGallery };
+
 export default ScannerGallery;
 
 // <input type="file" id="id" name="id" accept="image/png,image/jpeg" capture="filesystem" />

@@ -1,3 +1,27 @@
+# [1.2.0](https://github.com/opensrc0/fe-pilot/compare/v1.1.0...v1.2.0) (2024-4-9)
+
+
+### Features
+
+* **whatsapp share:** whatsapp share component has been added successfully ([a80375f](https://github.com/opensrc0/fe-pilot/commit/a80375fc206d7d5009dd1e08e40ee5e80cfcf5ca))
+
+# [1.1.0](https://github.com/opensrc0/fe-pilot/compare/v1.0.65...v1.1.0) (2024-4-8)
+
+
+### Bug Fixes
+
+* **color picker:** changed color picker msg ([46c4d08](https://github.com/opensrc0/fe-pilot/commit/46c4d08d6da57d618c18261d68c10a736c01f3ea))
+
+
+### Features
+
+* **component:** a new component weblock added ([fa9061a](https://github.com/opensrc0/fe-pilot/commit/fa9061a430417b3e0bfc72ae22edc75eddbcb36f))
+
+
+### Performance Improvements
+
+* removed ([bc4ed15](https://github.com/opensrc0/fe-pilot/commit/bc4ed15d4d77198e5e099b58e1a7efacf06c92b7))
+
 ## [1.0.65](https://github.com/opensrc0/fe-pilot/compare/v1.0.64...v1.0.65) (2024-4-6)
 
 

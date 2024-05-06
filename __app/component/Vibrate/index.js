@@ -1,5 +1,2 @@
-import Vibrate from './Vibrate';
-
-export { Vibrate };
-
-export default Vibrate;
+export * from './Vibrate';
+export { default } from './Vibrate';

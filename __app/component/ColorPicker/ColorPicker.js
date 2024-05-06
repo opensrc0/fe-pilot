@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { handleSuccess, handleError } from '../services/handlerService';
+import { handleSuccess, handleError, handleLoading } from '../services/handlerService';
 import Wrapper from '../Wrapper/Wrapper';
 
 const failureMsgDefault = {
@@ -8,17 +8,20 @@ const failureMsgDefault = {
   error: 'Unable to copy color code',
 };
 
-function ColorPicker({
-  successCb,
-  failureCb,
-  successMsg,
-  failureMsg: failureMsgProps,
-  children,
-}) {
+const isBrowserSupport = () => globalThis.EyeDropper;
+
+const colorPicker = ({
+  successCb = () => {},
+  failureCb = () => {},
+  loadingCb = () => {},
+  successMsg = 'Color picked successfully!!',
+  failureMsg: failureMsgProps = { ...failureMsgDefault },
+} = {}) => {
   const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
 
-  const pickColor = () => {
-    if (ColorPicker.isBrowserSupport()) {
+  const init = () => {
+    if (isBrowserSupport()) {
+      handleLoading({ loadingCb });
       const eyeDropper = new globalThis.EyeDropper();
 
       eyeDropper
@@ -33,26 +36,39 @@ function ColorPicker({
     return true;
   };
 
+  init();
+};
+
+function ColorPicker({
+  children,
+  successCb,
+  failureCb,
+  loadingCb,
+  successMsg,
+  failureMsg,
+}) {
   return React.Children.map(children || 'Copy Color', (child) => React.cloneElement(typeof child === 'string' ? <span>{child}</span> : child, {
-    onClick: pickColor,
-    onKeyDown: pickColor,
+    onClick: () => colorPicker({
+      successCb,
+      failureCb,
+      loadingCb,
+      successMsg,
+      failureMsg,
+    }),
   }));
 }
 
-ColorPicker.isBrowserSupport = () => globalThis.EyeDropper;
-
 ColorPicker.propTypes = {
+  showForever: PropTypes.bool,
   successCb: PropTypes.func,
   failureCb: PropTypes.func,
+  loadingCb: PropTypes.func,
   successMsg: PropTypes.string,
   failureMsg: PropTypes.object,
 };
 
-ColorPicker.defaultProps = {
-  successCb: () => {},
-  failureCb: () => {},
-  successMsg: 'Color picked successfully!!',
-  failureMsg: { ...failureMsgDefault },
-};
+const WColorPicker = Wrapper(ColorPicker, isBrowserSupport);
 
-export default Wrapper(ColorPicker);
+export { colorPicker, WColorPicker as ColorPicker };
+
+export default WColorPicker;

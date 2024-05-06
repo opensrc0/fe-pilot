@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import Wrapper from '../Wrapper/Wrapper';
 import { handleSuccess, handleError, handleLoading } from '../services/handlerService';
+import Wrapper from '../Wrapper/Wrapper';
 import dependentJsService from '../services/dependentJsService';
 
 const failureMsgDefault = {
@@ -13,6 +13,10 @@ const failureMsgDefault = {
   invalidLatLng: 'Invalid Lat lng',
   error: '',
 };
+
+const isBrowserSupport = () => globalThis.navigator?.geolocation
+  && globalThis.navigator?.permissions?.query
+  && globalThis.navigator?.geolocation?.getCurrentPosition;
 
 const checkPermitByBrowser = async (failureMsg, failureCb) => {
   try {
@@ -83,23 +87,24 @@ const onSuccss = async (
   handleSuccess({ msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: zipcode });
 };
 
-const onFailure = async (failureCb, error, failureMsg) => handleError({ msgType: 'ERROR', msg: failureMsg.error || JSON.stringify(error), failureCb });
+const onFailure = async (failureCb, error, failureMsg) => handleError({ msgType: 'ERROR', msg: failureMsg.error || error, failureCb });
 
-function LocateMe({
-  successCb,
-  failureCb,
-  successMsg,
-  failureMsg: failureMsgProps,
-  loadingCb,
-  children,
-  isProdKey,
-  googleKey,
-}) {
+const locateMe = ({
+  successCb = () => {},
+  failureCb = () => {},
+  loadingCb = () => {},
+  successMsg = 'Located Successfully!!',
+  failureMsg: failureMsgProps = { ...failureMsgDefault },
+  isProdKey = true,
+  googleKey = '',
+} = {}) => {
   const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
 
-  const onClick = async () => {
-    if (LocateMe.isBrowserSupport()) {
+  const init = async () => {
+    if (isBrowserSupport()) {
       handleLoading({ loadingCb });
+
+      // Your Code will start from here
       const isPermitByBrowser = await checkPermitByBrowser(failureMsg, failureCb);
       const isScriptInBrowser = await checkScriptInBrowser(
         failureMsg,
@@ -120,12 +125,25 @@ function LocateMe({
           onFailure(failureCb, error, failureMsg);
         });
       }
+      // Your Code will end here
     } else {
       return handleError({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
     }
     return true;
   };
 
+  init();
+};
+
+function LocateMe({
+  children,
+  successCb,
+  failureCb,
+  loadingCb,
+  successMsg,
+  failureMsg,
+  ...props
+}) {
   useEffect(() => {
     globalThis.console.error = (...arg) => {
       if (arg[0] && arg[0]?.indexOf('https://developers.google.com/maps/documentation/javascript/error-messages') !== -1) {
@@ -138,36 +156,31 @@ function LocateMe({
     };
   }, []);
 
-  return (
-    React.Children.map(children || 'Use my current location', (child) => React.cloneElement(typeof child === 'string' ? <span>{child}</span> : child, {
-      onClick,
-    }))
-  );
+  return React.Children.map(children || 'LocateMe', (child) => React.cloneElement(typeof child === 'string' ? <span>{child}</span> : child, {
+    onClick: () => locateMe({
+      successCb,
+      failureCb,
+      loadingCb,
+      successMsg,
+      failureMsg,
+      ...props,
+    }),
+  }));
 }
 
-LocateMe.isBrowserSupport = () => navigator.geolocation
-  && navigator?.permissions?.query
-  && navigator?.geolocation?.getCurrentPosition
-  && true;
-
 LocateMe.propTypes = {
+  showForever: PropTypes.bool,
   successCb: PropTypes.func,
   failureCb: PropTypes.func,
   loadingCb: PropTypes.func,
   successMsg: PropTypes.string,
   failureMsg: PropTypes.object,
   isProdKey: PropTypes.bool,
-  googleKey: PropTypes.string.isRequired,
+  googleKey: PropTypes.string,
 };
 
-LocateMe.defaultProps = {
-  successCb: () => {},
-  failureCb: () => {},
-  loadingCb: () => {},
-  successMsg: 'Located Successfully',
-  failureMsg: { ...failureMsgDefault },
-  isProdKey: true,
-  googleKey: '',
-};
+const WLocateMe = Wrapper(LocateMe, isBrowserSupport);
 
-export default Wrapper(LocateMe);
+export { locateMe, WLocateMe as LocateMe };
+
+export default WLocateMe;
