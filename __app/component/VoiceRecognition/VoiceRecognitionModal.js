@@ -1,6 +1,6 @@
 import React from 'react';
 
-function WVoiceRecognitionModal({
+function VoiceRecognitionModal({
   children,
   setIsModalVisible,
   isModalVisible,
@@ -18,6 +18,6 @@ function WVoiceRecognitionModal({
   });
 }
 
-export { WVoiceRecognitionModal as VoiceRecognitionModal };
+export { VoiceRecognitionModal };
 
-export default WVoiceRecognitionModal;
+export default VoiceRecognitionModal;

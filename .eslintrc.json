@@ -21,7 +21,8 @@
     "react/jsx-fragments": ["off" ],
     "react/jsx-props-no-spreading": ["off"],
     "func-names": ["off"],
-    "no-restricted-exports": ["off"]
+    "no-restricted-exports": ["off"],
+    "import/no-named-as-default": 0
   },
   "parserOptions": {
     "ecmaVersion":"latest"

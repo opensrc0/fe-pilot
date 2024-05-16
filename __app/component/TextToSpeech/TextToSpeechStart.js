@@ -1,6 +1,6 @@
 import React from 'react';
 
-function WTextToSpeechStart({
+function TextToSpeechStart({
   successCb,
   failureCb,
   loadingCb,
@@ -27,6 +27,6 @@ function WTextToSpeechStart({
   }));
 }
 
-export { WTextToSpeechStart as TextToSpeechStart };
+export { TextToSpeechStart };
 
-export default WTextToSpeechStart;
+export default TextToSpeechStart;

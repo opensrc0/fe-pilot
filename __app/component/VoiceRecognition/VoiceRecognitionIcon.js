@@ -1,6 +1,6 @@
 import React from 'react';
 
-function WVoiceRecognitionIcon({
+function VoiceRecognitionIcon({
   successCb,
   failureCb,
   loadingCb,
@@ -26,6 +26,6 @@ function WVoiceRecognitionIcon({
   }));
 }
 
-export { WVoiceRecognitionIcon as VoiceRecognitionIcon };
+export { VoiceRecognitionIcon };
 
-export default WVoiceRecognitionIcon;
+export default VoiceRecognitionIcon;

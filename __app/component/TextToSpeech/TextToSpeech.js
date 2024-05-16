@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { handleSuccess, handleError, handleLoading } from '../services/handlerService';
 import Wrapper from '../Wrapper/Wrapper';
 import textToSpeechService from './textToSpeechService';
-import { TextToSpeechStart } from './TextToSpeechStart';
+import TextToSpeechStart from './TextToSpeechStart';
 
 const failureMsgDefault = {
   unSupported: 'Text To Speech feature is not supporting in your device',
