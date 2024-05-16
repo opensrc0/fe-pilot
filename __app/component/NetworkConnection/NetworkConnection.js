@@ -32,7 +32,7 @@ const networkConnection = ({
         msg: successMsg,
         successCb,
         data: {
-          online: globalThis?.navigator?.onLine,
+          online: isBrowserSupport(),
           connectionDetail: globalThis?.navigator?.connection,
         },
       });
@@ -60,7 +60,7 @@ function NetworkConnection({
   const [isOnline, setIsOnline] = useState(isBrowserSupport());
 
   const onlineOfflineHandler = () => {
-    setIsOnline(globalThis?.navigator?.onLine);
+    setIsOnline(isBrowserSupport());
     networkConnection(successCb, failureCb, loadingCb, successMsg, failureMsg);
   };
 
