@@ -1,15 +1,5 @@
-import VoiceRecognition from './VoiceRecognition';
-import VoiceRecognitionIcon from './VoiceRecognitionIcon';
-import VoiceRecognitionModal from './VoiceRecognitionModal';
+export * from './VoiceRecognition';
+export * from './VoiceRecognitionIcon';
+export * from './VoiceRecognitionModal';
 
-export {
-  VoiceRecognition,
-  VoiceRecognitionIcon,
-  VoiceRecognitionModal,
-};
-
-export default {
-  Init: VoiceRecognition,
-  Icon: VoiceRecognitionIcon,
-  Modal: VoiceRecognitionModal,
-};
+export { default } from './VoiceRecognition';

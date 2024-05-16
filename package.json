@@ -61,7 +61,8 @@
     "colorpicker",
     "wakelock",
     "WhatsappShare",
-    "TextToSpeech"
+    "TextToSpeech",
+    "VoiceRecognition"
   ],
   "config": {
     "commitizen": {
