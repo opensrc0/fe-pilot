@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { handleSuccess, handleError, handleLoading } from '../services/handlerService';
 import Wrapper from '../Wrapper/Wrapper';
 import textToSpeechService from './textToSpeechService';
+import { TextToSpeechStart } from './TextToSpeechStart';
 
 const failureMsgDefault = {
   unSupported: 'Text To Speech feature is not supporting in your device',
@@ -82,7 +83,7 @@ function TextToSpeech({
     };
   }, []);
 
-  return React.Children.map(children, (child) => React.cloneElement(child, {
+  return React.Children.map(children || <TextToSpeechStart defaultShow />, (child) => React.cloneElement(typeof child === 'string' ? <span>{child}</span> : child, {
     successCb,
     failureCb,
     loadingCb,

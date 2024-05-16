@@ -11,8 +11,9 @@ function TextToSpeechStart({
   textToSpeechStart,
   setIsAudioOn,
   text,
+  defaultShow = false,
 }) {
-  return !isAudioOn && React.Children.map(children || 'Start', (child) => React.cloneElement(typeof child === 'string' ? <span>{child}</span> : child, {
+  return (!isAudioOn || defaultShow) && React.Children.map(children || 'Start', (child) => React.cloneElement(typeof child === 'string' ? <span>{child}</span> : child, {
     onClick: () => textToSpeechStart({
       successCb,
       failureCb,
