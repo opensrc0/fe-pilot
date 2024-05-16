@@ -12,7 +12,7 @@ const failureMsgDefault = {
   error: 'Unable to fetch details from NetworkConnection',
 };
 
-const isBrowserSupport = () => globalThis?.navigator?.onLine;
+const isBrowserSupport = () => globalThis?.navigator?.onLine || false;
 
 const networkConnection = ({
   successCb = () => {},
@@ -57,7 +57,7 @@ function NetworkConnection({
   successMsg,
   failureMsg,
 }) {
-  const [isOnline, setIsOnline] = useState(globalThis?.navigator.onLine);
+  const [isOnline, setIsOnline] = useState(isBrowserSupport());
 
   const onlineOfflineHandler = () => {
     setIsOnline(globalThis?.navigator?.onLine);
@@ -65,7 +65,7 @@ function NetworkConnection({
   };
 
   const networkChangeHandler = () => {
-    if (!globalThis?.navigator?.onLine) return;
+    if (!isBrowserSupport()) return;
 
     networkConnection(successCb, failureCb, loadingCb, successMsg, failureMsg);
   };
