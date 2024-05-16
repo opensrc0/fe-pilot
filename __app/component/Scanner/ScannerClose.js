@@ -19,6 +19,7 @@ function ScannerClose({
 
   return (
     <div
+      id="fe-pilot-scanner-close"
       style={{
         top,
         bottom,

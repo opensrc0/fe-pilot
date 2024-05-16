@@ -43,6 +43,7 @@ function ScannerCamera({
 
   return (
     <label
+      id="fe-pilot-click-photo"
       htmlFor="click-photo"
       style={{
         top,

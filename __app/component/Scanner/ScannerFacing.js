@@ -13,6 +13,7 @@ function ScannerFacing({
 }) {
   return (
     <div
+      id="fe-pilot-scanner-facing"
       style={{
         top,
         bottom,

@@ -13,6 +13,7 @@ function ScannerFlash({
 }) {
   return (
     <div
+      id="fe-pilot-scanner-flash"
       style={{
         top,
         bottom,

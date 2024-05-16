@@ -44,6 +44,7 @@ function ScannerGallery({
 
   return (
     <label
+      id="fe-pilot-gallery-photo"
       htmlFor="upload-gallery-photo"
       style={{
         top,

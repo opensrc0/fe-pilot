@@ -22,7 +22,8 @@
     "react/jsx-props-no-spreading": ["off"],
     "func-names": ["off"],
     "no-restricted-exports": ["off"],
-    "import/no-named-as-default": 0
+    "import/no-named-as-default": 0,
+    "react/require-default-props": ["off"]
   },
   "parserOptions": {
     "ecmaVersion":"latest"
