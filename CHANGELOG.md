@@ -1,3 +1,14 @@
+## [1.2.1](https://github.com/opensrc0/fe-pilot/compare/v1.2.0...v1.2.1) (2024-4-29)
+
+
+### Bug Fixes
+
+* **autofillotp:** changed in index.js of autofillOtp ([6d13195](https://github.com/opensrc0/fe-pilot/commit/6d13195b466e8daec3fd78dd959903c58c5965f0))
+* **boiler plate:** fixed boiler plate ([13d8189](https://github.com/opensrc0/fe-pilot/commit/13d8189093614565058bf6d33a3be848d9b4c6ce))
+* **colorpicker:** fixed: Import export in index.js of ColorPicker ([88e5b34](https://github.com/opensrc0/fe-pilot/commit/88e5b346fc62edfbd34162e7b3da2979269c9f88))
+* **share:** given support as a service and as a component ([13f603f](https://github.com/opensrc0/fe-pilot/commit/13f603f3c4d8dbe4d9c189c9c04bd66b254d42df))
+* **whatsapp web:** provided support for whatsapp web ([a2d9187](https://github.com/opensrc0/fe-pilot/commit/a2d91873b2b784300aef4ef8eafdeb52ef5e6758))
+
 # [1.2.0](https://github.com/opensrc0/fe-pilot/compare/v1.1.0...v1.2.0) (2024-4-9)
 
 
