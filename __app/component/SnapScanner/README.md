@@ -1,13 +1,6 @@
 ## 1. Happy Flow
 #### a) Passing child
-<TextToSpeech>
-  <TextToSpeechStart>
-    Start Icon/Text/Element
-  </TextToSpeechStart>
-  <TextToSpeechStop>
-    Stop Icon/Text/Element
-  </TextToSpeechStop>
-</TextToSpeech>
+
 
 
 
@@ -44,11 +37,7 @@ Failure can happend due to multiple reasons, due to that reason **failureMsg** i
 ## 5. Combine with all props
 
 
-```mermaid
-graph TD;
-    TextToSpeech--->TextToSpeechInit;
-    TextToSpeech--->TextToSpeechStart;
-    TextToSpeech--->TextToSpeechStop;
-```
 
 
+
+  

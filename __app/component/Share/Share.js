@@ -1,4 +1,3 @@
-/* eslint-disable react/require-default-props */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { handleSuccess, handleError, handleLoading } from '../services/handlerService';
@@ -18,7 +17,7 @@ const isShareAPIDataValid = (sharingData) => {
   return true;
 };
 
-const isBrowserSupport = () => globalThis.navigator?.share && true;
+const isBrowserSupport = () => globalThis.navigator?.share;
 
 const share = ({
   successCb = () => {},

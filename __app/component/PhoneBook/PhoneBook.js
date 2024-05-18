@@ -9,7 +9,7 @@ const failureMsgDefault = {
   error: 'Unable to fetch details from PhoneBook',
 };
 
-const isBrowserSupport = () => globalThis?.navigator?.contacts && globalThis?.ContactsManage;
+const isBrowserSupport = () => globalThis.navigator?.contacts && globalThis.ContactsManage;
 
 const phoneBook = ({
   successCb = () => {},

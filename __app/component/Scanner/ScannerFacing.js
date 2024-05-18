@@ -3,16 +3,17 @@ import React from 'react';
 function ScannerFacing({
   toggleCamera,
   children,
-  zIndex,
-  top,
-  bottom,
-  left,
-  right,
-  color,
-  position,
+  zIndex = 9,
+  color = 'white',
+  top = 'auto',
+  bottom = '25%',
+  left = 'auto',
+  right = '37%',
+  position = 'absolute',
 }) {
   return (
     <div
+      id="fe-pilot-scanner-facing"
       style={{
         top,
         bottom,
@@ -31,19 +32,6 @@ function ScannerFacing({
     </div>
   );
 }
-
-ScannerFacing.propTypes = {
-
-};
-
-ScannerFacing.defaultProps = {
-  color: 'white',
-  top: 'auto',
-  bottom: '25%',
-  left: 'auto',
-  right: '37%',
-  position: 'absolute',
-};
 
 export { ScannerFacing };
 

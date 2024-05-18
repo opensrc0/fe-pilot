@@ -60,7 +60,11 @@
     "detectmylocation",
     "colorpicker",
     "wakelock",
-    "WhatsappShare"
+    "WhatsappShare",
+    "NetworkConnection"
+    "TextToSpeech",
+    "VoiceRecognition",
+    "SnapScanner"
   ],
   "config": {
     "commitizen": {
@@ -98,7 +102,9 @@
     "VoiceRecognition/",
     "Vibrate/",
     "ColorPicker/",
-    "WhatsappShare/"
+    "WhatsappShare/",
+    "NetworkConnection/"
+    "SnapScanner/"
   ],
   "devDependencies": {
     "@babel/cli": "^7.23.9",
@@ -118,11 +124,7 @@
     "semantic-release": "^23.0.2"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
   }
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { browserDimensions } from '../utils/utils';
 
-function ScannerScanBox({ zIndex, marginTop, background, children }) {
+function ScannerScanBox({ zIndex = 9, marginTop, background, children }) {
   const [isBrowser, setIsBrowser] = useState(false);
   const [appCss, setAppCss] = useState({});
 
@@ -16,21 +16,23 @@ function ScannerScanBox({ zIndex, marginTop, background, children }) {
   }, []);
 
   return isBrowser && (children || (
-    <div style={{
-      left: '0px',
-      top: '0',
-      zIndex,
-      position: 'absolute',
-      boxSizing: 'border-box',
-      width: appCss.width,
-      height: appCss.height,
-      borderLeft: '25px',
-      borderRight: '25px',
-      borderTop: appCss.borderTop,
-      borderBottom: appCss.borderBottom,
-      borderColor: background,
-      borderStyle: 'solid',
-    }}
+    <div
+      id="fe-pilot-scan-box"
+      style={{
+        left: '0px',
+        top: '0',
+        zIndex,
+        position: 'absolute',
+        boxSizing: 'border-box',
+        width: appCss.width,
+        height: appCss.height,
+        borderLeft: '25px',
+        borderRight: '25px',
+        borderTop: appCss.borderTop,
+        borderBottom: appCss.borderBottom,
+        borderColor: background,
+        borderStyle: 'solid',
+      }}
     />
   ));
 }

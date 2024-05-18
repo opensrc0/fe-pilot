@@ -1,4 +1,3 @@
-/* eslint-disable no-inner-declarations */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { handleSuccess, handleError, handleLoading } from '../services/handlerService';
@@ -17,25 +16,24 @@ const failureMsgDefault = {
   unableToScan: 'Unable to scan',
 };
 
-const isBrowserSupport = () => navigator?.mediaDevices && globalThis.BarcodeDetector;
+const isBrowserSupport = () => globalThis.navigator?.mediaDevices && globalThis.BarcodeDetector;
 
 function Scanner({
-  successCb,
-  failureCb,
-  loadingCb,
-  successMsg,
-  failureMsg: failureMsgProps,
-  cameraType,
-  zIndex,
+  successCb = () => {},
+  failureCb = () => {},
+  loadingCb = () => {},
+  successMsg = 'Scanned successfully',
+  failureMsg: failureMsgProps = { ...failureMsgDefault },
+  cameraType = 'back',
+  zIndex = 9,
   children,
-}) {
+} = {}) {
   let list = null;
   let video = null;
   let facingMode;
   const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
 
   const [flash, setFlash] = useState(false);
-  const [isBrowser, setIsBrowser] = useState(false);
 
   const stopStreaming = () => {
     if (mediaStream) {
@@ -79,11 +77,11 @@ function Scanner({
   };
 
   const createVideo = async (id) => {
-    document.getElementById('streaming-video')?.remove();
+    document.getElementById('fe-pilot-video')?.remove();
 
     video = document.createElement('video');
 
-    video.id = 'streaming-video';
+    video.id = 'fe-pilot-video';
     video.srcObject = mediaStream;
     video.autoplay = true;
     video.play();
@@ -96,8 +94,9 @@ function Scanner({
     video.style.top = '0';
     video.style.left = '0';
     video.style.objectFit = 'fill';
+    video.style.transform = 'rotateY(180deg)';
     list = document.getElementById(id);
-    list.before(video);
+    list.insertBefore(video, list.firstChild);
   };
 
   const startStreaming = async () => {
@@ -118,7 +117,7 @@ function Scanner({
     return mediaStream;
   };
 
-  const startVideo = async (id = 'camera') => {
+  const startVideo = async (id = 'fe-pilot-scanner') => {
     mediaStream = await startStreaming();
     createVideo(id);
     detectCodes();
@@ -154,9 +153,8 @@ function Scanner({
 
   const handleBrowserSupport = () => {
     if (isBrowserSupport()) {
-      facingMode = cameraType === 'back' ? 'environment' : 'user';
       handleLoading({ loadingCb });
-
+      facingMode = cameraType === 'back' ? 'environment' : 'user';
       startVideo();
     } else {
       return handleError({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
@@ -166,7 +164,6 @@ function Scanner({
   };
 
   useEffect(() => {
-    setIsBrowser(true);
     handleBrowserSupport();
 
     return () => {
@@ -174,9 +171,8 @@ function Scanner({
     };
   }, []);
 
-  return isBrowser && isBrowserSupport() && (
-    <div id="scanner">
-      <div id="camera" />
+  return isBrowserSupport() && (
+    <div id="fe-pilot-scanner">
       {
         React.Children.map(children, (child) => React.cloneElement(child, {
           zIndex,
@@ -194,6 +190,8 @@ function Scanner({
 }
 
 Scanner.propTypes = {
+  // eslint-disable-next-line react/no-unused-prop-types
+  showForever: PropTypes.bool,
   successCb: PropTypes.func,
   failureCb: PropTypes.func,
   loadingCb: PropTypes.func,
@@ -203,18 +201,8 @@ Scanner.propTypes = {
   cameraType: PropTypes.oneOf(['back', 'front']),
 };
 
-Scanner.defaultProps = {
-  successCb: () => {},
-  failureCb: () => {},
-  loadingCb: () => {},
-  successMsg: '',
-  failureMsg: { ...failureMsgDefault },
-  zIndex: 9,
-  cameraType: 'back',
-};
-
 const WScanner = Wrapper(Scanner, isBrowserSupport);
 
 export { WScanner as Scanner };
 
-export default Scanner;
+export default WScanner;

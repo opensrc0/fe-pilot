@@ -8,7 +8,7 @@ const failureMsgDefault = {
   error: 'Unable to fetch details from WakeLock',
 };
 
-const isBrowserSupport = () => globalThis?.navigator.wakeLock;
+const isBrowserSupport = () => globalThis.navigator?.wakeLock;
 
 const wakeLock = ({
   successCb = () => {},

@@ -58,7 +58,6 @@ const ${COMPONENT_SERVICE} = ({
   init();
 };
 
-
 function ${COMPONENT}({
   children,
   successCb,

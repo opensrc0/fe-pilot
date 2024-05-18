@@ -1,16 +1,17 @@
 import React from 'react';
 
 function ScannerClose({
-  onClose,
-  children,
-  zIndex,
   allClear,
-  top,
-  bottom,
-  left,
-  right,
-  color,
-  position,
+  zIndex = 9,
+  color = 'white',
+  top = 'auto',
+  bottom = '25%',
+  left = 'auto',
+  right = '72%',
+  position = 'absolute',
+
+  onClose = () => {},
+  children,
 }) {
   const setClose = () => {
     onClose();
@@ -19,6 +20,7 @@ function ScannerClose({
 
   return (
     <div
+      id="fe-pilot-scanner-close"
       style={{
         top,
         bottom,
@@ -37,20 +39,6 @@ function ScannerClose({
     </div>
   );
 }
-
-ScannerClose.propTypes = {
-
-};
-
-ScannerClose.defaultProps = {
-  color: 'white',
-  top: 'auto',
-  bottom: '25%',
-  left: 'auto',
-  right: '72%',
-  position: 'absolute',
-  onClose: () => {},
-};
 
 export { ScannerClose };
 
