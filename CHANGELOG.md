@@ -1,3 +1,10 @@
+## [1.2.9](https://github.com/opensrc0/fe-pilot/compare/v1.2.8...v1.2.9) (2024-5-18)
+
+
+### Bug Fixes
+
+* **scanner:** scanner ([dc2b77c](https://github.com/opensrc0/fe-pilot/commit/dc2b77c4f60967537ec64e0a18ee94023836e1b0))
+
 ## [1.2.8](https://github.com/opensrc0/fe-pilot/compare/v1.2.7...v1.2.8) (2024-5-18)
 
 
