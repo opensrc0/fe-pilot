@@ -74,6 +74,7 @@
   "release": {
     "branches": [
       "master",
+      "main",
       "next"
     ],
     "plugins": [
