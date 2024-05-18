@@ -104,7 +104,8 @@
     "ColorPicker/",
     "WhatsappShare/",
     "NetworkConnection/",
-    "SnapScanner/"
+    "SnapScanner/",
+    "WakeLock"
   ],
   "devDependencies": {
     "@babel/cli": "^7.23.9",

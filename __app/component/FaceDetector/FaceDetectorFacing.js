@@ -4,12 +4,12 @@ function FaceDetectorFacing({
   toggleCamera,
   children,
   zIndex,
-  top,
-  bottom,
-  left,
-  right,
-  color,
-  position,
+  color = 'white',
+  top = 'auto',
+  bottom = '50%',
+  left = 'auto',
+  right = '37%',
+  position = 'absolute',
 }) {
   return (
     <div
@@ -31,18 +31,5 @@ function FaceDetectorFacing({
     </div>
   );
 }
-
-FaceDetectorFacing.propTypes = {
-
-};
-
-FaceDetectorFacing.defaultProps = {
-  color: 'white',
-  top: 'auto',
-  bottom: '50%',
-  left: 'auto',
-  right: '37%',
-  position: 'absolute',
-};
 
 export default FaceDetectorFacing;

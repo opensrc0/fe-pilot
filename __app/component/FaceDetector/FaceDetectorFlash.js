@@ -4,12 +4,12 @@ function FaceDetector({
   toggleFlash,
   children,
   zIndex,
-  top,
-  bottom,
-  left,
-  right,
-  color,
-  position,
+  color = 'white',
+  top = 'auto',
+  bottom = '50%',
+  left = 'auto',
+  right = '5%',
+  position = 'absolute',
 }) {
   return (
     <div
@@ -31,18 +31,5 @@ function FaceDetector({
     </div>
   );
 }
-
-FaceDetector.propTypes = {
-
-};
-
-FaceDetector.defaultProps = {
-  color: 'white',
-  top: 'auto',
-  bottom: '50%',
-  left: 'auto',
-  right: '5%',
-  position: 'absolute',
-};
 
 export default FaceDetector;

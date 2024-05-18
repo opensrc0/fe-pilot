@@ -5,12 +5,12 @@ function FaceDetectorClose({
   children,
   zIndex,
   allClear,
-  top,
-  bottom,
-  left,
-  right,
-  color,
-  position,
+  color = 'white',
+  top = 'auto',
+  bottom = '50%',
+  left = 'auto',
+  right = '72%',
+  position = 'absolute',
 }) {
   const setClose = () => {
     onClose();
@@ -37,18 +37,5 @@ function FaceDetectorClose({
     </div>
   );
 }
-
-FaceDetectorClose.propTypes = {
-
-};
-
-FaceDetectorClose.defaultProps = {
-  color: 'white',
-  top: 'auto',
-  bottom: '50%',
-  left: 'auto',
-  right: '72%',
-  position: 'absolute',
-};
 
 export default FaceDetectorClose;
