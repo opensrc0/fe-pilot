@@ -7,6 +7,4 @@ graph TD;
     Scanner--->CameraFacing;
     Scanner--->CameraFlash;
     Scanner--->CameraScanBox;
-    Scanner--->PhoneGallery;
-    Scanner--->StartCamera;
 ```
