@@ -1,3 +1,17 @@
+## [1.2.6](https://github.com/opensrc0/fe-pilot/compare/v1.2.5...v1.2.6) (2024-5-18)
+
+
+### Bug Fixes
+
+* **bugfix for last release:** phoneBook, Scanner, TextToSpeech, Vibrate component fixed ([7951696](https://github.com/opensrc0/fe-pilot/commit/7951696b934f3e521b573f942a72c6b8b3fea8a3))
+* **publish.yml:** (34) added main branch for auto release ([c3b25a4](https://github.com/opensrc0/fe-pilot/commit/c3b25a41ec75d178906947d6bad56bc2fb750b0c))
+* **publish.yml:** added main branch for auto release ([501274b](https://github.com/opensrc0/fe-pilot/commit/501274b61cd30451714d9099f55c8d942c4483d6))
+* **publish.yml:** added main branch for auto release ([4a4386c](https://github.com/opensrc0/fe-pilot/commit/4a4386c1332518197994e11c474fd6bca32c61c4))
+* **scanner:** fixed: Scanner component ([eaa12db](https://github.com/opensrc0/fe-pilot/commit/eaa12dbd9428323603d65fc9db31d1197ded69e3))
+* **version in package.json:** version in package.json ([eb75579](https://github.com/opensrc0/fe-pilot/commit/eb75579897d948cb7f3ff7ef1148cb62ab867188))
+* **version update:** update version ([66825a3](https://github.com/opensrc0/fe-pilot/commit/66825a37c572fa94da8db464de1a5b0d1bb33c33))
+* **versioning:** maintain version ([e9bed42](https://github.com/opensrc0/fe-pilot/commit/e9bed42d4f99c4e4d7c1ce2747fb0baad274b87b))
+
 ## [1.2.5](https://github.com/opensrc0/fe-pilot/compare/v1.2.4...v1.2.5) (2024-5-18)
 
 
