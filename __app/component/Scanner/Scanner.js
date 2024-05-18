@@ -173,7 +173,6 @@ function Scanner({
 
   return isBrowserSupport() && (
     <div id="fe-pilot-scanner">
-
       {
         React.Children.map(children, (child) => React.cloneElement(child, {
           zIndex,
