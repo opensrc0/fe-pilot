@@ -122,15 +122,19 @@ function Scanner({
   };
 
   const toggleFlash = async (close) => {
-    const track = mediaStream.getVideoTracks()[0];
-    try {
-      await track.applyConstraints({
-        advanced: [{ torch: close === false ? false : !flash }],
-      });
-      setFlash((s) => (close === false ? false : !s));
-    } catch (error) {
-      return handleError({ msgType: 'FLASH_UPSUPPORTED', msg: failureMsg.flashUnsupported, failureCb });
+    if (mediaStream) {
+      const track = mediaStream.getVideoTracks()[0];
+      try {
+        await track.applyConstraints({
+          advanced: [{ torch: !flash }],
+        });
+        setFlash((s) => (close === false ? false : !s));
+      } catch (error) {
+        return handleError({ msgType: 'FLASH_UPSUPPORTED', msg: failureMsg.flashUnsupported, failureCb });
+      }
+      return true;
     }
+
     return true;
   };
 
@@ -147,7 +151,7 @@ function Scanner({
     cancelAnimationFrame(videoUnmount);
     stopStreaming();
     clearTimeout(unmoutRenderLoop);
-    toggleFlash(false);
+    if (flash) toggleFlash(false);
     facingMode = 'back';
   };
 
