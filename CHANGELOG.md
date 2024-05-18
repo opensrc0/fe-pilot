@@ -1,3 +1,10 @@
+## [1.2.10](https://github.com/opensrc0/fe-pilot/compare/v1.2.9...v1.2.10) (2024-5-18)
+
+
+### Bug Fixes
+
+* **wakeuplocak added:** wakeup lock supoort was missing ([1285e85](https://github.com/opensrc0/fe-pilot/commit/1285e85fd3bbb1074b184de27841da97233daef7))
+
 ## [1.2.9](https://github.com/opensrc0/fe-pilot/compare/v1.2.8...v1.2.9) (2024-5-18)
 
 
