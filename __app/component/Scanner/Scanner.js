@@ -22,12 +22,12 @@ function Scanner({
   successCb = () => {},
   failureCb = () => {},
   loadingCb = () => {},
-  successMsg = 'OTP autofilled successfully',
+  successMsg = 'Scanned successfully',
   failureMsg: failureMsgProps = { ...failureMsgDefault },
   cameraType = 'back',
   zIndex = 9,
   children,
-}) {
+} = {}) {
   let list = null;
   let video = null;
   let facingMode;

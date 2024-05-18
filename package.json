@@ -62,7 +62,8 @@
     "wakelock",
     "WhatsappShare",
     "TextToSpeech",
-    "VoiceRecognition"
+    "VoiceRecognition",
+    "SnapScanner"
   ],
   "config": {
     "commitizen": {
@@ -100,7 +101,8 @@
     "VoiceRecognition/",
     "Vibrate/",
     "ColorPicker/",
-    "WhatsappShare/"
+    "WhatsappShare/",
+    "SnapScanner/"
   ],
   "devDependencies": {
     "@babel/cli": "^7.23.9",
