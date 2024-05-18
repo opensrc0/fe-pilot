@@ -8,6 +8,8 @@ import TextToSpeechStart from './TextToSpeechStart';
 const failureMsgDefault = {
   unSupported: 'Text To Speech feature is not supporting in your device',
   badRequest: 'Missing props/params',
+  techError: 'Technical error',
+  interrupted: 'Interrupted',
   error: 'Unable to convert text to voice',
 };
 
@@ -28,8 +30,6 @@ const textToSpeechStart = ({
 
   const init = async () => {
     if (isBrowserSupport()) {
-      handleLoading({ loadingCb });
-
       // Your Code will start from here
       if (text) {
         handleLoading({ loadingCb });
@@ -42,10 +42,13 @@ const textToSpeechStart = ({
           };
           utteranceCbk.onerror = (e) => {
             setIsAudioOn(false);
+            if (e.error === 'interrupted') {
+              return handleError({ msgType: 'INTERRUPTED', msg: failureMsg.interrupted || e.error, failureCb });
+            }
             return handleError({ msgType: 'ERROR', msg: failureMsg.error || e.error, failureCb });
           };
         } catch (error) {
-          return handleError({ msgType: 'ERROR', msg: failureMsg.error, failureCb });
+          return handleError({ msgType: 'TECH_ERROR', msg: failureMsg.techError, failureCb });
         }
       } else {
         return handleError({ msgType: 'MISSING_PARAMS', msg: failureMsg.badRequest, failureCb });
