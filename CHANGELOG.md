@@ -1,3 +1,10 @@
+## [1.2.5](https://github.com/opensrc0/fe-pilot/compare/v1.2.4...v1.2.5) (2024-5-18)
+
+
+### Bug Fixes
+
+* **version update:** update version ([2596ca0](https://github.com/opensrc0/fe-pilot/commit/2596ca01b47ab249ce598a16fd98edd51324cbf7))
+
 ## [1.2.2](https://github.com/opensrc0/fe-pilot/compare/v1.2.1...v1.2.2) (2024-5-18)
 
 
