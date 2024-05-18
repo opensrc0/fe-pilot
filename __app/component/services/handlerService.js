@@ -3,7 +3,7 @@ export const handleSuccess = ({ msg, msgType, successCb, data }) => {
     msgType,
     msg,
     data,
-    status: 'SUCCESS SUCCESS SUCCESS SUCCESS SUCCESS SUCCESS SUCCESS',
+    status: 'SUCCESS',
   };
   console.table('%c SUCCESS::%s', 'color: green; font-size: 20px', '', rtn);
   successCb(rtn);
