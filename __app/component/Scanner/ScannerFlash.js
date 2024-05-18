@@ -1,7 +1,7 @@
 import React from 'react';
 
 function ScannerFlash({
-  zIndex,
+  zIndex = 9,
   toggleFlash,
   color = 'white',
   top = 'auto',

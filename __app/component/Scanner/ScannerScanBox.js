@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { browserDimensions } from '../utils/utils';
 
-function ScannerScanBox({ zIndex, marginTop, background, children }) {
+function ScannerScanBox({ zIndex = 9, marginTop, background, children }) {
   const [isBrowser, setIsBrowser] = useState(false);
   const [appCss, setAppCss] = useState({});
 

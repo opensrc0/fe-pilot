@@ -1,8 +1,8 @@
 import React from 'react';
 
 function ScannerClose({
-  zIndex,
   allClear,
+  zIndex = 9,
   color = 'white',
   top = 'auto',
   bottom = '25%',
