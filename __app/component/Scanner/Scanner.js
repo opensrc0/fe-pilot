@@ -11,9 +11,7 @@ const failureMsgDefault = {
   unSupported: 'QR-Code/Bar-Code/UPI Scanner is not supporting in your device',
   streamingFailed: 'Camera streaming failed',
   barCodeDetectionFailed: 'Bar code detection failed',
-  invalidImage: 'Invalid Images',
   flashUnsupported: 'Flash is not supporting in your device',
-  unableToScan: 'Unable to scan',
 };
 
 const isBrowserSupport = () => globalThis.navigator?.mediaDevices && globalThis.BarcodeDetector;
@@ -123,19 +121,13 @@ function Scanner({
     detectCodes();
   };
 
-  const allClear = () => {
-    cancelAnimationFrame(videoUnmount);
-    stopStreaming();
-    clearTimeout(unmoutRenderLoop);
-  };
-
-  const toggleFlash = async () => {
+  const toggleFlash = async (close) => {
     const track = mediaStream.getVideoTracks()[0];
     try {
       await track.applyConstraints({
-        advanced: [{ torch: !flash }],
+        advanced: [{ torch: close === false ? false : !flash }],
       });
-      setFlash((s) => !s);
+      setFlash((s) => (close === false ? false : !s));
     } catch (error) {
       return handleError({ msgType: 'FLASH_UPSUPPORTED', msg: failureMsg.flashUnsupported, failureCb });
     }
@@ -149,6 +141,14 @@ function Scanner({
     cancelAnimationFrame(videoUnmount);
     clearTimeout(unmoutRenderLoop);
     startVideo();
+  };
+
+  const allClear = () => {
+    cancelAnimationFrame(videoUnmount);
+    stopStreaming();
+    clearTimeout(unmoutRenderLoop);
+    toggleFlash(false);
+    facingMode = 'back';
   };
 
   const handleBrowserSupport = () => {

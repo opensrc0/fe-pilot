@@ -1,28 +1,33 @@
 export const handleSuccess = ({ msg, msgType, successCb, data }) => {
-  console.log(`%c${msgType} : %s`, 'color: green; font-size: 20px', '', data);
-  successCb({
+  const rtn = {
     msgType,
     msg,
     data,
-    status: 'SUCCESS',
-  });
+    status: 'SUCCESS SUCCESS SUCCESS SUCCESS SUCCESS SUCCESS SUCCESS',
+  };
+  console.table('%c SUCCESS::%s', 'color: green; font-size: 20px', '', rtn);
+  successCb(rtn);
 };
 
 export const handleError = ({ msg, msgType, failureCb }) => {
-  console.log(`%c${msgType} : %s`, 'color: green; font-size: 20px', '', msg);
-  failureCb({
+  const rtn = {
     msgType,
     msg,
     status: 'FAILURE',
-  });
+  };
+  console.table('%c FAILURE::%s', 'color: red; font-size: 20px', '', rtn);
+  failureCb(rtn);
 
   return false;
 };
 
 export const handleLoading = ({ loadingCb }) => {
-  loadingCb({
+  const rtn = {
     msgType: 'LOADING',
     msg: 'Loading...',
     status: 'LOADING',
-  });
+  };
+
+  console.table('%c Loading::%s', 'color: green; font-size: 20px', '', rtn);
+  loadingCb(rtn);
 };
