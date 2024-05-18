@@ -61,7 +61,7 @@
     "colorpicker",
     "wakelock",
     "WhatsappShare",
-    "NetworkConnection"
+    "NetworkConnection",
     "TextToSpeech",
     "VoiceRecognition",
     "SnapScanner"
@@ -103,7 +103,7 @@
     "Vibrate/",
     "ColorPicker/",
     "WhatsappShare/",
-    "NetworkConnection/"
+    "NetworkConnection/",
     "SnapScanner/"
   ],
   "devDependencies": {
