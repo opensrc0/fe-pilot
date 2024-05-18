@@ -152,7 +152,6 @@ function Scanner({
     stopStreaming();
     clearTimeout(unmoutRenderLoop);
     if (flash) toggleFlash(false);
-    facingMode = 'back';
   };
 
   const handleBrowserSupport = () => {
