@@ -32,6 +32,7 @@ function Scanner({
   const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
 
   const [flash, setFlash] = useState(false);
+  const [isBrowser, setIsBrowser] = useState(false);
 
   const stopStreaming = () => {
     if (mediaStream) {
@@ -75,11 +76,11 @@ function Scanner({
   };
 
   const createVideo = async (id) => {
-    document.getElementById('fe-pilot-video')?.remove();
+    document.getElementById('streaming-video')?.remove();
 
     video = document.createElement('video');
 
-    video.id = 'fe-pilot-video';
+    video.id = 'streaming-video';
     video.srcObject = mediaStream;
     video.autoplay = true;
     video.play();
@@ -94,7 +95,7 @@ function Scanner({
     video.style.objectFit = 'fill';
     video.style.transform = 'rotateY(180deg)';
     list = document.getElementById(id);
-    list.insertBefore(video, list.firstChild);
+    list.before(video);
   };
 
   const startStreaming = async () => {
@@ -115,24 +116,27 @@ function Scanner({
     return mediaStream;
   };
 
-  const startVideo = async (id = 'fe-pilot-scanner') => {
+  const startVideo = async (id = 'camera') => {
     mediaStream = await startStreaming();
     createVideo(id);
     detectCodes();
   };
 
-  const toggleFlash = async (close) => {
-    if (mediaStream) {
-      const track = mediaStream.getVideoTracks()[0];
-      try {
-        await track.applyConstraints({
-          advanced: [{ torch: !flash }],
-        });
-        setFlash((s) => (close === false ? false : !s));
-      } catch (error) {
-        return handleError({ msgType: 'FLASH_UPSUPPORTED', msg: failureMsg.flashUnsupported, failureCb });
-      }
-      return true;
+  const allClear = () => {
+    cancelAnimationFrame(videoUnmount);
+    stopStreaming();
+    clearTimeout(unmoutRenderLoop);
+  };
+
+  const toggleFlash = async () => {
+    const track = mediaStream.getVideoTracks()[0];
+    try {
+      await track.applyConstraints({
+        advanced: [{ torch: !flash }],
+      });
+      setFlash((s) => !s);
+    } catch (error) {
+      return handleError({ msgType: 'FLASH_UPSUPPORTED', msg: failureMsg.flashUnsupported, failureCb });
     }
 
     return true;
@@ -145,13 +149,6 @@ function Scanner({
     cancelAnimationFrame(videoUnmount);
     clearTimeout(unmoutRenderLoop);
     startVideo();
-  };
-
-  const allClear = () => {
-    cancelAnimationFrame(videoUnmount);
-    stopStreaming();
-    clearTimeout(unmoutRenderLoop);
-    if (flash) toggleFlash(false);
   };
 
   const handleBrowserSupport = () => {
@@ -167,6 +164,7 @@ function Scanner({
   };
 
   useEffect(() => {
+    setIsBrowser(true);
     handleBrowserSupport();
 
     return () => {
@@ -174,8 +172,9 @@ function Scanner({
     };
   }, []);
 
-  return isBrowserSupport() && (
-    <div id="fe-pilot-scanner">
+  return isBrowser && isBrowserSupport() && (
+    <div id="scanner">
+      <div id="camera" />
       {
         React.Children.map(children, (child) => React.cloneElement(child, {
           zIndex,
