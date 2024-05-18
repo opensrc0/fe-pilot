@@ -4,6 +4,18 @@
 ### Bug Fixes
 
 * **added support of multi export and services:** added support of multi export and services ([1981372](https://github.com/opensrc0/fe-pilot/commit/1981372a4c2d2dee30884f5fec18d8c0cff9a7ff))
+* **bugfix for last release:** phoneBook, Scanner, TextToSpeech, Vibrate component fixed ([9fc641c](https://github.com/opensrc0/fe-pilot/commit/9fc641c1911888f2512561f3acdabb95d9e1abb0))
+* **bugfix for last release:** phoneBook, Scanner, TextToSpeech, Vibrate component fixed ([7951696](https://github.com/opensrc0/fe-pilot/commit/7951696b934f3e521b573f942a72c6b8b3fea8a3))
+* **publish.yml:** (34) added main branch for auto release ([c3b25a4](https://github.com/opensrc0/fe-pilot/commit/c3b25a41ec75d178906947d6bad56bc2fb750b0c))
+* **publish.yml:** added main branch for auto release ([501274b](https://github.com/opensrc0/fe-pilot/commit/501274b61cd30451714d9099f55c8d942c4483d6))
+* **publish.yml:** added main branch for auto release ([4a4386c](https://github.com/opensrc0/fe-pilot/commit/4a4386c1332518197994e11c474fd6bca32c61c4))
+
+## [1.2.2](https://github.com/opensrc0/fe-pilot/compare/v1.2.1...v1.2.2) (2024-5-18)
+
+
+### Bug Fixes
+
+* **added support of multi export and services:** added support of multi export and services ([1981372](https://github.com/opensrc0/fe-pilot/commit/1981372a4c2d2dee30884f5fec18d8c0cff9a7ff))
 
 ## [1.2.1](https://github.com/opensrc0/fe-pilot/compare/v1.2.0...v1.2.1) (2024-4-29)
 
