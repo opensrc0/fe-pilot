@@ -1,18 +1,19 @@
 import React from 'react';
 
 function ScannerFlash({
+  zIndex = 9,
   toggleFlash,
+  color = 'white',
+  top = 'auto',
+  bottom = '25%',
+  left = 'auto',
+  right = '5%',
+  position = 'absolute',
   children,
-  zIndex,
-  top,
-  bottom,
-  left,
-  right,
-  color,
-  position,
 }) {
   return (
     <div
+      id="fe-pilot-scanner-flash"
       style={{
         top,
         bottom,
@@ -31,19 +32,6 @@ function ScannerFlash({
     </div>
   );
 }
-
-ScannerFlash.propTypes = {
-
-};
-
-ScannerFlash.defaultProps = {
-  color: 'white',
-  top: 'auto',
-  bottom: '25%',
-  left: 'auto',
-  right: '5%',
-  position: 'absolute',
-};
 
 export { ScannerFlash };
 

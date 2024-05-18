@@ -1,30 +1,34 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Wrapper from '../Wrapper/Wrapper';
 import { handleSuccess, handleError, handleLoading } from '../services/handlerService';
+import Wrapper from '../Wrapper/Wrapper';
+import VoiceRecognitionIcon from './VoiceRecognitionIcon';
 
 const failureMsgDefault = {
-  unSupported: 'Voice Recognition feature is not supporting in your device',
+  unSupported: 'VoiceRecognition is not supporting in your device',
   error: 'Unable to convert your voice to text',
 };
 
-function VoiceRecognition({
-  successCb,
-  failureCb,
-  loadingCb,
-  successMsg,
-  failureMsg: failureMsgProps,
-  children,
-}) {
-  const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [isVoiceStarted, setIsVoiceStarted] = useState(false);
-  const [voiceText, setVoiceText] = useState('');
+const isBrowserSupport = () => globalThis.SpeechRecognition || globalThis.webkitSpeechRecognition;
 
-  const listen = () => {
-    if (VoiceRecognition.isBrowserSupport()) {
+const voiceRecognition = ({
+  successCb = () => {},
+  failureCb = () => {},
+  loadingCb = () => {},
+  successMsg = 'Successfully converted your voice to text!!',
+  failureMsg: failureMsgProps = { ...failureMsgDefault },
+
+  setIsModalVisible = () => {},
+  setIsVoiceStarted = () => {},
+  setVoiceText = () => {},
+} = {}) => {
+  const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
+
+  const init = () => {
+    if (isBrowserSupport()) {
       handleLoading({ loadingCb });
 
+      // Your Code will start from here
       const SpeechRecognition = globalThis.SpeechRecognition || globalThis.webkitSpeechRecognition;
       const recognition = new SpeechRecognition();
 
@@ -61,31 +65,50 @@ function VoiceRecognition({
         setTimeout(() => setIsModalVisible(false), 1500);
       };
       setIsModalVisible(true);
+      // Your Code will end here
     } else {
       return handleError({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
     }
-
     return true;
   };
 
-  return React.Children.map(children, (child) => React.cloneElement(child, {
-    successCb,
-    successMsg,
-    failureCb,
-    failureMsg,
-    listen,
-    isVoiceStarted,
-    isModalVisible,
-    voiceText,
-    onClose: () => setIsModalVisible(false),
+  init();
+};
 
+function VoiceRecognition({
+  children,
+  successCb,
+  failureCb,
+  loadingCb,
+  successMsg,
+  failureMsg,
+  ...props
+}) {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isVoiceStarted, setIsVoiceStarted] = useState(false);
+  const [voiceText, setVoiceText] = useState('');
+  return React.Children.map(children || <VoiceRecognitionIcon />, (child) => React.cloneElement(typeof child === 'string' ? <span>{child}</span> : child, {
+    successCb,
+    failureCb,
+    loadingCb,
+    successMsg,
+    failureMsg,
+
+    voiceRecognition,
+
+    isModalVisible,
+    isVoiceStarted,
+    voiceText,
+    setIsModalVisible,
+    setIsVoiceStarted,
+    setVoiceText,
+
+    ...props,
   }));
 }
 
-VoiceRecognition.isBrowserSupport = () => globalThis.SpeechRecognition
-  || globalThis.webkitSpeechRecognition;
-
 VoiceRecognition.propTypes = {
+  showForever: PropTypes.bool,
   successCb: PropTypes.func,
   failureCb: PropTypes.func,
   loadingCb: PropTypes.func,
@@ -93,12 +116,8 @@ VoiceRecognition.propTypes = {
   failureMsg: PropTypes.object,
 };
 
-VoiceRecognition.defaultProps = {
-  successCb: () => {},
-  failureCb: () => {},
-  loadingCb: () => {},
-  successMsg: 'Successfully converted your voice to text',
-  failureMsg: { ...failureMsgDefault },
-};
+const WVoiceRecognition = Wrapper(VoiceRecognition, isBrowserSupport);
 
-export default Wrapper(VoiceRecognition);
+export { voiceRecognition, WVoiceRecognition as VoiceRecognition };
+
+export default WVoiceRecognition;
