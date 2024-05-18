@@ -16,7 +16,7 @@
     "commit": "npm run lint:check && git-cz",
     "lint:check": "lint-staged",
     "lint:fix": "eslint . --fix",
-    "semantic-release": "semantic-release --branches master",
+    "semantic-release": "semantic-release --branches main",
     "prod:unminified": "NODE_ENV=production babel __app/component -d __build"
   },
   "author": "Himanshu Gupta <opensrc0@gmail.com>",
