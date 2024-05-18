@@ -32,7 +32,6 @@ function Scanner({
   const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
 
   const [flash, setFlash] = useState(false);
-  const [isBrowser, setIsBrowser] = useState(false);
 
   const stopStreaming = () => {
     if (mediaStream) {
@@ -164,7 +163,6 @@ function Scanner({
   };
 
   useEffect(() => {
-    setIsBrowser(true);
     handleBrowserSupport();
 
     return () => {
@@ -172,7 +170,7 @@ function Scanner({
     };
   }, []);
 
-  return isBrowser && isBrowserSupport() && (
+  return isBrowserSupport() && (
     <div id="scanner">
       <div id="camera" />
       {
