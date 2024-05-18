@@ -16,7 +16,7 @@ const vibrate = ({
   loadingCb = () => {},
   successMsg = 'Vibrated Successfully!!',
   failureMsg: failureMsgProps = { ...failureMsgDefault },
-  vibrationSeq,
+  vibrationSeq = [100, 30, 100, 30, 100, 30, 200, 30, 200, 30],
 } = {}) => {
   const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
 
