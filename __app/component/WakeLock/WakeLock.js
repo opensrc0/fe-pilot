@@ -14,7 +14,7 @@ const wakeLock = ({
   successCb = () => {},
   failureCb = () => {},
   loadingCb = () => {},
-  successMsg = 'WakeLock successfully applied!!',
+  successMsg = 'WakeLock successfully applied in your Device!!',
   failureMsg: failureMsgProps = { ...failureMsgDefault },
 } = {}) => {
   const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
