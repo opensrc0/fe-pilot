@@ -1,3 +1,10 @@
+## [1.2.11](https://github.com/opensrc0/fe-pilot/compare/v1.2.10...v1.2.11) (2024-5-19)
+
+
+### Bug Fixes
+
+* **network monitor:** added a new component Network Monitor ([63e124d](https://github.com/opensrc0/fe-pilot/commit/63e124d766e22ab13e6a8d775cfb3cc49f151630))
+
 ## [1.2.10](https://github.com/opensrc0/fe-pilot/compare/v1.2.9...v1.2.10) (2024-5-18)
 
 
