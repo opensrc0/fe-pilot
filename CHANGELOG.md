@@ -1,3 +1,10 @@
+## [1.2.12](https://github.com/opensrc0/fe-pilot/compare/v1.2.11...v1.2.12) (2024-5-20)
+
+
+### Bug Fixes
+
+* **scanner:** toogle fix in Scanner ([bd64d45](https://github.com/opensrc0/fe-pilot/commit/bd64d4593e414ad24a135868c0c8f63ce7887f39))
+
 ## [1.2.11](https://github.com/opensrc0/fe-pilot/compare/v1.2.10...v1.2.11) (2024-5-19)
 
 
