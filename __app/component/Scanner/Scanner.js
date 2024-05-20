@@ -61,9 +61,8 @@ function Scanner({
             });
           }
         });
-      } catch (error) {
-        return handleError({ msgType: 'BAR_CODE_DETECTION_FAILED', msg: failureMsg.barCodeDetectionFailed || JSON.stringify(error), failureCb });
-      }
+      // eslint-disable-next-line no-empty
+      } catch (e) {}
     }
 
     unmoutRenderLoop = setTimeout(() => {

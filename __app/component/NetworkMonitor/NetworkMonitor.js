@@ -11,7 +11,8 @@ const failureMsgDefault = {
   error: 'Unable to fetch details from NetworkMonitor',
 };
 
-const isBrowserSupport = () => globalThis.navigator?.connection;
+const isBrowserSupport = () => globalThis.navigator?.onLine === true
+  || globalThis.navigator?.onLine === false;
 
 const networkMonitor = ({
   successCb = () => {},
@@ -21,28 +22,30 @@ const networkMonitor = ({
   failureMsg: failureMsgProps = { ...failureMsgDefault },
 } = {}) => {
   const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
-
   const init = () => {
     if (isBrowserSupport()) {
       handleLoading({ loadingCb });
 
       // Your Code will start from here
-      const conObj = globalThis.navigator.connection;
       const newConObj = {};
-      for (const name in conObj) {
-        // If User offline, effectiveType should be 0g
-        if (name === 'effectiveType' && conObj.type === 'none') {
-          newConObj[name] = '0g';
-          continue;
-        }
 
-        // Don't include functions in the new object
-        if (Object.prototype.toString.call(conObj[name]) !== '[object Function]') {
-          newConObj[name] = conObj[name];
+      if (globalThis.navigator?.connection) {
+        const conObj = globalThis.navigator.connection;
+        for (const name in conObj) {
+          // If User offline, effectiveType should be 0g
+          if (name === 'effectiveType' && conObj.type === 'none') {
+            newConObj[name] = '0g';
+            continue;
+          }
+
+          // Don't include functions in the new object
+          if (Object.prototype.toString.call(conObj[name]) !== '[object Function]') {
+            newConObj[name] = conObj[name];
+          }
         }
       }
-      newConObj.isOnline = globalThis.navigator.onLine;
 
+      newConObj.isOnline = globalThis.navigator.onLine;
       handleSuccess({ msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: { ...newConObj } });
 
       // Your Code will end here
@@ -66,20 +69,26 @@ function NetworkMonitor({
   const [isToastEnable, setIsToastEnable] = useState(false);
   const [isOnline, setIsOnline] = useState(globalThis.navigator?.onLine);
 
-  useEffect(() => {
-    globalThis?.navigator.connection.addEventListener('change', () => {
-      if (isOnline !== globalThis.navigator?.onLine) {
-        setIsToastEnable(true);
-        setIsOnline(globalThis.navigator?.onLine);
-      }
-      networkMonitor({
-        successCb,
-        failureCb,
-        loadingCb,
-        successMsg,
-        failureMsg,
-      });
+  const onNetworkChange = () => {
+    if (isOnline !== globalThis.navigator?.onLine) {
+      setIsToastEnable(true);
+      setIsOnline(globalThis.navigator?.onLine);
+    }
+    networkMonitor({
+      successCb,
+      failureCb,
+      loadingCb,
+      successMsg,
+      failureMsg,
     });
+  };
+  useEffect(() => {
+    if (globalThis.navigator?.connection) {
+      globalThis.navigator?.connection?.addEventListener('change', () => onNetworkChange);
+    } else {
+      globalThis.addEventListener('online', onNetworkChange);
+      globalThis.addEventListener('offline', onNetworkChange);
+    }
   });
 
   return isToastEnable ? (
