@@ -62,7 +62,7 @@ function Scanner({
           }
         });
       } catch (error) {
-        return handleError({ msgType: 'BAR_CODE_DETECTION_FAILED', msg: failureMsg.barCodeDetectionFailed || JSON.stringify(error), failureCb });
+        return handleError({ msgType: 'BAR_CODE_DETECTION_FAILED', msg: JSON.stringify(error) || failureMsg.barCodeDetectionFailed, failureCb });
       }
     }
 
