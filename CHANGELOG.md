@@ -1,3 +1,10 @@
+## [1.2.13](https://github.com/opensrc0/fe-pilot/compare/v1.2.12...v1.2.13) (2024-5-20)
+
+
+### Bug Fixes
+
+* **network monitor:** replaced Network Connection component to Network Monitor ([9788283](https://github.com/opensrc0/fe-pilot/commit/97882831737389f00494ae349a16825f1e1bb815))
+
 ## [1.2.12](https://github.com/opensrc0/fe-pilot/compare/v1.2.11...v1.2.12) (2024-5-20)
 
 
