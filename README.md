@@ -89,7 +89,7 @@ import Share from 'fe-pilot/Share';
 4. :white_check_mark: &nbsp; [FaceDetector](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/FaceDetector/README.md)
 5. :white_check_mark: &nbsp; [LiveLocation](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/LiveLocationTracking/README.md)
 6. :white_check_mark: &nbsp; [LocateMe](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/LocateMe/README.md)
-7. :white_check_mark: &nbsp; [NetworkConnection](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/NetworkConnection/README.md)
+7. :white_check_mark: &nbsp; [NetworkMonitor](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/NetworkMonitor/README.md)
 8. :white_check_mark: &nbsp; [PhoneBook](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/PhoneBook/README.md)
 9. :white_check_mark: &nbsp; [Scanner](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/Scanner/README.md)
 10. :white_check_mark: &nbsp; [Share](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/Share/README.md)
@@ -99,7 +99,6 @@ import Share from 'fe-pilot/Share';
 14. :white_check_mark: &nbsp; [Vibrate](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/Vibrate/README.md)
 15. :white_check_mark: &nbsp; [WakeLock](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/WakeLock/README.md)
 16. :white_check_mark: &nbsp; [WhatsappShare](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/WhatsappShare/README.md)
-18. :white_check_mark: &nbsp; [NetworkMonitor](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/NetworkMonitor/README.md)
 </details>
 
 ## Online Editor Templates
