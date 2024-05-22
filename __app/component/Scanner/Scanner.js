@@ -165,12 +165,13 @@ function Scanner({
     handleBrowserSupport();
 
     return () => {
+      if (flash) toggleFlash();
       allClear();
     };
   }, []);
 
   return isBrowserSupport() && (
-    <div id="scanner">
+    <div id="scanner" style={{ background: '#000000b3' }}>
       <div id="camera" />
       {
         React.Children.map(children, (child) => React.cloneElement(child, {
