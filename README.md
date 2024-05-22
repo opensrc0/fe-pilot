@@ -1,7 +1,7 @@
 <p align="center">
 <img src="https://github.com/opensrc0/fe-pilot/blob/develop/logo.png" alt="fe-pilot Logo" align="center" width="30%" style="width: 30%;">
 </p>
-<h2 align="center">A React UI library for Advance Web Features 👨‍✈️ </h2>
+<h2 align="center">A React UI library for Advanced Web Features 👨‍✈️ </h2>
 <br />
 <h3 >
   <p align="center" class="tasklist-issue-content">
@@ -29,7 +29,7 @@
 </h3>
 <br />
 
-A React UI library for Advance Web Features that streamlines the development of modern web applications and websites. The library offers component like scanner, voice search, autofill otp, phonebook, share and many more for a small/medium/large size web based applications. Fe-Pilot is a easy to use, light weighted, fully mobile APP like features in web.
+A React UI library for Advanced Web Features that streamlines the development of modern web applications and websites. The library offers component like scanner, voice search, autofill otp, phonebook, share and many more for a small/medium/large size web based applications. Fe-Pilot is a easy to use, light weighted, fully mobile APP like features in web.
 
 ## Table of contents
 1. 🚀 [Features](#features)
@@ -74,7 +74,7 @@ import Share from 'fe-pilot/Share';
 
 <Share
   name={'fe-pilot'}
-  title={'A React library for advance web features'}
+  title={'A React library for advanced web features'}
   url={'https://www.npmjs.com/package/fe-pilot'}
 />
 ```
@@ -121,95 +121,128 @@ Feel like contributing? Most welcome!
 
 Thanks goes to these wonderful people
 <table>
-    <tbody>
-      <tr>
-        <td align="center" valign="top" width="14.28%">
-          <p>
-            <a href="https://github.com/opensrc0">
-              <img src="https://avatars.githubusercontent.com/u/6891544?s=400&v=4" width="64px;" alt="Himanshu Gupta" />
-              <br />
-              <sub><b>Himanshu Gupta</b></sub>
-            </a>
-          </p>
-        </td>
-        <td align="center" valign="top" width="14.28%">
-          <p>
-            <a target="_blank" href="https://github.com/hardikjain29">
-              <img src="https://avatars.githubusercontent.com/u/13768932?v=4" width="64px;" alt="Hardik Jain" />
-              <br />
-              <sub><b>Hardik Jain</b></sub>
-            </a>
-          </p>
-        </td>
-        <td align="center" valign="top" width="14.28%">
-          <p>
-            <a target="_blank" href="https://github.com/Indian2025">
-              <img src="https://avatars.githubusercontent.com/u/164238626?v=4" width="64px;" alt="Shashank Gupta" />
-              <br />
-              <sub><b>Shashank Gupta</b></sub>
-            </a>
-          </p>
-        </td>
-        <td align="center" valign="top" width="14.28%">
-          <p>
-            <a href="https://github.com/Alok30">
-              <img src="https://avatars.githubusercontent.com/u/36290248?s=64&v=4" width="64px;" alt="Alok Dubey" />
-              <br />
-              <sub><b>Alok Dubey</b></sub>
-            </a>
-          </p>
-        </td>
-        <td align="center" valign="top" width="14.28%">
-          <p>
-            <a href="https://github.com/NimishGupta95">
-              <img src="https://avatars.githubusercontent.com/u/13002628?v=4" width="64px;" alt="Nimish Gupta" />
-              <br />
-              <sub><b>Nimish Gupta</b></sub>
-            </a>
-          </p>
-        </td>
-        <td align="center" valign="top" width="14.28%">
-          <p>
-            <a href="https://github.com/Ravi-Chef">
-              <img src="https://avatars.githubusercontent.com/u/31059087?v=4" width="64px;" alt="Ravi Verma" />
-              <br />
-              <sub><b>Ravi Verma</b></sub>
-            </a>
-          </p>
-        </td>
-        <td align="center" valign="top" width="14.28%">
-          <p>
-            <a target="_blank" href="https://github.com/semantic-release-bot">
-              <img src="https://avatars.githubusercontent.com/u/32174276?v=4" width="64px;" alt="Semantic Release Bot" />
-              <br />
-              <sub><b>Semantic Release Bot</b></sub>
-            </a>
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <td align="center" valign="top" width="14.28%">
-          <p>
-            <a target="_blank" href="https://github.com/fossabot">
-              <img src="https://avatars.githubusercontent.com/u/29791463?v=4" width="64px;" alt="Fossa Bot" />
-              <br />
-              <sub><b>Fossa Bot</b></sub>
-            </a>
-          </p>
-        </td>
-        <td align="center" valign="top" width="14.28%">
-          <p>
-            <a target="_blank" href="https://github.com/vineet091">
-              <img src="https://avatars.githubusercontent.com/u/5345138?v=4" width="64px;" alt="Vineet Gupta" />
-              <br />
-              <sub><b>Vineet Gupta</b></sub>
-            </a>
-          </p>
-        </td>
-      </tr>
-    </tbody>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%">
+        <p>
+          <a href="https://github.com/opensrc0">
+            <img src="https://avatars.githubusercontent.com/u/6891544?s=400&v=4" width="64px;" alt="Himanshu Gupta" />
+            <br />
+            <sub><b>Himanshu Gupta</b></sub>
+          </a>
+        </p>
+      </td>
+      <td align="center" valign="top" width="14.28%">
+        <p>
+          <a target="_blank" href="https://github.com/hardikjain29">
+            <img src="https://avatars.githubusercontent.com/u/13768932?v=4" width="64px;" alt="Hardik Jain" />
+            <br />
+            <sub><b>Hardik Jain</b></sub>
+          </a>
+        </p>
+      </td>
+      <td align="center" valign="top" width="14.28%">
+        <a href="https://github.com/ashwinihegde123">
+          <img src="https://avatars.githubusercontent.com/u/40521396?v=4" width="64px;" alt="Ashwini Hegde" />
+          <br />
+          <sub><b>Ashwini Hegde</b></sub>
+        </a>
+        <br />
+      </td>
+      <td align="center" valign="top" width="14.28%">
+        <p>
+          <a target="_blank" href="https://github.com/Indian2025">
+            <img src="https://avatars.githubusercontent.com/u/164238626?v=4" width="64px;" alt="Shashank Gupta" />
+            <br />
+            <sub><b>Shashank Gupta</b></sub>
+          </a>
+        </p>
+      </td>
+      <td align="center" valign="top" width="14.28%">
+        <p>
+          <a href="https://github.com/Alok30">
+            <img src="https://avatars.githubusercontent.com/u/36290248?s=64&v=4" width="64px;" alt="Alok Dubey" />
+            <br />
+            <sub><b>Alok Dubey</b></sub>
+          </a>
+        </p>
+      </td>
+      <td align="center" valign="top" width="14.28%">
+        <p>
+          <a href="https://github.com/NimishGupta95">
+            <img src="https://avatars.githubusercontent.com/u/13002628?v=4" width="64px;" alt="Nimish Gupta" />
+            <br />
+            <sub><b>Nimish Gupta</b></sub>
+          </a>
+        </p>
+      </td>
+      <td align="center" valign="top" width="14.28%">
+        <p>
+          <a href="https://github.com/Ravi-Chef">
+            <img src="https://avatars.githubusercontent.com/u/31059087?v=4" width="64px;" alt="Ravi Verma" />
+            <br />
+            <sub><b>Ravi Verma</b></sub>
+          </a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <!-- <td align="center" valign="top" width="14.28%">
+        <p>
+          <a target="_blank" href="https://github.com/VarshaBhagat0714">
+            <img src="https://avatars.githubusercontent.com/u/36624782?v=4" width="64px;" alt="Varsha Bhagat" />
+            <br />
+            <sub><b>Varsha Bhagat</b></sub>
+          </a>
+        </p>
+      </td> -->
+      <td align="center" valign="top" width="14.28%">
+        <p>
+          <a target="_blank" href="https://github.com/semantic-release-bot">
+            <img src="https://avatars.githubusercontent.com/u/32174276?v=4" width="64px;" alt="Semantic Release Bot" />
+            <br />
+            <sub><b>Semantic Release Bot</b></sub>
+          </a>
+        </p>
+      </td>
+      <td align="center" valign="top" width="14.28%">
+        <p>
+          <a target="_blank" href="https://github.com/vineet091">
+            <img src="https://avatars.githubusercontent.com/u/5345138?v=4" width="64px;" alt="Vineet Gupta" />
+            <br />
+            <sub><b>Vineet Gupta</b></sub>
+          </a>
+        </p>
+      </td>
+      <td align="center" valign="top" width="14.28%">
+        <p>
+          <a target="_blank" href="https://github.com/fossabot">
+            <img src="https://avatars.githubusercontent.com/u/29791463?v=4" width="64px;" alt="Fossa Bot" />
+            <br />
+            <sub><b>Fossa Bot</b></sub>
+          </a>
+        </p>
+      </td>
+      <!-- <td align="center" valign="top" width="14.28%">
+        <p>
+          <a target="_blank" href="https://github.com/pragyajha">
+            <img src="https://avatars.githubusercontent.com/u/3938228?v=4" width="64px;" alt="Pragya Jha" />
+            <br />
+            <sub><b>Pragya Jha</b></sub>
+          </a>
+        </p>
+      </td> -->
+      <td align="center" valign="top" width="14.28%">
+        <a target="_blank" href="https://github.com/swarajgolu">
+          <img src="https://avatars.githubusercontent.com/u/31703347?v=4" width="64px;" alt="Swaraj Singh" />
+          <br />
+          <sub><b>Swaraj Singh</b></sub>
+        </a>
+        <br />
+      </td>
+    </tr>
+  </tbody>
 </table>
-
 
 ## License
 

@@ -1,86 +1,165 @@
-## 1. Happy Flow
+# AutoFillOtp
 
-```js
-import AutoFillOtp from "fe-pilot/AutoFillOtp";
+  An ```AutoFillOTP``` component will help you to enable a listener. The listner will wait for the ```SMS``` in ```your phone``` to enable autoFillOTP.
+
+  <b>Note:</b> ```SMS``` should follow the format. To use auto fill OTP, last line of the sms should contain
+
+  ```javascript
+  @your-domain.com #12345
 ```
 
-#### a) Call AutoFillOtp function
+## Demo
 
-```js
-AutoFillOtp();
-```
+A minimal [Demo Link](https://6jpxdq.csb.app/?component=AutoFillOtp)
+
+
+## Usage/Examples
+
+| Value |  Used as a  | Description|
+|--------- | -------- |-----------------|
+| <b>AutoFillOtp</b> | :white_check_mark: Component | Can be used as Component |
+| <b>autoFillOtp<b> | :white_check_mark: Service | Can be used as Service |
+
+##### 1. Here's an example of basic usage with Default Import:
+ ```javascript
+  // Default import will return AutoFillOtp Component
+  import AutoFillOtp from 'fe-pilot/AutoFillOtp';
+
+  <AutoFillOtp /> // Used as a Component
+  ```
+
+##### 2. Here's an example of basic usage with Multiple Import:
+  ```javascript
+  import { AutoFillOtp, autoFillOtp } from 'fe-pilot/AutoFillOtp'; // Multi Export
+
+  <AutoFillOtp /> // Used as a Component
+
+  autoFillOtp(); // Used as a Service
+  ```
+
+##### 3. Here's an example of a advanced usage:
+
+  ```javascript
+  import { autoFillOtp } from 'fe-pilot/AutoFillOtp';
+
+  const successCb = (response) => {
+    console.log("success response:", response);
+  }
+
+  const failureCb = (response) => {
+    console.log("failure response:", response);
+  }
+
+  autoFillOtp({
+    successCb
+    failureCb
+  });
+
+  ```
 
 > [!Important]
 > To work AutoFillOtp successfully, your otp message template should follow the below format.
+> <br />
 > <br />
 > ```Your OTP is 123456```
 > <br/>
 > ```@your-domain.com #123456```
 
+  ### Props
 
-## 2. Success: successCb callBack function definition
+  <table>
+    <tr>
+      <th>
+        Props
+      </th>
+      <th>
+        Type
+      </th>
+      <th>
+        Description
+      </th>
+      <th>
+        Response
+      </th>
+    </tr>
+    <tr>
+      <td>
+          successCb
+      </td>
+      <td>Function</td>
+      <td> It will be called on success</td>
+      <td>
+        <pre>
+  {
+      data: "Can be array/object/string/number",
+      msgType: "SUCCESSFUL",
+      msg: "A success msg",
+      status: "SUCCESS"
+  }
+        </pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          loadingCb
+      </td>
+      <td>Function</td>
+      <td>
+        It will be called before success/failure.
+      </td>
+      <td>
+        <pre>
+  {
+    msgType: "LOADING",
+    msg: "LOADING...",
+    status: "LOADING"
+  }
+  </pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          failureCb
+      </td>
+      <td>Function</td>
+      <td>
+        It will be called on failure
+      </td>
+      <td>
+         <pre>
+  {
+    msgType: "ERROR",
+    msg: "A failed msg",
+    status: "FAILURE"
+  }
+         </pre>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+     <th>
+      Props
+    </th>
+    <th>
+        Type
+    </th>
+    <th>
+        Description
+    </th>
+    <th>
+        Default Values
+    </th>
+    <tr>
+      <td>
+          showForever
+      </td>
+       <td>Boolean</td>
+      <td>To hide/remove unsupported feature, make it <b>false</b>.</td>
+      <td>Default value is <b>true.</b></td>
+    </tr>
+  </table>
 
-```js
-const successCb = ({ msgType, msg, data, status }) => {
-  console.log(msgType); // SUCCESSFUL
-  console.log(msg); // Success OTP Autofill
-  console.log(data); // logs - otp
-  console.log(status); // SUCCESS
-};
-
-AutoFillOtp({
-  successCb,
-  successMsg: "Success OTP Autofill",
-});
-```
-
-> [!Note]
-> **successCb** function will get an object contains the property `msgType`, `msg`, `data`, `status`
-
-
-## 3. Failure: failureCb callBack function definition
-
-```js
-const failureCb = ({ msgType, msg, status }) => {
-  console.log(msgType); 
-  console.log(msg); 
-  console.log(status); 
-  // UN_SUPPORTED_FEATURE ERROR
-  // Your device does not support AutoFillOtp
-  // FAILURE
-
-  // ----------OR----------
-
-  // ERROR
-  // Unable to auto fill otp
-  // FAILURE
-};
-
-AutoFillOtp({
-  failureCb,
-  failureMsg: {
-    unSupported: "Your device does not support AutoFillOtp",
-    error: "Unable to auto fill otp",
-  },
-});
-```
-
-> [!Note] 
-> **failureCb** function will get an object contains the property `msgType`, `msg`, `status`
-
-> [!Important]
-> Failure can happend due to multiple reasons, due to that reason `failureMsg` is an object having different kind of error property according to the error can occur in component
-
-## 4. Combine with all props
-
-```js
-AutoFillOtp({
-  successCb,
-  successMsg: "Success OTP Autofill",
-  failureCb,
-  failureMsg: {
-    unSupported: "Your device does not support AutoFillOtp",
-    error: "Unable to auto fill otp",
-  },
-});
-```

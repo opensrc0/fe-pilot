@@ -1,43 +1,171 @@
-## 1. Happy Flow
-#### a) Passing child
+# WhatsappShare
+
+A ```WhatsappShare``` component will help you to ```open whatsapp``` directly and ```share``` the ```message```. You can provide a ```pre-defined``` ```mobile number``` and share the details directly in a ```specific number``` as well.
 
 
+## Demo
+
+A minimal [Demo Link](https://6jpxdq.csb.app/?component=WhatsappShare)
 
 
-## 2. Success: successCb callBack Fn along with success msg
+## Usage/Examples
 
+| Value |  Used as a  | Description|
+|--------- | -------- |-----------------|
+| <b>WhatsappShare</b> | :white_check_mark: Component | Can be used as Component |
+| <b>whatsappShare<b> | :white_check_mark: Service | Can be used as Service |
 
+##### 1. Here's an example of basic usage with Multiple Import: with Default Import:
+```javascript
+// Default import will return WhatsappShare Component
+import WhatsappShare from 'fe-pilot/WhatsappShare';
 
+<WhatsappShare /> // Used as a Component
 
+```
 
-> [!Note]
-> **successCb** will get an object contains the property **msgType**, **msg**, **data**
+##### 2. Here's an example of basic usage with Multiple Import: with Multiple Import:
+```javascript
+import { WhatsappShare, whatsappShare } from 'fe-pilot/WhatsappShare';
 
-## 3. Failure: failureCb callBack Fn along with failure msg
+<WhatsappShare /> // Used as a Component
 
+whatsappShare(); // Used as a Service
+```
 
+##### 3. Here's an example of a advanced usage:
 
+```javascript
+import { WhatsappShare } from 'fe-pilot/WhatsappShare';
 
+const successCb = (response) => {
+  console.log("success response:", response);
+}
 
-> [!Note]
-> **failureCb** will get an object contains the property **msgType**, **msg**
+const failureCb = (response) => {
+  console.log("failure response:", response);
+}
 
-> [!Important]
-Failure can happend due to multiple reasons, due to that reason **failureMsg** is an object having different kind of error property according to the error can occur in component
+return (
+  <WhatsappShare
+    successCb={successCb}
+    failureCb={failureCb}
+    mobile="7204535372"
+    msg="Welcome to fe-pilot"
+  >
+    Pass clickable element (button, anchor etc)  here to bind onClick event
+  </WhatsappShare>
+);
 
-## 4. Failure: Device don't support the feature and you want to hide the feauture from User
+```
 
+### Props
 
+<table>
+  <tr>
+    <th>
+      Props
+    </th>
+    <th>
+      Type
+    </th>
+    <th>
+      Description
+    </th>
+    <th>
+      Response
+    </th>
+  </tr>
+  <tr>
+    <td>
+        successCb
+    </td>
+    <td>Function</td>
+    <td> It will be called on success</td>
+    <td>
+      <pre>
+{
+    data: "Can be array/object/string/number",
+    msgType: "SUCCESSFUL",
+    msg: "A success msg",
+    status: "SUCCESS"
+}
+      </pre>
+    </td>
+  </tr>
+  <tr>
+    <td>
+        loadingCb
+    </td>
+    <td>Function</td>
+    <td>
+      It will be called before success/failure.
+    </td>
+    <td>
+      <pre>
+{
+  msgType: "LOADING",
+  msg: "LOADING...",
+  status: "LOADING"
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>
+        failureCb
+    </td>
+    <td>Function</td>
+    <td>
+      It will be called on failure
+    </td>
+    <td>
+       <pre>
+{
+  msgType: "ERROR",
+  msg: "A failed msg",
+  status: "FAILURE"
+}
+       </pre>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <th>
+    Props
+  </th>
+  <th>
+    Type
+  </th>
+  <th>
+    Description
+  </th>
+  <th>
+      Default Values
+  </th>
+  <tr>
+    <td>
+      showForever
+    </td>
+     <td>Boolean</td>
+    <td>To hide/remove unsupported feature, make it <b>false</b>.</td>
+    <td>Default value is <b>true.</b></td>
+  </tr>
+  <tr>
+    <td>mobile</td>
+    <td>number</td>
+    <td>Provide a mobile number to open directly</td>
+    <td> <pre>---</pre> </td>
+  </tr>
+    <tr>
+    <td>msg</td>
+    <td>String</td>
+    <td>Provide a message to send to user</td>
+    <td> <pre>---</pre> </td>
+  </tr>
+</table>
 
-
-
-> [!Note]
-> if **showForever** props value is false, feature will be hidden in case of unSupported by the device
-
-## 5. Combine with all props
-
-
-
-
-
-  

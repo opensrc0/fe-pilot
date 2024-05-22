@@ -5,7 +5,7 @@ import Wrapper from '../Wrapper/Wrapper';
 
 const failureMsgDefault = {
   unSupported: 'AutoFillOtp is not supporting in your device',
-  error: 'Unable to fetch details from AutoFillOtp',
+  error: '',
 };
 
 const isBrowserSupport = () => globalThis.OTPCredential;
@@ -38,7 +38,7 @@ const autoFillOtp = ({
       }).then((otp) => {
         const { code } = otp;
         handleSuccess({ msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: code });
-      }).catch((error) => handleError({ msgType: 'ERROR', msg: error, failureCb }));
+      }).catch((error) => handleError({ msgType: 'ERROR', msg: failureMsg.error || error?.message || 'Unable to fetch details from AutoFillOtp', failureCb }));
     } else {
       return handleError({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
     }

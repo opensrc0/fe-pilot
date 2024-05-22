@@ -1,41 +1,51 @@
-# WakeLock
+# LocateMe
 
-The WakeLock Component will allows you to keep the device screen awake, i.e. prevent the screen from sleeping
+A ```LocateMe``` component will be used to get the ```current pincode``` of the user using ```google map api```.
+
 
 ## Demo
 
-A minimal [Demo Link](https://6jpxdq.csb.app/?component=WakeLock)
+A minimal [Demo Link](https://6jpxdq.csb.app/?component=LocateMe)
 
 
 ## Usage/Examples
 
 | Value |  Used as a  | Description|
 |--------- | -------- |-----------------|
-| <b>WakeLock</b> | :white_check_mark: Component | Can be used as Component |
-| <b>wakeLock<b> | :white_check_mark: Service | Can be used as Service |
+| <b>LocateMe</b> | :white_check_mark: Component | Can be used as Component |
+| <b>locateMe<b> | :white_check_mark: Service | Can be used as Service |
 
 ##### 1. Here's an example of basic usage with Multiple Import: with Default Import:
 ```javascript
-// Default import will return WakeLock Component
-import WakeLock from 'fe-pilot/WakeLock';
+// Default import will return LocateMe Component
+import LocateMe from 'fe-pilot/LocateMe';
 
-<WakeLock /> // Used as a Component
+<LocateMe
+  googleKey="Require Google Map Key"
+  isProdKey={false}
+/> // Used as a Component
 
 ```
 
 ##### 2. Here's an example of basic usage with Multiple Import: with Multiple Import:
 ```javascript
-import { WakeLock, wakeLock } from 'fe-pilot/WakeLock';
+import { LocateMe, locateMe } from 'fe-pilot/LocateMe';
 
-<WakeLock /> // Used as a Component
+<LocateMe
+  googleKey="Require Google Map Key"
+  isProdKey={false}
+/> // Used as a Component
 
-wakeLock(); // Used as a Service
+locateMe({
+  googleKey="Require Google Map Key"
+  isProdKey={false}
+}); // Used as a Service
 ```
 
 ##### 3. Here's an example of a advanced usage:
 
 ```javascript
-import { WakeLock } from 'fe-pilot/WakeLock';
+import { LocateMe } from 'fe-pilot/LocateMe';
 
 const successCb = (response) => {
   console.log("success response:", response);
@@ -45,7 +55,17 @@ const failureCb = (response) => {
   console.log("failure response:", response);
 }
 
-wakeLock({ successCb, failureCb });
+return (
+ <LocateMe
+    successCb={successCb}
+    failureCb={failureCb}
+    googleKey="Require Google Map Key"
+    isProdKey={false}
+  >
+    Pass clickable element (button, anchor etc)  here to bind onClick event
+  </LocateMe>
+);
+
 ```
 
 ### Props
@@ -143,6 +163,18 @@ wakeLock({ successCb, failureCb });
      <td>Boolean</td>
     <td>To hide/remove unsupported feature, make it <b>false</b>.</td>
     <td>Default value is <b>true.</b></td>
+  </tr>
+  <tr>
+    <td>googleKey(*)</td>
+    <td>String</td>
+    <td>Provide a googleKey for prod/lower-env</td>
+    <td><pre>---</pre></td>
+  </tr>
+    <tr>
+    <td>isProdKey(*)</td>
+    <td>Boolean</td>
+    <td>For <b>non-production</b> google key make it <b>false</b></td>
+    <td>Default is <b>true.</b></td>
   </tr>
 </table>
 

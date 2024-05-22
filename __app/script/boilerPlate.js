@@ -98,49 +98,161 @@ export default W${COMPONENT};
 export { default } from './${COMPONENT}';
 `;
 
-  const READMEContent = `## 1. Happy Flow
-#### a) Passing child
+  const READMEContent = `# ${COMPONENT}
+
+A short description about the component
 
 
+## Demo
+
+A minimal [Demo Link](https://6jpxdq.csb.app/?component=${COMPONENT})
 
 
-## 2. Success: successCb callBack Fn along with success msg
+## Usage/Examples
 
+| Value |  Used as a  | Description|
+|--------- | -------- |-----------------|
+| <b>${COMPONENT}</b> | :white_check_mark: Component | Can be used as Component |
+| <b>${COMPONENT_SERVICE}<b> | :white_check_mark: Service | Can be used as Service |
 
+##### 1. Here's an example of basic usage with Multiple Import: with Default Import:
+\`\`\`javascript
+// Default import will return ${COMPONENT} Component
+import ${COMPONENT} from 'fe-pilot/${COMPONENT}';
 
+<${COMPONENT} /> // Used as a Component
 
+\`\`\`
 
-> [!Note]
-> **successCb** will get an object contains the property **msgType**, **msg**, **data**
+##### 2. Here's an example of basic usage with Multiple Import: with Multiple Import:
+\`\`\`javascript
+import { ${COMPONENT}, ${COMPONENT_SERVICE} } from 'fe-pilot/${COMPONENT}';
 
-## 3. Failure: failureCb callBack Fn along with failure msg
+<${COMPONENT} /> // Used as a Component
 
+${COMPONENT_SERVICE}(); // Used as a Service
+\`\`\`
 
+##### 3. Here's an example of a advanced usage:
 
+\`\`\`javascript
+import { ${COMPONENT} } from 'fe-pilot/${COMPONENT}';
 
+const successCb = (response) => {
+  console.log("success response:", response);
+}
 
-> [!Note]
-> **failureCb** will get an object contains the property **msgType**, **msg**
+const failureCb = (response) => {
+  console.log("failure response:", response);
+}
 
-> [!Important]
-Failure can happend due to multiple reasons, due to that reason **failureMsg** is an object having different kind of error property according to the error can occur in component
+return (
+  <${COMPONENT} successCb={successCb} failureCb={failureCb}>
+    Pass clickable element (button, anchor etc)  here to bind onClick event
+  </${COMPONENT}>
+);
 
-## 4. Failure: Device don't support the feature and you want to hide the feauture from User
+\`\`\`
 
+### Props
 
+<table>
+  <tr>
+    <th>
+      Props
+    </th>
+    <th>
+      Type
+    </th>
+    <th>
+      Description
+    </th>
+    <th>
+      Response
+    </th>
+  </tr>
+  <tr>
+    <td>
+        successCb
+    </td>
+    <td>Function</td>
+    <td> It will be called on success</td>
+    <td>
+      <pre>
+{
+    data: "Can be array/object/string/number",
+    msgType: "SUCCESSFUL",
+    msg: "A success msg",
+    status: "SUCCESS"
+}
+      </pre>
+    </td>
+  </tr>
+  <tr>
+    <td>
+        loadingCb
+    </td>
+    <td>Function</td>
+    <td>
+      It will be called before success/failure.
+    </td>
+    <td>
+      <pre>
+{
+  msgType: "LOADING",
+  msg: "LOADING...",
+  status: "LOADING"
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>
+        failureCb
+    </td>
+    <td>Function</td>
+    <td>
+      It will be called on failure
+    </td>
+    <td>
+       <pre>
+{
+  msgType: "ERROR",
+  msg: "A failed msg",
+  status: "FAILURE"
+}
+       </pre>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <th>
+    Props
+  </th>
+  <th>
+    Type
+  </th>
+  <th>
+    Description
+  </th>
+  <th>
+      Default Values
+  </th>
+  <tr>
+    <td>
+      showForever
+    </td>
+    <td>Boolean</td>
+    <td>To hide/remove unsupported feature, make it <b>false</b>.</td>
+    <td>Default value is <b>true.</b></td>
+  </tr>
+</table>
 
-
-
-> [!Note]
-> if **showForever** props value is false, feature will be hidden in case of unSupported by the device
-
-## 5. Combine with all props
-
-
-
-
-
-  `;
+`;
 
   fs.writeFile((`${componentDir}/${COMPONENT}.js`), componentContent, () => {});
   fs.writeFile((`${componentDir}/index.js`), IndexContent, () => {

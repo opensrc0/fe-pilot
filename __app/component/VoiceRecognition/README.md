@@ -1,50 +1,182 @@
-## 1. Happy Flow
-#### a) Passing child
-<TextToSpeech text="Password field is not contained in a form: (More info: ">
-  <TextToSpeechStart>TextToSpeech-Start Icon/Text/Component</TextToSpeechStart>
-  <TextToSpeechStop>TextToSpeech-Stop Icon/Text/Component-Stop</TextToSpeechStop>
-</TextToSpeech>
+# VoiceRecognition
+
+A ```VoiceRecognition``` component is used to ```capture``` the ```voice``` from the user and ```convert``` into the ```text```.
 
 
+## Demo
 
-## 2. Success: successCb callBack Fn along with success msg
-
-
-
+A minimal [Demo Link](https://6jpxdq.csb.app/?component=VoiceRecognition)
 
 
-> [!Note]
-> **successCb** will get an object contains the property **msgType**, **msg**, **data**
+## Usage/Examples
 
-## 3. Failure: failureCb callBack Fn along with failure msg
+| Value |  Used as a  | Description|
+|--------- | -------- |-----------------|
+| <b>VoiceRecognition</b> | :white_check_mark: Component | Can be used as Component |
+| <b>voiceRecognition<b> | :white_check_mark: Service | Can be used as Service |
 
+##### 1. Here's an example of basic usage with Multiple Import: with Default Import:
+```javascript
+// Default import will return VoiceRecognition Component
+import VoiceRecognition from 'fe-pilot/VoiceRecognition';
 
+<VoiceRecognition /> // Used as a Component
 
-
-
-> [!Note]
-> **failureCb** will get an object contains the property **msgType**, **msg**
-
-> [!Important]
-Failure can happend due to multiple reasons, due to that reason **failureMsg** is an object having different kind of error property according to the error can occur in component
-
-## 4. Failure: Device don't support the feature and you want to hide the feauture from User
-
-
-
-
-
-> [!Note]
-> if **showForever** props value is false, feature will be hidden in case of unSupported by the device
-
-## 5. Combine with all props
-
-
-
-
-```mermaid
-graph TD;
-    VoiceRecognition--->TextToSpeechInit;
-    VoiceRecognition--->VoiceRecognitionIcon;
-    VoiceRecognition--->VoiceRecognitionModal;
 ```
+
+##### 2. Here's an example of basic usage with Multiple Import: with Multiple Import:
+```javascript
+import { VoiceRecognition, voiceRecognition } from 'fe-pilot/VoiceRecognition';
+
+<VoiceRecognition /> // Used as a Component
+
+voiceRecognition(); // Used as a Service
+```
+
+##### 3. Here's an example of a advanced usage:
+
+```javascript
+import { VoiceRecognition } from 'fe-pilot/VoiceRecognition';
+
+const successCb = (response) => {
+  console.log("success response:", response);
+}
+
+const failureCb = (response) => {
+  console.log("failure response:", response);
+}
+
+return (
+  <VoiceRecognition successCb={successCb} failureCb={failureCb}>
+    <VoiceRecognitionIcon>
+      Voice Icon
+    </VoiceRecognitionIcon>
+    <VoiceRecognitionModal>
+      <div className="blink_me">...Listening, Please say something</div>
+    </VoiceRecognitionModal>
+  </VoiceRecognition>
+);
+
+```
+
+### Props
+
+<table>
+  <tr>
+    <th>
+      Props
+    </th>
+    <th>
+      Type
+    </th>
+    <th>
+      Description
+    </th>
+    <th>
+      Response
+    </th>
+  </tr>
+  <tr>
+    <td>
+        successCb
+    </td>
+    <td>Function</td>
+    <td> It will be called on success</td>
+    <td>
+      <pre>
+{
+    data: "Can be array/object/string/number",
+    msgType: "SUCCESSFUL",
+    msg: "A success msg",
+    status: "SUCCESS"
+}
+      </pre>
+    </td>
+  </tr>
+  <tr>
+    <td>
+        loadingCb
+    </td>
+    <td>Function</td>
+    <td>
+      It will be called before success/failure.
+    </td>
+    <td>
+      <pre>
+{
+  msgType: "LOADING",
+  msg: "LOADING...",
+  status: "LOADING"
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>
+        failureCb
+    </td>
+    <td>Function</td>
+    <td>
+      It will be called on failure
+    </td>
+    <td>
+       <pre>
+{
+  msgType: "ERROR",
+  msg: "A failed msg",
+  status: "FAILURE"
+}
+       </pre>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <th>
+    Props
+  </th>
+  <th>
+    Type
+  </th>
+  <th>
+    Description
+  </th>
+  <th>
+      Default Values
+  </th>
+  <tr>
+    <td>
+      showForever
+    </td>
+     <td>Boolean</td>
+    <td>To hide/remove unsupported feature, make it <b>false</b>.</td>
+    <td>Default value is <b>true.</b></td>
+  </tr>
+</table>
+
+### Child Component
+<table>
+  <th>
+    Child
+  </th>
+  <th>
+    Type
+  </th>
+  <th>
+    Description
+  </th>
+  <tr>
+    <td>VoiceRecognitionIcon</td>
+    <td>Element</td>
+    <td>onClick, <b>A Voice Recognition</b> Modal will open</td>
+  </tr>
+  <tr>
+    <td>VoiceRecognitionModal</td>
+    <td>Element</td>
+    <td>Provide the modal here</td>
+  </tr>
+</table>
+

@@ -9,9 +9,8 @@ let unmoutRenderLoop = null;
 
 const failureMsgDefault = {
   unSupported: 'QR-Code/Bar-Code/UPI Scanner is not supporting in your device',
-  streamingFailed: 'Camera streaming failed',
-  barCodeDetectionFailed: 'Bar code detection failed',
   flashUnsupported: 'Flash is not supporting in your device',
+  error: '',
 };
 
 const isBrowserSupport = () => globalThis.navigator?.mediaDevices && globalThis.BarcodeDetector;
@@ -109,7 +108,7 @@ function Scanner({
         },
       });
     } catch (error) {
-      return handleError({ msgType: 'STREAMING_FAILED', msg: failureMsg.streamingFailed || JSON.stringify(error), failureCb });
+      return handleError({ msgType: 'ERROR', msg: failureMsg.error || error?.message || 'Camera streaming failed', failureCb });
     }
     return mediaStream;
   };
