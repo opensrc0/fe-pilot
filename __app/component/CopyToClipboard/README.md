@@ -1,118 +1,164 @@
-## 1. Happy Flow 
+# CopyToClipboard
 
-#### a) Passing string for copy
+  The Component has the capability to ```copy``` any value like (Element, String, Number)
 
-```js
-<CopyToClipboard 
-  elementToBeCopy="Fe-pilot library offers component like scanner, voice search, autofill otp, phonebook, share and many more for a small/medium/large size web based applications" 
-/>
-```
+## Demo
 
-#### b) Passing element for copy
+A minimal [Demo Link](https://6jpxdq.csb.app/?component=CopyToClipboard)
 
-```js
-<CopyToClipboard 
-  elementToBeCopy={`
-    <div>
-      <CopyToClipboard />
-    <div>
-  `} 
-/>
-```
-> [!Tip]
-> You can also pass ref variable
+## Usage/Examples
+
+| Value |  Used as a  | Description|
+|--------- | -------- |-----------------|
+| <b>CopyToClipboard</b> | :white_check_mark: Component | Can be used as Component |
+| <b>copyToClipboard<b> | :white_check_mark: Service | Can be used as Service |
 
 
-#### c) Passing child
+  ##### 1. Here's an example of basic usage with Default Import:
+  ```javascript
+ // Default import will return a Component
+  import CopyToClipboard from 'fe-pilot/CopyToClipboard';
 
-```js
-<CopyToClipboard 
-  elementToBeCopy={`
-    <div>
-      <CopyToClipboard />
-    <div>
-  `} 
->
-  Pass clickable(button, anchor, icon etc) element here to bind onClick event
-</CopyToClipboard> 
-```
+  <CopyToClipboard elementToBeCopy={`<div>Element to be Copy<div>`} />
+  ```
 
-## 2. Success: successCb callBack Fn along with success msg
+  ##### 2. Here's an example of basic usage with Multiple Import:
+  ```javascript
+  import { CopyToClipboard, copyToClipboard } from 'fe-pilot/CopyToClipboard';
 
-```js
-const successCb = ({ msgType, msg, data }) => {
-  console.log(msgType); // Success
-  console.log(msg);     // Copied Successfully
-  console.log(data);    // Fe-pilot library offers component like scanner, voice search, autofill otp, phonebook, share
-}
+  // Used as a Component
+  <CopyToClipboard elementToBeCopy={`<div>Element to be Copy<div>`} />
 
-<CopyToClipboard 
-  successCb={successCb}
-  successMsg="Copied Successfully"
-  elementToBeCopy={`Fe-pilot library offers component like scanner, voice search, autofill otp, phonebook, share`}
->
-  Click here to copy (Element, String, etc)
-</CopyToClipboard>
-```
-> [!Note]
-> **successCb** will get an object contains the property ```msgType```, ```msg```, ```data```
+  // Used as a Service
+  copyToClipboard({ elementToBeCopy={`Element to be Copy`} });
+  ```
 
-## 3. Failure: failureCb callBack Fn along with failure msg
-```js
-const failureCb = ({ msgType, msg }) => {
-  console.log(msgType); // UN_SUPPORTED_FEATURE
-  console.log(msg);     // Your device is not supporting Copy feature
+  ##### 3. Here's an example of a advance usage:
 
-  OR
+  ```javascript
+  import { CopyToClipboard } from 'fe-pilot/CopyToClipboard';
 
-  console.log(msgType); // ERROR
-  console.log(msg);     // Unable to copy the text
-}
-```
-```js
-<CopyToClipboard 
-  failureCb={failureCb}
-  failureMsg={{
-    unSupported: 'Your device is not supporting Copy feature',
-    error: 'Unable to copy the text',
-  }}
-  elementToBeCopy={`Fe-pilot library offers component like scanner, voice search, autofill otp, phonebook, share`}
-/>
-```
-> [!Note]
-> **failureCb** will get an object contains the property ```msgType```, ```msg```
+  const successCb = (response) => {
+    console.log("success response:", response);
+  }
 
-> [!Important]
-Failure can happend due to multiple reasons, due to that reason ```failureMsg``` is an object having different kind of error property according to the error can occur in component
+  const failureCb = (response) => {
+    console.log("failure response:", response);
+  }
 
-## 4. Failure: Device don't support the feature and you want to hide the feauture from User
-```js
-<CopyToClipboard 
-  failureCb={failureCb}
-  failureMsg={{
-    unSupported: 'Your device is not supporting Copy feature',
-    error: 'Unable to copy the text',
-  }}
-  showForever={false}
-  elementToBeCopy={`Fe-pilot library offers component like scanner, voice search, autofill otp, phonebook, share`}
-/>
-```
-> [!Note]
-> if ```showForever``` props value is false, feature will be hidden in case of unSupported by the device
+  return (
+    <CopyToClipboard
+      successCb={successCb}
+      failureCb={failureCb}
+      elementToBeCopy={`A string text To Copy`}
+    >
+      Pass clickable element (button, anchor, string, icon etc)
+    </CopyToClipboard>
+  );
 
-## 5. Combine with all props
-```js
-<CopyToClipboard 
-  successCb={successCb}
-  successMsg="Copied Successfully"
-  failureCb={failureCb}
-  failureMsg={{
-    unSupported: 'Your device is not supporting Copy feature',
-    error: 'Unable to copy the text',
-  }}
-  showForever={false}
-  elementToBeCopy={`Fe-pilot library offers component like scanner, voice search, autofill otp, phonebook, share`}
->
-  Pass Copy Icon here
-</CopyToClipboard>
-```
+  ```
+
+  ### Props
+
+  <table>
+    <tr>
+      <th>
+        Props
+      </th>
+      <th>
+        Type
+      </th>
+      <th>
+        Description
+      </th>
+      <th>
+        Response
+      </th>
+    </tr>
+    <tr>
+      <td>
+          successCb
+      </td>
+      <td>Function</td>
+      <td> It will be called on success</td>
+      <td>
+        <pre>
+  {
+      data: "Can be array/object/string/number",
+      msgType: "SUCCESSFUL",
+      msg: "A success msg",
+      status: "SUCCESS"
+  }
+        </pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          loadingCb
+      </td>
+      <td>Function</td>
+      <td>
+        It will be called before success/failure.
+      </td>
+      <td>
+        <pre>
+  {
+    msgType: "LOADING",
+    msg: "LOADING...",
+    status: "LOADING"
+  }
+  </pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          failureCb
+      </td>
+      <td>Function</td>
+      <td>
+        It will be called on failure
+      </td>
+      <td>
+         <pre>
+  {
+    msgType: "ERROR",
+    msg: "A failed msg",
+    status: "FAILURE"
+  }
+         </pre>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <th>
+      Props
+    </th>
+    <th>
+        Type
+    </th>
+    <th>
+        Description
+    </th>
+    <th>
+        Default Values
+    </th>
+    <tr>
+      <td>
+          showForever
+      </td>
+       <td>Boolean</td>
+      <td>To hide/remove unsupported feature, make it <b>false</b>.</td>
+      <td>Default value is <b>true</b></td>
+    </tr>
+    <tr>
+      <td>elementToBeCopy*</td>
+      <td>Element</td>
+      <td>Pass the text/element/number to be copy</td>
+      <td> <pre>---</pre> </td>
+    </tr>
+  </table>
+

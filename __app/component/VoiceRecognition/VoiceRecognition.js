@@ -6,7 +6,7 @@ import VoiceRecognitionIcon from './VoiceRecognitionIcon';
 
 const failureMsgDefault = {
   unSupported: 'VoiceRecognition is not supporting in your device',
-  error: 'Unable to convert your voice to text',
+  error: '',
 };
 
 const isBrowserSupport = () => globalThis.SpeechRecognition || globalThis.webkitSpeechRecognition;
@@ -54,9 +54,9 @@ const voiceRecognition = ({
       recognition.onsoundend = () => {
         setIsVoiceStarted(false);
       };
-      recognition.onerror = () => {
+      recognition.onerror = (event) => {
         setIsModalVisible(false);
-        return handleError({ msgType: 'ERROR', msg: failureMsg.error, failureCb });
+        return handleError({ msgType: 'ERROR', msg: failureMsg.error || event?.error || 'Unable to convert your voice to text', failureCb });
       };
       recognition.onend = () => {
         recognition.abort();

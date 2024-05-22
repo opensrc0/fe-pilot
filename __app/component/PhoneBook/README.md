@@ -1,128 +1,181 @@
-## 1. Happy Flow 
+# PhoneBook
 
-#### a) Including PhoneBook Component
-```js
-<PhoneBook />
+The PhoneBook component will help you to ```open phonebook directory``` from ```your phone```. User can choose any contact from the phone book ```directory``` and get the contact details like ```name```, ```email```, ```tel```, ```address```, ```icon```
+
+
+## Demo
+
+A minimal [Demo Link](https://6jpxdq.csb.app/?component=PhoneBook)
+
+
+## Usage/Examples
+
+| Value |  Used as a  | Description|
+|--------- | -------- |-----------------|
+| <b>PhoneBook</b> | :white_check_mark: Component | Can be used as Component |
+| <b>phoneBook<b> | :white_check_mark: Service | Can be used as Service |
+
+##### 1. Here's an example of basic usage with Default Import:
+```javascript
+// Default import will return PhoneBook Component
+import PhoneBook from 'fe-pilot/PhoneBook';
+
+<PhoneBook /> // Used as a Component
+
 ```
 
-#### b) Passing contactProperty pros to the PhoneBook Component
-```js
-<PhoneBook contactProperty={['name', 'email', 'tel', 'address', 'icon']} />
-```
-> [!Note]
-> Prop contactProperty will be an array and it can contains 5 value. These 5 value are optional, you can pass either the single/two/three/four/five values.
+##### 2. Here's an example of basic usage with Multiple Import:
+```javascript
+import { PhoneBook, phoneBook } from 'fe-pilot/PhoneBook';
 
-#### c) Passing isSelectMultiple pros to the PhoneBook Component
-```js
-<PhoneBook isSelectMultiple={true} />
-```
-> [!Note]
-> You can select multiple phone numbers from phonebook directory.
+<PhoneBook /> // Used as a Component
 
-
-#### d) Passing child
-
-```js
-<PhoneBook>Pass PhoneBook Icon here</PhoneBook>
+phoneBook(); // Used as a Service
 ```
 
-## 2. Success: successCb callBack Fn along with success msg
+##### 3. Here's an example of a advanced usage:
 
-```js
-const successCb = ({ msgType, msg, data }) => {
-  console.log(msgType); // Success
-  console.log(msg);     // Copied Successfully
-  console.log(data);    // data will be an array of object
+```javascript
+import { PhoneBook } from 'fe-pilot/PhoneBook';
+
+const successCb = (response) => {
+  console.log("success response:", response);
 }
 
-<PhoneBook 
-  successCb={successCb}
-  successMsg="Details selected Successfully"
-/>
-
-```
-> [!Note]
-> **successCb** will get an object contains the property ```msgType```, ```msg```, ```data```
-
-> [!Important]
-> <details>
->  <summary>data</summary>
->
->   
->  [
->     {
->        'name': 'fe-pilot',
->        'email': 'opensrc0',
->        'tel': "7204535372", 
->        'address': "Dubai"
->     }
->  ]
-
-## 3. Failure: failureCb callBack Fn along with failure msg
-```js
-const failureCb = ({ msgType, msg }) => {
-  console.log(msgType); 
-  console.log(msg);     
-
-  // UN_SUPPORTED_FEATURE
-  // PhoneBook is not supporting in your device
-
-  // ----------OR----------
-
-  // CANCELLED
-  // Feature Cancelled
-
-  // ----------OR----------
-
-  // ERROR
-  // Unable to fetch details from PhoneBook
+const failureCb = (response) => {
+  console.log("failure response:", response);
 }
 
-<PhoneBook 
-  failureCb={failureCb}
-  failureMsg={{
-    unSupported: 'PhoneBook is not supporting in your device',
-    cancelled: 'Feature Cancelled',
-    error: 'Unable to fetch details from PhoneBook',
-  }}
-/>
-```
-> [!Note]
-> **failureCb** fn will get an object contains the property ```msgType```, ```msg```
+return (
+  <PhoneBook
+    successCb={successCb}
+    failureCb={failureCb}
+    showForever={false}
+    contactProperty={['name', 'email', 'tel', 'address', 'icon']}
+    isSelectMultiple={true}
+  >
+    Pass clickable element (button, anchor etc)  here to bind onClick event
+  </PhoneBook>
+);
 
-> [!Important]
-Failure can happend due to multiple reasons, due to that reason ```failureMsg``` is an object having different kind of error property according to the error can occur in component
-
-## 4. Failure: Device don't support the feature and you want to hide the feauture from User
-```js
-<PhoneBook 
-  failureCb={failureCb}
-  failureMsg={{
-    unSupported: 'PhoneBook is not supporting in your device',
-    cancelled: 'Feature Cancelled',
-    error: 'Unable to fetch details from PhoneBook',
-  }}
-  showForever={false}
-/>
 ```
-> [!Note]
-> if ```showForever``` props value is false, feature will be hidden in case of unSupported by the device
 
-## 5. Combine with all props
-```js
-<PhoneBook 
-  successCb={successCb}
-  successMsg="Details selected Successfully"
-  failureCb={failureCb}
-  failureMsg={{
-    unSupported: 'PhoneBook is not supporting in your device',
-    cancelled: 'Feature Cancelled',
-    error: 'Unable to fetch details from PhoneBook',
-  }}
-  showForever={false}
-  contactProperty={['name', 'email', 'tel', 'address', 'icon']},
-  isSelectMultiple={true},
->
-  Pass PhoneBook Icon here
-</PhoneBook>
-```
+### Props
+
+<table>
+  <tr>
+    <th>
+      Props
+    </th>
+    <th>
+      Type
+    </th>
+    <th>
+      Description
+    </th>
+    <th>
+      Response
+    </th>
+  </tr>
+  <tr>
+    <td>
+        successCb
+    </td>
+    <td>Function</td>
+    <td> It will be called on success</td>
+    <td>
+      <pre>
+{
+    data: "Can be array/object/string/number",
+    msgType: "SUCCESSFUL",
+    msg: "A success msg",
+    status: "SUCCESS"
+}
+      </pre>
+    </td>
+  </tr>
+  <tr>
+    <td>
+        loadingCb
+    </td>
+    <td>Function</td>
+    <td>
+      It will be called before success/failure.
+    </td>
+    <td>
+      <pre>
+{
+  msgType: "LOADING",
+  msg: "LOADING...",
+  status: "LOADING"
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>
+        failureCb
+    </td>
+    <td>Function</td>
+    <td>
+      It will be called on failure
+    </td>
+    <td>
+       <pre>
+{
+  msgType: "ERROR",
+  msg: "A failed msg",
+  status: "FAILURE"
+}
+       </pre>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+   <th>
+    Props
+  </th>
+  <th>
+    Type
+  </th>
+  <th>
+    Description
+  </th>
+  <th>
+    Default Values
+  </th>
+  <tr>
+    <td>
+      showForever
+    </td>
+     <td>Boolean</td>
+    <td>To hide/remove unsupported feature, make it <b>false</b>.</td>
+    <td>Default value is <b>true.</b></td>
+  </tr>
+  <tr>
+    <td>contactProperty</td>
+    <td>Array</td>
+    <td>An <b>array of strings</b> defining what information to retrieve from a contact. <br><br><b>Default</b> value is
+      <b>['name', 'email', 'tel', 'address', 'icon']</b>.<br><br>
+      <pre>
+'name': The contact's name.
+'tel': The telephone number(s) of the contact.
+'email': The email address of the contact.
+'address': The contact's postal address.
+'icon': The avatar of the contact.
+        </pre>
+</td>
+    <td><pre>---</pre></td>
+  </tr>
+  <tr>
+    <td>isSelectMultiple</td>
+    <td>Boolean</td>
+    <td>A Boolean that allows <b>multiple contacts</b> to be <b>selected</b>. The <b>default</b> is <b>false</b>.</td>
+    <td><pre>---</pre></td>
+  </tr>
+</table>
+

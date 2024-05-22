@@ -1,93 +1,152 @@
-## 1. Happy Flow 
+# ColorPicker
 
+The ColorPicker Component will be used to open an ```eye dropper tool```, and allow user to ```pick the color``` from the screen. 
 
-#### a) Passing child
+## Demo
 
-```js
-<ColorPicker 
-  successCb={successCb}
-  successMsg="Color picked successfully!!"
->
-  Pass clickable(button, anchor etc) element here to bind onClick event
-</ColorPicker> 
+A minimal [Demo Link](https://6jpxdq.csb.app/?component=ColorPicker)
+
+## Usage/Examples
+
+| Value |  Used as a  | Description|
+|--------- | -------- |-----------------|
+| <b>ColorPicker</b> | :white_check_mark: Component | Can be used as Component |
+| <b>colorPicker<b> | :white_check_mark: Service | Can be used as Service |
+
+##### 1. Here's an example of basic usage with Default Import:
+```javascript
+// Default import will return ColorPicker Component
+import ColorPicker from 'fe-pilot/ColorPicker';
+
+<ColorPicker /> // Used as a Component
+
 ```
 
-## 2. Success: successCb callBack Fn along with success msg
+##### 2. Here's an example of basic usage with Multiple Import:
+```javascript
+import { ColorPicker, colorPicker } from 'fe-pilot/ColorPicker';
 
-```js
-const successCb = ({ msgType, msg, data }) => {
-  console.log(msgType); // Success
-  console.log(msg);     // Color picked successfully!!
-  console.log(data);   // #FFFFFF (Color Code)
+<ColorPicker /> // Used as a Component
+
+colorPicker(); // Used as a Service
+```
+
+##### 3. Here's an example of a advanced usage:
+
+```javascript
+import { ColorPicker } from 'fe-pilot/ColorPicker';
+
+const successCb = (response) => {
+  console.log("success response:", response);
 }
 
-<ColorPicker 
-  successCb={successCb}
-  successMsg="Color picked successfully!!"
->
-  <button type="button">Click here to start Color Picker</button>
-</ColorPicker>
-```
-> [!Note]
-> **successCb** will get an object contains the property ```msgType```, ```msg```, ```data```
-
-## 3. Failure: failureCb callBack Fn along with failure msg
-```js
-const failureCb = ({ msgType, msg }) => {
-  console.log(msgType); // UN_SUPPORTED_FEATURE
-  console.log(msg);     // Your device is not supporting Color Picker feature
-
-  OR
-
-  console.log(msgType); // ERROR
-  console.log(msg);     // Unable to copy color code
+const failureCb = (response) => {
+  console.log("failure response:", response);
 }
-```
-```js
-<ColorPicker 
-  failureCb={failureCb}
-  failureMsg={{
-    unSupported: 'Your device is not supporting Color Picker feature',
-    error: 'Unable to copy color code',
-  }}
->
-  <button type="button">Click here to start Color Picker</button>
-</ColorPicker>
-```
-> [!Note]
-> **failureCb** will get an object contains the property ```msgType```, ```msg```
 
-> [!Important]
-Failure can happend due to multiple reasons, due to that reason ```failureMsg``` is an object having different kind of error property according to the error can occur in component
+return (
+  <ColorPicker successCb={successCb} failureCb={failureCb}>
+    Pass clickable element (button, anchor, string, icon etc)
+  </ColorPicker>
+);
 
-## 4. Failure: Device don't support the feature and you want to hide the feauture from User
-```js
-<ColorPicker 
-  failureCb={failureCb}
-  failureMsg={{
-    unSupported: 'Your device is not supporting Color Picker feature',
-    error: 'Unable to copy color code',
-  }}
-  showForever={false}
->  
-  <button type="button">Click here to start Color Picker</button>
-</ColorPicker>
 ```
-> [!Note]
-> if ```showForever``` props value is false, feature will be hidden in case of unSupported by the device
 
-## 5. Combine with all props
-```js
-<ColorPicker 
-  successCb={successCb}
-  successMsg="Color picked successfully!!"
-  failureCb={failureCb}
-  failureMsg={{
-    unSupported: 'Your device is not supporting Color Picker feature',
-    error: 'Unable to copy color code',
-  }}
-  showForever={false}
->
-  <button type="button">Click here to start Color Picker</button>
-</ColorPicker>
-```
+### Props
+
+<table>
+  <tr>
+    <th>
+      Props
+    </th>
+    <th>
+      Type
+    </th>
+    <th>
+      Description
+    </th>
+    <th>
+      Response
+    </th>
+  </tr>
+  <tr>
+    <td>
+        successCb
+    </td>
+    <td>Function</td>
+    <td> It will be called on success</td>
+    <td>
+      <pre>
+{
+    data: "Can be array/object/string/number",
+    msgType: "SUCCESSFUL",
+    msg: "A success msg",
+    status: "SUCCESS"
+}
+      </pre>
+    </td>
+  </tr>
+  <tr>
+    <td>
+        loadingCb
+    </td>
+    <td>Function</td>
+    <td>
+      It will be called before success/failure.
+    </td>
+    <td>
+      <pre>
+{
+  msgType: "LOADING",
+  msg: "LOADING...",
+  status: "LOADING"
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>
+        failureCb
+    </td>
+    <td>Function</td>
+    <td>
+      It will be called on failure
+    </td>
+    <td>
+       <pre>
+{
+  msgType: "ERROR",
+  msg: "A failed msg",
+  status: "FAILURE"
+}
+       </pre>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <th>
+    Props
+  </th>
+  <th>
+      Type
+  </th>
+  <th>
+      Description
+  </th>
+  <th>
+      Default Values
+  </th>
+  <tr>
+    <td>
+        showForever
+    </td>
+     <td>Boolean</td>
+    <td>To hide/remove unsupported feature, make it <b>false</b>.</td>
+    <td>Default value is <b>true.</b></td>
+  </tr>
+</table>
+

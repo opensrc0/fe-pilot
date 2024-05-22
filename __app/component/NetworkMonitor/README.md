@@ -1,45 +1,176 @@
-
-# Network Monitor
+# NetworkMonitor
 
 A Network Monitor Component returns online status and also information about the system's connection in terms of general connection type (e.g., 'Wi-Fi, 'cellular', etc.). Which can be used to select high-definition content or low-definition content based on the user's connection.
+
+## Demo
+
+A minimal [Demo Link](https://6jpxdq.csb.app/?component=NetworkMonitor)
 
 
 ## Usage/Examples
 
+| Value |  Used as a  | Description|
+|--------- | -------- |-----------------|
+| <b>NetworkMonitor</b> | :white_check_mark: Component | Can be used as Component |
+| <b>networkMonitor<b> | :white_check_mark: Service | Can be used as Service |
+
+##### 1. Here's an example of basic usage with Default Import:
 ```javascript
-import { NetworkMonitor, OnlineToast, OfflineToast } from 'fe-pilot/NetworkMonitor';
+// Default import will return NetworkMonitor Component
+import NetworkMonitor from 'fe-pilot/NetworkMonitor';
 
-  const success = (response) => {
-    console.log("success response:", response);
-  }
+<NetworkMonitor /> // Used as a Component
 
-  const failure = (response) => {
-    console.log("failure response:", response);
-  }
-
-  return (
-    <NetworkMonitor successCb={success} failureCb={failure}>
-        <OnlineToast>Online</OnlineToast>
-        <OfflineToast>
-            <div>Pass custom Html to be displayed when appeared offline</div>
-        </OfflineToast>
-    </NetworkMonitor>
-  );
-}
 ```
 
-### Universal Props Table
-| Props      | Type               | Universal        | Description|
-| -------    | ------------------ | ---------------- | ---------- |
-| showForever| Boolean            |:white_check_mark:|
-| loadingCb  | function           |:white_check_mark:|
-| successCb  | function           |:white_check_mark:|
-| failureCb  | function           |:white_check_mark:|
-| successMsg | String             |:white_check_mark:|
-| failureMsg | Object             |:white_check_mark:|
+##### 2. Here's an example of basic usage with Multiple Import:
+```javascript
+import { NetworkMonitor, networkMonitor } from 'fe-pilot/NetworkMonitor';
 
-### Component Specific Props Table
-| Props      | Type               | Specific         | Description|
-| -------    | ------------------ | ---------------- | ---------- |
-| No Props Specific to Component| ---- | ---- | ----- |
+<NetworkMonitor /> // Used as a Component
 
+networkMonitor(); // Used as a Service
+```
+
+##### 3. Here's an example of a advanced usage:
+
+```javascript
+import { NetworkMonitor, OfflineToast, OnlineToast } from 'fe-pilot/NetworkMonitor';
+
+const successCb = (response) => {
+  console.log("success response:", response);
+}
+
+const failureCb = (response) => {
+  console.log("failure response:", response);
+}
+
+return (
+  <NetworkMonitor successCb={successCb} failureCb={failureCb}>
+    <OfflineToast />
+    <OnlineToast />
+  </NetworkMonitor>
+);
+
+```
+
+### Props
+
+<table>
+  <tr>
+    <th>
+      Props
+    </th>
+    <th>
+      Type
+    </th>
+    <th>
+      Description
+    </th>
+    <th>
+      Response
+    </th>
+  </tr>
+  <tr>
+    <td>
+        successCb
+    </td>
+    <td>Function</td>
+    <td> It will be called on success</td>
+    <td>
+      <pre>
+{
+    data: "Can be array/object/string/number",
+    msgType: "SUCCESSFUL",
+    msg: "A success msg",
+    status: "SUCCESS"
+}
+      </pre>
+    </td>
+  </tr>
+  <tr>
+    <td>
+        loadingCb
+    </td>
+    <td>Function</td>
+    <td>
+      It will be called before success/failure.
+    </td>
+    <td>
+      <pre>
+{
+  msgType: "LOADING",
+  msg: "LOADING...",
+  status: "LOADING"
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>
+        failureCb
+    </td>
+    <td>Function</td>
+    <td>
+      It will be called on failure
+    </td>
+    <td>
+       <pre>
+{
+  msgType: "ERROR",
+  msg: "A failed msg",
+  status: "FAILURE"
+}
+       </pre>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <th>
+    Props
+  </th>
+  <th>
+    Type
+  </th>
+  <th>
+    Description
+  </th>
+  <th>
+    Default Values
+  </th>
+   <tr>
+    <td>
+      showForever
+    </td>
+     <td>Boolean</td>
+    <td>To hide/remove unsupported feature, make it <b>false</b>.</td>
+    <td>Default value is <b>true.</b></td>
+  </tr>
+</table>
+
+### Child Component
+<table>
+  <th>
+    Child
+  </th>
+  <th>
+    Type
+  </th>
+  <th>
+    Description
+  </th>
+  <tr>
+    <td>OfflineToast</td>
+    <td>Element</td>
+    <td>A offline toast, will be appear as user goes offline</td>
+  </tr>
+  <tr>
+    <td>OnlineToast</td>
+    <td>Element</td>
+    <td>A online toast, will be appear as user goes from offline to online</td>
+  </tr>
+</table>
