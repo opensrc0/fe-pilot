@@ -10,7 +10,7 @@ const failureMsgDefault = {
   badRequest: 'Missing props/params',
   techError: 'Technical error',
   interrupted: 'Interrupted',
-  error: 'Unable to convert text to voice',
+  error: '',
 };
 
 const isBrowserSupport = () => globalThis?.speechSynthesis
@@ -40,12 +40,12 @@ const textToSpeechStart = ({
             setIsAudioOn(false);
             handleSuccess({ msgType: 'SUCCESSFULFUL', msg: successMsg, successCb, data: text });
           };
-          utteranceCbk.onerror = (e) => {
+          utteranceCbk.onerror = (event) => {
             setIsAudioOn(false);
-            if (e.error === 'interrupted') {
-              return handleError({ msgType: 'INTERRUPTED', msg: failureMsg.interrupted || e.error, failureCb });
+            if (event.error === 'interrupted') {
+              return handleError({ msgType: 'INTERRUPTED', msg: failureMsg.interrupted, failureCb });
             }
-            return handleError({ msgType: 'ERROR', msg: failureMsg.error || e.error, failureCb });
+            return handleError({ msgType: 'ERROR', msg: failureMsg.error || event.error || 'Unable to convert text to voice', failureCb });
           };
         } catch (error) {
           return handleError({ msgType: 'TECH_ERROR', msg: failureMsg.techError, failureCb });

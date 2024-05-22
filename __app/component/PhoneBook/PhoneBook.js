@@ -6,7 +6,7 @@ import Wrapper from '../Wrapper/Wrapper';
 const failureMsgDefault = {
   unSupported: 'PhoneBook is not supporting in your device',
   cancelled: 'Feature Cancelled',
-  error: 'Unable to fetch details from PhoneBook',
+  error: '',
 };
 
 const isBrowserSupport = () => globalThis.navigator?.contacts;
@@ -35,7 +35,7 @@ const phoneBook = ({
           return handleError({ msgType: 'CANCELLED', msg: failureMsg.cancelled, failureCb });
         }
       } catch (error) {
-        return handleError({ msgType: 'ERROR', msg: failureMsg.error || JSON.stringify(error), failureCb });
+        return handleError({ msgType: 'ERROR', msg: failureMsg.error || error?.message || 'Unable to fetch details from PhoneBook', failureCb });
       }
       // Your Code will end here
     } else {

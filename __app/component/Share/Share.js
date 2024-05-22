@@ -5,8 +5,8 @@ import Wrapper from '../Wrapper/Wrapper';
 
 const failureMsgDefault = {
   unSupported: 'Share is not supporting in your device',
-  badRequest: 'Missing props',
-  error: 'Unable to share',
+  badRequest: 'Mandatory props are missing',
+  error: '',
 };
 
 const isShareAPIDataValid = (sharingData) => {
@@ -37,7 +37,7 @@ const share = ({
       if (isShareAPIDataValid(sharingData)) {
         navigator.share(sharingData).then(() => {
           handleSuccess({ msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: sharingData });
-        }).catch(() => handleError({ msgType: 'ERROR', msg: failureMsg.error, failureCb }));
+        }).catch((error) => handleError({ msgType: 'ERROR', msg: failureMsg.error || error?.message || 'Unable to share', failureCb }));
       } else {
         return handleError({ msgType: 'BAD_REQUEST', msg: failureMsg.badRequest, failureCb });
       }
