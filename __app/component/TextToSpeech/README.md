@@ -14,9 +14,23 @@
   ```javascript
   import { TextToSpeech, textToSpeech } from 'fe-pilot/TextToSpeech';
 
-  <TextToSpeech /> // Used as a Component
+  // Used as a Component
+  <TextToSpeech
+    text={`Fe-pilot library offers component like
+      scanner, voice search, autofill otp, phonebook,
+      share and many more for a small/medium/large
+      size web based applications`
+    }
+  />
 
-  textToSpeech(); // Used as a Service
+  // Used as a Service
+  textToSpeech({
+    text={`Fe-pilot library offers component like
+      scanner, voice search, autofill otp, phonebook,
+      share and many more for a small/medium/large
+      size web based applications`
+    }
+  });
   ```
 
   Here's an example of a advance usage:
@@ -33,13 +47,21 @@
   }
 
   return (
-    <TextToSpeech successCb={successCb} failureCb={failureCb}>
-     <TextToSpeechStart>
-    Start Icon/Text/Element
-  </TextToSpeechStart>
-  <TextToSpeechStop>
-    Stop Icon/Text/Element
-  </TextToSpeechStop>
+    <TextToSpeech
+      text={`Fe-pilot library offers component like
+        scanner, voice search, autofill otp, phonebook,
+        share and many more for a small/medium/large
+        size web based applications`
+      }
+      successCb={successCb}
+      failureCb={failureCb}
+    >
+      <TextToSpeechStart>
+        Start Icon/Text/Element
+      </TextToSpeechStart>
+      <TextToSpeechStop>
+        Stop Icon/Text/Element
+      </TextToSpeechStop>
     </TextToSpeech>
   );
 
@@ -128,6 +150,12 @@
       <td></td>
       <td></td>
       <td></td>
+    </tr>
+     <tr>
+      <td>text</td>
+      <td>String</td>
+      <td>Text that need to be convert in voice</td>
+      <td> <pre>---</pre> </td>
     </tr>
   </table>
 

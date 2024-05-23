@@ -34,7 +34,12 @@
 
   return (
     <VoiceRecognition successCb={successCb} failureCb={failureCb}>
-      Pass clickable element (button, anchor etc)  here to bind onClick event
+      <VoiceRecognitionIcon>
+        Voice Icon
+      </VoiceRecognitionIcon>
+      <VoiceRecognitionModal>
+        <div className="blink_me">...Listening, Please say something</div>
+      </VoiceRecognitionModal>
     </VoiceRecognition>
   );
 
@@ -126,4 +131,3 @@
     </tr>
   </table>
 
-  

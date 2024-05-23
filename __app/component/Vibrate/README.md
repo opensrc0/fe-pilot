@@ -119,5 +119,11 @@
       <td></td>
       <td></td>
     </tr>
+    <tr>
+      <td>vibrationSeq</td>
+      <td>Array</td>
+      <td>Sequence number for vibration</td>
+      <td> <pre>---</pre> </td>
+    </tr>
   </table>
 

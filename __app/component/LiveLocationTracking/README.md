@@ -12,16 +12,18 @@
 
   Here's an example of basic usage:
   ```javascript
-  import { LiveLocationTracking, liveLocationTracking } from 'fe-pilot/LiveLocationTracking';
+  import { LiveLocationTracking } from 'fe-pilot/LiveLocationTracking';
 
+// Used as a Component
   <LiveLocationTracking
-  googleKey="AIzaSyCimWLcCkTc03jZrTE6TxfTH0PauR2Keps"
-  isProdKey={false}
-  destinationLatLng={{ lat: 12.9541033, lng: 77.7091133 }}
-  /> // Used as a Component
-
-  liveLocationTracking(); // Used as a Service
+    googleKey="AIzaSyCimWLcCkTc03jZrTE6TxfTH0PauR2Keps"
+    isProdKey={false}
+    destinationLatLng={{ lat: 12.9541033, lng: 77.7091133 }}
+  />
   ```
+> [!Note]
+> Can't use as a service
+
 
   Here's an example of a advance usage:
 
@@ -37,9 +39,13 @@
   }
 
   return (
-    <LiveLocationTracking successCb={successCb} failureCb={failureCb}>
-      Pass clickable element (button, anchor etc)  here to bind onClick event
-    </LiveLocationTracking>
+    <LiveLocationTracking
+      successCb={successCb}
+      failureCb={failureCb}
+      googleKey="AIzaSyCimWLcCkTc03jZrTE6TxfTH0PauR2Keps"
+      isProdKey={false}
+      destinationLatLng={{ lat: 12.9541033, lng: 77.7091133 }}
+    />
   );
 
   ```
@@ -128,5 +134,75 @@
       <td></td>
       <td></td>
     </tr>
+     <tr>
+      <td>googleKey (*)</td>
+      <td>String</td>
+      <td></td>
+      <td></td>
+    </tr>
+     <tr>
+      <td>isProdKey (*)</td>
+      <td>Boolean</td>
+      <td></td>
+      <td></td>
+    </tr>
+     <tr>
+      <td>destinationLatLng (*)</td>
+      <td>Object</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>mapTypeControl</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+     <tr>
+      <td>panControl</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+     <tr>
+      <td>zoomControl</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+     <tr>
+      <td>scaleControl</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+     <tr>
+      <td>streetViewControl</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+     <tr>
+      <td>overviewMapControl</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+     <tr>
+      <td>rotateControl</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>fullscreenControl</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
   </table>
+
+
+
+
 

@@ -33,7 +33,12 @@
   }
 
   return (
-    <WhatsappShare successCb={successCb} failureCb={failureCb}>
+    <WhatsappShare
+      successCb={successCb}
+      failureCb={failureCb}
+      mobile="7204535372"
+      msg="Welcome to fe-pilot "
+    >
       Pass clickable element (button, anchor etc)  here to bind onClick event
     </WhatsappShare>
   );
@@ -124,6 +129,17 @@
       <td></td>
       <td></td>
     </tr>
+    <tr>
+      <td>mobile</td>
+      <td>number</td>
+      <td></td>
+      <td> <pre>---</pre> </td>
+    </tr>
+     <tr>
+      <td>msg</td>
+      <td>String</td>
+      <td></td>
+      <td> <pre>---</pre> </td>
+    </tr>
   </table>
 
-  

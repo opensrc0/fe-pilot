@@ -33,7 +33,10 @@ A Network Monitor Component returns online status and also information about the
 
   return (
     <NetworkMonitor successCb={successCb} failureCb={failureCb}>
-      Pass clickable element (button, anchor etc)  here to bind onClick event
+        <OnlineToast>Online</OnlineToast>
+        <OfflineToast>
+            <div>Pass custom Html to be displayed when appeared offline</div>
+        </OfflineToast>
     </NetworkMonitor>
   );
 

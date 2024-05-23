@@ -14,9 +14,19 @@
   ```javascript
   import { CopyToClipboard, copyToClipboard } from 'fe-pilot/CopyToClipboard';
 
-  <CopyToClipboard elementToBeCopy={`<div>Fe-pilot library offers component like scanner, voice search, autofill otp, phonebook, share and many more for a small/medium/large size web based applications<div>`} /> // Used as a Component
+  // Used as a Component
+  <CopyToClipboard elementToBeCopy={`<div>
+    Fe-pilot library offers component like scanner,
+    search, autofill otp, phonebook, share and many more
+    for a small/medium/large size web based applications<div>
+`} />
 
-  copyToClipboard({  elementToBeCopy="Fe-pilot library offers component like scanner, voice search, autofill otp, phonebook, share and many more for a small/medium/large size web based applications" }); // Used as a Service
+  // Used as a Service
+  copyToClipboard({  elementToBeCopy={`
+    Fe-pilot library offers component like scanner,
+    voice search, autofill otp, phonebook, share and many more
+    for a small/medium/large size web based applications`}
+  });
   ```
 
   Here's an example of a advance usage:
@@ -36,7 +46,10 @@
     <CopyToClipboard
       successCb={successCb}
       failureCb={failureCb}
-      elementToBeCopy="Fe-pilot library offers component like scanner, voice search, autofill otp, phonebook, share and many more for a small/medium/large size web based applications"
+      elementToBeCopy={`Fe-pilot library offers component like
+        scanner, voice search, autofill otp, phonebook, share
+        and many more for a small/medium/large size web based applications`
+      }
     >
       Pass clickable element (button, anchor etc)  here to bind onClick event
     </CopyToClipboard>
@@ -128,5 +141,12 @@
       <td></td>
       <td></td>
     </tr>
+     <tr>
+      <td>elementToBeCopy</td>
+      <td>Element</td>
+      <td>Pass the text/element/number to be copy</td>
+     <td> <pre>---</pre> </td>
+    </tr>
+    elementToBeCopy
   </table>
 

@@ -36,9 +36,9 @@
     <PhoneBook
       successCb={successCb}
       failureCb={failureCb}
-       showForever={false}
-  contactProperty={['name', 'email', 'tel', 'address', 'icon']},
-  isSelectMultiple={true},
+      showForever={false}
+      contactProperty={['name', 'email', 'tel', 'address', 'icon']}
+      isSelectMultiple={true}
     >
       Pass clickable element (button, anchor etc)  here to bind onClick event
     </PhoneBook>
@@ -130,5 +130,16 @@
       <td></td>
       <td></td>
     </tr>
+    <tr>
+      <td>contactProperty</td>
+      <td>Array</td>
+      <td></td>
+      <td>['name', 'email', 'tel', 'address', 'icon']</td>
+    </tr>
+    <tr>
+      <td>isSelectMultiple</td>
+      <td>Boolean</td>
+      <td></td>
+      <td></td>
+    </tr>
   </table>
-

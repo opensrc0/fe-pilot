@@ -33,7 +33,13 @@
   }
 
   return (
-    <Share successCb={successCb} failureCb={failureCb}>
+    <Share
+      successCb={successCb}
+      failureCb={failureCb}
+      sName='fe-pilot'
+      sTitle='A React library for advance JS features'
+      sUrl='https://www.npmjs.com/package/fe-pilot'
+    >
       Pass clickable element (button, anchor etc)  here to bind onClick event
     </Share>
   );
@@ -124,6 +130,23 @@
       <td></td>
       <td></td>
     </tr>
+     <tr>
+      <td>sName</td>
+      <td>String</td>
+      <td></td>
+      <td></td>
+    </tr>
+     <tr>
+      <td>sTitle</td>
+      <td>String</td>
+      <td></td>
+      <td></td>
+    </tr>
+     <tr>
+      <td>sUrl</td>
+      <td>String</td>
+      <td></td>
+      <td></td>
+    </tr>
   </table>
 
-  

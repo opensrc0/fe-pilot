@@ -139,3 +139,9 @@
     </tr>
   </table>
 
+sudo vim /etc/hosts
+127.0.0.1 www.mysite.com
+chrome://net-internals/#hsts
+delete www.mysite.com
+chrome://flags/#unsafely-treat-insecure-origin-as-secure
+add domain www.mysite.com and enbale Insecure origins treated as secure
