@@ -98,8 +98,7 @@ export default W${COMPONENT};
 export { default } from './${COMPONENT}';
 `;
 
-  const READMEContent = `
-# {component name}
+  const READMEContent = `# ${COMPONENT}
 
 A short description about the component
 
@@ -112,31 +111,122 @@ A minimal [Online demo](link of codesandbox).
 ## Usage/Examples
 
 Here's an example of basic usage:
-
 \`\`\`javascript
+import { ${COMPONENT}, ${COMPONENT_SERVICE} } from 'fe-pilot/${COMPONENT}';
 
+<${COMPONENT} /> // Used as a Component
+
+${COMPONENT_SERVICE}(); // Used as a Service
 \`\`\`
 
-Here's an example of a complex usage:
+Here's an example of a advance usage:
 
 \`\`\`javascript
+import { ${COMPONENT} } from 'fe-pilot/${COMPONENT}';
+
+const successCb = (response) => {
+  console.log("success response:", response);
+}
+
+const failureCb = (response) => {
+  console.log("failure response:", response);
+}
+
+return (
+  <${COMPONENT} successCb={successCb} failureCb={failureCb}>
+    Pass clickable element (button, anchor etc)  here to bind onClick event
+  </${COMPONENT}>
+);
 
 \`\`\`
-
-## User guide
 
 ### Props
 
-| Prop name  | Description        | Type     | Default value    | Universal          |
-| ---------- | ------------------ | -------- | ---------------- | ------------------ |
-| showForever|                    | Boolean  |                  | :white_check_mark: |
-| loadingCb  |                    | function |                  | :white_check_mark: |
-| successCb  |                    | function |                  | :white_check_mark: |
-| failureCb  |                    | function |                  | :white_check_mark: |
-| successMsg |                    | String   |                  | :white_check_mark: |
-| failureMsg |                    | Object   |                  | :white_check_mark: |
+<table>
+  <tr>
+    <th>
+      Props
+    </th>
+    <th>
+      Type
+    </th>
+    <th>
+      Description
+    </th>
+    <th>
+      Response
+    </th>
+  </tr>
+  <tr>
+    <td>
+        successCb
+    </td>
+    <td>Function</td>
+    <td> It will be called on success</td>
+    <td>
+      <pre>
+{
+    data: "Can be array/object/string/number",
+    msgType: "SUCCESSFUL",
+    msg: "A success msg",
+    status: "SUCCESS"
+}
+      </pre>
+    </td>
+  </tr>
+  <tr>
+    <td>
+        loadingCb
+    </td>
+    <td>Function</td>
+    <td>
+      It will be called before success/failure.
+    </td>
+    <td>
+      <pre>
+{
+  msgType: "LOADING",
+  msg: "LOADING...",
+  status: "LOADING"
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>
+        failureCb
+    </td>
+    <td>Function</td>
+    <td>
+      It will be called on failure
+    </td>
+    <td>
+       <pre>
+{
+  msgType: "ERROR",
+  msg: "A failed msg",
+  status: "FAILURE"
+}
+       </pre>
+    </td>
+  </tr>
+   <tr>
+    <td>
+        showForever
+    </td>
+     <td>Boolean</td>
+    <td>To hide unsupported feature from browser, make it <b>false</b>. Default value is <b>true</b></td>
+    <td> <pre>---</pre> </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
 
-  `;
+`;
 
   fs.writeFile((`${componentDir}/${COMPONENT}.js`), componentContent, () => {});
   fs.writeFile((`${componentDir}/index.js`), IndexContent, () => {
