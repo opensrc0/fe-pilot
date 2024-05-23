@@ -1,54 +1,133 @@
-## 1. Happy Flow
-#### a) Passing child
-<TextToSpeech>
-  <TextToSpeechStart>
+# TextToSpeech
+
+  A short description about the component
+
+
+  ## Demo
+
+  A minimal [Online demo](link of codesandbox).
+
+
+  ## Usage/Examples
+
+  Here's an example of basic usage:
+  ```javascript
+  import { TextToSpeech, textToSpeech } from 'fe-pilot/TextToSpeech';
+
+  <TextToSpeech /> // Used as a Component
+
+  textToSpeech(); // Used as a Service
+  ```
+
+  Here's an example of a advance usage:
+
+  ```javascript
+  import { TextToSpeech } from 'fe-pilot/TextToSpeech';
+
+  const successCb = (response) => {
+    console.log("success response:", response);
+  }
+
+  const failureCb = (response) => {
+    console.log("failure response:", response);
+  }
+
+  return (
+    <TextToSpeech successCb={successCb} failureCb={failureCb}>
+     <TextToSpeechStart>
     Start Icon/Text/Element
   </TextToSpeechStart>
   <TextToSpeechStop>
     Stop Icon/Text/Element
   </TextToSpeechStop>
-</TextToSpeech>
+    </TextToSpeech>
+  );
 
+  ```
 
+  ### Props
 
-## 2. Success: successCb callBack Fn along with success msg
-
-
-
-
-
-> [!Note]
-> **successCb** will get an object contains the property **msgType**, **msg**, **data**
-
-## 3. Failure: failureCb callBack Fn along with failure msg
-
-
-
-
-
-> [!Note]
-> **failureCb** will get an object contains the property **msgType**, **msg**
-
-> [!Important]
-Failure can happend due to multiple reasons, due to that reason **failureMsg** is an object having different kind of error property according to the error can occur in component
-
-## 4. Failure: Device don't support the feature and you want to hide the feauture from User
-
-
-
-
-
-> [!Note]
-> if **showForever** props value is false, feature will be hidden in case of unSupported by the device
-
-## 5. Combine with all props
-
-
-```mermaid
-graph TD;
-    TextToSpeech--->TextToSpeechInit;
-    TextToSpeech--->TextToSpeechStart;
-    TextToSpeech--->TextToSpeechStop;
-```
-
+  <table>
+    <tr>
+      <th>
+        Props
+      </th>
+      <th>
+        Type
+      </th>
+      <th>
+        Description
+      </th>
+      <th>
+        Response
+      </th>
+    </tr>
+    <tr>
+      <td>
+          successCb
+      </td>
+      <td>Function</td>
+      <td> It will be called on success</td>
+      <td>
+        <pre>
+  {
+      data: "Can be array/object/string/number",
+      msgType: "SUCCESSFUL",
+      msg: "A success msg",
+      status: "SUCCESS"
+  }
+        </pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          loadingCb
+      </td>
+      <td>Function</td>
+      <td>
+        It will be called before success/failure.
+      </td>
+      <td>
+        <pre>
+  {
+    msgType: "LOADING",
+    msg: "LOADING...",
+    status: "LOADING"
+  }
+  </pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          failureCb
+      </td>
+      <td>Function</td>
+      <td>
+        It will be called on failure
+      </td>
+      <td>
+         <pre>
+  {
+    msgType: "ERROR",
+    msg: "A failed msg",
+    status: "FAILURE"
+  }
+         </pre>
+      </td>
+    </tr>
+     <tr>
+      <td>
+          showForever
+      </td>
+       <td>Boolean</td>
+      <td>To hide unsupported feature from browser, make it <b>false</b>. Default value is <b>true</b></td>
+      <td> <pre>---</pre> </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
 

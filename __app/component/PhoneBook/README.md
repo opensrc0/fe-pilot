@@ -1,128 +1,134 @@
-## 1. Happy Flow 
+# PhoneBook
 
-#### a) Including PhoneBook Component
-```js
-<PhoneBook />
-```
-
-#### b) Passing contactProperty pros to the PhoneBook Component
-```js
-<PhoneBook contactProperty={['name', 'email', 'tel', 'address', 'icon']} />
-```
-> [!Note]
-> Prop contactProperty will be an array and it can contains 5 value. These 5 value are optional, you can pass either the single/two/three/four/five values.
-
-#### c) Passing isSelectMultiple pros to the PhoneBook Component
-```js
-<PhoneBook isSelectMultiple={true} />
-```
-> [!Note]
-> You can select multiple phone numbers from phonebook directory.
+  A short description about the component
 
 
-#### d) Passing child
+  ## Demo
 
-```js
-<PhoneBook>Pass PhoneBook Icon here</PhoneBook>
-```
+  A minimal [Online demo](link of codesandbox).
 
-## 2. Success: successCb callBack Fn along with success msg
 
-```js
-const successCb = ({ msgType, msg, data }) => {
-  console.log(msgType); // Success
-  console.log(msg);     // Copied Successfully
-  console.log(data);    // data will be an array of object
-}
+  ## Usage/Examples
 
-<PhoneBook 
-  successCb={successCb}
-  successMsg="Details selected Successfully"
-/>
+  Here's an example of basic usage:
+  ```javascript
+  import { PhoneBook, phoneBook } from 'fe-pilot/PhoneBook';
 
-```
-> [!Note]
-> **successCb** will get an object contains the property ```msgType```, ```msg```, ```data```
+  <PhoneBook /> // Used as a Component
 
-> [!Important]
-> <details>
->  <summary>data</summary>
->
->   
->  [
->     {
->        'name': 'fe-pilot',
->        'email': 'opensrc0',
->        'tel': "7204535372", 
->        'address': "Dubai"
->     }
->  ]
+  phoneBook(); // Used as a Service
+  ```
 
-## 3. Failure: failureCb callBack Fn along with failure msg
-```js
-const failureCb = ({ msgType, msg }) => {
-  console.log(msgType); 
-  console.log(msg);     
+  Here's an example of a advance usage:
 
-  // UN_SUPPORTED_FEATURE
-  // PhoneBook is not supporting in your device
+  ```javascript
+  import { PhoneBook } from 'fe-pilot/PhoneBook';
 
-  // ----------OR----------
+  const successCb = (response) => {
+    console.log("success response:", response);
+  }
 
-  // CANCELLED
-  // Feature Cancelled
+  const failureCb = (response) => {
+    console.log("failure response:", response);
+  }
 
-  // ----------OR----------
-
-  // ERROR
-  // Unable to fetch details from PhoneBook
-}
-
-<PhoneBook 
-  failureCb={failureCb}
-  failureMsg={{
-    unSupported: 'PhoneBook is not supporting in your device',
-    cancelled: 'Feature Cancelled',
-    error: 'Unable to fetch details from PhoneBook',
-  }}
-/>
-```
-> [!Note]
-> **failureCb** fn will get an object contains the property ```msgType```, ```msg```
-
-> [!Important]
-Failure can happend due to multiple reasons, due to that reason ```failureMsg``` is an object having different kind of error property according to the error can occur in component
-
-## 4. Failure: Device don't support the feature and you want to hide the feauture from User
-```js
-<PhoneBook 
-  failureCb={failureCb}
-  failureMsg={{
-    unSupported: 'PhoneBook is not supporting in your device',
-    cancelled: 'Feature Cancelled',
-    error: 'Unable to fetch details from PhoneBook',
-  }}
-  showForever={false}
-/>
-```
-> [!Note]
-> if ```showForever``` props value is false, feature will be hidden in case of unSupported by the device
-
-## 5. Combine with all props
-```js
-<PhoneBook 
-  successCb={successCb}
-  successMsg="Details selected Successfully"
-  failureCb={failureCb}
-  failureMsg={{
-    unSupported: 'PhoneBook is not supporting in your device',
-    cancelled: 'Feature Cancelled',
-    error: 'Unable to fetch details from PhoneBook',
-  }}
-  showForever={false}
+  return (
+    <PhoneBook
+      successCb={successCb}
+      failureCb={failureCb}
+       showForever={false}
   contactProperty={['name', 'email', 'tel', 'address', 'icon']},
   isSelectMultiple={true},
->
-  Pass PhoneBook Icon here
-</PhoneBook>
-```
+    >
+      Pass clickable element (button, anchor etc)  here to bind onClick event
+    </PhoneBook>
+  );
+
+  ```
+
+  ### Props
+
+  <table>
+    <tr>
+      <th>
+        Props
+      </th>
+      <th>
+        Type
+      </th>
+      <th>
+        Description
+      </th>
+      <th>
+        Response
+      </th>
+    </tr>
+    <tr>
+      <td>
+          successCb
+      </td>
+      <td>Function</td>
+      <td> It will be called on success</td>
+      <td>
+        <pre>
+  {
+      data: "Can be array/object/string/number",
+      msgType: "SUCCESSFUL",
+      msg: "A success msg",
+      status: "SUCCESS"
+  }
+        </pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          loadingCb
+      </td>
+      <td>Function</td>
+      <td>
+        It will be called before success/failure.
+      </td>
+      <td>
+        <pre>
+  {
+    msgType: "LOADING",
+    msg: "LOADING...",
+    status: "LOADING"
+  }
+  </pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          failureCb
+      </td>
+      <td>Function</td>
+      <td>
+        It will be called on failure
+      </td>
+      <td>
+         <pre>
+  {
+    msgType: "ERROR",
+    msg: "A failed msg",
+    status: "FAILURE"
+  }
+         </pre>
+      </td>
+    </tr>
+     <tr>
+      <td>
+          showForever
+      </td>
+       <td>Boolean</td>
+      <td>To hide unsupported feature from browser, make it <b>false</b>. Default value is <b>true</b></td>
+      <td> <pre>---</pre> </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+

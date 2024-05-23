@@ -1,53 +1,123 @@
-## WakeLock Service Documentation
+# WakeLock
 
-The WakeLock service provides functionality to manage WakeLock for preventing the screen from sleeping.
+  A short description about the component
 
-## Usage
 
-### 1. Apply WakeLock
+  ## Demo
 
-```js
-import WakeLockService from 'path/to/WakeLockService';
+  A minimal [Online demo](link of codesandbox).
 
-// Apply WakeLock
-WakeLockService();
-```
 
-## 2. Success: successCb callBack Fn along with success msg
+  ## Usage/Examples
 
-```js
-const successCb = ({ msgType, msg, data }) => {
-  console.log(msgType); // Success
-  console.log(msg);     // WakeLock successfully applied!
-}
+  Here's an example of basic usage:
+  ```javascript
+  import { WakeLock, wakeLock } from 'fe-pilot/WakeLock';
 
-WakeLockService({ successCb });
-```
-> [!Note]
-> **successCb** will get an object contains the property ```msgType```, ```msg```, ```data```
+  <WakeLock /> // Used as a Component
 
-## 3. Failure: failureCb callBack Fn along with failure msg
-```js
-const failureCb = ({ msgType, msg }) => {
-  console.log(msgType);  // UN_SUPPORTED_FEATURE or ERROR
-  console.log(msg);      // Corresponding error message
-}
+  wakeLock(); // Used as a Service
+  ```
 
-WakeLockService({ failureCb });
+  Here's an example of a advance usage:
 
-```
+  ```javascript
+  import { WakeLock } from 'fe-pilot/WakeLock';
 
-## 4. Combine with Callbacks and Messages
-
-```js
-WakeLockService({
-  successCb,
-  successMsg: "WakeLock successfully applied!",
-  failureCb,
-  failureMsg: {
-    unSupported: 'Your browser does not support the WakeLock feature',
-    error: 'Unable to apply WakeLock',
+  const successCb = (response) => {
+    console.log("success response:", response);
   }
-});
 
-```
+  const failureCb = (response) => {
+    console.log("failure response:", response);
+  }
+
+  wakeLock({ successCb, failureCb });
+  ```
+
+  ### Props
+
+  <table>
+    <tr>
+      <th>
+        Props
+      </th>
+      <th>
+        Type
+      </th>
+      <th>
+        Description
+      </th>
+      <th>
+        Response
+      </th>
+    </tr>
+    <tr>
+      <td>
+          successCb
+      </td>
+      <td>Function</td>
+      <td> It will be called on success</td>
+      <td>
+        <pre>
+  {
+      data: "Can be array/object/string/number",
+      msgType: "SUCCESSFUL",
+      msg: "A success msg",
+      status: "SUCCESS"
+  }
+        </pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          loadingCb
+      </td>
+      <td>Function</td>
+      <td>
+        It will be called before success/failure.
+      </td>
+      <td>
+        <pre>
+  {
+    msgType: "LOADING",
+    msg: "LOADING...",
+    status: "LOADING"
+  }
+  </pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          failureCb
+      </td>
+      <td>Function</td>
+      <td>
+        It will be called on failure
+      </td>
+      <td>
+         <pre>
+  {
+    msgType: "ERROR",
+    msg: "A failed msg",
+    status: "FAILURE"
+  }
+         </pre>
+      </td>
+    </tr>
+     <tr>
+      <td>
+          showForever
+      </td>
+       <td>Boolean</td>
+      <td>To hide unsupported feature from browser, make it <b>false</b>. Default value is <b>true</b></td>
+      <td> <pre>---</pre> </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+

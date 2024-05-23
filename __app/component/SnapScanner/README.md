@@ -1,43 +1,129 @@
-## 1. Happy Flow
-#### a) Passing child
+# SnapScanner
+
+  A short description about the component
 
 
+  ## Demo
+
+  A minimal [Online demo](link of codesandbox).
 
 
-## 2. Success: successCb callBack Fn along with success msg
+  ## Usage/Examples
 
+  Here's an example of basic usage:
+  ```javascript
+  import { SnapScanner, snapScanner } from 'fe-pilot/SnapScanner';
 
+  <SnapScanner /> // Used as a Component
 
+  snapScanner(); // Used as a Service
+  ```
 
+  Here's an example of a advance usage:
 
-> [!Note]
-> **successCb** will get an object contains the property **msgType**, **msg**, **data**
+  ```javascript
+  import { SnapScanner } from 'fe-pilot/SnapScanner';
 
-## 3. Failure: failureCb callBack Fn along with failure msg
+  const successCb = (response) => {
+    console.log("success response:", response);
+  }
 
+  const failureCb = (response) => {
+    console.log("failure response:", response);
+  }
 
+  return (
+    <SnapScanner successCb={successCb} failureCb={failureCb}>
+      Pass clickable element (button, anchor etc)  here to bind onClick event
+    </SnapScanner>
+  );
 
+  ```
 
+  ### Props
 
-> [!Note]
-> **failureCb** will get an object contains the property **msgType**, **msg**
-
-> [!Important]
-Failure can happend due to multiple reasons, due to that reason **failureMsg** is an object having different kind of error property according to the error can occur in component
-
-## 4. Failure: Device don't support the feature and you want to hide the feauture from User
-
-
-
-
-
-> [!Note]
-> if **showForever** props value is false, feature will be hidden in case of unSupported by the device
-
-## 5. Combine with all props
-
-
-
-
+  <table>
+    <tr>
+      <th>
+        Props
+      </th>
+      <th>
+        Type
+      </th>
+      <th>
+        Description
+      </th>
+      <th>
+        Response
+      </th>
+    </tr>
+    <tr>
+      <td>
+          successCb
+      </td>
+      <td>Function</td>
+      <td> It will be called on success</td>
+      <td>
+        <pre>
+  {
+      data: "Can be array/object/string/number",
+      msgType: "SUCCESSFUL",
+      msg: "A success msg",
+      status: "SUCCESS"
+  }
+        </pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          loadingCb
+      </td>
+      <td>Function</td>
+      <td>
+        It will be called before success/failure.
+      </td>
+      <td>
+        <pre>
+  {
+    msgType: "LOADING",
+    msg: "LOADING...",
+    status: "LOADING"
+  }
+  </pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          failureCb
+      </td>
+      <td>Function</td>
+      <td>
+        It will be called on failure
+      </td>
+      <td>
+         <pre>
+  {
+    msgType: "ERROR",
+    msg: "A failed msg",
+    status: "FAILURE"
+  }
+         </pre>
+      </td>
+    </tr>
+     <tr>
+      <td>
+          showForever
+      </td>
+       <td>Boolean</td>
+      <td>To hide unsupported feature from browser, make it <b>false</b>. Default value is <b>true</b></td>
+      <td> <pre>---</pre> </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
 
   

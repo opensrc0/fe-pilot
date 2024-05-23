@@ -1,22 +1,139 @@
-## Setup to test LocateMe at local
+# LocateMe
 
-1. sudo vim /etc/hosts
-2. 127.0.0.1       www.mysite.com
-3. chrome://net-internals/#hsts
-4. delete www.mysite.com
-5. chrome://flags/#unsafely-treat-insecure-origin-as-secure
-6. add domain [www.mysite.com](http://www.mysite.com:9003) and enbale **Insecure origins treated as secure**
+  A short description about the component
 
-## 1. Happy Flow 
 
-#### a) Provide mandatory fields
-```js
-<LocateMe 
-  googleKey="Require Google Map Key" 
-  isProdKey={false}
->
-  Locate Me
-</LocateMe>
-```
-> [!Note]
-> Passing production googleKey require to pass isProdKey as a true.
+  ## Demo
+
+  A minimal [Online demo](link of codesandbox).
+
+
+  ## Usage/Examples
+
+  Here's an example of basic usage:
+  ```javascript
+  import { LocateMe, locateMe } from 'fe-pilot/LocateMe';
+
+  <LocateMe
+    googleKey="Require Google Map Key"
+    isProdKey={false}
+  /> // Used as a Component
+
+  locateMe({
+    googleKey="Require Google Map Key"
+    isProdKey={false}
+  }); // Used as a Service
+  ```
+
+  Here's an example of a advance usage:
+
+  ```javascript
+  import { LocateMe } from 'fe-pilot/LocateMe';
+
+  const successCb = (response) => {
+    console.log("success response:", response);
+  }
+
+  const failureCb = (response) => {
+    console.log("failure response:", response);
+  }
+
+  return (
+    <LocateMe
+      successCb={successCb}
+      failureCb={failureCb}
+      googleKey="Require Google Map Key"
+      isProdKey={false}
+    >
+      Pass clickable element (button, anchor etc)  here to bind onClick event
+    </LocateMe>
+  );
+
+  ```
+
+  ### Props
+
+  <table>
+    <tr>
+      <th>
+        Props
+      </th>
+      <th>
+        Type
+      </th>
+      <th>
+        Description
+      </th>
+      <th>
+        Response
+      </th>
+    </tr>
+    <tr>
+      <td>
+          successCb
+      </td>
+      <td>Function</td>
+      <td> It will be called on success</td>
+      <td>
+        <pre>
+  {
+      data: "Can be array/object/string/number",
+      msgType: "SUCCESSFUL",
+      msg: "A success msg",
+      status: "SUCCESS"
+  }
+        </pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          loadingCb
+      </td>
+      <td>Function</td>
+      <td>
+        It will be called before success/failure.
+      </td>
+      <td>
+        <pre>
+  {
+    msgType: "LOADING",
+    msg: "LOADING...",
+    status: "LOADING"
+  }
+  </pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          failureCb
+      </td>
+      <td>Function</td>
+      <td>
+        It will be called on failure
+      </td>
+      <td>
+         <pre>
+  {
+    msgType: "ERROR",
+    msg: "A failed msg",
+    status: "FAILURE"
+  }
+         </pre>
+      </td>
+    </tr>
+     <tr>
+      <td>
+          showForever
+      </td>
+       <td>Boolean</td>
+      <td>To hide unsupported feature from browser, make it <b>false</b>. Default value is <b>true</b></td>
+      <td> <pre>---</pre> </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+
