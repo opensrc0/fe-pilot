@@ -189,7 +189,7 @@ Thanks goes to these wonderful people
       </td>
     </tr>
     <tr>
-      <td align="center" valign="top" width="14.28%">
+      <!-- <td align="center" valign="top" width="14.28%">
         <p>
           <a target="_blank" href="https://github.com/VarshaBhagat0714">
             <img src="https://avatars.githubusercontent.com/u/36624782?v=4" width="64px;" alt="Varsha Bhagat" />
@@ -197,7 +197,7 @@ Thanks goes to these wonderful people
             <sub><b>Varsha Bhagat</b></sub>
           </a>
         </p>
-      </td>
+      </td> -->
       <td align="center" valign="top" width="14.28%">
         <p>
           <a target="_blank" href="https://github.com/semantic-release-bot">
@@ -225,7 +225,7 @@ Thanks goes to these wonderful people
           </a>
         </p>
       </td>
-      <td align="center" valign="top" width="14.28%">
+      <!-- <td align="center" valign="top" width="14.28%">
         <p>
           <a target="_blank" href="https://github.com/pragyajha">
             <img src="https://avatars.githubusercontent.com/u/3938228?v=4" width="64px;" alt="Pragya Jha" />
@@ -233,7 +233,7 @@ Thanks goes to these wonderful people
             <sub><b>Pragya Jha</b></sub>
           </a>
         </p>
-      </td>
+      </td> -->
       <td align="center" valign="top" width="14.28%">
         <a target="_blank" href="https://github.com/swarajgolu">
           <img src="https://avatars.githubusercontent.com/u/31703347?v=4" width="64px;" alt="Swaraj Singh" />
