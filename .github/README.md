@@ -235,15 +235,6 @@ Thanks goes to these wonderful people
         </p>
       </td>
       <td align="center" valign="top" width="14.28%">
-        <p>
-          <a target="_blank" href="https://github.com/pragyajha">
-            <img src="https://avatars.githubusercontent.com/u/3938228?v=4" width="64px;" alt="Pragya Jha" />
-            <br />
-            <sub><b>Pragya Jha</b></sub>
-          </a>
-        </p>
-      </td>
-      <td align="center" valign="top" width="14.28%">
         <a target="_blank" href="https://github.com/swarajgolu">
           <img src="https://avatars.githubusercontent.com/u/31703347?v=4" width="64px;" alt="Swaraj Singh" />
           <br />
