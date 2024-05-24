@@ -1,10 +1,10 @@
 # AutoFillOtp
 
-  An ```AutoFillOTP``` component will help you to enable a listener. The listner will wait for the ```SMS``` in ```your phone``` to enable autoFillOTP. 
-  
+  An ```AutoFillOTP``` component will help you to enable a listener. The listner will wait for the ```SMS``` in ```your phone``` to enable autoFillOTP.
+
   Also, Our ```SMS``` should follow a format. To use auto fill OTP, our sms last line should contain
-  
-  ```javascript 
+
+  ```javascript
   @your-domain.com #12345
 ```
 
@@ -18,11 +18,11 @@
 
   ###### <i>You can use AutoFillOtp as Component/Service. Either First letter should be in ```CAPS``` to use as a ```Component``` or First letter should be in ```small letter``` to use as a ```Service```. ```Default Import``` will always be a ```Component```.</i>
   <br />
-  
+
   1. Here's an example of basic usage with Default Import:
  ```javascript
   // Default import will return AutoFillOtp Component
-  import AutoFillOtp from 'fe-pilot/AutoFillOtp'; 
+  import AutoFillOtp from 'fe-pilot/AutoFillOtp';
 
   <AutoFillOtp /> // Used as a Component
   ```
