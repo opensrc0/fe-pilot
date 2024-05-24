@@ -1,6 +1,12 @@
 # AutoFillOtp
 
-  A short description about the component
+  An ```AutoFillOTP``` component will help you to enable a listener. The listner will wait for the ```SMS``` in ```your phone``` to enable autoFillOTP. 
+  
+  Also, Our ```SMS``` should follow a format. To use auto fill OTP, our sms last line should contain
+  
+  ```javascript 
+  @your-domain.com #12345
+```
 
 
   ## Demo
@@ -10,19 +16,30 @@
 
   ## Usage/Examples
 
-  Here's an example of basic usage:
+  ###### <i>You can use AutoFillOtp as Component/Service. Either First letter should be in ```CAPS``` to use as a ```Component``` or First letter should be in ```small letter``` to use as a ```Service```. ```Default Import``` will always be a ```Component```.</i>
+  <br />
+  
+  1. Here's an example of basic usage with Default Import:
+ ```javascript
+  // Default import will return AutoFillOtp Component
+  import AutoFillOtp from 'fe-pilot/AutoFillOtp'; 
+
+  <AutoFillOtp /> // Used as a Component
+  ```
+
+  2. Here's an example of basic usage with Multiple Import:
   ```javascript
-  import { AutoFillOtp, autoFillOtp } from 'fe-pilot/AutoFillOtp';
+  import { AutoFillOtp, autoFillOtp } from 'fe-pilot/AutoFillOtp'; // Multi Export
 
   <AutoFillOtp /> // Used as a Component
 
   autoFillOtp(); // Used as a Service
   ```
 
-  Here's an example of a advance usage:
+  3. Here's an example of a advance usage:
 
   ```javascript
-  import { AutoFillOtp } from 'fe-pilot/AutoFillOtp';
+  import { autoFillOtp } from 'fe-pilot/AutoFillOtp';
 
   const successCb = (response) => {
     console.log("success response:", response);
@@ -41,6 +58,7 @@
 
 > [!Important]
 > To work AutoFillOtp successfully, your otp message template should follow the below format.
+> <br />
 > <br />
 > ```Your OTP is 123456```
 > <br/>
@@ -121,7 +139,7 @@
           showForever
       </td>
        <td>Boolean</td>
-      <td>To hide unsupported feature from browser, make it <b>false</b>. Default value is <b>true</b></td>
+      <td>To hide/remove unsupported feature, make it <b>false</b>. Default value is <b>true</b></td>
       <td> <pre>---</pre> </td>
     </tr>
     <tr>
