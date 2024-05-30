@@ -15,10 +15,11 @@
 
 
   ## Usage/Examples
-  
-| Use as a Component| Use as a Service|
-|-------------------|-----------------|
-| AutoFillOtp   | autoFillOtp |
+
+| Value |  Used as a  | Description|
+|--------- | -------- |-----------------|
+| <b>AutoFillOtp</b> | Component | Can be used as Component |
+| <b>autoFillOtp<b> |  Service | Can be used as Service |
 
   1. Here's an example of basic usage with Default Import:
  ```javascript
