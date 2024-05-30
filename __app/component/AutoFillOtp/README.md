@@ -18,8 +18,8 @@
 
 | Value |  Used as a  | Description|
 |--------- | -------- |-----------------|
-| <b>AutoFillOtp</b> | Component | Can be used as Component |
-| <b>autoFillOtp<b> |  Service | Can be used as Service |
+| <b>AutoFillOtp</b> | Component :white_check_mark: | Can be used as Component |
+| <b>autoFillOtp<b> |  Service :white_check_mark: | Can be used as Service |
 
 ##### 1. Here's an example of basic usage with Default Import:
  ```javascript
