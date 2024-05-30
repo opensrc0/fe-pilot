@@ -1,6 +1,6 @@
 # CopyToClipboard
 
-  A short description about the component
+  The Component has the capability to copy any type of value (Element, String, Number)
 
 
   ## Demo
@@ -10,30 +10,31 @@
 
   ## Usage/Examples
 
-###### <i>You can use AutoFillOtp as Component/Service. Either First letter should be in ```CAPS``` to use as a ```Component``` or First letter should be in ```small letter``` to use as a ```Service```. ```Default Import``` will always be a ```Component```.</i>
-<br />
+| Use as a Component| Use as a Service|
+|-------------------|-----------------|
+| CopyToClipboard   | copyToClipboard |
 
 
-  2. Here's an example of basic usage with Multiple Import:
+  ##### 1. Here's an example of basic usage with Default Import:
+  ```javascript
+ // Default import will return a Component
+  import CopyToClipboard from 'fe-pilot/CopyToClipboard';
+
+  <CopyToClipboard elementToBeCopy={`<div>Element to be Copy<div>`} />
+  ```
+
+  ##### 2. Here's an example of basic usage with Multiple Import:
   ```javascript
   import { CopyToClipboard, copyToClipboard } from 'fe-pilot/CopyToClipboard';
 
   // Used as a Component
-  <CopyToClipboard elementToBeCopy={`<div>
-    Fe-pilot library offers component like scanner,
-    search, autofill otp, phonebook, share and many more
-    for a small/medium/large size web based applications<div>
-`} />
+  <CopyToClipboard elementToBeCopy={`<div>Element to be Copy<div>`} />
 
   // Used as a Service
-  copyToClipboard({  elementToBeCopy={`
-    Fe-pilot library offers component like scanner,
-    voice search, autofill otp, phonebook, share and many more
-    for a small/medium/large size web based applications`}
-  });
+  copyToClipboard({ elementToBeCopy={`Element to be Copy`} });
   ```
 
-  3. Here's an example of a advance usage:
+  ##### 3. Here's an example of a advance usage:
 
   ```javascript
   import { CopyToClipboard } from 'fe-pilot/CopyToClipboard';
@@ -50,12 +51,9 @@
     <CopyToClipboard
       successCb={successCb}
       failureCb={failureCb}
-      elementToBeCopy={`Fe-pilot library offers component like
-        scanner, voice search, autofill otp, phonebook, share
-        and many more for a small/medium/large size web based applications`
-      }
+      elementToBeCopy={`A string text To Copy`}
     >
-      Pass clickable element (button, anchor etc)  here to bind onClick event
+      Pass clickable element (button, anchor, Text etc)
     </CopyToClipboard>
   );
 
@@ -151,6 +149,5 @@
       <td>Pass the text/element/number to be copy</td>
      <td> <pre>---</pre> </td>
     </tr>
-    elementToBeCopy
   </table>
 
