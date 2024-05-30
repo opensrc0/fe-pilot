@@ -110,9 +110,10 @@ A minimal [Online demo](link of codesandbox).
 
 ## Usage/Examples
 
-| Use as a Component| Use as a Service|
-|-------------------|-----------------|
-| ${COMPONENT}      | ${COMPONENT_SERVICE} |
+| Value |  Used as a  | Description|
+|--------- | -------- |-----------------|
+| <b>${COMPONENT}</b> | Component | Can be used as Component |
+| <b>${COMPONENT_SERVICE}<b> |  Service | Can be used as Service |
 
 1. Here's an example of basic usage with Multiple Import: with Default Import:
 \`\`\`javascript
