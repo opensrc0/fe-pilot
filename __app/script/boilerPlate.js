@@ -110,7 +110,20 @@ A minimal [Online demo](link of codesandbox).
 
 ## Usage/Examples
 
-Here's an example of basic usage:
+| Use as a Component| Use as a Service|
+|-------------------|-----------------|
+| ${COMPONENT}      | ${COMPONENT_SERVICE} |
+
+1. Here's an example of basic usage with Multiple Import: with Default Import:
+\`\`\`javascript
+// Default import will return ${COMPONENT} Component
+import ${COMPONENT} from 'fe-pilot/${COMPONENT}';
+
+<${COMPONENT} /> // Used as a Component
+
+\`\`\`
+
+2. Here's an example of basic usage with Multiple Import: with Multiple Import:
 \`\`\`javascript
 import { ${COMPONENT}, ${COMPONENT_SERVICE} } from 'fe-pilot/${COMPONENT}';
 
@@ -119,7 +132,7 @@ import { ${COMPONENT}, ${COMPONENT_SERVICE} } from 'fe-pilot/${COMPONENT}';
 ${COMPONENT_SERVICE}(); // Used as a Service
 \`\`\`
 
-Here's an example of a advance usage:
+3. Here's an example of a advanced usage:
 
 \`\`\`javascript
 import { ${COMPONENT} } from 'fe-pilot/${COMPONENT}';
@@ -215,7 +228,7 @@ return (
         showForever
     </td>
      <td>Boolean</td>
-    <td>To hide unsupported feature from browser, make it <b>false</b>. Default value is <b>true</b></td>
+    <td>To hide/remove unsupported feature, make it <b>false</b>. Default value is <b>true</b></td>
     <td> <pre>---</pre> </td>
   </tr>
   <tr>
