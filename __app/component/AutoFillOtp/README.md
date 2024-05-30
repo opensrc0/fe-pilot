@@ -15,9 +15,10 @@
 
 
   ## Usage/Examples
-
-  ###### <i>You can use AutoFillOtp as Component/Service. Either First letter should be in ```CAPS``` to use as a ```Component``` or First letter should be in ```small letter``` to use as a ```Service```. ```Default Import``` will always be a ```Component```.</i>
-  <br />
+  
+| Use as a Component| Use as a Service|
+|-------------------|-----------------|
+| AutoFillOtp   | autoFillOtp |
 
   1. Here's an example of basic usage with Default Import:
  ```javascript
