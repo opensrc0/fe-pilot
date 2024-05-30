@@ -26,7 +26,7 @@ const share = ({
   successMsg = 'Shared Successfully',
   failureMsg: failureMsgProps = { ...failureMsgDefault },
   sName = 'fe-pilot',
-  sTitle = 'A React library for advance JS features',
+  sTitle = 'A React library for advanced JS features',
   sUrl = 'https://www.npmjs.com/package/fe-pilot',
 } = {}) => {
   const failureMsg = { ...failureMsgDefault, ...failureMsgProps };

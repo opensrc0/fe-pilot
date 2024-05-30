@@ -24,7 +24,7 @@
 > [!Note]
 > Can't use as service
 
-  3. Here's an example of a advance usage:
+  3. Here's an example of a advanced usage:
 
   ```javascript
   import { FaceDetector } from 'fe-pilot/FaceDetector';

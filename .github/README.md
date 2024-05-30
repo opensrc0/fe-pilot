@@ -1,7 +1,7 @@
 <p align="center">
 <img src="https://github.com/opensrc0/fe-pilot/blob/develop/logo.png" alt="fe-pilot Logo" align="center" width="30%" style="width: 30%;">
 </p>
-<h2 align="center">A React UI library for Advance Web Features 👨‍✈️ </h2>
+<h2 align="center">A React UI library for Advanced Web Features 👨‍✈️ </h2>
 <br />
 <h3 >
   <p align="center" class="tasklist-issue-content">
@@ -29,7 +29,7 @@
 </h3>
 <br />
 
-A React UI library for Advance Web Features that streamlines the development of modern web applications and websites. The library offers component like scanner, voice search, autofill otp, phonebook, share and many more for a small/medium/large size web based applications. Fe-Pilot is a easy to use, light weighted, fully mobile APP like features in web.
+A React UI library for Advanced Web Features that streamlines the development of modern web applications and websites. The library offers component like scanner, voice search, autofill otp, phonebook, share and many more for a small/medium/large size web based applications. Fe-Pilot is a easy to use, light weighted, fully mobile APP like features in web.
 
 ## Table of contents
 1. 🚀 [Features](#features)
@@ -74,7 +74,7 @@ import Share from 'fe-pilot/Share';
 
 <Share
   name={'fe-pilot'}
-  title={'A React library for advance web features'}
+  title={'A React library for advanced web features'}
   url={'https://www.npmjs.com/package/fe-pilot'}
 />
 ```

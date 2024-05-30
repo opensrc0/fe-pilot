@@ -23,7 +23,7 @@
   phoneBook(); // Used as a Service
   ```
 
-  3. Here's an example of a advance usage:
+  3. Here's an example of a advanced usage:
 
   ```javascript
   import { PhoneBook } from 'fe-pilot/PhoneBook';

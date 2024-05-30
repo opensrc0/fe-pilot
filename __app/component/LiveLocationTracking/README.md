@@ -29,7 +29,7 @@
 > Can't use as a service
 
 
-  3. Here's an example of a advance usage:
+  3. Here's an example of a advanced usage:
 
   ```javascript
   import { LiveLocationTracking } from 'fe-pilot/LiveLocationTracking';

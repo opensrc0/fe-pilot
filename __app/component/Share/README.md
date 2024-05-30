@@ -23,7 +23,7 @@
   share(); // Used as a Service
   ```
 
-  3. Here's an example of a advance usage:
+  3. Here's an example of a advanced usage:
 
   ```javascript
   import { Share } from 'fe-pilot/Share';
@@ -41,7 +41,7 @@
       successCb={successCb}
       failureCb={failureCb}
       sName='fe-pilot'
-      sTitle='A React library for advance JS features'
+      sTitle='A React library for advanced JS features'
       sUrl='https://www.npmjs.com/package/fe-pilot'
     >
       Pass clickable element (button, anchor etc)  here to bind onClick event

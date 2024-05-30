@@ -33,7 +33,7 @@
   });
   ```
 
-  3. Here's an example of a advance usage:
+  3. Here's an example of a advanced usage:
 
   ```javascript
   import { CopyToClipboard } from 'fe-pilot/CopyToClipboard';
@@ -151,6 +151,5 @@
       <td>Pass the text/element/number to be copy</td>
      <td> <pre>---</pre> </td>
     </tr>
-    elementToBeCopy
   </table>
 
