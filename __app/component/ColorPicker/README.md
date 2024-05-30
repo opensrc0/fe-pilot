@@ -10,10 +10,12 @@ A minimal [Online demo](link of codesandbox).
 
 ## Usage/Examples
 
-###### <i>You can use AutoFillOtp as Component/Service. Either First letter should be in ```CAPS``` to use as a ```Component``` or First letter should be in ```small letter``` to use as a ```Service```. ```Default Import``` will always be a ```Component```.</i>
-<br />
+| Value |  Used as a  | Description|
+|--------- | -------- |-----------------|
+| <b>ColorPicker</b> | Component | Can be used as Component |
+| <b>colorPicker<b> |  Service | Can be used as Service |
 
-1. Here's an example of basic usage with Default Import:
+##### 1. Here's an example of basic usage with Default Import:
 ```javascript
 // Default import will return ColorPicker Component
 import ColorPicker from 'fe-pilot/ColorPicker';
@@ -22,7 +24,7 @@ import ColorPicker from 'fe-pilot/ColorPicker';
 
 ```
 
-2. Here's an example of basic usage with Multiple Import:
+##### 2. Here's an example of basic usage with Multiple Import:
 ```javascript
 import { ColorPicker, colorPicker } from 'fe-pilot/ColorPicker';
 
@@ -31,7 +33,7 @@ import { ColorPicker, colorPicker } from 'fe-pilot/ColorPicker';
 colorPicker(); // Used as a Service
 ```
 
-3. Here's an example of a advanced usage:
+##### 3. Here's an example of a advanced usage:
 
 ```javascript
 import { ColorPicker } from 'fe-pilot/ColorPicker';

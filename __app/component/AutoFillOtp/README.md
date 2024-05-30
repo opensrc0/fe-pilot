@@ -21,7 +21,7 @@
 | <b>AutoFillOtp</b> | Component | Can be used as Component |
 | <b>autoFillOtp<b> |  Service | Can be used as Service |
 
-  1. Here's an example of basic usage with Default Import:
+##### 1. Here's an example of basic usage with Default Import:
  ```javascript
   // Default import will return AutoFillOtp Component
   import AutoFillOtp from 'fe-pilot/AutoFillOtp';
@@ -29,7 +29,7 @@
   <AutoFillOtp /> // Used as a Component
   ```
 
-  2. Here's an example of basic usage with Multiple Import:
+##### 2. Here's an example of basic usage with Multiple Import:
   ```javascript
   import { AutoFillOtp, autoFillOtp } from 'fe-pilot/AutoFillOtp'; // Multi Export
 
@@ -38,7 +38,7 @@
   autoFillOtp(); // Used as a Service
   ```
 
-  3. Here's an example of a advanced usage:
+##### 3. Here's an example of a advanced usage:
 
   ```javascript
   import { autoFillOtp } from 'fe-pilot/AutoFillOtp';

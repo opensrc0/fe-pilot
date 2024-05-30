@@ -115,7 +115,7 @@ A minimal [Online demo](link of codesandbox).
 | <b>${COMPONENT}</b> | Component | Can be used as Component |
 | <b>${COMPONENT_SERVICE}<b> |  Service | Can be used as Service |
 
-1. Here's an example of basic usage with Multiple Import: with Default Import:
+##### 1. Here's an example of basic usage with Multiple Import: with Default Import:
 \`\`\`javascript
 // Default import will return ${COMPONENT} Component
 import ${COMPONENT} from 'fe-pilot/${COMPONENT}';
@@ -124,7 +124,7 @@ import ${COMPONENT} from 'fe-pilot/${COMPONENT}';
 
 \`\`\`
 
-2. Here's an example of basic usage with Multiple Import: with Multiple Import:
+##### 2. Here's an example of basic usage with Multiple Import: with Multiple Import:
 \`\`\`javascript
 import { ${COMPONENT}, ${COMPONENT_SERVICE} } from 'fe-pilot/${COMPONENT}';
 
@@ -133,7 +133,7 @@ import { ${COMPONENT}, ${COMPONENT_SERVICE} } from 'fe-pilot/${COMPONENT}';
 ${COMPONENT_SERVICE}(); // Used as a Service
 \`\`\`
 
-3. Here's an example of a advanced usage:
+##### 3. Here's an example of a advanced usage:
 
 \`\`\`javascript
 import { ${COMPONENT} } from 'fe-pilot/${COMPONENT}';
