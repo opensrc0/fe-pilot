@@ -112,8 +112,8 @@ A minimal [Online demo](link of codesandbox).
 
 | Value |  Used as a  | Description|
 |--------- | -------- |-----------------|
-| <b>${COMPONENT}</b> | Component :white_check_mark: | Can be used as Component |
-| <b>${COMPONENT_SERVICE}<b> |  Service :white_check_mark: | Can be used as Service |
+| <b>${COMPONENT}</b> | :white_check_mark: Component | Can be used as Component |
+| <b>${COMPONENT_SERVICE}<b> | :white_check_mark: Service | Can be used as Service |
 
 ##### 1. Here's an example of basic usage with Multiple Import: with Default Import:
 \`\`\`javascript
