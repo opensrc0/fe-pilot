@@ -13,7 +13,7 @@ A minimal [Online demo](link of codesandbox).
 | Value |  Used as a  | Description|
 |--------- | -------- |-----------------|
 | <b>FaceDetector</b> | Component :white_check_mark: | Can be used as Component |
-| <b>faceDetector<b> |  Service :x: | Can be used as Service |
+| <b>faceDetector<b> |  Service :x: | Can't be used as Service |
 
 ##### 1. Here's an example of basic usage with Multiple Import: with Default Import:
 ```javascript
