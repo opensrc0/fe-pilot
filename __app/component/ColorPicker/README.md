@@ -3,11 +3,6 @@
 A short description about the component
 
 
-## Demo
-
-A minimal [Online demo](link of codesandbox).
-
-
 ## Usage/Examples
 
 | Value |  Used as a  | Description|
