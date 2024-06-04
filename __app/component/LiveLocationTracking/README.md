@@ -61,7 +61,7 @@ return (
 
 ### Props
 
-<>
+<table>
   <tr>
     <th>
       Props
