@@ -1,6 +1,6 @@
 # Vibrate
 
-A Component will be used to vibrate the mobile device. We would like to notify user after the successful transaction, is an use case.
+A Component will be used to ```vibrate``` the ```mobile device```. We would like to ```notify``` user after the successful transaction, is an use case.
 
 ## Demo
 
