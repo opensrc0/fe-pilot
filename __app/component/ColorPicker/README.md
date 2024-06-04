@@ -1,6 +1,6 @@
 # ColorPicker
 
-A short description about the component
+The ColorPicker Component will be used to open an ```eye dropper tool```, and allow user to ```pick the color``` from the screen. 
 
 ## Demo
 
