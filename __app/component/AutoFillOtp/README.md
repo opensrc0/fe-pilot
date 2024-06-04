@@ -8,12 +8,6 @@
   @your-domain.com #12345
 ```
 
-
-  ## Demo
-
-  A minimal [Online demo](link of codesandbox).
-
-
   ## Usage/Examples
 
 | Value |  Used as a  | Description|
