@@ -139,3 +139,25 @@ return (
   </tr>
 </table>
 
+### Child
+<table>
+  <th>
+    Child
+  </th>
+  <th>
+    Type
+  </th>
+  <th>
+    Description
+  </th>
+  <tr>
+    <td>OfflineToast</td>
+    <td>Element/String/Number</td>
+    <td>A offline toast, will be appear as user goes offline</td>
+  </tr>
+  <tr>
+    <td>OnlineToast</td>
+    <td>Element/String/Number</td>
+    <td>A online toast, will be appear as user goes from offline to online</td>
+  </tr>
+</table>
