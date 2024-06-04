@@ -1,6 +1,6 @@
 # CopyToClipboard
 
-  The Component has the capability to ```copy``` any type of value (Element, String, Number)
+  The Component has the capability to ```copy``` any value like (Element, String, Number)
 
 ## Demo
 
