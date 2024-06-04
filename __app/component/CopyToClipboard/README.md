@@ -3,11 +3,6 @@
   The Component has the capability to copy any type of value (Element, String, Number)
 
 
-  ## Demo
-
-  A minimal [Online demo](link of codesandbox).
-
-
   ## Usage/Examples
 
 | Value |  Used as a  | Description|
