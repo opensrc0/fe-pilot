@@ -1,7 +1,6 @@
 # WakeLock
 
-A short description about the component
-
+The WakeLock Component will allows you to keep the device screen awake, i.e. prevent the screen from sleeping
 
 ## Demo
 
