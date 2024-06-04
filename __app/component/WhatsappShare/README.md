@@ -1,6 +1,6 @@
 # WhatsappShare
 
-A short description about the component
+A ```WhatsappShare``` component will help you to ```open whatsapp``` directly on a ```pre-defined``` ```mobile number```, and ```share``` the ```message```.
 
 
 ## Demo
