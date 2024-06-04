@@ -1,133 +1,143 @@
 # Vibrate
 
-  A short description about the component
+A short description about the component
 
 
-  ## Demo
+## Demo
 
-  A minimal [Online demo](link of codesandbox).
-
-
-  ## Usage/Examples
-
-###### <i>You can use AutoFillOtp as Component/Service. Either First letter should be in ```CAPS``` to use as a ```Component``` or First letter should be in ```small letter``` to use as a ```Service```. ```Default Import``` will always be a ```Component```.</i>
-<br />
+A minimal [Demo Link](https://6jpxdq.csb.app/?component=Vibrate)
 
 
-  2. Here's an example of basic usage with Multiple Import:
-  ```javascript
-  import { Vibrate, vibrate } from 'fe-pilot/Vibrate';
+## Usage/Examples
 
-  <Vibrate /> // Used as a Component
+| Value |  Used as a  | Description|
+|--------- | -------- |-----------------|
+| <b>Vibrate</b> | :white_check_mark: Component | Can be used as Component |
+| <b>vibrate<b> | :white_check_mark: Service | Can be used as Service |
 
-  vibrate(); // Used as a Service
-  ```
+##### 1. Here's an example of basic usage with Multiple Import: with Default Import:
+```javascript
+// Default import will return Vibrate Component
+import Vibrate from 'fe-pilot/Vibrate';
 
-  3. Here's an example of a advanced usage:
+<Vibrate /> // Used as a Component
 
-  ```javascript
-  import { Vibrate } from 'fe-pilot/Vibrate';
+```
 
-  const successCb = (response) => {
-    console.log("success response:", response);
-  }
+##### 2. Here's an example of basic usage with Multiple Import: with Multiple Import:
+```javascript
+import { Vibrate, vibrate } from 'fe-pilot/Vibrate';
 
-  const failureCb = (response) => {
-    console.log("failure response:", response);
-  }
+<Vibrate /> // Used as a Component
 
-  vibrate({ successCb failureCb });
-  ```
+vibrate(); // Used as a Service
+```
 
-  ### Props
+##### 3. Here's an example of a advanced usage:
 
-  <table>
-    <tr>
-      <th>
-        Props
-      </th>
-      <th>
-        Type
-      </th>
-      <th>
-        Description
-      </th>
-      <th>
-        Response
-      </th>
-    </tr>
-    <tr>
-      <td>
-          successCb
-      </td>
-      <td>Function</td>
-      <td> It will be called on success</td>
-      <td>
-        <pre>
-  {
-      data: "Can be array/object/string/number",
-      msgType: "SUCCESSFUL",
-      msg: "A success msg",
-      status: "SUCCESS"
-  }
-        </pre>
-      </td>
-    </tr>
-    <tr>
-      <td>
-          loadingCb
-      </td>
-      <td>Function</td>
-      <td>
-        It will be called before success/failure.
-      </td>
-      <td>
-        <pre>
-  {
-    msgType: "LOADING",
-    msg: "LOADING...",
-    status: "LOADING"
-  }
-  </pre>
-      </td>
-    </tr>
-    <tr>
-      <td>
-          failureCb
-      </td>
-      <td>Function</td>
-      <td>
-        It will be called on failure
-      </td>
-      <td>
-         <pre>
-  {
-    msgType: "ERROR",
-    msg: "A failed msg",
-    status: "FAILURE"
-  }
-         </pre>
-      </td>
-    </tr>
-     <tr>
-      <td>
-          showForever
-      </td>
-       <td>Boolean</td>
-      <td>To hide/remove unsupported feature, make it <b>false</b>. Default value is <b>true</b></td>
-      <td> <pre>---</pre> </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>vibrationSeq</td>
-      <td>Array</td>
-      <td>Sequence number for vibration</td>
-      <td> <pre>---</pre> </td>
-    </tr>
-  </table>
+```javascript
+import { Vibrate } from 'fe-pilot/Vibrate';
+
+const successCb = (response) => {
+  console.log("success response:", response);
+}
+
+const failureCb = (response) => {
+  console.log("failure response:", response);
+}
+
+vibrate({ successCb failureCb });
+```
+
+### Props
+
+<table>
+  <tr>
+    <th>
+      Props
+    </th>
+    <th>
+      Type
+    </th>
+    <th>
+      Description
+    </th>
+    <th>
+      Response
+    </th>
+  </tr>
+  <tr>
+    <td>
+        successCb
+    </td>
+    <td>Function</td>
+    <td> It will be called on success</td>
+    <td>
+      <pre>
+{
+    data: "Can be array/object/string/number",
+    msgType: "SUCCESSFUL",
+    msg: "A success msg",
+    status: "SUCCESS"
+}
+      </pre>
+    </td>
+  </tr>
+  <tr>
+    <td>
+        loadingCb
+    </td>
+    <td>Function</td>
+    <td>
+      It will be called before success/failure.
+    </td>
+    <td>
+      <pre>
+{
+  msgType: "LOADING",
+  msg: "LOADING...",
+  status: "LOADING"
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>
+        failureCb
+    </td>
+    <td>Function</td>
+    <td>
+      It will be called on failure
+    </td>
+    <td>
+       <pre>
+{
+  msgType: "ERROR",
+  msg: "A failed msg",
+  status: "FAILURE"
+}
+       </pre>
+    </td>
+  </tr>
+   <tr>
+    <td>
+        showForever
+    </td>
+     <td>Boolean</td>
+    <td>To hide/remove unsupported feature, make it <b>false</b>. Default value is <b>true</b></td>
+    <td> <pre>---</pre> </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>vibrationSeq</td>
+    <td>Array</td>
+    <td>Sequence number for vibration</td>
+    <td> <pre>---</pre> </td>
+  </tr>
+</table>
 

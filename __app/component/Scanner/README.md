@@ -1,143 +1,148 @@
 # Scanner
 
-  A short description about the component
+A short description about the component
 
 
-  ## Demo
+## Demo
 
-  A minimal [Online demo](link of codesandbox).
-
-
-  ## Usage/Examples
-
-###### <i>You can use AutoFillOtp as Component/Service. Either First letter should be in ```CAPS``` to use as a ```Component``` or First letter should be in ```small letter``` to use as a ```Service```. ```Default Import``` will always be a ```Component```.</i>
-<br />
+A minimal [Demo Link](https://6jpxdq.csb.app/?component=Scanner)
 
 
-  2. Here's an example of basic usage with Multiple Import:
-  ```javascript
-  import { Scanner } from 'fe-pilot/Scanner';
+## Usage/Examples
 
-  <Scanner /> // Used as a Component
+| Value |  Used as a  | Description|
+|--------- | -------- |-----------------|
+| <b>Scanner</b> | :white_check_mark: Component | Can be used as Component |
+| <b>scanner<b> | :x: Service | Can be used as Service |
 
-  ```
-> [!Note]
-> Can't use as service
+##### 1. Here's an example of basic usage with Multiple Import: with Default Import:
+```javascript
+// Default import will return Scanner Component
+import Scanner from 'fe-pilot/Scanner';
 
-  3. Here's an example of a advanced usage:
+<Scanner /> // Used as a Component
 
-  ```javascript
-  import { Scanner } from 'fe-pilot/Scanner';
+```
 
-  const successCb = (response) => {
-    console.log("success response:", response);
-  }
+##### 2. Here's an example of basic usage with Multiple Import: with Multiple Import:
+```javascript
+import { Scanner, scanner } from 'fe-pilot/Scanner';
 
-  const failureCb = (response) => {
-    console.log("failure response:", response);
-  }
+<Scanner /> // Used as a Component
 
-  const onClose = () => {
-    console.log("onclose response:", response);
-  }
+```
 
-  return (
-    <Scanner successCb={successCb} failureCb={failureCb}>
-      <ScannerFlash />
-      <ScannerScanBox />
-      <ScannerFacing />
-      <ScannerClose
-        onClose={onClose}
-      >
-        ❎ Close
-      </ScannerClose>
-    </Scanner>
-  );
+##### 3. Here's an example of a advanced usage:
 
-  ```
+```javascript
+import { Scanner } from 'fe-pilot/Scanner';
 
-  ### Props
+const successCb = (response) => {
+  console.log("success response:", response);
+}
 
-  <table>
-    <tr>
-      <th>
-        Props
-      </th>
-      <th>
-        Type
-      </th>
-      <th>
-        Description
-      </th>
-      <th>
-        Response
-      </th>
-    </tr>
-    <tr>
-      <td>
-          successCb
-      </td>
-      <td>Function</td>
-      <td> It will be called on success</td>
-      <td>
-        <pre>
-  {
-      data: "Can be array/object/string/number",
-      msgType: "SUCCESSFUL",
-      msg: "A success msg",
-      status: "SUCCESS"
-  }
-        </pre>
-      </td>
-    </tr>
-    <tr>
-      <td>
-          loadingCb
-      </td>
-      <td>Function</td>
-      <td>
-        It will be called before success/failure.
-      </td>
-      <td>
-        <pre>
-  {
-    msgType: "LOADING",
-    msg: "LOADING...",
-    status: "LOADING"
-  }
-  </pre>
-      </td>
-    </tr>
-    <tr>
-      <td>
-          failureCb
-      </td>
-      <td>Function</td>
-      <td>
-        It will be called on failure
-      </td>
-      <td>
-         <pre>
-  {
-    msgType: "ERROR",
-    msg: "A failed msg",
-    status: "FAILURE"
-  }
-         </pre>
-      </td>
-    </tr>
-     <tr>
-      <td>
-          showForever
-      </td>
-       <td>Boolean</td>
-      <td>To hide/remove unsupported feature, make it <b>false</b>. Default value is <b>true</b></td>
-      <td> <pre>---</pre> </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </table>
+const failureCb = (response) => {
+  console.log("failure response:", response);
+}
+
+return (
+ <Scanner successCb={successCb} failureCb={failureCb}>
+  <ScannerFlash />
+  <ScannerScanBox />
+  <ScannerFacing />
+  <ScannerClose
+    onClose={onClose}
+  >
+    ❎ Close
+  </ScannerClose>
+</Scanner>
+);
+
+```
+
+### Props
+
+<table>
+  <tr>
+    <th>
+      Props
+    </th>
+    <th>
+      Type
+    </th>
+    <th>
+      Description
+    </th>
+    <th>
+      Response
+    </th>
+  </tr>
+  <tr>
+    <td>
+        successCb
+    </td>
+    <td>Function</td>
+    <td> It will be called on success</td>
+    <td>
+      <pre>
+{
+    data: "Can be array/object/string/number",
+    msgType: "SUCCESSFUL",
+    msg: "A success msg",
+    status: "SUCCESS"
+}
+      </pre>
+    </td>
+  </tr>
+  <tr>
+    <td>
+        loadingCb
+    </td>
+    <td>Function</td>
+    <td>
+      It will be called before success/failure.
+    </td>
+    <td>
+      <pre>
+{
+  msgType: "LOADING",
+  msg: "LOADING...",
+  status: "LOADING"
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>
+        failureCb
+    </td>
+    <td>Function</td>
+    <td>
+      It will be called on failure
+    </td>
+    <td>
+       <pre>
+{
+  msgType: "ERROR",
+  msg: "A failed msg",
+  status: "FAILURE"
+}
+       </pre>
+    </td>
+  </tr>
+   <tr>
+    <td>
+        showForever
+    </td>
+     <td>Boolean</td>
+    <td>To hide/remove unsupported feature, make it <b>false</b>. Default value is <b>true</b></td>
+    <td> <pre>---</pre> </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
