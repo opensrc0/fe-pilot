@@ -1,149 +1,160 @@
 # PhoneBook
 
-  A short description about the component
+A short description about the component
 
 
-  ## Demo
+## Demo
 
-  A minimal [Online demo](link of codesandbox).
-
-
-  ## Usage/Examples
-
-###### <i>You can use AutoFillOtp as Component/Service. Either First letter should be in ```CAPS``` to use as a ```Component``` or First letter should be in ```small letter``` to use as a ```Service```. ```Default Import``` will always be a ```Component```.</i>
-<br />
+A minimal [Demo Link](https://6jpxdq.csb.app/?component=PhoneBook)
 
 
-  2. Here's an example of basic usage with Multiple Import:
-  ```javascript
-  import { PhoneBook, phoneBook } from 'fe-pilot/PhoneBook';
+## Usage/Examples
 
-  <PhoneBook /> // Used as a Component
+| Value |  Used as a  | Description|
+|--------- | -------- |-----------------|
+| <b>PhoneBook</b> | :white_check_mark: Component | Can be used as Component |
+| <b>phoneBook<b> | :white_check_mark: Service | Can be used as Service |
 
-  phoneBook(); // Used as a Service
-  ```
+##### 1. Here's an example of basic usage with Multiple Import: with Default Import:
+```javascript
+// Default import will return PhoneBook Component
+import PhoneBook from 'fe-pilot/PhoneBook';
 
-  3. Here's an example of a advanced usage:
+<PhoneBook /> // Used as a Component
 
-  ```javascript
-  import { PhoneBook } from 'fe-pilot/PhoneBook';
+```
 
-  const successCb = (response) => {
-    console.log("success response:", response);
-  }
+##### 2. Here's an example of basic usage with Multiple Import: with Multiple Import:
+```javascript
+import { PhoneBook, phoneBook } from 'fe-pilot/PhoneBook';
 
-  const failureCb = (response) => {
-    console.log("failure response:", response);
-  }
+<PhoneBook /> // Used as a Component
 
-  return (
-    <PhoneBook
-      successCb={successCb}
-      failureCb={failureCb}
-      showForever={false}
-      contactProperty={['name', 'email', 'tel', 'address', 'icon']}
-      isSelectMultiple={true}
-    >
-      Pass clickable element (button, anchor etc)  here to bind onClick event
-    </PhoneBook>
-  );
+phoneBook(); // Used as a Service
+```
 
-  ```
+##### 3. Here's an example of a advanced usage:
 
-  ### Props
+```javascript
+import { PhoneBook } from 'fe-pilot/PhoneBook';
 
-  <table>
-    <tr>
-      <th>
-        Props
-      </th>
-      <th>
-        Type
-      </th>
-      <th>
-        Description
-      </th>
-      <th>
-        Response
-      </th>
-    </tr>
-    <tr>
-      <td>
-          successCb
-      </td>
-      <td>Function</td>
-      <td> It will be called on success</td>
-      <td>
-        <pre>
-  {
-      data: "Can be array/object/string/number",
-      msgType: "SUCCESSFUL",
-      msg: "A success msg",
-      status: "SUCCESS"
-  }
-        </pre>
-      </td>
-    </tr>
-    <tr>
-      <td>
-          loadingCb
-      </td>
-      <td>Function</td>
-      <td>
-        It will be called before success/failure.
-      </td>
-      <td>
-        <pre>
-  {
-    msgType: "LOADING",
-    msg: "LOADING...",
-    status: "LOADING"
-  }
-  </pre>
-      </td>
-    </tr>
-    <tr>
-      <td>
-          failureCb
-      </td>
-      <td>Function</td>
-      <td>
-        It will be called on failure
-      </td>
-      <td>
-         <pre>
-  {
-    msgType: "ERROR",
-    msg: "A failed msg",
-    status: "FAILURE"
-  }
-         </pre>
-      </td>
-    </tr>
-     <tr>
-      <td>
-          showForever
-      </td>
-       <td>Boolean</td>
-      <td>To hide/remove unsupported feature, make it <b>false</b>. Default value is <b>true</b></td>
-      <td> <pre>---</pre> </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>contactProperty</td>
-      <td>Array</td>
-      <td></td>
-      <td>['name', 'email', 'tel', 'address', 'icon']</td>
-    </tr>
-    <tr>
-      <td>isSelectMultiple</td>
-      <td>Boolean</td>
-      <td></td>
-      <td></td>
-    </tr>
-  </table>
+const successCb = (response) => {
+  console.log("success response:", response);
+}
+
+const failureCb = (response) => {
+  console.log("failure response:", response);
+}
+
+return (
+  <PhoneBook
+    successCb={successCb}
+    failureCb={failureCb}
+    showForever={false}
+    contactProperty={['name', 'email', 'tel', 'address', 'icon']}
+    isSelectMultiple={true}
+  >
+    Pass clickable element (button, anchor etc)  here to bind onClick event
+  </PhoneBook>
+);
+
+```
+
+### Props
+
+<table>
+  <tr>
+    <th>
+      Props
+    </th>
+    <th>
+      Type
+    </th>
+    <th>
+      Description
+    </th>
+    <th>
+      Response
+    </th>
+  </tr>
+  <tr>
+    <td>
+        successCb
+    </td>
+    <td>Function</td>
+    <td> It will be called on success</td>
+    <td>
+      <pre>
+{
+    data: "Can be array/object/string/number",
+    msgType: "SUCCESSFUL",
+    msg: "A success msg",
+    status: "SUCCESS"
+}
+      </pre>
+    </td>
+  </tr>
+  <tr>
+    <td>
+        loadingCb
+    </td>
+    <td>Function</td>
+    <td>
+      It will be called before success/failure.
+    </td>
+    <td>
+      <pre>
+{
+  msgType: "LOADING",
+  msg: "LOADING...",
+  status: "LOADING"
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>
+        failureCb
+    </td>
+    <td>Function</td>
+    <td>
+      It will be called on failure
+    </td>
+    <td>
+       <pre>
+{
+  msgType: "ERROR",
+  msg: "A failed msg",
+  status: "FAILURE"
+}
+       </pre>
+    </td>
+  </tr>
+   <tr>
+    <td>
+        showForever
+    </td>
+     <td>Boolean</td>
+    <td>To hide/remove unsupported feature, make it <b>false</b>. Default value is <b>true</b></td>
+    <td> <pre>---</pre> </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>contactProperty</td>
+    <td>Array</td>
+    <td></td>
+    <td>['name', 'email', 'tel', 'address', 'icon']</td>
+  </tr>
+  <tr>
+    <td>isSelectMultiple</td>
+    <td>Boolean</td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
