@@ -8,7 +8,12 @@
   @your-domain.com #12345
 ```
 
-  ## Usage/Examples
+## Demo
+
+A minimal [Demo Link](https://6jpxdq.csb.app/?component=AutoFillOtp)
+
+
+## Usage/Examples
 
 | Value |  Used as a  | Description|
 |--------- | -------- |-----------------|

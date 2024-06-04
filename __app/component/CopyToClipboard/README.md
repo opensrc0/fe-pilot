@@ -2,8 +2,11 @@
 
   The Component has the capability to copy any type of value (Element, String, Number)
 
+## Demo
 
-  ## Usage/Examples
+A minimal [Demo Link](https://6jpxdq.csb.app/?component=CopyToClipboard)
+
+## Usage/Examples
 
 | Value |  Used as a  | Description|
 |--------- | -------- |-----------------|

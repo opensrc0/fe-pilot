@@ -5,7 +5,7 @@ A short description about the component
 
 ## Demo
 
-A minimal [Online demo](link of codesandbox).
+A minimal [Demo Link](https://6jpxdq.csb.app/?component=LocateMe)
 
 
 ## Usage/Examples

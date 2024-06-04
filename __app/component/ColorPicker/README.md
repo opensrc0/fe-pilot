@@ -2,6 +2,9 @@
 
 A short description about the component
 
+## Demo
+
+A minimal [Demo Link](https://6jpxdq.csb.app/?component=ColorPicker)
 
 ## Usage/Examples
 
