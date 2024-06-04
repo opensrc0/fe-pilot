@@ -1,6 +1,6 @@
 # Share
 
-A short description about the component
+The ```Share``` Component will help you to ```share``` ```Name```, ```Title``` and a ```link``` in your mobile apps.
 
 
 ## Demo
