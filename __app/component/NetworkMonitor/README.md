@@ -2,133 +2,140 @@
 
 A Network Monitor Component returns online status and also information about the system's connection in terms of general connection type (e.g., 'Wi-Fi, 'cellular', etc.). Which can be used to select high-definition content or low-definition content based on the user's connection.
 
-  ## Demo
+## Demo
 
-  A minimal [Online demo](link of codesandbox).
-
-
-  ## Usage/Examples
-
-###### <i>You can use AutoFillOtp as Component/Service. Either First letter should be in ```CAPS``` to use as a ```Component``` or First letter should be in ```small letter``` to use as a ```Service```. ```Default Import``` will always be a ```Component```.</i>
-<br />
+A minimal [Demo Link](https://6jpxdq.csb.app/?component=NetworkMonitor)
 
 
-  2. Here's an example of basic usage with Multiple Import:
-  ```javascript
-  import { NetworkMonitor, networkMonitor } from 'fe-pilot/NetworkMonitor';
+## Usage/Examples
 
-  <NetworkMonitor /> // Used as a Component
+| Value |  Used as a  | Description|
+|--------- | -------- |-----------------|
+| <b>NetworkMonitor</b> | :white_check_mark: Component | Can be used as Component |
+| <b>networkMonitor<b> | :white_check_mark: Service | Can be used as Service |
 
-  networkMonitor(); // Used as a Service
-  ```
+##### 1. Here's an example of basic usage with Multiple Import: with Default Import:
+```javascript
+// Default import will return NetworkMonitor Component
+import NetworkMonitor from 'fe-pilot/NetworkMonitor';
 
-  3. Here's an example of a advanced usage:
+<NetworkMonitor /> // Used as a Component
 
-  ```javascript
-  import { NetworkMonitor, OnlineToast, OfflineToast  } from 'fe-pilot/NetworkMonitor';
+```
 
-  const successCb = (response) => {
-    console.log("success response:", response);
-  }
+##### 2. Here's an example of basic usage with Multiple Import: with Multiple Import:
+```javascript
+import { NetworkMonitor, networkMonitor } from 'fe-pilot/NetworkMonitor';
 
-  const failureCb = (response) => {
-    console.log("failure response:", response);
-  }
+<NetworkMonitor /> // Used as a Component
 
-  return (
-    <NetworkMonitor successCb={successCb} failureCb={failureCb}>
-        <OnlineToast>Online</OnlineToast>
-        <OfflineToast>
-            <div>Pass custom Html to be displayed when appeared offline</div>
-        </OfflineToast>
-    </NetworkMonitor>
-  );
+networkMonitor(); // Used as a Service
+```
 
-  ```
+##### 3. Here's an example of a advanced usage:
 
-  ### Props
+```javascript
+import { NetworkMonitor } from 'fe-pilot/NetworkMonitor';
 
-  <table>
-    <tr>
-      <th>
-        Props
-      </th>
-      <th>
-        Type
-      </th>
-      <th>
-        Description
-      </th>
-      <th>
-        Response
-      </th>
-    </tr>
-    <tr>
-      <td>
-          successCb
-      </td>
-      <td>Function</td>
-      <td> It will be called on success</td>
-      <td>
-        <pre>
-  {
-      data: "Can be array/object/string/number",
-      msgType: "SUCCESSFUL",
-      msg: "A success msg",
-      status: "SUCCESS"
-  }
-        </pre>
-      </td>
-    </tr>
-    <tr>
-      <td>
-          loadingCb
-      </td>
-      <td>Function</td>
-      <td>
-        It will be called before success/failure.
-      </td>
-      <td>
-        <pre>
-  {
-    msgType: "LOADING",
-    msg: "LOADING...",
-    status: "LOADING"
-  }
-  </pre>
-      </td>
-    </tr>
-    <tr>
-      <td>
-          failureCb
-      </td>
-      <td>Function</td>
-      <td>
-        It will be called on failure
-      </td>
-      <td>
-         <pre>
-  {
-    msgType: "ERROR",
-    msg: "A failed msg",
-    status: "FAILURE"
-  }
-         </pre>
-      </td>
-    </tr>
-     <tr>
-      <td>
-          showForever
-      </td>
-       <td>Boolean</td>
-      <td>To hide/remove unsupported feature, make it <b>false</b>. Default value is <b>true</b></td>
-      <td> <pre>---</pre> </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </table>
+const successCb = (response) => {
+  console.log("success response:", response);
+}
+
+const failureCb = (response) => {
+  console.log("failure response:", response);
+}
+
+return (
+  <NetworkMonitor successCb={successCb} failureCb={failureCb}>
+    Pass clickable element (button, anchor etc)  here to bind onClick event
+  </NetworkMonitor>
+);
+
+```
+
+### Props
+
+<table>
+  <tr>
+    <th>
+      Props
+    </th>
+    <th>
+      Type
+    </th>
+    <th>
+      Description
+    </th>
+    <th>
+      Response
+    </th>
+  </tr>
+  <tr>
+    <td>
+        successCb
+    </td>
+    <td>Function</td>
+    <td> It will be called on success</td>
+    <td>
+      <pre>
+{
+    data: "Can be array/object/string/number",
+    msgType: "SUCCESSFUL",
+    msg: "A success msg",
+    status: "SUCCESS"
+}
+      </pre>
+    </td>
+  </tr>
+  <tr>
+    <td>
+        loadingCb
+    </td>
+    <td>Function</td>
+    <td>
+      It will be called before success/failure.
+    </td>
+    <td>
+      <pre>
+{
+  msgType: "LOADING",
+  msg: "LOADING...",
+  status: "LOADING"
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>
+        failureCb
+    </td>
+    <td>Function</td>
+    <td>
+      It will be called on failure
+    </td>
+    <td>
+       <pre>
+{
+  msgType: "ERROR",
+  msg: "A failed msg",
+  status: "FAILURE"
+}
+       </pre>
+    </td>
+  </tr>
+   <tr>
+    <td>
+        showForever
+    </td>
+     <td>Boolean</td>
+    <td>To hide/remove unsupported feature, make it <b>false</b>. Default value is <b>true</b></td>
+    <td> <pre>---</pre> </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
 
