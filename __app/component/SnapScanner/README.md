@@ -1,6 +1,6 @@
 # SnapScanner
 
-A short description about the component
+A SnapScanner is used to scan any ```QR code```, ```Bar Code```, ```UPI QR Code``` from an image. You just need to pass an ```image```, the component will ```scan``` the ```image``` and provide you the ```QR code ID```, ```Bar code ID``` or ```UPI ID```
 
 
 ## Demo
