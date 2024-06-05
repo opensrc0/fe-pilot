@@ -1,6 +1,6 @@
 # LiveLocationTracking
 
-A short description about the component
+A ```LiveLocationTracking``` component is used to track the ```current location``` of the ```user``` in the ```google map```. On ```food delivey``` app, we are ```tracking``` the ```location``` of ```delivery person```, in the same way we can implement in web as well. 
 
 
 ## Demo

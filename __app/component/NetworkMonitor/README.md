@@ -14,7 +14,7 @@ A minimal [Demo Link](https://6jpxdq.csb.app/?component=NetworkMonitor)
 | <b>NetworkMonitor</b> | :white_check_mark: Component | Can be used as Component |
 | <b>networkMonitor<b> | :white_check_mark: Service | Can be used as Service |
 
-##### 1. Here's an example of basic usage with Multiple Import: with Default Import:
+##### 1. Here's an example of basic usage with Default Import:
 ```javascript
 // Default import will return NetworkMonitor Component
 import NetworkMonitor from 'fe-pilot/NetworkMonitor';
@@ -23,7 +23,7 @@ import NetworkMonitor from 'fe-pilot/NetworkMonitor';
 
 ```
 
-##### 2. Here's an example of basic usage with Multiple Import: with Multiple Import:
+##### 2. Here's an example of basic usage with Multiple Import:
 ```javascript
 import { NetworkMonitor, networkMonitor } from 'fe-pilot/NetworkMonitor';
 
@@ -139,3 +139,25 @@ return (
   </tr>
 </table>
 
+### Child
+<table>
+  <th>
+    Child
+  </th>
+  <th>
+    Type
+  </th>
+  <th>
+    Description
+  </th>
+  <tr>
+    <td>OfflineToast</td>
+    <td>Element/String/Number</td>
+    <td>A offline toast, will be appear as user goes offline</td>
+  </tr>
+  <tr>
+    <td>OnlineToast</td>
+    <td>Element/String/Number</td>
+    <td>A online toast, will be appear as user goes from offline to online</td>
+  </tr>
+</table>

@@ -1,6 +1,6 @@
 # PhoneBook
 
-A short description about the component
+The PhoneBook component will help you to ```open phonebook directory``` from ```your phone```. User can choose any contact from the phone book ```directory``` and get the contact details like ```name```, ```email```, ```tel```, ```address```, ```icon```
 
 
 ## Demo
@@ -15,7 +15,7 @@ A minimal [Demo Link](https://6jpxdq.csb.app/?component=PhoneBook)
 | <b>PhoneBook</b> | :white_check_mark: Component | Can be used as Component |
 | <b>phoneBook<b> | :white_check_mark: Service | Can be used as Service |
 
-##### 1. Here's an example of basic usage with Multiple Import: with Default Import:
+##### 1. Here's an example of basic usage with Default Import:
 ```javascript
 // Default import will return PhoneBook Component
 import PhoneBook from 'fe-pilot/PhoneBook';
@@ -24,7 +24,7 @@ import PhoneBook from 'fe-pilot/PhoneBook';
 
 ```
 
-##### 2. Here's an example of basic usage with Multiple Import: with Multiple Import:
+##### 2. Here's an example of basic usage with Multiple Import:
 ```javascript
 import { PhoneBook, phoneBook } from 'fe-pilot/PhoneBook';
 

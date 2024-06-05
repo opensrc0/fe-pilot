@@ -1,6 +1,6 @@
 # WhatsappShare
 
-A short description about the component
+A ```WhatsappShare``` component will help you to ```open whatsapp``` directly and ```share``` the ```message```. You can provide a ```pre-defined``` ```mobile number``` and share the details directly in a ```specific number``` as well.  
 
 
 ## Demo
@@ -146,13 +146,13 @@ return (
   <tr>
     <td>mobile</td>
     <td>number</td>
-    <td></td>
+    <td>Provide a mobile number to open directly</td>
     <td> <pre>---</pre> </td>
   </tr>
     <tr>
     <td>msg</td>
     <td>String</td>
-    <td></td>
+    <td>Provide a message to send to user</td>
     <td> <pre>---</pre> </td>
   </tr>
 </table>

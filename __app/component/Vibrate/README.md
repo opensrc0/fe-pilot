@@ -1,7 +1,6 @@
 # Vibrate
 
-A short description about the component
-
+A Component will be used to ```vibrate``` the ```mobile device```. We would like to ```notify``` user after the successful transaction, is an use case.
 
 ## Demo
 
@@ -134,10 +133,24 @@ vibrate({ successCb failureCb });
     <td></td>
   </tr>
   <tr>
+   <th>
+      Props
+    </th>
+    <th>
+      Type
+    </th>
+    <th>
+      Description
+    </th>
+    <th>
+      Accepted Values
+    </th>
+  </tr>
+  <tr>
     <td>vibrationSeq</td>
     <td>Array</td>
     <td>Sequence number for vibration</td>
-    <td> <pre>---</pre> </td>
+    <td>Will accept number in the array like [100,200,12,90,39] </td>
   </tr>
 </table>
 

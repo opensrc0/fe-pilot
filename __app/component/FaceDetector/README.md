@@ -1,6 +1,6 @@
 # FaceDetector
 
-A short description about the component
+A ```FaceDetector``` component is used to ```detect``` the ```face``` of ```users``` and draw a squrebox on the ```user's face```.
 
 
 ## Demo

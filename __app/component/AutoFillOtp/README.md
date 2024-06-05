@@ -2,7 +2,7 @@
 
   An ```AutoFillOTP``` component will help you to enable a listener. The listner will wait for the ```SMS``` in ```your phone``` to enable autoFillOTP.
 
-  Also, Our ```SMS``` should follow a format. To use auto fill OTP, our sms last line should contain
+  <b>Note:</b> ```SMS``` should follow the format. To use auto fill OTP, last line of the sms should contain
 
   ```javascript
   @your-domain.com #12345
