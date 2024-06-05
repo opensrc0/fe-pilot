@@ -118,33 +118,33 @@ vibrate({ successCb failureCb });
        </pre>
     </td>
   </tr>
-   <tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+  <th>
+    Props
+  </th>
+  <th>
+    Type
+  </th>
+  <th>
+    Description
+  </th>
+  <th>
+    Default Values
+  </th>
+  </tr>
+  <tr>
     <td>
         showForever
     </td>
      <td>Boolean</td>
-    <td>To hide/remove unsupported feature, make it <b>false</b>. Default value is <b>true</b></td>
-    <td> <pre>---</pre> </td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-   <th>
-      Props
-    </th>
-    <th>
-      Type
-    </th>
-    <th>
-      Description
-    </th>
-    <th>
-      Default Values
-    </th>
+    <td>To hide/remove unsupported feature, make it <b>false</b>.</td>
+    <td>Default value is <b>true</b>.</td>
   </tr>
   <tr>
     <td>vibrationSeq</td>
