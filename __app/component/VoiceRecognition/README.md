@@ -1,6 +1,6 @@
 # VoiceRecognition
 
-A short description about the component
+A VoiceRecognition component is used to ```capture``` the ```voice``` from the user and ```convert``` into the ```text```.
 
 
 ## Demo
