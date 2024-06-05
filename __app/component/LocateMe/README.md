@@ -1,6 +1,6 @@
 # LocateMe
 
-A short description about the component
+A ```LocateMe``` component will be used to get the ```current pincode``` of the user using ```google map api```. 
 
 
 ## Demo
