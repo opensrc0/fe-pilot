@@ -146,13 +146,13 @@ return (
   <tr>
     <td>mobile</td>
     <td>number</td>
-    <td></td>
+    <td>Provide a mobile number to open directly</td>
     <td> <pre>---</pre> </td>
   </tr>
     <tr>
     <td>msg</td>
     <td>String</td>
-    <td></td>
+    <td>Provide a message to send to user</td>
     <td> <pre>---</pre> </td>
   </tr>
 </table>
