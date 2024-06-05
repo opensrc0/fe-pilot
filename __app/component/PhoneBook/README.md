@@ -147,9 +147,8 @@ return (
   <tr>
     <td>contactProperty</td>
     <td>Array</td>
-    <td>An <b>array of strings</b> defining what information to retrieve from a contact. <b>Default</b> value is 
-      <br><b>['name', 'email', 'tel', 'address', 'icon']</b>.
-     Where
+    <td>An <b>array of strings</b> defining what information to retrieve from a contact. <br><br><b>Default</b> value is 
+      <b>['name', 'email', 'tel', 'address', 'icon']</b>.<br><br>
       <pre>
 'name': The contact's name.
 'tel': The telephone number(s) of the contact.
