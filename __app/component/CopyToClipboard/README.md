@@ -128,25 +128,37 @@ A minimal [Demo Link](https://6jpxdq.csb.app/?component=CopyToClipboard)
          </pre>
       </td>
     </tr>
-     <tr>
-      <td>
-          showForever
-      </td>
-       <td>Boolean</td>
-      <td>To hide/remove unsupported feature, make it <b>false</b>. Default value is <b>true</b></td>
-      <td> <pre>---</pre> </td>
-    </tr>
     <tr>
       <td></td>
       <td></td>
       <td></td>
       <td></td>
     </tr>
-     <tr>
-      <td>elementToBeCopy</td>
+    <th>
+      Props
+    </th>
+    <th>
+        Type
+    </th>
+    <th>
+        Description
+    </th>
+    <th>
+        Default Values
+    </th>
+    <tr>
+      <td>
+          showForever
+      </td>
+       <td>Boolean</td>
+      <td>To hide/remove unsupported feature, make it <b>false</b>.</td>
+      <td>Default value is <b>true</b></td>
+    </tr>
+    <tr>
+      <td>elementToBeCopy*</td>
       <td>Element</td>
       <td>Pass the text/element/number to be copy</td>
-     <td> <pre>---</pre> </td>
+      <td> <pre>---</pre> </td>
     </tr>
   </table>
 
