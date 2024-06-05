@@ -1,6 +1,6 @@
 # TextToSpeech
 
-A TextToSpeech component will help to ```convert``` the ```text``` value in the ```voice```. You will pass the text and your application will convert it in the sound.
+A ```TextToSpeech``` component will help to ```convert``` the ```text``` value in the ```voice```. You will pass the text and your application will convert it in the sound.
 
 
 ## Demo
