@@ -153,13 +153,13 @@ return (
     <td></td>
   </tr>
   <tr>
-    <td>googleKey (*)</td>
+    <td>googleKey(*)</td>
     <td>String</td>
     <td></td>
     <td></td>
   </tr>
     <tr>
-    <td>isProdKey (*)</td>
+    <td>isProdKey(*)</td>
     <td>Boolean</td>
     <td></td>
     <td></td>

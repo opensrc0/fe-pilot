@@ -139,21 +139,21 @@ return (
     <td></td>
   </tr>
   <tr>
-    <td>sName</td>
+    <td>title</td>
     <td>String</td>
-    <td></td>
+    <td>Provide a title</td>
     <td></td>
   </tr>
     <tr>
-    <td>sTitle</td>
+    <td>description</td>
     <td>String</td>
-    <td></td>
+    <td>Provide a Description</td>
     <td></td>
   </tr>
     <tr>
-    <td>sUrl</td>
+    <td>url</td>
     <td>String</td>
-    <td></td>
+    <td>Provide a Link</td>
     <td></td>
   </tr>
 </table>

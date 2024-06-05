@@ -25,12 +25,12 @@ const share = ({
   loadingCb = () => {},
   successMsg = 'Shared Successfully',
   failureMsg: failureMsgProps = { ...failureMsgDefault },
-  sName = 'fe-pilot',
-  sTitle = 'A React library for advanced JS features',
-  sUrl = 'https://www.npmjs.com/package/fe-pilot',
+  title = 'fe-pilot',
+  description = 'A React library for advanced JS features',
+  url = 'https://www.npmjs.com/package/fe-pilot',
 } = {}) => {
   const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
-  const sharingData = { title: sName, text: sTitle, url: sUrl };
+  const sharingData = { title, text: description, url };
   const init = () => {
     if (isBrowserSupport()) {
       handleLoading({ loadingCb });
@@ -57,9 +57,9 @@ function Share({
   loadingCb,
   successMsg,
   failureMsg,
-  sName,
-  sTitle,
-  sUrl,
+  title,
+  description,
+  url,
 }) {
   return React.Children.map(children || 'Share', (child) => React.cloneElement(typeof child === 'string' ? <span>{child}</span> : child, {
     onClick: () => share({
@@ -68,9 +68,9 @@ function Share({
       loadingCb,
       successMsg,
       failureMsg,
-      sName,
-      sTitle,
-      sUrl,
+      title,
+      description,
+      url,
     }),
   }));
 }
@@ -82,9 +82,9 @@ Share.propTypes = {
   loadingCb: PropTypes.func,
   successMsg: PropTypes.string,
   failureMsg: PropTypes.object,
-  sName: PropTypes.string,
-  sTitle: PropTypes.string,
-  sUrl: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  url: PropTypes.string,
 };
 
 const WShare = Wrapper(Share, isBrowserSupport);
