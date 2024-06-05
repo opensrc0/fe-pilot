@@ -153,12 +153,12 @@ return (
   </th>
   <tr>
     <td>OfflineToast</td>
-    <td>Element/String/Number</td>
+    <td>Element</td>
     <td>A offline toast, will be appear as user goes offline</td>
   </tr>
   <tr>
     <td>OnlineToast</td>
-    <td>Element/String/Number</td>
+    <td>Element</td>
     <td>A online toast, will be appear as user goes from offline to online</td>
   </tr>
 </table>
