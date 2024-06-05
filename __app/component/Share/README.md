@@ -142,19 +142,19 @@ return (
     <td>title</td>
     <td>String</td>
     <td>Provide a title</td>
-    <td></td>
+    <td> <pre>---</pre> </td>
   </tr>
     <tr>
     <td>description</td>
     <td>String</td>
     <td>Provide a Description</td>
-    <td></td>
+    <td> <pre>---</pre> </td>
   </tr>
     <tr>
     <td>url</td>
     <td>String</td>
     <td>Provide a Link</td>
-    <td></td>
+    <td> <pre>---</pre> </td>
   </tr>
 </table>
 
