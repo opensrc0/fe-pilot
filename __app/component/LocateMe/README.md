@@ -155,13 +155,13 @@ return (
   <tr>
     <td>googleKey(*)</td>
     <td>String</td>
-    <td></td>
+    <td>Provide a googleKey for prod/lower-env</td>
     <td></td>
   </tr>
     <tr>
     <td>isProdKey(*)</td>
     <td>Boolean</td>
-    <td></td>
+    <td>For <b>non-production</b> google key make it <b>false</b>, default is <b>true</b></td>
     <td></td>
   </tr>
 </table>
