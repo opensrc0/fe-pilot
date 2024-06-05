@@ -139,7 +139,7 @@ return (
   </tr>
 </table>
 
-### Child
+### Child Component
 <table>
   <th>
     Child
