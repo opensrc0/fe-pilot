@@ -1,6 +1,6 @@
 # Scanner
 
-A ```Scanner component``` is used to scan any ```QR code```, ```Bar Code```, ```UPI QR Code```. The component will also provide you the feature like ```flash light```, ```Toggle camera```.
+A ```Scanner``` component is used to scan any ```QR code```, ```Bar Code```, ```UPI QR Code```. The component will also provide you the feature like ```flash light```, ```Toggle camera```.
 
 
 ## Demo
