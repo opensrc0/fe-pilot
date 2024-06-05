@@ -52,7 +52,7 @@ A minimal [Demo Link](https://6jpxdq.csb.app/?component=CopyToClipboard)
       failureCb={failureCb}
       elementToBeCopy={`A string text To Copy`}
     >
-      Pass clickable element (button, anchor, Text etc)
+      Pass clickable element (button, anchor, string, icon etc)
     </CopyToClipboard>
   );
 
