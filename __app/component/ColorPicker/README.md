@@ -46,7 +46,7 @@ const failureCb = (response) => {
 
 return (
   <ColorPicker successCb={successCb} failureCb={failureCb}>
-    Pass clickable element (button, anchor etc)  here to bind onClick event
+    Pass clickable element (button, anchor, string, icon etc)
   </ColorPicker>
 );
 
