@@ -165,16 +165,16 @@ return (
   <tr>
     <td>FaceDetectorClose</td>
     <td>Element</td>
-    <td><b>Close</b> the <b>camera</b></td>
+    <td><b>Onclick, Close</b> the <b>camera</b></td>
   </tr>
   <tr>
     <td>FaceDetectorFacing</td>
     <td>Element</td>
-    <td>Toggle the <b>camera</b> from <b>front</b> to <b>back</b> and vice versa.</td>
+    <td>OnClick, Toggle the <b>camera</b> from <b>front</b> to <b>back</b> and vice versa.</td>
   </tr>
   <tr>
     <td>FaceDetectorFlash</td>
     <td>Element</td>
-    <td>Toggle the <b>flash</b> light of <b>camera</b></td>
+    <td>OnClick, Toggle the <b>flash</b> light of <b>camera</b></td>
   </tr>
 </table>
