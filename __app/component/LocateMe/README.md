@@ -1,6 +1,6 @@
 # LocateMe
 
-A ```LocateMe``` component will be used to get the ```current pincode``` of the user using ```google map api```. 
+A ```LocateMe``` component will be used to get the ```current pincode``` of the user using ```google map api```.
 
 
 ## Demo
@@ -152,6 +152,18 @@ return (
     <td></td>
     <td></td>
   </tr>
+  <th>
+    Props
+  </th>
+  <th>
+    Type
+  </th>
+  <th>
+    Description
+  </th>
+  <th>
+      Default Values
+  </th>
   <tr>
     <td>googleKey(*)</td>
     <td>String</td>
@@ -161,8 +173,8 @@ return (
     <tr>
     <td>isProdKey(*)</td>
     <td>Boolean</td>
-    <td>For <b>non-production</b> google key make it <b>false</b>, default is <b>true</b></td>
-    <td><pre>---</pre></td>
+    <td>For <b>non-production</b> google key make it <b>false</b></td>
+    <td>Default is <b>true.</b></td>
   </tr>
 </table>
 

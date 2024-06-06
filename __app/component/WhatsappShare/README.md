@@ -1,6 +1,6 @@
 # WhatsappShare
 
-A ```WhatsappShare``` component will help you to ```open whatsapp``` directly and ```share``` the ```message```. You can provide a ```pre-defined``` ```mobile number``` and share the details directly in a ```specific number``` as well.  
+A ```WhatsappShare``` component will help you to ```open whatsapp``` directly and ```share``` the ```message```. You can provide a ```pre-defined``` ```mobile number``` and share the details directly in a ```specific number``` as well.
 
 
 ## Demo
@@ -129,19 +129,31 @@ return (
        </pre>
     </td>
   </tr>
-   <tr>
-    <td>
-        showForever
-    </td>
-     <td>Boolean</td>
-    <td>To hide/remove unsupported feature, make it <b>false</b>. Default value is <b>true</b></td>
-    <td> <pre>---</pre> </td>
-  </tr>
   <tr>
     <td></td>
     <td></td>
     <td></td>
     <td></td>
+  </tr>
+  <th>
+    Props
+  </th>
+  <th>
+    Type
+  </th>
+  <th>
+    Description
+  </th>
+  <th>
+      Default Values
+  </th>
+  <tr>
+    <td>
+      showForever
+    </td>
+     <td>Boolean</td>
+    <td>To hide/remove unsupported feature, make it <b>false</b>.</td>
+    <td>Default value is <b>true.</b></td>
   </tr>
   <tr>
     <td>mobile</td>

@@ -130,24 +130,36 @@ return (
        </pre>
     </td>
   </tr>
-   <tr>
-    <td>
-        showForever
-    </td>
-     <td>Boolean</td>
-    <td>To hide/remove unsupported feature, make it <b>false</b>. Default value is <b>true</b></td>
-    <td> <pre>---</pre> </td>
-  </tr>
   <tr>
     <td></td>
     <td></td>
     <td></td>
     <td></td>
+  </tr>
+   <th>
+    Props
+  </th>
+  <th>
+    Type
+  </th>
+  <th>
+    Description
+  </th>
+  <th>
+    Default Values
+  </th>
+  <tr>
+    <td>
+      showForever
+    </td>
+     <td>Boolean</td>
+    <td>To hide/remove unsupported feature, make it <b>false</b>.</td>
+    <td>Default value is <b>true.</b></td>
   </tr>
   <tr>
     <td>contactProperty</td>
     <td>Array</td>
-    <td>An <b>array of strings</b> defining what information to retrieve from a contact. <br><br><b>Default</b> value is 
+    <td>An <b>array of strings</b> defining what information to retrieve from a contact. <br><br><b>Default</b> value is
       <b>['name', 'email', 'tel', 'address', 'icon']</b>.<br><br>
       <pre>
 'name': The contact's name.
