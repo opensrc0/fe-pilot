@@ -172,22 +172,22 @@ return (
   <tr>
     <td>ScannerClose</td>
     <td>Element</td>
-    <td><b>Close</b> the <b>camera</b></td>
+    <td>onClick, <b>Close</b> the <b>camera</b></td>
   </tr>
   <tr>
     <td>ScannerFacing</td>
     <td>Element</td>
-    <td>Toggle the <b>camera</b> from <b>front</b> to <b>back</b> and vice versa.</td>
+    <td>onClick, Toggle the <b>camera</b> from <b>front</b> to <b>back</b> and vice versa.</td>
   </tr>
   <tr>
     <td>ScannerFlash</td>
     <td>Element</td>
-    <td>Toggle the <b>flash</b> light of <b>camera</b></td>
+    <td>onClick, Toggle the <b>flash</b> light of <b>camera</b></td>
   </tr>
    <tr>
     <td>ScannerScanBox</td>
     <td>Element</td>
-    <td>Create a <b>box area</b> used for <b>scanning</b></td>
+    <td>onClick, Create a <b>box area</b> used for <b>scanning</b></td>
   </tr>
 </table>
 

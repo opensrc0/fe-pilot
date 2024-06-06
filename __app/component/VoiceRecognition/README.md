@@ -157,3 +157,26 @@ return (
   </tr>
 </table>
 
+### Child Component
+<table>
+  <th>
+    Child
+  </th>
+  <th>
+    Type
+  </th>
+  <th>
+    Description
+  </th>
+  <tr>
+    <td>VoiceRecognitionIcon</td>
+    <td>Element</td>
+    <td>onClick, <b>A Voice Recognition</b> Modal will open</td>
+  </tr>
+  <tr>
+    <td>VoiceRecognitionModal</td>
+    <td>Element</td>
+    <td>Provide the modal here</td>
+  </tr>
+</table>
+

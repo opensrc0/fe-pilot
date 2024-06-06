@@ -138,14 +138,6 @@ return (
        </pre>
     </td>
   </tr>
-   <tr>
-    <td>
-        showForever
-    </td>
-     <td>Boolean</td>
-    <td>To hide/remove unsupported feature, make it <b>false</b>. Default value is <b>true</b></td>
-    <td> <pre>---</pre> </td>
-  </tr>
   <tr>
     <td></td>
     <td></td>
@@ -164,6 +156,14 @@ return (
   <th>
       Default Values
   </th>
+  <tr>
+    <td>
+      showForever
+    </td>
+     <td>Boolean</td>
+    <td>To hide/remove unsupported feature, make it <b>false</b>.</td>
+    <td>Default value is <b>true.</b></td>
+  </tr>
   <tr>
     <td>googleKey(*)</td>
     <td>String</td>
