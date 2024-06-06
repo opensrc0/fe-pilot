@@ -25,9 +25,13 @@ const copyToClipboard = ({
       handleLoading({ loadingCb });
 
       // Your Code will start from here
-      navigator.clipboard.writeText(elementToBeCopy).then(() => {
-        handleSuccess({ msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: elementToBeCopy });
-      }).catch((error) => handleError({ msgType: 'ERROR', msg: failureMsg.error || error?.message || 'Unable To Copy', failureCb }));
+      if (elementToBeCopy) {
+        navigator.clipboard.writeText(elementToBeCopy).then(() => {
+          handleSuccess({ msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: elementToBeCopy });
+        }).catch((error) => handleError({ msgType: 'ERROR', msg: failureMsg.error || error?.message || 'Unable To Copy', failureCb }));
+      } else {
+        return handleError({ msgType: 'BAD_REQUEST', msg: 'elementToBeCopy is missing', failureCb });
+      }
       // Your Code will end here
     } else {
       return handleError({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });

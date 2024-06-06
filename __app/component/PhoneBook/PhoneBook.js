@@ -75,7 +75,6 @@ PhoneBook.propTypes = {
   loadingCb: PropTypes.func,
   successMsg: PropTypes.string,
   failureMsg: PropTypes.object,
-
 };
 
 const WPhoneBook = Wrapper(PhoneBook, isBrowserSupport);
