@@ -1,53 +1,148 @@
-## WakeLock Service Documentation
+# WakeLock
 
-The WakeLock service provides functionality to manage WakeLock for preventing the screen from sleeping.
+The WakeLock Component will allows you to keep the device screen awake, i.e. prevent the screen from sleeping
 
-## Usage
+## Demo
 
-### 1. Apply WakeLock
+A minimal [Demo Link](https://6jpxdq.csb.app/?component=WakeLock)
 
-```js
-import WakeLockService from 'path/to/WakeLockService';
 
-// Apply WakeLock
-WakeLockService();
+## Usage/Examples
+
+| Value |  Used as a  | Description|
+|--------- | -------- |-----------------|
+| <b>WakeLock</b> | :white_check_mark: Component | Can be used as Component |
+| <b>wakeLock<b> | :white_check_mark: Service | Can be used as Service |
+
+##### 1. Here's an example of basic usage with Multiple Import: with Default Import:
+```javascript
+// Default import will return WakeLock Component
+import WakeLock from 'fe-pilot/WakeLock';
+
+<WakeLock /> // Used as a Component
+
 ```
 
-## 2. Success: successCb callBack Fn along with success msg
+##### 2. Here's an example of basic usage with Multiple Import: with Multiple Import:
+```javascript
+import { WakeLock, wakeLock } from 'fe-pilot/WakeLock';
 
-```js
-const successCb = ({ msgType, msg, data }) => {
-  console.log(msgType); // Success
-  console.log(msg);     // WakeLock successfully applied!
+<WakeLock /> // Used as a Component
+
+wakeLock(); // Used as a Service
+```
+
+##### 3. Here's an example of a advanced usage:
+
+```javascript
+import { WakeLock } from 'fe-pilot/WakeLock';
+
+const successCb = (response) => {
+  console.log("success response:", response);
 }
 
-WakeLockService({ successCb });
-```
-> [!Note]
-> **successCb** will get an object contains the property ```msgType```, ```msg```, ```data```
-
-## 3. Failure: failureCb callBack Fn along with failure msg
-```js
-const failureCb = ({ msgType, msg }) => {
-  console.log(msgType);  // UN_SUPPORTED_FEATURE or ERROR
-  console.log(msg);      // Corresponding error message
+const failureCb = (response) => {
+  console.log("failure response:", response);
 }
 
-WakeLockService({ failureCb });
-
+wakeLock({ successCb, failureCb });
 ```
 
-## 4. Combine with Callbacks and Messages
+### Props
 
-```js
-WakeLockService({
-  successCb,
-  successMsg: "WakeLock successfully applied!",
-  failureCb,
-  failureMsg: {
-    unSupported: 'Your browser does not support the WakeLock feature',
-    error: 'Unable to apply WakeLock',
-  }
-});
+<table>
+  <tr>
+    <th>
+      Props
+    </th>
+    <th>
+      Type
+    </th>
+    <th>
+      Description
+    </th>
+    <th>
+      Response
+    </th>
+  </tr>
+  <tr>
+    <td>
+        successCb
+    </td>
+    <td>Function</td>
+    <td> It will be called on success</td>
+    <td>
+      <pre>
+{
+    data: "Can be array/object/string/number",
+    msgType: "SUCCESSFUL",
+    msg: "A success msg",
+    status: "SUCCESS"
+}
+      </pre>
+    </td>
+  </tr>
+  <tr>
+    <td>
+        loadingCb
+    </td>
+    <td>Function</td>
+    <td>
+      It will be called before success/failure.
+    </td>
+    <td>
+      <pre>
+{
+  msgType: "LOADING",
+  msg: "LOADING...",
+  status: "LOADING"
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>
+        failureCb
+    </td>
+    <td>Function</td>
+    <td>
+      It will be called on failure
+    </td>
+    <td>
+       <pre>
+{
+  msgType: "ERROR",
+  msg: "A failed msg",
+  status: "FAILURE"
+}
+       </pre>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <th>
+    Props
+  </th>
+  <th>
+    Type
+  </th>
+  <th>
+    Description
+  </th>
+  <th>
+      Default Values
+  </th>
+  <tr>
+    <td>
+      showForever
+    </td>
+     <td>Boolean</td>
+    <td>To hide/remove unsupported feature, make it <b>false</b>.</td>
+    <td>Default value is <b>true.</b></td>
+  </tr>
+</table>
 
-```

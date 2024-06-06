@@ -5,8 +5,7 @@ import Wrapper from '../Wrapper/Wrapper';
 
 const failureMsgDefault = {
   unSupported: 'WhatsappShare is not supporting in your device',
-  badRequest: 'msg is missing',
-  error: 'Unable to fetch details from WhatsappShare',
+  error: '',
 };
 const isBrowserSupport = () => globalThis;
 
@@ -17,7 +16,7 @@ const whatsAppShare = ({
   successMsg = 'WhatsappShare details fetch Successfully!!',
   failureMsg: failureMsgProps = { ...failureMsgDefault },
   mobile,
-  msg,
+  msg = '',
 } = {}) => {
   const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
 
@@ -34,7 +33,7 @@ const whatsAppShare = ({
           window.location.href = `https://wa.me/?text=${msg}`;
           handleSuccess({ msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: msg });
         } else {
-          return handleError({ msgType: 'BAD_REQUEST', msg: failureMsg.badRequest, failureCb });
+          return handleError({ msgType: 'ERROR', msg: failureMsg.error || 'Mandatory props are missing', failureCb });
         }
       } else {
         window.location.href = `https://web.whatsapp.com/send?text=${msg}&phone=${mobile}`;

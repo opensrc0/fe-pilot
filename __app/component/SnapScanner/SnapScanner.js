@@ -6,8 +6,7 @@ import Wrapper from '../Wrapper/Wrapper';
 const failureMsgDefault = {
   unSupported: 'SnapScanner is not supporting in your device',
   invalidImage: 'Invalid Images',
-  unableToScan: 'Unable to scan',
-  error: 'Unable to fetch details from SnapScanner',
+  error: '',
 };
 
 const isBrowserSupport = () => 'BarcodeDetector' in globalThis;
@@ -47,7 +46,7 @@ const snapScanner = ({
           }
           return true;
         })
-        .catch((error) => handleError({ msgType: 'UNABLE_TO_SCAN', msg: failureMsg.unableToScan || JSON.stringify(error), failureCb }));
+        .catch((error) => handleError({ msgType: 'ERROR', msg: failureMsg.error || error.message || 'Unable to scan', failureCb }));
       // Your Code will end here
     } else {
       return handleError({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });

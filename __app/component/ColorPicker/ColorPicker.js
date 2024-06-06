@@ -5,7 +5,7 @@ import Wrapper from '../Wrapper/Wrapper';
 
 const failureMsgDefault = {
   unSupported: 'Your browser does not support the Color Picker fetaure',
-  error: 'Unable to copy color code',
+  error: '',
 };
 
 const isBrowserSupport = () => globalThis.EyeDropper;
@@ -29,7 +29,7 @@ const colorPicker = ({
         .then((result) => {
           handleSuccess({ msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: result.sRGBHex });
         })
-        .catch((error) => handleError({ msgType: 'ERROR', msg: failureMsg.error || JSON.stringify(error), failureCb }));
+        .catch((error) => handleError({ msgType: 'ERROR', msg: failureMsg.error || error?.message || 'Unable to copy color code', failureCb }));
     } else {
       return handleError({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
     }

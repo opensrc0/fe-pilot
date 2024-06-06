@@ -5,7 +5,7 @@ import Wrapper from '../Wrapper/Wrapper';
 
 const failureMsgDefault = {
   unSupported: 'WakeLock is not supporting in your device',
-  error: 'Unable to fetch details from WakeLock',
+  error: '',
 };
 
 const isBrowserSupport = () => globalThis.navigator?.wakeLock;
@@ -33,7 +33,7 @@ const wakeLock = ({
           return handleError({ msgType: 'CANCELLED', failureCb });
         }
       } catch (error) {
-        return handleError({ msgType: 'ERROR', msg: failureMsg.error || JSON.stringify(error), failureCb });
+        return handleError({ msgType: 'ERROR', msg: failureMsg.error || error?.message || 'WakeLock failed', failureCb });
       }
       // Your Code will end here
     } else {

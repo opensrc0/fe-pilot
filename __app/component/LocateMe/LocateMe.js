@@ -87,7 +87,7 @@ const onSuccss = async (
   handleSuccess({ msgType: 'SUCCESSFUL', msg: successMsg, successCb, data: zipcode });
 };
 
-const onFailure = async (failureCb, error, failureMsg) => handleError({ msgType: 'ERROR', msg: failureMsg.error || error, failureCb });
+const onFailure = async (failureCb, error, failureMsg) => handleError({ msgType: 'ERROR', msg: failureMsg.error || error || 'Error occured', failureCb });
 
 const locateMe = ({
   successCb = () => {},

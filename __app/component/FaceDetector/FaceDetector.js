@@ -9,8 +9,8 @@ let videoUnmount = null;
 let unmoutRenderLoop = null;
 const failureMsgDefault = {
   unSupported: 'Face Detector is not supporting in your device',
-  streamingFailed: 'Camera streaming failed',
-  barCodeDetectionFailed: 'Bar code detection failed',
+  streamingFailed: '',
+  barCodeDetectionFailed: '',
   flashUnsupported: 'Flash is not supporting in your device',
 };
 
@@ -63,7 +63,7 @@ function FaceDetector({
           // clearTimeout(unmoutRenderLoop);
         }
       } catch (error) {
-        return handleError({ msgType: 'BAR_CODE_DETECTION_FAILED', msg: failureMsg.barCodeDetectionFailed || JSON.stringify(error), failureCb });
+        return handleError({ msgType: 'BAR_CODE_DETECTION_FAILED', msg: failureMsg.barCodeDetectionFailed || error?.message || 'Bar code detection failed', failureCb });
       }
     }
 
@@ -112,7 +112,7 @@ function FaceDetector({
         },
       });
     } catch (error) {
-      return handleError({ msgType: 'STREAMING_FAILED', msg: failureMsg.streamingFailed || JSON.stringify(error), failureCb });
+      return handleError({ msgType: 'STREAMING_FAILED', msg: failureMsg.streamingFailed || error?.message || 'Camera streaming failed', failureCb });
     }
     return mediaStream;
   };
