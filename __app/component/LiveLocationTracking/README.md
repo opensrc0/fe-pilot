@@ -1,6 +1,6 @@
 # LiveLocationTracking
 
-A ```LiveLocationTracking``` component is used to track the ```current location``` of the ```user``` in the ```google map```. On ```food delivey``` app, we are ```tracking``` the ```location``` of ```delivery person```, in the same way we can implement in web as well. 
+A ```LiveLocationTracking``` component is used to track the ```current location``` of the ```user``` in the ```google map```. On ```food delivey``` app, we are ```tracking``` the ```location``` of ```delivery person```, in the same way we can implement in web as well.
 
 
 ## Demo
@@ -129,19 +129,31 @@ return (
        </pre>
     </td>
   </tr>
-   <tr>
-    <td>
-        showForever
-    </td>
-     <td>Boolean</td>
-    <td>To hide/remove unsupported feature, make it <b>false</b>. Default value is <b>true</b></td>
-    <td> <pre>---</pre> </td>
-  </tr>
   <tr>
     <td></td>
     <td></td>
     <td></td>
     <td></td>
+  </tr>
+  <th>
+    Props
+  </th>
+  <th>
+      Type
+  </th>
+  <th>
+      Description
+  </th>
+  <th>
+      Default Values
+  </th>
+  <tr>
+    <td>
+        showForever
+    </td>
+      <td>Boolean</td>
+    <td>To hide/remove unsupported feature, make it <b>false</b>.</td>
+    <td>Default value is <b>true</b></td>
   </tr>
   <tr>
     <td>googleKey (*)</td>
