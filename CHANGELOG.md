@@ -1,3 +1,18 @@
+# [1.3.0](https://github.com/opensrc0/fe-pilot/compare/v1.2.13...v1.3.0) (2024-6-6)
+
+
+### Bug Fixes
+
+* **documentation templete:** changed documentation templete in boiler plate ([db1dc9b](https://github.com/opensrc0/fe-pilot/commit/db1dc9b6ce2ab32c1a77d8e29672f11815282485))
+* **errors:** revamp error in all the component ([cb4ad9f](https://github.com/opensrc0/fe-pilot/commit/cb4ad9f91ca25ca740fa53c9a9eecafc4404d64b))
+* **errors:** revamp error in all the component ([9111d1f](https://github.com/opensrc0/fe-pilot/commit/9111d1f158f07029cda47b82cbd5adc9c3a0425e))
+* **scanner flash:** close flash if scanner is unmount ([edab101](https://github.com/opensrc0/fe-pilot/commit/edab1019fdb44636c2a58ba6737b2a764e130337))
+
+
+### Features
+
+* **documentation:** fe-Pilot is ready to use with documentation ([a496516](https://github.com/opensrc0/fe-pilot/commit/a496516c046851d6aa8c52e354fb4b2b2ec1c53e))
+
 ## [1.2.13](https://github.com/opensrc0/fe-pilot/compare/v1.2.12...v1.2.13) (2024-5-20)
 
 
