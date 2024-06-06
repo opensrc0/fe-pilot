@@ -105,7 +105,7 @@ A short description about the component
 
 ## Demo
 
-A minimal [Online demo](link of codesandbox).
+A minimal [Demo Link](https://6jpxdq.csb.app/?component=${COMPONENT})
 
 
 ## Usage/Examples
@@ -224,19 +224,31 @@ return (
        </pre>
     </td>
   </tr>
-   <tr>
-    <td>
-        showForever
-    </td>
-     <td>Boolean</td>
-    <td>To hide/remove unsupported feature, make it <b>false</b>. Default value is <b>true</b></td>
-    <td> <pre>---</pre> </td>
-  </tr>
   <tr>
     <td></td>
     <td></td>
     <td></td>
     <td></td>
+  </tr>
+  <th>
+    Props
+  </th>
+  <th>
+    Type
+  </th>
+  <th>
+    Description
+  </th>
+  <th>
+      Default Values
+  </th>
+  <tr>
+    <td>
+      showForever
+    </td>
+    <td>Boolean</td>
+    <td>To hide/remove unsupported feature, make it <b>false</b>.</td>
+    <td>Default value is <b>true.</b></td>
   </tr>
 </table>
 
