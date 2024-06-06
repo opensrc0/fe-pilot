@@ -35,7 +35,7 @@ networkMonitor(); // Used as a Service
 ##### 3. Here's an example of a advanced usage:
 
 ```javascript
-import { NetworkMonitor } from 'fe-pilot/NetworkMonitor';
+import { NetworkMonitor, OfflineToast, OnlineToast } from 'fe-pilot/NetworkMonitor';
 
 const successCb = (response) => {
   console.log("success response:", response);
@@ -47,7 +47,8 @@ const failureCb = (response) => {
 
 return (
   <NetworkMonitor successCb={successCb} failureCb={failureCb}>
-    Pass clickable element (button, anchor etc)  here to bind onClick event
+    <OfflineToast />
+    <OnlineToast />
   </NetworkMonitor>
 );
 
@@ -139,7 +140,7 @@ return (
   </tr>
 </table>
 
-### Child
+### Child Component
 <table>
   <th>
     Child
@@ -152,12 +153,12 @@ return (
   </th>
   <tr>
     <td>OfflineToast</td>
-    <td>Element/String/Number</td>
+    <td>Element</td>
     <td>A offline toast, will be appear as user goes offline</td>
   </tr>
   <tr>
     <td>OnlineToast</td>
-    <td>Element/String/Number</td>
+    <td>Element</td>
     <td>A online toast, will be appear as user goes from offline to online</td>
   </tr>
 </table>

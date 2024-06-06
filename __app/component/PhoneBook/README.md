@@ -147,14 +147,23 @@ return (
   <tr>
     <td>contactProperty</td>
     <td>Array</td>
-    <td></td>
-    <td>['name', 'email', 'tel', 'address', 'icon']</td>
+    <td>An <b>array of strings</b> defining what information to retrieve from a contact. <br><br><b>Default</b> value is 
+      <b>['name', 'email', 'tel', 'address', 'icon']</b>.<br><br>
+      <pre>
+'name': The contact's name.
+'tel': The telephone number(s) of the contact.
+'email': The email address of the contact.
+'address': The contact's postal address.
+'icon': The avatar of the contact.
+        </pre>
+</td>
+    <td><pre>---</pre></td>
   </tr>
   <tr>
     <td>isSelectMultiple</td>
     <td>Boolean</td>
-    <td></td>
-    <td></td>
+    <td>A Boolean that allows <b>multiple contacts</b> to be <b>selected</b>. The <b>default</b> is <b>false</b>.</td>
+    <td><pre>---</pre></td>
   </tr>
 </table>
 

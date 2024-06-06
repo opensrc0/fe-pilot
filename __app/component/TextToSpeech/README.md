@@ -50,7 +50,7 @@ textToSpeech({
 ##### 3. Here's an example of a advanced usage:
 
 ```javascript
-import { TextToSpeech } from 'fe-pilot/TextToSpeech';
+import { TextToSpeech, TextToSpeechStart, TextToSpeechStop } from 'fe-pilot/TextToSpeech';
 
 const successCb = (response) => {
   console.log("success response:", response);
@@ -173,3 +173,25 @@ return (
   </tr>
 </table>
 
+### Child Component
+<table>
+  <th>
+    Child
+  </th>
+  <th>
+    Type
+  </th>
+  <th>
+    Description
+  </th>
+  <tr>
+    <td>TextToSpeechStart</td>
+    <td>Element</td>
+    <td><b>Speech</b> will <b>start</b> onClick on <b>start</b> Icon/Text</td>
+  </tr>
+  <tr>
+    <td>TextToSpeechStop</td>
+    <td>Element</td>
+    <td><b>Speech</b> will <b>stop</b> onClick on <b>stop</b> Icon/Text</td>
+  </tr>
+</table>

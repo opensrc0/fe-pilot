@@ -118,39 +118,39 @@ vibrate({ successCb failureCb });
        </pre>
     </td>
   </tr>
-   <tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+  <th>
+    Props
+  </th>
+  <th>
+    Type
+  </th>
+  <th>
+    Description
+  </th>
+  <th>
+    Default Values
+  </th>
+  </tr>
+  <tr>
     <td>
         showForever
     </td>
      <td>Boolean</td>
-    <td>To hide/remove unsupported feature, make it <b>false</b>. Default value is <b>true</b></td>
-    <td> <pre>---</pre> </td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-   <th>
-      Props
-    </th>
-    <th>
-      Type
-    </th>
-    <th>
-      Description
-    </th>
-    <th>
-      Accepted Values
-    </th>
+    <td>To hide/remove unsupported feature, make it <b>false</b>.</td>
+    <td>Default value is <b>true</b>.</td>
   </tr>
   <tr>
     <td>vibrationSeq</td>
     <td>Array</td>
-    <td>Sequence number for vibration</td>
-    <td>Will accept number in the array like [100,200,12,90,39] </td>
+    <td>Provides a pattern of vibration and pause intervals. Each value indicates a number of milliseconds to vibrate or pause, in alternation. You may provide either a single value (to vibrate once for that many milliseconds) or an array of values to alternately vibrate, pause, then vibrate again</td>
+    <td>[100, 30, 100, 30, 100, 30, 200, 30, 200, 30]</td>
   </tr>
 </table>
 
