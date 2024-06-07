@@ -182,10 +182,9 @@ return (
 
 ```mermaid
 graph TD;
-    Scanner--->ScannerClose;
-    Scanner--->ScannerFacing;
-    Scanner--->ScannerFlash;
-    Scanner--->ScannerScanBox;
+    FaceDetector--->FaceDetectorClose;
+    FaceDetector--->FaceDetectorFacing;
+    FaceDetector--->FaceDetectorFlash;
 ```
 
 </td>
