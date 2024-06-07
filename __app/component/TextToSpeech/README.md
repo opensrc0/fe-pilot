@@ -206,4 +206,15 @@ return (
     <td>Element</td>
     <td><b>Speech</b> will <b>stop</b> onClick on <b>stop</b> Icon/Text</td>
   </tr>
+<tr>
+<td colspan="3">
+
+```mermaid
+graph TD;
+    TextToSpeech--->TextToSpeechStart;
+    TextToSpeech--->TextToSpeechStop;
+```
+
+</td>
+</tr>
 </table>

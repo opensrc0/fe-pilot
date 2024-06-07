@@ -189,5 +189,17 @@ return (
     <td>Element</td>
     <td>onClick, Create a <b>box area</b> used for <b>scanning</b></td>
   </tr>
-</table>
+  <tr>
+<td colspan="3">
 
+```mermaid
+graph TD;
+    Scanner--->ScannerClose;
+    Scanner--->ScannerFacing;
+    Scanner--->ScannerFlash;
+    Scanner--->ScannerScanBox;
+```
+
+</td>
+</tr>
+</table>
