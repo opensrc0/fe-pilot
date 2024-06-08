@@ -1,3 +1,15 @@
+# [1.4.0](https://github.com/opensrc0/fe-pilot/compare/v1.3.0...v1.4.0) (2024-6-8)
+
+
+### Bug Fixes
+
+* **scanner flash:** close flash if scanner is unmount ([8451945](https://github.com/opensrc0/fe-pilot/commit/84519459ec44b3b46a34d4ff76077970e8144c28))
+
+
+### Features
+
+* **documentation:** fe-Pilot is ready to use with documentation ([8a291c5](https://github.com/opensrc0/fe-pilot/commit/8a291c5335f27784128b7de132194303699519c8))
+
 # [1.3.0](https://github.com/opensrc0/fe-pilot/compare/v1.2.13...v1.3.0) (2024-6-6)
 
 
