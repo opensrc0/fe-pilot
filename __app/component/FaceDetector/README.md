@@ -177,4 +177,16 @@ return (
     <td>Element</td>
     <td>OnClick, Toggle the <b>flash</b> light of <b>camera</b></td>
   </tr>
+<tr>
+<td colspan="3">
+
+```mermaid
+graph TD;
+    FaceDetector--->FaceDetectorClose;
+    FaceDetector--->FaceDetectorFacing;
+    FaceDetector--->FaceDetectorFlash;
+```
+
+</td>
+</tr>
 </table>

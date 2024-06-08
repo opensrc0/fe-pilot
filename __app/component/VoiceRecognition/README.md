@@ -178,5 +178,16 @@ return (
     <td>Element</td>
     <td>Provide the modal here</td>
   </tr>
+<tr>
+<td colspan="3">
+
+```mermaid
+graph TD;
+    VoiceRecognition--->VoiceRecognitionIcon;
+    VoiceRecognition--->VoiceRecognitionModal;
+```
+
+</td>
+</tr>
 </table>
 

@@ -21,7 +21,7 @@ npm link {PATH}/fe-pilot/
 ```js
 import PhoneBook from 'fe-pilot/PhoneBook';
 import Share from 'fe-pilot/Share';
-import { TextToSpeechInit, TextToSpeechStart, TextToSpeechStop } from 'fe-pilot/TextToSpeech';
+import { TextToSpeech, TextToSpeechStart, TextToSpeechStop } from 'fe-pilot/TextToSpeech';
 
 <PhoneBook />
 <Share />

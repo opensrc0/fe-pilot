@@ -173,4 +173,15 @@ return (
     <td>Element</td>
     <td>A online toast, will be appear as user goes from offline to online</td>
   </tr>
+<tr>
+<td colspan="3">
+
+```mermaid
+graph TD;
+    NetworkMonitor--->OfflineToast;
+    NetworkMonitor--->OnlineToast;
+```
+
+</td>
+</tr>
 </table>
