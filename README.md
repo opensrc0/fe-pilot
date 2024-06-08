@@ -73,8 +73,8 @@ bun add fe-pilot
 import Share from 'fe-pilot/Share';
 
 <Share
-  name={'fe-pilot'}
-  title={'A React library for advanced web features'}
+  title={'fe-pilot'}
+  description={'A React library for advanced web features'}
   url={'https://www.npmjs.com/package/fe-pilot'}
 />
 ```
