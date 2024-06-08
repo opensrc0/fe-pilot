@@ -65,7 +65,8 @@
     "TextToSpeech",
     "VoiceRecognition",
     "SnapScanner",
-    "NetworkMonitor"
+    "NetworkMonitor",
+    "View360"
   ],
   "config": {
     "commitizen": {
@@ -106,7 +107,8 @@
     "WhatsappShare/",
     "SnapScanner/",
     "WakeLock/",
-    "NetworkMonitor/"
+    "NetworkMonitor/",
+    "View360/"
   ],
   "devDependencies": {
     "@babel/cli": "^7.23.9",
