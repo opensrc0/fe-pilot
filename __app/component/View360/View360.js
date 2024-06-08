@@ -4,7 +4,7 @@ import Wrapper from '../Wrapper/Wrapper';
 
 function View360({
   imageList,
-  height,
+  height = '300px',
   width,
 }) {
   const [imageIndexInView, setImageIndexInView] = useState(0);
@@ -37,6 +37,7 @@ function View360({
         position: 'relative',
         height,
         width,
+        overflow: 'hidden',
       }}
     >
       {

@@ -95,11 +95,11 @@ import Share from 'fe-pilot/Share';
 10. :white_check_mark: &nbsp; [Share](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/Share/README.md)
 11. :white_check_mark: &nbsp; [SnapScanner](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/SnapScanner/README.md)
 12. :white_check_mark: &nbsp; [TextToSpeech](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/TextToSpeech/README.md)
-13. :white_check_mark: &nbsp; [VoiceRecognition](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/VoiceRecognition/README.md)
-14. :white_check_mark: &nbsp; [Vibrate](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/Vibrate/README.md)
-15. :white_check_mark: &nbsp; [WakeLock](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/WakeLock/README.md)
-16. :white_check_mark: &nbsp; [WhatsappShare](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/WhatsappShare/README.md)
-17. :white_check_mark: &nbsp; [View360](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/View360/README.md)
+13. :white_check_mark: &nbsp; [Vibrate](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/Vibrate/README.md)
+14. :white_check_mark: &nbsp; [View360](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/View360/README.md)
+15. :white_check_mark: &nbsp; [VoiceRecognition](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/VoiceRecognition/README.md)
+16. :white_check_mark: &nbsp; [WakeLock](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/WakeLock/README.md)
+17. :white_check_mark: &nbsp; [WhatsappShare](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/WhatsappShare/README.md)
 </details>
 
 ## Online Editor Templates
