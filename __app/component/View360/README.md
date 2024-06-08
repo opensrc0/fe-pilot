@@ -96,7 +96,7 @@ import { View360 } from 'fe-pilot/View360';
       height
     </td>
     <td>String</td>
-    <td>Height of the Image/td>
+    <td>Height of the Image</td>
     <td>
       Default value is <b>300px</b>
     </td>
