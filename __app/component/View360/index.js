@@ -1,3 +1,2 @@
-import View360 from './View360';
-
-export default View360;
+export * from './View360';
+export { default } from './View360';

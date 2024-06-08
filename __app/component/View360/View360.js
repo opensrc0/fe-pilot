@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Wrapper from '../Wrapper/Wrapper';
 
 function View360({
-  imageList,
+  imageList = [],
   height = '300px',
   width,
 }) {
@@ -84,4 +84,8 @@ View360.propTypes = {
   width: PropTypes.string,
 };
 
-export default Wrapper(View360);
+const WView360 = Wrapper(View360, true);
+
+export { WView360 as View360 };
+
+export default WView360;

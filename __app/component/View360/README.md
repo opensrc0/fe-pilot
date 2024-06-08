@@ -1,39 +1,77 @@
 # View360
 
-A short description about the component
+A View360 Component will be used to rotate the image 360 Degree. We have to pass multiple image from different angle to support 360 view of image.
 
 
 ## Demo
 
-A minimal [Online demo](link of codesandbox).
+A minimal [Demo Link](https://6jpxdq.csb.app/?component=View360)
 
 
 ## Usage/Examples
 
-Here's an example of basic usage:
+| Value |  Used as a  | Description|
+|--------- | -------- |-----------------|
+| <b>View360</b> | :white_check_mark: Component | Can be used as Component |
+| <b>view360<b> | :x: Service | Can be used as Service |
+
+##### 1. Here's an example of basic usage with Multiple Import: with Default Import:
+```javascript
+// Default import will return View360 Component
+import View360 from 'fe-pilot/View360';
+
+
+<View360
+  height="600px"
+  width="100%"
+  imageList={[
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(1).jpg",
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(2).jpg",
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(3).jpg",
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(4).jpg",
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(5).jpg",
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(6).jpg",
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(7).jpg",
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(8).jpg",
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(9).jpg",
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(10).jpg",
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(11).jpg",
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(12).jpg",
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(13).jpg",
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(14).jpg",
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(15).jpg",
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(16).jpg",
+  ]}
+/> // Used as a Component
+
+```
+
+##### 2. Here's an example of basic usage with Multiple Import: with Multiple Import:
 ```javascript
 import { View360 } from 'fe-pilot/View360';
 
-<View360 height="600px" width="100%" imageList={[
-          "http://woosterwebdesign.com/experiments/images/car_slides/car_(1).jpg",
-          "http://woosterwebdesign.com/experiments/images/car_slides/car_(2).jpg",
-          "http://woosterwebdesign.com/experiments/images/car_slides/car_(3).jpg",
-          "http://woosterwebdesign.com/experiments/images/car_slides/car_(4).jpg",
-          "http://woosterwebdesign.com/experiments/images/car_slides/car_(5).jpg",
-          "http://woosterwebdesign.com/experiments/images/car_slides/car_(6).jpg",
-          "http://woosterwebdesign.com/experiments/images/car_slides/car_(7).jpg",
-          "http://woosterwebdesign.com/experiments/images/car_slides/car_(8).jpg",
-          "http://woosterwebdesign.com/experiments/images/car_slides/car_(9).jpg",
-          "http://woosterwebdesign.com/experiments/images/car_slides/car_(10).jpg",
-          "http://woosterwebdesign.com/experiments/images/car_slides/car_(11).jpg",
-          "http://woosterwebdesign.com/experiments/images/car_slides/car_(12).jpg",
-          "http://woosterwebdesign.com/experiments/images/car_slides/car_(13).jpg",
-          "http://woosterwebdesign.com/experiments/images/car_slides/car_(14).jpg",
-          "http://woosterwebdesign.com/experiments/images/car_slides/car_(15).jpg",
-          "http://woosterwebdesign.com/experiments/images/car_slides/car_(16).jpg",
-        ]}
-        /> // Used as a Component
-
+<View360
+  height="600px"
+  width="100%"
+  imageList={[
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(1).jpg",
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(2).jpg",
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(3).jpg",
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(4).jpg",
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(5).jpg",
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(6).jpg",
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(7).jpg",
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(8).jpg",
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(9).jpg",
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(10).jpg",
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(11).jpg",
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(12).jpg",
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(13).jpg",
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(14).jpg",
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(15).jpg",
+    "http://woosterwebdesign.com/experiments/images/car_slides/car_(16).jpg",
+  ]}
+/> // Used as a Component
 ```
 
 ### Props
@@ -50,69 +88,42 @@ import { View360 } from 'fe-pilot/View360';
       Description
     </th>
     <th>
-      Response
+      Default Value
     </th>
   </tr>
   <tr>
     <td>
-        successCb
+      height
     </td>
-    <td>Function</td>
-    <td> It will be called on success</td>
+    <td>String</td>
+    <td>Height of the Image/td>
     <td>
-      <pre>
-{
-    data: "Can be array/object/string/number",
-    msgType: "SUCCESSFUL",
-    msg: "A success msg",
-    status: "SUCCESS"
-}
-      </pre>
+      Default value is <b>300px</b>
     </td>
   </tr>
   <tr>
     <td>
-        loadingCb
+        width
     </td>
-    <td>Function</td>
+    <td>String</td>
     <td>
-      It will be called before success/failure.
+      Width of the Image
     </td>
     <td>
-      <pre>
-{
-  msgType: "LOADING",
-  msg: "LOADING...",
-  status: "LOADING"
-}
-</pre>
+      Default value is <b>100%</b>
     </td>
   </tr>
   <tr>
     <td>
-        failureCb
+        imageList
     </td>
-    <td>Function</td>
+    <td>Array</td>
     <td>
-      It will be called on failure
+      Provide the images from different angle to rotate
     </td>
     <td>
-       <pre>
-{
-  msgType: "ERROR",
-  msg: "A failed msg",
-  status: "FAILURE"
-}
-       </pre>
+      Default value is <b>[]</b>
     </td>
-  </tr>
-   <tr>
-    <td>
-        showForever
-    </td>
-     <td>Boolean</td>
-    <td>To hide unsupported feature from browser, make it <b>false</b>. Default value is <b>true</b></td>
-    <td> <pre>---</pre> </td>
   </tr>
   <tr>
     <td></td>
