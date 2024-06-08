@@ -99,6 +99,7 @@ import Share from 'fe-pilot/Share';
 >  00. :white_check_mark: &nbsp; [Vibrate](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/Vibrate/README.md)
 >  00. :white_check_mark: &nbsp; [WakeLock](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/WakeLock/README.md)
 >  00. :white_check_mark: &nbsp; [WhatsappShare](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/WhatsappShare/README.md)
+>  00. :white_check_mark: &nbsp; [View360](https://github.com/opensrc0/fe-pilot/blob/main/__app/component/View360/README.md)
 > </details>
 
 ## Online Editor Templates
