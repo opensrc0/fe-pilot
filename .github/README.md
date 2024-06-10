@@ -243,6 +243,14 @@ Thanks goes to these wonderful people
         </a>
         <br />
       </td>
+      <td align="center" valign="top" width="14.28%">
+        <a target="_blank" href="https://github.com/100beats">
+          <img src="https://avatars.githubusercontent.com/u/172108056?v=4" width="64px;" alt="100beats" />
+          <br />
+          <sub><b>100beats</b></sub>
+        </a>
+        <br />
+      </td>
     </tr>
   </tbody>
 </table>
