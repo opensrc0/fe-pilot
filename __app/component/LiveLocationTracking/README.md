@@ -139,22 +139,22 @@ return (
     Props
   </th>
   <th>
-      Type
+    Type
   </th>
   <th>
-      Description
+    Description
   </th>
   <th>
       Default Values
   </th>
   <tr>
     <td>
-        showForever
+      showForever
     </td>
-      <td>Boolean</td>
+    <td>Boolean</td>
     <td>To hide/remove unsupported feature, make it <b>false</b>.</td>
-    <td>Default value is <b>true</b></td>
-  </tr>
+    <td>Default value is <b>true.</b></td>
+    </tr>
   <tr>
     <td>googleKey (*)</td>
     <td>String</td>
@@ -224,5 +224,4 @@ return (
     <td></td>
   </tr>
 </table>
-
 
