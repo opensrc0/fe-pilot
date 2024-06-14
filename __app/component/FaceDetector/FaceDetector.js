@@ -152,7 +152,7 @@ function FaceDetector({
   };
 
   const handleBrowserSupport = () => {
-    if (FaceDetector.isBrowserSupport()) {
+    if (isBrowserSupport()) {
       facingMode = cameraType === 'back' ? 'environment' : 'user';
       handleLoading({ loadingCb });
 
