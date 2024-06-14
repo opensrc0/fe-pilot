@@ -150,5 +150,13 @@ return (
     <td>To hide/remove unsupported feature, make it <b>false</b>.</td>
     <td>Default value is <b>true.</b></td>
   </tr>
+  <tr>
+    <td>
+      via
+    </td>
+     <td>String</td>
+    <td>To open <b>gallary/Phone Camera/File System</b></td>
+    <td>Default value is <b>gallery</b>. Possible values are <b>gallary/camera/phone</b></td>
+  </tr>
 </table>
 
