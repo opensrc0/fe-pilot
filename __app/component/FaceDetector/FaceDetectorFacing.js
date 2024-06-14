@@ -32,4 +32,6 @@ function FaceDetectorFacing({
   );
 }
 
+export { FaceDetectorFacing };
+
 export default FaceDetectorFacing;

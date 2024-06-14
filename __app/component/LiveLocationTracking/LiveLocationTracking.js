@@ -61,7 +61,7 @@ function LiveLocationTracking({
   overviewMapControl = true,
   rotateControl = true,
   fullscreenControl = true,
-}) {
+} = {}) {
   const directionMapRef = useRef();
   let directionsService;
   let directionsRenderer;

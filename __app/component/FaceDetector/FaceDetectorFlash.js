@@ -1,6 +1,6 @@
 import React from 'react';
 
-function FaceDetector({
+function FaceDetectorFlash({
   toggleFlash,
   children,
   zIndex,
@@ -32,4 +32,6 @@ function FaceDetector({
   );
 }
 
-export default FaceDetector;
+export { FaceDetectorFlash };
+
+export default FaceDetectorFlash;
