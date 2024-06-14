@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/opensrc0/fe-pilot/compare/v1.4.1...v1.5.0) (2024-6-14)
+
+
+### Features
+
+* **facedetector:** default props pass in params instead of using prop-types ([a1fd389](https://github.com/opensrc0/fe-pilot/commit/a1fd389c11190885716d993d5e5a9fb9e4bb2ea2))
+
 ## [1.4.1](https://github.com/opensrc0/fe-pilot/compare/v1.4.0...v1.4.1) (2024-6-14)
 
 
