@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/opensrc0/fe-pilot/compare/v1.4.0...v1.4.1) (2024-6-14)
+
+
+### Bug Fixes
+
+* **facedetector, livelocation tracking:** default props pass in params instead of using prop-types ([f0940ff](https://github.com/opensrc0/fe-pilot/commit/f0940ff624b31da005b7576c72e8d3c697bdc79b))
+
 # [1.4.0](https://github.com/opensrc0/fe-pilot/compare/v1.3.0...v1.4.0) (2024-6-8)
 
 
