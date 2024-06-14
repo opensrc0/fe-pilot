@@ -38,4 +38,6 @@ function FaceDetectorClose({
   );
 }
 
+export { FaceDetectorClose };
+
 export default FaceDetectorClose;

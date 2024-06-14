@@ -139,22 +139,22 @@ return (
     Props
   </th>
   <th>
-      Type
+    Type
   </th>
   <th>
-      Description
+    Description
   </th>
   <th>
       Default Values
   </th>
   <tr>
     <td>
-        showForever
+      showForever
     </td>
-      <td>Boolean</td>
+    <td>Boolean</td>
     <td>To hide/remove unsupported feature, make it <b>false</b>.</td>
-    <td>Default value is <b>true</b></td>
-  </tr>
+    <td>Default value is <b>true.</b></td>
+    </tr>
   <tr>
     <td>googleKey (*)</td>
     <td>String</td>
@@ -175,52 +175,53 @@ return (
   </tr>
   <tr>
     <td>mapTypeControl</td>
-    <td></td>
-    <td></td>
+    <td>Boolean</td>
+    <td>This allows the user to choose a map type (ROADMAP, SATELLITE, HYBRID, or TERRAIN)</td>
     <td></td>
   </tr>
     <tr>
     <td>panControl</td>
-    <td></td>
+    <td>Boolean</td>
     <td></td>
     <td></td>
   </tr>
     <tr>
     <td>zoomControl</td>
-    <td></td>
-    <td></td>
+    <td>Boolean</td>
+    <td>This adds a buttons for changing the zoom level of the map. </td>
     <td></td>
   </tr>
     <tr>
     <td>scaleControl</td>
-    <td></td>
-    <td></td>
+    <td>Boolean</td>
+    <td>This displays a map scale element.</td>
     <td></td>
   </tr>
     <tr>
     <td>streetViewControl</td>
-    <td></td>
-    <td></td>
+    <td>Boolean</td>
+    <td>This contains a Pegman icon which can be dragged onto the map to enable Street View.</td>
     <td></td>
   </tr>
     <tr>
     <td>overviewMapControl</td>
-    <td></td>
+    <td>Boolean</td>
     <td></td>
     <td></td>
   </tr>
     <tr>
     <td>rotateControl</td>
-    <td></td>
-    <td></td>
+    <td>Boolean</td>
+    <td>This provides a combination of tilt and rotate options for maps containing oblique imagery. This control appears by default near the bottom right of the map.</td>
     <td></td>
   </tr>
   <tr>
     <td>fullscreenControl</td>
-    <td></td>
-    <td></td>
+    <td>Boolean</td>
+    <td>This offers the option to open the map in fullscreen mode.
+    Note: iOS doesn't support the fullscreen feature. The fullscreen control is therefore not visible on iOS devices.
+</td>
     <td></td>
   </tr>
 </table>
-
 

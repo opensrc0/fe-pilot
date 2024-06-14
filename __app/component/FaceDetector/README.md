@@ -12,8 +12,8 @@ A minimal [Demo Link](https://6jpxdq.csb.app/?component=FaceDetector)
 
 | Value |  Used as a  | Description|
 |--------- | -------- |-----------------|
-| <b>FaceDetector</b> | Component :white_check_mark: | Can be used as Component |
-| <b>faceDetector<b> |  Service :x: | Can't be used as Service |
+| <b>FaceDetector</b> | :white_check_mark: Component | Can be used as Component |
+| <b>faceDetector<b> | :x: Service | Can be used as Service |
 
 ##### 1. Here's an example of basic usage with Multiple Import: with Default Import:
 ```javascript
@@ -135,19 +135,31 @@ return (
        </pre>
     </td>
   </tr>
-   <tr>
-    <td>
-        showForever
-    </td>
-     <td>Boolean</td>
-    <td>To hide/remove unsupported feature, make it <b>false</b>. Default value is <b>true</b></td>
-    <td> <pre>---</pre> </td>
-  </tr>
   <tr>
     <td></td>
     <td></td>
     <td></td>
     <td></td>
+  </tr>
+  <th>
+    Props
+  </th>
+  <th>
+    Type
+  </th>
+  <th>
+    Description
+  </th>
+  <th>
+      Default Values
+  </th>
+  <tr>
+    <td>
+      showForever
+    </td>
+    <td>Boolean</td>
+    <td>To hide/remove unsupported feature, make it <b>false</b>.</td>
+    <td>Default value is <b>true.</b></td>
   </tr>
 </table>
 

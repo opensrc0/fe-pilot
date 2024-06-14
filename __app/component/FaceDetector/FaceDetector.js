@@ -1,7 +1,6 @@
-/* eslint-disable no-inner-declarations */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { handleError, handleLoading } from '../services/handlerService';
+import { handleSuccess, handleError, handleLoading } from '../services/handlerService';
 import Wrapper from '../Wrapper/Wrapper';
 
 let mediaStream = null;
@@ -14,23 +13,24 @@ const failureMsgDefault = {
   flashUnsupported: 'Flash is not supporting in your device',
 };
 
+const isBrowserSupport = () => navigator?.mediaDevices && globalThis.FaceDetector;
+
 function FaceDetector({
-  // successCb,
-  failureCb,
-  loadingCb,
-  // successMsg,
-  failureMsg: failureMsgProps,
-  cameraType,
-  zIndex,
+  successCb = () => {},
+  failureCb = () => {},
+  loadingCb = () => {},
+  successMsg = 'Successfully!!',
+  failureMsg: failureMsgProps = { ...failureMsgDefault },
+  cameraType = 'back',
+  zIndex = 9,
   children,
-}) {
+} = {}) {
   const failureMsg = { ...failureMsgDefault, ...failureMsgProps };
   let list = null;
   let video = null;
   let facingMode;
 
   const [flash, setFlash] = useState(false);
-  const [isBrowser, setIsBrowser] = useState(false);
   const [faces, setFaces] = useState([]);
 
   const stopStreaming = () => {
@@ -58,6 +58,12 @@ function FaceDetector({
 
         if (getFaces[0]) {
           setFaces(getFaces);
+          handleSuccess({
+            msgType: 'SUCCESSFUL',
+            msg: successMsg,
+            successCb,
+            data: [...getFaces],
+          });
           // cancelAnimationFrame(videoUnmount);
           // stopStreaming();
           // clearTimeout(unmoutRenderLoop);
@@ -159,7 +165,6 @@ function FaceDetector({
   };
 
   useEffect(() => {
-    setIsBrowser(true);
     handleBrowserSupport();
 
     return () => {
@@ -167,7 +172,7 @@ function FaceDetector({
     };
   }, []);
 
-  return isBrowser && FaceDetector.isBrowserSupport() && (
+  return isBrowserSupport() && (
     <div id="face-detector">
       <div id="camera" style={{ position: 'absolute' }} />
       {
@@ -199,9 +204,8 @@ function FaceDetector({
   );
 }
 
-FaceDetector.isBrowserSupport = () => navigator?.mediaDevices && globalThis.FaceDetector;
-
 FaceDetector.propTypes = {
+  // showForever: PropTypes.bool,
   // successCb: PropTypes.func,
   failureCb: PropTypes.func,
   loadingCb: PropTypes.func,
@@ -211,14 +215,8 @@ FaceDetector.propTypes = {
   cameraType: PropTypes.oneOf(['back', 'front']),
 };
 
-FaceDetector.defaultProps = {
-  // successCb: () => {},
-  failureCb: () => {},
-  loadingCb: () => {},
-  // successMsg: '',
-  failureMsg: { ...failureMsgDefault },
-  zIndex: 9,
-  cameraType: 'back',
-};
+const WFaceDetector = Wrapper(FaceDetector, isBrowserSupport);
 
-export default Wrapper(FaceDetector);
+export { WFaceDetector as FaceDetector };
+
+export default WFaceDetector;

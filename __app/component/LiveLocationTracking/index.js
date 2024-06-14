@@ -1,5 +1,2 @@
-import LiveLocationTracking from './LiveLocationTracking';
-
-export { LiveLocationTracking };
-
-export default LiveLocationTracking;
+export * from './LiveLocationTracking';
+export { default } from './LiveLocationTracking';

@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import dependentJsService from '../services/dependentJsService';
-import { handleError, handleSuccess, handleLoading } from '../services/handlerService';
+import { handleSuccess, handleError, handleLoading } from '../services/handlerService';
 import Wrapper from '../Wrapper/Wrapper';
 
 const failureMsgDefault = {
@@ -15,6 +15,8 @@ const failureMsgDefault = {
   googleAPIKeyMissing: 'Unable to check browser permission',
   error: '',
 };
+
+const isBrowserSupport = () => navigator?.geolocation?.watchPosition;
 
 const checkPermitByBrowser = async (failureMsg, failureCb) => {
   try {
@@ -43,23 +45,23 @@ const checkScriptInBrowser = async (failureMsg, failureCb, isProdKey, googleKey)
 };
 
 function LiveLocationTracking({
-  successCb,
-  failureCb,
-  successMsg,
-  failureMsg: failureMsgProps,
-  loadingCb,
-  googleKey,
-  isProdKey,
-  destinationLatLng,
-  mapTypeControl,
-  panControl,
-  zoomControl,
-  scaleControl,
-  streetViewControl,
-  overviewMapControl,
-  rotateControl,
-  fullscreenControl,
-}) {
+  successCb = () => {},
+  failureCb = () => {},
+  loadingCb = () => {},
+  successMsg = 'Successfully!!',
+  failureMsg: failureMsgProps = { ...failureMsgDefault },
+  googleKey = '',
+  isProdKey = true,
+  destinationLatLng = { lat: 12.9387901, lng: 77.6407703 },
+  mapTypeControl = true,
+  panControl = true,
+  zoomControl = true,
+  scaleControl = true,
+  streetViewControl = true,
+  overviewMapControl = true,
+  rotateControl = true,
+  fullscreenControl = true,
+} = {}) {
   const directionMapRef = useRef();
   let directionsService;
   let directionsRenderer;
@@ -167,8 +169,10 @@ function LiveLocationTracking({
   };
 
   const init = async () => {
-    if (LiveLocationTracking.isBrowserSupport()) {
+    if (isBrowserSupport()) {
       handleLoading({ loadingCb });
+
+      // Your Code will start from here
       const isPermitByBrowser = await checkPermitByBrowser(failureMsg, failureCb);
       const isScriptInBrowser = await checkScriptInBrowser(
         failureMsg,
@@ -203,6 +207,7 @@ function LiveLocationTracking({
           // }, 200);
         }
       };
+      // Your Code will end here
     } else {
       return handleError({ msgType: 'UN_SUPPORTED_FEATURE', msg: failureMsg.unSupported, failureCb });
     }
@@ -224,9 +229,9 @@ function LiveLocationTracking({
   );
 }
 
-LiveLocationTracking.isBrowserSupport = () => navigator?.geolocation?.watchPosition;
-
 LiveLocationTracking.propTypes = {
+  // eslint-disable-next-line react/no-unused-prop-types
+  showForever: PropTypes.bool,
   successCb: PropTypes.func,
   failureCb: PropTypes.func,
   loadingCb: PropTypes.func,
@@ -245,28 +250,8 @@ LiveLocationTracking.propTypes = {
   fullscreenControl: PropTypes.bool,
 };
 
-LiveLocationTracking.defaultProps = {
-  successCb: () => {},
-  failureCb: () => {},
-  loadingCb: () => {},
-  successMsg: '',
-  failureMsg: { ...failureMsgDefault },
+const WLiveLocationTracking = Wrapper(LiveLocationTracking, isBrowserSupport);
 
-  destinationLatLng: { lat: 12.9387901, lng: 77.6407703 },
-  isProdKey: true,
-  googleKey: '',
-  mapTypeControl: true,
-  panControl: true,
-  zoomControl: true,
-  scaleControl: true,
-  streetViewControl: true,
-  overviewMapControl: true,
-  rotateControl: true,
-  fullscreenControl: true,
-};
+export { WLiveLocationTracking as LiveLocationTracking };
 
-export default Wrapper(LiveLocationTracking);
-
-// WALKING - bike
-// TWO_WHEELER - Walking
-// DRIVING - Car
+export default WLiveLocationTracking;
