@@ -9,7 +9,6 @@
     "create": "node ./__app/script/boilerPlate.js",
     "postcreate": "npm pkg set files[].=$npm_config_component/",
     "start": "npm run local",
-    "prelocal": "node ./__app/script/generateIndex.js",
     "local": "NODE_ENV=development babel __app/component -d __build --watch",
     "preprod": "node ./__app/script/generateIndex.js",
     "prod": "NODE_ENV=production BABEL_ENV=minify babel __app/component -d  __build --out-file-extension .js",
@@ -110,22 +109,25 @@
     "NetworkMonitor/",
     "View360/"
   ],
+  "exports": {
+    "./*": "./__app/component/*.js"
+  },
   "devDependencies": {
-    "@babel/cli": "^7.23.9",
-    "@babel/core": "^7.24.3",
-    "@babel/preset-env": "^7.24.3",
-    "@babel/preset-react": "^7.23.3",
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/git": "^10.0.1",
-    "babel-minify": "^0.5.2",
-    "babel-plugin-minify-dead-code-elimination": "^0.5.2",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.57.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "lint-staged": "^15.2.2",
-    "mkdirp": "^3.0.1",
-    "semantic-release": "^23.0.2"
+    "@babel/cli": "7.24.8",
+    "@babel/core": "7.24.8",
+    "@babel/preset-env": "7.24.8",
+    "@babel/preset-react": "7.24.7",
+    "@semantic-release/changelog": "6.0.3",
+    "@semantic-release/git": "10.0.1",
+    "babel-minify": "0.5.2",
+    "babel-plugin-minify-dead-code-elimination": "0.5.2",
+    "babel-plugin-transform-react-remove-prop-types": "0.4.24",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "8.57.0",
+    "eslint-config-airbnb": "19.0.4",
+    "lint-staged": "15.2.7",
+    "mkdirp": "3.0.1",
+    "semantic-release": "23.0.2"
   },
   "peerDependencies": {
     "react": "^18.3.1",
