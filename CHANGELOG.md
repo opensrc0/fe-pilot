@@ -1,3 +1,11 @@
+## [1.5.2](https://github.com/opensrc0/fe-pilot/compare/v1.5.1...v1.5.2) (2024-7-17)
+
+
+### Bug Fixes
+
+* **package.json:** added content in description in package.json ([d416dc7](https://github.com/opensrc0/fe-pilot/commit/d416dc74046ca31c52ad6016b88f9f27bd5ff733))
+* **package.json:** added keywords in the description in package.json ([d3f315e](https://github.com/opensrc0/fe-pilot/commit/d3f315eb73c90b28efb78a777dc1f5c010e9c791))
+
 ## [1.5.1](https://github.com/opensrc0/fe-pilot/compare/v1.5.0...v1.5.1) (2024-7-17)
 
 
