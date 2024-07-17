@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/opensrc0/fe-pilot/compare/v1.5.0...v1.5.1) (2024-7-17)
+
+
+### Bug Fixes
+
+* **fpackage.json:** added keywords for SEO ([351d553](https://github.com/opensrc0/fe-pilot/commit/351d553553b1f05a2f45f7c9b70d47a5a2bcf097))
+
 # [1.5.0](https://github.com/opensrc0/fe-pilot/compare/v1.4.1...v1.5.0) (2024-6-14)
 
 
