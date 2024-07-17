@@ -1,6 +1,6 @@
 {
   "name": "fe-pilot",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "A React UI library for Advanced Web Features built on native javascript, Plug & Play, scanner, phonebook ,voice search ,autofill otp, share, live location tracking, detect my location, color picker, wakelock, WhatsappShare, NetworkConnection, TextToSpeech, VoiceRecognition, SnapScanner, NetworkMonitor, View360, in web, in react, in javascript, components, web component, frontend, library, react, react components, ui component, ui library, web, advanced component, advanced feature,",
   "main": "index.js",
   "scripts": {
