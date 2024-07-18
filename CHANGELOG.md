@@ -1,3 +1,10 @@
+## [1.5.3](https://github.com/opensrc0/fe-pilot/compare/v1.5.2...v1.5.3) (2024-7-17)
+
+
+### Bug Fixes
+
+* **package.json:** added description string till 255 length ([06e403f](https://github.com/opensrc0/fe-pilot/commit/06e403fa7be5767bb1c48d7b7f5306fa39934baf))
+
 ## [1.5.2](https://github.com/opensrc0/fe-pilot/compare/v1.5.1...v1.5.2) (2024-7-17)
 
 
