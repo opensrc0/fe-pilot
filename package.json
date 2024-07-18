@@ -114,6 +114,10 @@
   "exports": {
     "./*": "./__app/component/*.js"
   },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
   "devDependencies": {
     "@babel/cli": "7.24.8",
     "@babel/core": "7.24.8",
