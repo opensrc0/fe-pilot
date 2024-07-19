@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/opensrc0/fe-pilot/compare/v1.5.3...v1.6.0) (2024-7-18)
+
+
+### Features
+
+* **package.json:** added dependent package ([ec8f868](https://github.com/opensrc0/fe-pilot/commit/ec8f868618f52a5309486b996c3e5ecc59232072))
+
 ## [1.5.3](https://github.com/opensrc0/fe-pilot/compare/v1.5.2...v1.5.3) (2024-7-17)
 
 
