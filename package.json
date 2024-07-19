@@ -10,7 +10,6 @@
     "postcreate": "npm pkg set files[].=$npm_config_component/",
     "start": "npm run local",
     "local": "NODE_ENV=development babel __app/component -d __build --watch",
-    "preprod": "node ./__app/script/generateIndex.js",
     "prod": "NODE_ENV=production BABEL_ENV=minify babel __app/component -d  __build --out-file-extension .js",
     "commit": "npm run lint:check && git-cz",
     "lint:check": "lint-staged",
