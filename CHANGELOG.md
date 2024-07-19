@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/opensrc0/fe-pilot/compare/v1.6.0...v1.6.1) (2024-7-19)
+
+
+### Bug Fixes
+
+* **package.json:** removed index file generation ([a63897f](https://github.com/opensrc0/fe-pilot/commit/a63897f06fb347a6ce2a04fabcd74d29786cc3f1))
+
 # [1.6.0](https://github.com/opensrc0/fe-pilot/compare/v1.5.3...v1.6.0) (2024-7-18)
 
 
