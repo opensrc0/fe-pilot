@@ -1,3 +1,11 @@
+## [1.6.2](https://github.com/opensrc0/fe-pilot/compare/v1.6.1...v1.6.2) (2024-7-29)
+
+
+### Bug Fixes
+
+* **changed description meta tags:** package.json ([74bbb1d](https://github.com/opensrc0/fe-pilot/commit/74bbb1d886d6f7870b655b0481fb105984679e3e))
+* **conflict:** resolved conflicts ([5bca17e](https://github.com/opensrc0/fe-pilot/commit/5bca17ef16d3019c4d022bb989a973b7b2aac52f))
+
 ## [1.6.1](https://github.com/opensrc0/fe-pilot/compare/v1.6.0...v1.6.1) (2024-7-19)
 
 
