@@ -1,7 +1,7 @@
 {
   "name": "fe-pilot",
   "version": "1.6.0",
-  "description": "scanner, phonebook, voice search, autofill otp, share, live location tracking, detect my location, color picker, wakelock, WhatsappShare, TextToSpeech, Voice Recognition, SnapScanner, NetworkMonitor, View360, in web, in react, in javascript",
+  "description": "scanner in web, phonebook in web, autofill otp in web, share web, TextToSpeech in web, Voice Recognition in web, live location tracking in web, detect my location web, wakelock in web, color picker, WhatsappShare, SnapScanner, NetworkMonitor, View360",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Success: Verified\"",
