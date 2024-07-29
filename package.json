@@ -1,6 +1,6 @@
 {
   "name": "fe-pilot",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "scanner in web, phonebook in web, autofill otp in web, share web, TextToSpeech in web, Voice Recognition in web, live location tracking in web, detect my location web, wakelock in web, color picker, WhatsappShare, SnapScanner, NetworkMonitor, View360",
   "main": "index.js",
   "scripts": {
