@@ -1,3 +1,10 @@
+## [1.6.3](https://github.com/opensrc0/fe-pilot/compare/v1.6.2...v1.6.3) (2024-8-3)
+
+
+### Bug Fixes
+
+* **linking fixed:** fixed linking ([a3f5cc4](https://github.com/opensrc0/fe-pilot/commit/a3f5cc4d89d7a502c05aca0045b5c5da3db38831))
+
 ## [1.6.2](https://github.com/opensrc0/fe-pilot/compare/v1.6.1...v1.6.2) (2024-7-29)
 
 
