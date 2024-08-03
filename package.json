@@ -88,54 +88,27 @@
     ]
   },
   "files": [
-    "__build/**",
-    "./index.js",
-    "AutoFillOtp/",
-    "Bluetooth/",
-    "FaceDetector/",
-    "CopyToClipboard/",
-    "LiveLocationTracking/",
-    "LocateMe/",
-    "MobileNavBar/",
-    "PhoneBook/",
-    "Scanner/",
-    "Share/",
-    "TextToSpeech/",
-    "VoiceRecognition/",
-    "Vibrate/",
-    "ColorPicker/",
-    "WhatsappShare/",
-    "SnapScanner/",
-    "WakeLock/",
-    "NetworkMonitor/",
-    "View360/"
+    "__build/**"
   ],
   "exports": {
-    "./*": "./__app/component/*.js"
-  },
-  "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "./*": "./__build/*"
   },
   "devDependencies": {
-    "@babel/cli": "7.24.8",
-    "@babel/core": "7.24.8",
-    "@babel/preset-env": "^7.24.8",
-    "@babel/preset-react": "^7.24.7",
-    "@semantic-release/changelog": "6.0.3",
-    "@semantic-release/git": "10.0.1",
-    "babel-jest": "^29.7.0",
-    "babel-minify": "0.5.2",
-    "babel-plugin-minify-dead-code-elimination": "0.5.2",
-    "babel-plugin-transform-react-remove-prop-types": "0.4.24",
-    "cz-conventional-changelog": "3.3.0",
-    "eslint": "8.57.0",
-    "eslint-config-airbnb": "19.0.4",
-    "jest": "^29.7.0",
-    "lint-staged": "15.2.7",
-    "mkdirp": "3.0.1",
-    "react-test-renderer": "^18.3.1",
-    "semantic-release": "23.0.2"
+    "@babel/cli": "^7.23.9",
+    "@babel/core": "^7.24.3",
+    "@babel/preset-env": "^7.24.3",
+    "@babel/preset-react": "^7.23.3",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "babel-minify": "^0.5.2",
+    "babel-plugin-minify-dead-code-elimination": "^0.5.2",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "lint-staged": "^15.2.2",
+    "mkdirp": "^3.0.1",
+    "semantic-release": "^23.0.2"
   },
   "peerDependencies": {
     "react": "^18.3.1",
