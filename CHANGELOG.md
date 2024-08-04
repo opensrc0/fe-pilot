@@ -1,3 +1,11 @@
+## [1.6.7](https://github.com/opensrc0/fe-pilot/compare/v1.6.6...v1.6.7) (2024-8-4)
+
+
+### Bug Fixes
+
+* **package.json:** support direct import ([b444d18](https://github.com/opensrc0/fe-pilot/commit/b444d18286a6bc2a0bfa836098ff3ae75bf3ad4b))
+* **package.json:** support of esm ([f0bda8b](https://github.com/opensrc0/fe-pilot/commit/f0bda8b161ca79f6615e86f998e2f2e8efb54f10))
+
 ## [1.6.6](https://github.com/opensrc0/fe-pilot/compare/v1.6.5...v1.6.6) (2024-8-4)
 
 
