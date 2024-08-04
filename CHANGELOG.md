@@ -1,3 +1,10 @@
+## [1.6.5](https://github.com/opensrc0/fe-pilot/compare/v1.6.4...v1.6.5) (2024-8-4)
+
+
+### Bug Fixes
+
+* **package.json:** right export ([e21cb95](https://github.com/opensrc0/fe-pilot/commit/e21cb955e23b41d907ac9efdb0d140a7a56a78a5))
+
 ## [1.6.4](https://github.com/opensrc0/fe-pilot/compare/v1.6.3...v1.6.4) (2024-8-3)
 
 
