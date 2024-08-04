@@ -1,3 +1,10 @@
+## [1.6.8](https://github.com/opensrc0/fe-pilot/compare/v1.6.7...v1.6.8) (2024-8-4)
+
+
+### Bug Fixes
+
+* **package.json:** generated index for each module ([05840af](https://github.com/opensrc0/fe-pilot/commit/05840af32e5b5bbd8a00187c7a985af0a09abce4))
+
 ## [1.6.7](https://github.com/opensrc0/fe-pilot/compare/v1.6.6...v1.6.7) (2024-8-4)
 
 
