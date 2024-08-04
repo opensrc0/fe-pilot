@@ -1,3 +1,10 @@
+## [1.6.4](https://github.com/opensrc0/fe-pilot/compare/v1.6.3...v1.6.4) (2024-8-3)
+
+
+### Bug Fixes
+
+* **runtime removed:** removed runtime from .babelrc ([333ab42](https://github.com/opensrc0/fe-pilot/commit/333ab42b70295d4185467a74e59ab15e30e9260f))
+
 ## [1.6.3](https://github.com/opensrc0/fe-pilot/compare/v1.6.2...v1.6.3) (2024-8-3)
 
 
