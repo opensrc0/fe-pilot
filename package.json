@@ -91,7 +91,7 @@
     "__build/**"
   ],
   "exports": {
-    "./*": "./__build/*"
+    "./*": "./__build/*/*.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.23.9",
