@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/opensrc0/fe-pilot/compare/v1.6.8...v1.7.0) (2025-03-10)
+
+
+### Features
+
+* **react 19.x.x:** supporting react version 19 ([83ce75e](https://github.com/opensrc0/fe-pilot/commit/83ce75e9c12712753bb5251de5251a51ac8bbb0b))
+
 ## [1.6.8](https://github.com/opensrc0/fe-pilot/compare/v1.6.7...v1.6.8) (2024-8-4)
 
 
