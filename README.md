@@ -129,7 +129,7 @@ Thanks goes to these wonderful people
           <a href="https://github.com/opensrc0">
             <img src="https://avatars.githubusercontent.com/u/6891544?s=400&v=4" width="64px;" alt="Himanshu Gupta" />
             <br />
-            <sub><b>Himanshu Gupta</b></sub>
+            <small><b>Himanshu Gupta</b></small>
           </a>
         </p>
       </td>
@@ -138,7 +138,7 @@ Thanks goes to these wonderful people
           <a target="_blank" href="https://github.com/hardikjain29">
             <img src="https://avatars.githubusercontent.com/u/13768932?v=4" width="64px;" alt="Hardik Jain" />
             <br />
-            <sub><b>Hardik Jain</b></sub>
+            <small><b>Hardik Jain</b></small>
           </a>
         </p>
       </td>
@@ -146,7 +146,7 @@ Thanks goes to these wonderful people
         <a href="https://github.com/ashwinihegde123">
           <img src="https://avatars.githubusercontent.com/u/40521396?v=4" width="64px;" alt="Ashwini Hegde" />
           <br />
-          <sub><b>Ashwini Hegde</b></sub>
+          <small><b>Ashwini Hegde</b></small>
         </a>
         <br />
       </td>
@@ -155,7 +155,7 @@ Thanks goes to these wonderful people
           <a target="_blank" href="https://github.com/Indian2025">
             <img src="https://avatars.githubusercontent.com/u/164238626?v=4" width="64px;" alt="Shashank Gupta" />
             <br />
-            <sub><b>Shashank Gupta</b></sub>
+            <small><b>Shashank Gupta</b></small>
           </a>
         </p>
       </td>
@@ -164,7 +164,7 @@ Thanks goes to these wonderful people
           <a href="https://github.com/Alok30">
             <img src="https://avatars.githubusercontent.com/u/36290248?s=64&v=4" width="64px;" alt="Alok Dubey" />
             <br />
-            <sub><b>Alok Dubey</b></sub>
+            <small><b>Alok Dubey</b></small>
           </a>
         </p>
       </td>
@@ -173,7 +173,7 @@ Thanks goes to these wonderful people
           <a href="https://github.com/NimishGupta95">
             <img src="https://avatars.githubusercontent.com/u/13002628?v=4" width="64px;" alt="Nimish Gupta" />
             <br />
-            <sub><b>Nimish Gupta</b></sub>
+            <small><b>Nimish Gupta</b></small>
           </a>
         </p>
       </td>
@@ -182,7 +182,7 @@ Thanks goes to these wonderful people
           <a href="https://github.com/Ravi-Chef">
             <img src="https://avatars.githubusercontent.com/u/31059087?v=4" width="64px;" alt="Ravi Verma" />
             <br />
-            <sub><b>Ravi Verma</b></sub>
+            <small><b>Ravi Verma</b></small>
           </a>
         </p>
       </td>
@@ -193,7 +193,7 @@ Thanks goes to these wonderful people
           <a target="_blank" href="https://github.com/VarshaBhagat0714">
             <img src="https://avatars.githubusercontent.com/u/36624782?v=4" width="64px;" alt="Varsha Bhagat" />
             <br />
-            <sub><b>Varsha Bhagat</b></sub>
+            <small><b>Varsha Bhagat</b></small>
           </a>
         </p>
       </td> -->
@@ -202,7 +202,7 @@ Thanks goes to these wonderful people
           <a target="_blank" href="https://github.com/semantic-release-bot">
             <img src="https://avatars.githubusercontent.com/u/32174276?v=4" width="64px;" alt="Semantic Release Bot" />
             <br />
-            <sub><b>Semantic Release Bot</b></sub>
+            <small><b>Semantic Release Bot</b></small>
           </a>
         </p>
       </td>
@@ -211,7 +211,7 @@ Thanks goes to these wonderful people
           <a target="_blank" href="https://github.com/vineet091">
             <img src="https://avatars.githubusercontent.com/u/5345138?v=4" width="64px;" alt="Vineet Gupta" />
             <br />
-            <sub><b>Vineet Gupta</b></sub>
+            <small><b>Vineet Gupta</b></small>
           </a>
         </p>
       </td>
@@ -220,7 +220,7 @@ Thanks goes to these wonderful people
           <a target="_blank" href="https://github.com/fossabot">
             <img src="https://avatars.githubusercontent.com/u/29791463?v=4" width="64px;" alt="Fossa Bot" />
             <br />
-            <sub><b>Fossa Bot</b></sub>
+            <small><b>Fossa Bot</b></small>
           </a>
         </p>
       </td>
@@ -229,7 +229,7 @@ Thanks goes to these wonderful people
           <a target="_blank" href="https://github.com/pragyajha">
             <img src="https://avatars.githubusercontent.com/u/3938228?v=4" width="64px;" alt="Pragya Jha" />
             <br />
-            <sub><b>Pragya Jha</b></sub>
+            <small><b>Pragya Jha</b></small>
           </a>
         </p>
       </td> -->
@@ -237,7 +237,7 @@ Thanks goes to these wonderful people
         <a target="_blank" href="https://github.com/swarajgolu">
           <img src="https://avatars.githubusercontent.com/u/31703347?v=4" width="64px;" alt="Swaraj Singh" />
           <br />
-          <sub><b>Swaraj Singh</b></sub>
+          <small><b>Swaraj Singh</b></small>
         </a>
         <br />
       </td>
@@ -245,7 +245,7 @@ Thanks goes to these wonderful people
         <a target="_blank" href="https://github.com/100beats">
           <img src="https://avatars.githubusercontent.com/u/172108056?v=4" width="64px;" alt="100beats" />
           <br />
-          <sub><b>100beats</b></sub>
+          <small><b>100beats</b></small>
         </a>
         <br />
       </td>
