@@ -128,62 +128,55 @@ Thanks goes to these wonderful people
         <p>
           <a href="https://github.com/opensrc0">
             <img src="https://avatars.githubusercontent.com/u/6891544?s=400&v=4" width="64px;" alt="Himanshu Gupta" />
-            <br />
-            <small><b>Himanshu Gupta</b></small>
           </a>
+          <sub><b><a href="https://github.com/opensrc0">Himanshu Gupta</a></b></sub>
         </p>
       </td>
       <td align="center" valign="top" width="14.28%">
         <p>
           <a target="_blank" href="https://github.com/hardikjain29">
             <img src="https://avatars.githubusercontent.com/u/13768932?v=4" width="64px;" alt="Hardik Jain" />
-            <br />
-            <sup><b>Hardik Jain</b></sup>
           </a>
+          <sub><b><a target="_blank" href="https://github.com/hardikjain29">Hardik Jain</a></b></sub>
         </p>
       </td>
       <td align="center" valign="top" width="14.28%">
         <a href="https://github.com/ashwinihegde123">
           <img src="https://avatars.githubusercontent.com/u/40521396?v=4" width="64px;" alt="Ashwini Hegde" />
-          <br />
-          <sup><b>Ashwini Hegde</b></sup>
         </a>
+        <sub><b> <a href="https://github.com/ashwinihegde123">Ashwini Hegde</a></b></sub>
         <br />
       </td>
       <td align="center" valign="top" width="14.28%">
         <p>
           <a target="_blank" href="https://github.com/Indian2025">
             <img src="https://avatars.githubusercontent.com/u/164238626?v=4" width="64px;" alt="Shashank Gupta" />
-            <br />
-            <sup><b>Shashank Gupta</b></sup>
           </a>
+          <sub><b><a target="_blank" href="https://github.com/Indian2025">Shashank Gupta</a></b></sub>
         </p>
       </td>
       <td align="center" valign="top" width="14.28%">
         <p>
           <a href="https://github.com/Alok30">
             <img src="https://avatars.githubusercontent.com/u/36290248?s=64&v=4" width="64px;" alt="Alok Dubey" />
-            <br />
-            <sup><b>Alok Dubey</b></sup>
           </a>
+          <sub><b><a href="https://github.com/Alok30">Alok Dubey</a></b></sub>
         </p>
       </td>
       <td align="center" valign="top" width="14.28%">
         <p>
           <a href="https://github.com/NimishGupta95">
             <img src="https://avatars.githubusercontent.com/u/13002628?v=4" width="64px;" alt="Nimish Gupta" />
-            <br />
-            <sup><b>Nimish Gupta</b></sup>
           </a>
+          <sub><b><a href="https://github.com/NimishGupta95">Nimish Gupta</a></b></sub>
         </p>
       </td>
       <td align="center" valign="top" width="14.28%">
         <p>
           <a href="https://github.com/Ravi-Chef">
             <img src="https://avatars.githubusercontent.com/u/31059087?v=4" width="64px;" alt="Ravi Verma" />
-            <br />
-            <sup><b>Ravi Verma</b></sup>
           </a>
+          <sub><b><a href="https://github.com/Ravi-Chef">Ravi Verma</a></b></sub>
         </p>
       </td>
     </tr>
@@ -193,7 +186,7 @@ Thanks goes to these wonderful people
           <a target="_blank" href="https://github.com/VarshaBhagat0714">
             <img src="https://avatars.githubusercontent.com/u/36624782?v=4" width="64px;" alt="Varsha Bhagat" />
             <br />
-            <sup><b>Varsha Bhagat</b></sup>
+            <sub><b>Varsha Bhagat</b></sub>
           </a>
         </p>
       </td> -->
@@ -201,27 +194,24 @@ Thanks goes to these wonderful people
         <p>
           <a target="_blank" href="https://github.com/semantic-release-bot">
             <img src="https://avatars.githubusercontent.com/u/32174276?v=4" width="64px;" alt="Semantic Release Bot" />
-            <br />
-            <sup><b>Semantic Release Bot</b></sup>
           </a>
+          <sub><b><a target="_blank" href="https://github.com/semantic-release-bot">Semantic Release Bot</a></b></sub>
         </p>
       </td>
       <td align="center" valign="top" width="14.28%">
         <p>
           <a target="_blank" href="https://github.com/vineet091">
             <img src="https://avatars.githubusercontent.com/u/5345138?v=4" width="64px;" alt="Vineet Gupta" />
-            <br />
-            <sup><b>Vineet Gupta</b></sup>
           </a>
+          <sub><b><a target="_blank" href="https://github.com/vineet091">Vineet Gupta</a></b></sub>
         </p>
       </td>
       <td align="center" valign="top" width="14.28%">
         <p>
           <a target="_blank" href="https://github.com/fossabot">
             <img src="https://avatars.githubusercontent.com/u/29791463?v=4" width="64px;" alt="Fossa Bot" />
-            <br />
-            <sup><b>Fossa Bot</b></sup>
           </a>
+          <sub><b><a target="_blank" href="https://github.com/fossabot">Fossa Bot</a></b></sub>
         </p>
       </td>
       <!-- <td align="center" valign="top" width="14.28%">
@@ -229,25 +219,21 @@ Thanks goes to these wonderful people
           <a target="_blank" href="https://github.com/pragyajha">
             <img src="https://avatars.githubusercontent.com/u/3938228?v=4" width="64px;" alt="Pragya Jha" />
             <br />
-            <sup><b>Pragya Jha</b></sup>
+            <sub><b>Pragya Jha</b></sub>
           </a>
         </p>
       </td> -->
       <td align="center" valign="top" width="14.28%">
         <a target="_blank" href="https://github.com/swarajgolu">
           <img src="https://avatars.githubusercontent.com/u/31703347?v=4" width="64px;" alt="Swaraj Singh" />
-          <br />
-          <sup><b>Swaraj Singh</b></sup>
         </a>
-        <br />
+        <sub><b><a target="_blank" href="https://github.com/swarajgolu">Swaraj Singh</a></b></sub>
       </td>
       <td align="center" valign="top" width="14.28%">
         <a target="_blank" href="https://github.com/100beats">
           <img src="https://avatars.githubusercontent.com/u/172108056?v=4" width="64px;" alt="100beats" />
-          <br />
-          <sup><b>100beats</b></sup>
         </a>
-        <br />
+        <sub><b><a target="_blank" href="https://github.com/100beats">100beats</a></b></sub>
       </td>
     </tr>
   </tbody>
