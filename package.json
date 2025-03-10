@@ -25,9 +25,6 @@
       "eslint"
     ]
   },
-  "devEngines": {
-    "node": "20.x"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/opensrc0/fe-pilot.git"
@@ -135,10 +132,10 @@
     "eslint-config-airbnb": "^19.0.4",
     "lint-staged": "^15.2.2",
     "mkdirp": "^3.0.1",
-    "semantic-release": "^23.0.2"
+    "semantic-release": "^24.2.3"
   },
-  "peerDependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   }
 }
