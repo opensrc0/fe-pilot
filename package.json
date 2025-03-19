@@ -18,7 +18,11 @@
     "semantic-release": "semantic-release --branches master",
     "prod:unminified": "NODE_ENV=production babel __app/component -d __build"
   },
-  "author": "Himanshu Gupta <opensrc0@gmail.com>",
+  "author": {
+    "name": "Himanshu Gupta",
+    "email": "opensrc0@gmail.com",
+    "url": "http://example.com/"
+  },
   "license": "MIT",
   "lint-staged": {
     "*.js": [
