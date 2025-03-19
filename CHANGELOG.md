@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/opensrc0/fe-pilot/compare/v1.7.0...v1.7.1) (2025-03-19)
+
+
+### Bug Fixes
+
+* **package.json:** added maintainers ([5cd7946](https://github.com/opensrc0/fe-pilot/commit/5cd79465cf2702f7ef7853819cd6307676186e4c))
+
 # [1.7.0](https://github.com/opensrc0/fe-pilot/compare/v1.6.8...v1.7.0) (2025-03-10)
 
 
