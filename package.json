@@ -1,6 +1,6 @@
 {
   "name": "fe-pilot",
-  "version": "1.7.1",
+  "version": "1.7.2",
   "description": "scanner in web, phonebook in web, autofill otp in web, share web, TextToSpeech in web, Voice Recognition in web, live location tracking in web, detect my location web, wakelock in web, color picker, WhatsappShare, SnapScanner, NetworkMonitor, View360",
   "main": "index.js",
   "scripts": {
@@ -26,13 +26,16 @@
     {
       "name": "opensrc0",
       "email": "opensrc0@gmail.com"
-    }, {
+    },
+    {
       "name": "Himanshu Gupta",
       "email": "25himanshugupta@gmail.com"
-    }, {
+    },
+    {
       "name": "Ashwini Hegde",
       "email": "sirsiashwini@gmail.com"
-    }, {
+    },
+    {
       "name": "Alok Dubey",
       "email": "kpalokdubey@gmail.com"
     }
