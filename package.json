@@ -19,10 +19,21 @@
     "prod:unminified": "NODE_ENV=production babel __app/component -d __build"
   },
   "author": {
-    "name": "Himanshu Gupta",
-    "email": "opensrc0@gmail.com",
-    "url": "http://example.com/"
+    "name": "opensrc0",
+    "email": "opensrc0@gmail.com"
   },
+  "maintainers": [
+    {
+      "name": "opensrc0",
+      "email": "opensrc0@gmail.com"
+    }, {
+      "name": "Himanshu Gupta",
+      "email": "25himanshugupta@gmail.com"
+    }, {
+      "name": "Ashwini Hegde",
+      "email": "sirsiashwini@gmail.com"
+    }
+  ],
   "license": "MIT",
   "lint-staged": {
     "*.js": [
