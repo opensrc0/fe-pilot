@@ -1,3 +1,11 @@
+## [1.7.4](https://github.com/opensrc0/fe-pilot/compare/v1.7.3...v1.7.4) (2026-01-22)
+
+
+### Bug Fixes
+
+* **added document scanner:** document scanner component has been added ([227e1e9](https://github.com/opensrc0/fe-pilot/commit/227e1e9558762f8301436d968561c569b8449ef9))
+* **document scanner:** added component Document Scanner ([885e722](https://github.com/opensrc0/fe-pilot/commit/885e7220c3a27fb0806e4762ec7ef423ed8b51db))
+
 ## [1.7.3](https://github.com/opensrc0/fe-pilot/compare/v1.7.2...v1.7.3) (2026-01-22)
 
 
