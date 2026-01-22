@@ -111,6 +111,7 @@
     "./index.js",
     "AutoFillOtp/",
     "Bluetooth/",
+    "DocumentScanner/",
     "FaceDetector/",
     "CopyToClipboard/",
     "LiveLocationTracking/",
