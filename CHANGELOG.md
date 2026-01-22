@@ -1,3 +1,10 @@
+## [1.7.3](https://github.com/opensrc0/fe-pilot/compare/v1.7.2...v1.7.3) (2026-01-22)
+
+
+### Bug Fixes
+
+* **added bluettoth:** bluethooth Component has beed added ([9de32d9](https://github.com/opensrc0/fe-pilot/commit/9de32d982e085f6b2def331712117f4689b31cb1))
+
 ## [1.7.2](https://github.com/opensrc0/fe-pilot/compare/v1.7.1...v1.7.2) (2025-03-19)
 
 
