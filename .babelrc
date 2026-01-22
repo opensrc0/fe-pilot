@@ -3,7 +3,10 @@
   "comments": false,
   "env": {
     "minify": {
-      "presets": [["@babel/preset-env", { "modules": false }], ["babel-preset-minify"]],
+      "presets": [
+        ["@babel/preset-env", { "modules": false }],
+        ["babel-preset-minify", { "builtIns": false }]
+      ],
       "plugins": [["transform-react-remove-prop-types", {
         "mode": "remove",
         "removeImport": true,
